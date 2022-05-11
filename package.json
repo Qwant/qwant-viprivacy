@@ -2,11 +2,11 @@
   "name": "qwant-viprivacy",
   "version": "0.0.2.10",
   "description": "Qwant VIPrivacy",
-  "author": "extension@qwant.com",
+  "author": "extensions@qwant.com",
   "license": "GPL-3.0",
   "repository": {
     "type": "git",
-    "url": "ssh://git@github.com:AdguardTeam/AdguardBrowserExtension.git"
+    "url": "ssh://git@github.com:Qwant/qwant-viprivacy.git"
   },
   "scripts": {
     "dev": "cross-env BUILD_ENV=dev babel-node tools/bundle.js",
@@ -15,9 +15,6 @@
     "beta": "cross-env BUILD_ENV=beta babel-node tools/bundle.js",
     "release": "cross-env BUILD_ENV=release babel-node tools/bundle.js",
     "test": "jest",
-    "locales:download": "babel-node tools/locales.js download",
-    "locales:upload": "babel-node tools/locales.js upload",
-    "locales:renew": "babel-node tools/locales.js renew",
     "locales:validate": "babel-node tools/locales.js validate",
     "locales:info": "babel-node tools/locales.js info",
     "resources": "babel-node tools/resources.js",
