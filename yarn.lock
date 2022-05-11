@@ -2809,13 +2809,6 @@ bunyan@1.8.15:
     mv "~2"
     safe-json-stringify "~1"
 
-c3@0.4.15:
-  version "0.4.15"
-  resolved "https://registry.yarnpkg.com/c3/-/c3-0.4.15.tgz#747c47b33739d0f92bf4b5ddcce2bffff4fd4a31"
-  integrity sha512-DRlEmSC/slaHfMg+agLYBfCkLV7ShZtJKJDrtZ10fyfXNy0bGTUygf7eOcFDmrbxAjYPajvEwfTXRqEcfC9WGw==
-  dependencies:
-    d3 "~3.5.0"
-
 cache-base@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/cache-base/-/cache-base-1.0.1.tgz#0a7f46416831c8b662ee36fe4e7c59d76f666ab2"
@@ -3606,11 +3599,6 @@ csstype@^3.0.2, csstype@^3.0.6:
   version "3.0.11"
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.0.11.tgz#d66700c5eacfac1940deb4e3ee5642792d85cd33"
   integrity sha512-sa6P2wJ+CAbgyy4KFssIb/JNMLxFvKF1pCYCSXS8ZMuqZnMsrxqI2E5sPyoTpxoPU/gVZMzr2zjOfg8GIZOMsw==
-
-d3@~3.5.0:
-  version "3.5.17"
-  resolved "https://registry.yarnpkg.com/d3/-/d3-3.5.17.tgz#bc46748004378b21a360c9fc7cf5231790762fb8"
-  integrity sha1-vEZ0gAQ3iyGjYMn8fPUjF5B2L7g=
 
 damerau-levenshtein@^1.0.7:
   version "1.0.8"
@@ -10070,9 +10058,9 @@ uri-js@^4.2.2:
     punycode "^2.1.0"
 
 urijs@^1.18.2:
-  version "1.19.10"
-  resolved "https://registry.yarnpkg.com/urijs/-/urijs-1.19.10.tgz#8e2fe70a8192845c180f75074884278f1eea26cb"
-  integrity sha512-EzauQlgKuJgsXOqoMrCiePBf4At5jVqRhXykF3Wfb8ZsOBMxPcfiVBcsHXug4Aepb/ICm2PIgqAUGMelgdrWEg==
+  version "1.19.11"
+  resolved "https://registry.yarnpkg.com/urijs/-/urijs-1.19.11.tgz#204b0d6b605ae80bea54bea39280cdb7c9f923cc"
+  integrity sha512-HXgFDgDommxn5/bIv0cnQZsPhHDA90NPHD6+c/v21U5+Sx5hoP8+dP9IZXBU1gIfvdRfhG8cel9QNPeionfcCQ==
 
 urix@^0.1.0:
   version "0.1.0"
