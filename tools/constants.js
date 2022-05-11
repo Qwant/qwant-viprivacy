@@ -72,7 +72,7 @@ export const BUILD_PATH = path.resolve(__dirname, '../build');
 // filters constants
 export const METADATA_DOWNLOAD_URL_FORMAT = 'https://f.qwant.com/tracking-protection/%browser_filters.json';
 export const FILTERS_DEST = 'Extension/filters/%browser';
-export const ADGUARD_FILTERS_IDS = [];
+export const ADGUARD_FILTERS_IDS = [3, 10, 15, 17, 118, 122, 207, 208, 4, 14, 201, 225, 239];
 export const LOCAL_SCRIPT_RULES_COMMENT = `By the rules of AMO we cannot use remote scripts (and our JS rules can be counted as such). Because of that we use the following approach (that was accepted by AMO reviewers):
 
 1. We pre-build JS rules from AdGuard filters into the add-on (see the file called "local_script_rules.json").
