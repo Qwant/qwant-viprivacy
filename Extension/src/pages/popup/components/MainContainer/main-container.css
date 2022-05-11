@@ -1,0 +1,11 @@
+body {
+    font-family: Helvetica, sans-serif;
+    width: 408px;
+    background-color: #fffffa;
+    margin: 0;
+
+    @media (pointer:none), (pointer:coarse) {
+        width: 100%;
+        min-height: unset;
+    }
+}

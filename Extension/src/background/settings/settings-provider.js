@@ -488,7 +488,7 @@ export const settingsProvider = (function () {
     const validateJSON = (data) => {
         const valid = validateJsonSchema(data);
         if (!valid) {
-            log.error(validateJsonSchema.errors);
+            log.error(JSON.stringify(validateJsonSchema.errors));
             return false;
         }
 

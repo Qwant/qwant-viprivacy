@@ -6,6 +6,7 @@ export const ANTIBANNER_FILTERS_ID = {
     USER_FILTER_ID: 0,
     RUSSIAN_FILTER_ID: 1,
     ENGLISH_FILTER_ID: 2,
+    FRENCH_FILTER_ID: 16,
     TRACKING_FILTER_ID: 3,
     SOCIAL_FILTER_ID: 4,
     SEARCH_AND_SELF_PROMO_FILTER_ID: 10,
@@ -99,6 +100,9 @@ export const MESSAGE_TYPES = {
     ADD_LONG_LIVED_CONNECTION: 'addLongLivedConnection',
     GET_OPTIONS_DATA: 'getOptionsData',
     CHANGE_USER_SETTING: 'changeUserSetting',
+    CHANGE_PROTECTION_LEVEL: 'changeProtectionLevel',
+    PERMISSIONS_REJECTED: 'permissionsRejected',
+    CHECK_SETTINGS_APPLIED: 'checkSettingsApplied',
     CHECK_REQUEST_FILTER_READY: 'checkRequestFilterReady',
     OPEN_THANKYOU_PAGE: 'openThankYouPage',
     OPEN_SAFEBROWSING_TRUSTED: 'openSafebrowsingTrusted',
@@ -118,6 +122,8 @@ export const MESSAGE_TYPES = {
     GET_EDITOR_STORAGE_CONTENT: 'getEditorStorageContent',
     SET_EDITOR_STORAGE_CONTENT: 'setEditorStorageContent',
     CONVERT_RULES_TEXT: 'convertRulesText',
+    START_TRACKING_BLOCKER: 'startTrackingBlocker',
+    QWANT_SETTINGS_APPLIED: 'qwantSettingsApplied',
 };
 
 export const NOTIFIER_TYPES = {
@@ -128,6 +134,7 @@ export const NOTIFIER_TYPES = {
     FILTER_ENABLE_DISABLE: 'event.filter.enable.disable', // Enabled or disabled
     FILTER_ADD_REMOVE: 'event.filter.add.remove', // Added or removed
     ADS_BLOCKED: 'event.ads.blocked',
+    POST_PROCESS_REQUEST: 'event.request.post.process',
     START_DOWNLOAD_FILTER: 'event.start.download.filter',
     SUCCESS_DOWNLOAD_FILTER: 'event.success.download.filter',
     ERROR_DOWNLOAD_FILTER: 'event.error.download.filter',

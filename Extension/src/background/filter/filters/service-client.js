@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /**
  * This file is part of Adguard Browser Extension (https://github.com/AdguardTeam/AdguardBrowserExtension).
  *
@@ -36,48 +37,47 @@ export const backend = (function () {
 
         // Base url of our backend server
         get backendUrl() {
-            return 'https://chrome.adtidy.org';
-        },
-
-        get apiKey() {
-            return '4DDBE80A3DA94D819A00523252FB6380';
+            return 'https://example.com'; // TODO
         },
 
         // Url for load filters metadata and rules
+        // https://f.qwant.com/tracking-protection/chrome_filter_102.txt
         get filtersUrl() {
             return lazyGet(this, 'filtersUrl', () => {
                 if (browserUtils.isFirefoxBrowser()) {
-                    return 'https://filters.adtidy.org/extension/firefox';
-                } if (browserUtils.isEdgeBrowser()) {
-                    return 'https://filters.adtidy.org/extension/edge';
-                } if (browserUtils.isOperaBrowser()) {
-                    return 'https://filters.adtidy.org/extension/opera';
+                    return 'https://f.qwant.com/tracking-protection/firefox_';
                 }
-                return 'https://filters.adtidy.org/extension/chromium';
+                if (browserUtils.isEdgeBrowser()) {
+                    return 'https://f.qwant.com/tracking-protection/edge_';
+                }
+                return 'https://f.qwant.com/tracking-protection/chrome_'; // chromium
             });
         },
 
         // URL for downloading AG filters
         get filterRulesUrl() {
-            return `${this.filtersUrl}/filters/{filter_id}.txt`;
-        },
-
-        // URL for downloading optimized AG filters
-        get optimizedFilterRulesUrl() {
-            return `${this.filtersUrl}/filters/{filter_id}_optimized.txt`;
+            return `${this.filtersUrl}filter_{filter_id}.txt`;
         },
 
         // URL for checking filter updates
         get filtersMetadataUrl() {
             const params = browserUtils.getExtensionParams();
-            return `${this.filtersUrl}/filters.js?${params.join('&')}`;
+            const qs = `?${params.join('&')}`;
+
+            if (browserUtils.isFirefoxBrowser()) {
+                return `https://f.qwant.com/tracking-protection/firefox_filters.js${qs}`;
+            }
+            if (browserUtils.isEdgeBrowser()) {
+                return `https://f.qwant.com/tracking-protection/edge_filters.js${qs}`;
+            }
+            return `https://f.qwant.com/tracking-protection/chromium_filters.js${qs}`;
         },
 
         // URL for downloading i18n localizations
-        get filtersI18nMetadataUrl() {
-            const params = browserUtils.getExtensionParams();
-            return `${this.filtersUrl}/filters_i18n.json?${params.join('&')}`;
-        },
+        // get filtersI18nMetadataUrl() {
+        //     const params = browserUtils.getExtensionParams();
+        //     return `${this.filtersUrl}/filters_i18n.json?${params.join('&')}`;
+        // },
 
         // URL for user complaints on missed ads or malware/phishing websites
         get reportUrl() {
@@ -98,9 +98,9 @@ export const backend = (function () {
         /**
          * Browsing Security lookups. In case of Firefox lookups are disabled for HTTPS urls.
          */
-        get safebrowsingLookupUrl() {
-            return 'https://sb.adtidy.org/safebrowsing-lookup-short-hash.html';
-        },
+        // get safebrowsingLookupUrl() {
+        //     return 'https://sb.adtidy.org/safebrowsing-lookup-short-hash.html';
+        // },
 
         // Folder that contains filters metadata and files with rules. 'filters' by default
         get localFiltersFolder() {
@@ -179,16 +179,8 @@ export const backend = (function () {
      * @param useOptimizedFilters
      * @private
      */
-    function getUrlForDownloadFilterRules(filterId, useOptimizedFilters) {
-        const url = useOptimizedFilters ? settings.optimizedFilterRulesUrl : settings.filterRulesUrl;
-        return utils.strings.replaceAll(url, '{filter_id}', filterId);
-    }
-
-    /**
-     * Appends request key to url
-     */
-    function addKeyParameter(url) {
-        return `${url}&key=${settings.apiKey}`;
+    function getUrlForDownloadFilterRules(filterId) {
+        return utils.strings.replaceAll(settings.filterRulesUrl, '{filter_id}', filterId);
     }
 
     /**
@@ -227,19 +219,19 @@ export const backend = (function () {
      * Downloads i18n metadata from backend
      * @return {Promise<void>}
      */
-    const downloadI18nMetadataFromBackend = async () => {
-        const response = await executeRequestAsync(settings.filtersI18nMetadataUrl, 'application/json');
-        if (!response?.responseText) {
-            throw new Error(`Empty response: ${response}`);
-        }
+    // const downloadI18nMetadataFromBackend = async () => {
+    //     const response = await executeRequestAsync(settings.filtersI18nMetadataUrl, 'application/json');
+    //     if (!response?.responseText) {
+    //         throw new Error(`Empty response: ${response}`);
+    //     }
 
-        const metadata = parseJson(response.responseText);
-        if (!metadata) {
-            throw new Error(`Invalid response: ${response}`);
-        }
+    //     const metadata = parseJson(response.responseText);
+    //     if (!metadata) {
+    //         throw new Error(`Invalid response: ${response}`);
+    //     }
 
-        return metadata;
-    };
+    //     return metadata;
+    // };
 
     /**
      * Downloads filter rules by filter ID
@@ -251,7 +243,6 @@ export const backend = (function () {
      */
     const downloadFilterRules = (filterId, forceRemote, useOptimizedFilters) => {
         let url;
-
         if (forceRemote || settings.localFilterIds.indexOf(filterId) < 0) {
             url = getUrlForDownloadFilterRules(filterId, useOptimizedFilters);
         } else {
@@ -260,7 +251,6 @@ export const backend = (function () {
                 url = backgroundPage.getURL(`${settings.localFiltersFolder}/filter_mobile_${filterId}.txt`);
             }
         }
-
         return FiltersDownloader.download(url, FilterCompilerConditionsConstants);
     };
 
@@ -315,7 +305,6 @@ export const backend = (function () {
      */
     const getLocalFiltersMetadata = async () => {
         const url = backgroundPage.getURL(`${settings.localFiltersFolder}/filters.json`);
-
         let response;
 
         try {
@@ -341,27 +330,27 @@ export const backend = (function () {
      * Loads filter groups metadata from local file
      * @returns {Promise}
      */
-    const getLocalFiltersI18Metadata = async () => {
-        const url = backgroundPage.getURL(`${settings.localFiltersFolder}/filters_i18n.json`);
+    // const getLocalFiltersI18Metadata = async () => {
+    //     const url = backgroundPage.getURL(`${settings.localFiltersFolder}/filters_i18n.json`);
 
-        let response;
-        try {
-            response = await executeRequestAsync(url, 'application/json');
-        } catch (e) {
-            const exMessage = e?.message || 'couldn\'t load local filters i18n metadata';
-            throw createError(exMessage, url);
-        }
+    //     let response;
+    //     try {
+    //         response = await executeRequestAsync(url, 'application/json');
+    //     } catch (e) {
+    //         const exMessage = e?.message || 'couldn\'t load local filters i18n metadata';
+    //         throw createError(exMessage, url);
+    //     }
 
-        if (!response?.responseText) {
-            throw createError('empty response', url, response);
-        }
+    //     if (!response?.responseText) {
+    //         throw createError('empty response', url, response);
+    //     }
 
-        const metadata = parseJson(response.responseText);
-        if (!metadata) {
-            throw createError('invalid response', url, response);
-        }
-        return metadata;
-    };
+    //     const metadata = parseJson(response.responseText);
+    //     if (!metadata) {
+    //         throw createError('invalid response', url, response);
+    //     }
+    //     return metadata;
+    // };
 
     /**
      * Loads script rules from local file
@@ -420,11 +409,11 @@ export const backend = (function () {
      *
      * @param hashes                Host hashes
      */
-    const lookupSafebrowsing = async function (hashes) {
-        const url = `${settings.safebrowsingLookupUrl}?prefixes=${encodeURIComponent(hashes.join('/'))}`;
-        const response = await executeRequestAsync(url, 'application/json');
-        return response;
-    };
+    // const lookupSafebrowsing = async function (hashes) {
+    //     const url = `${settings.safebrowsingLookupUrl}?prefixes=${encodeURIComponent(hashes.join('/'))}`;
+    //     const response = await executeRequestAsync(url, 'application/json');
+    //     return response;
+    // };
 
     /**
      * Sends feedback from the user to our server
@@ -439,7 +428,7 @@ export const backend = (function () {
         if (comment) {
             params += `&comment=${encodeURIComponent(comment)}`;
         }
-        params = addKeyParameter(params);
+        // params = addKeyParameter(params);
 
         const request = new XMLHttpRequest();
         request.open('POST', settings.reportUrl);
@@ -466,7 +455,7 @@ export const backend = (function () {
                 params += `&f=${encodeURIComponent(`${filter.filterId},${filter.version}`)}`;
             }
         }
-        params = addKeyParameter(params);
+        // params = addKeyParameter(params);
 
         const request = new XMLHttpRequest();
         request.open('POST', settings.ruleStatsUrl);
@@ -534,14 +523,13 @@ export const backend = (function () {
         downloadFilterRulesBySubscriptionUrl,
 
         getLocalFiltersMetadata,
-        getLocalFiltersI18Metadata,
+        // getLocalFiltersI18Metadata,
         getLocalScriptRules,
         getRedirectSources,
 
         downloadMetadataFromBackend,
-        downloadI18nMetadataFromBackend,
-
-        lookupSafebrowsing,
+        // downloadI18nMetadataFromBackend,
+        // lookupSafebrowsing,
 
         sendUrlReport,
         sendHitStats,

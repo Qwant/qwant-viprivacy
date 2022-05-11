@@ -1,1 +1,0 @@
-export { PromoNotification } from './PromoNotification';

@@ -1,0 +1,24 @@
+.popup_view_container>.header {
+    display: flex;
+    align-items: center;
+    align-content: space-between;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.back-btn {
+    display: flex;
+    background: none;
+    align-items: center;
+    justify-content: flex-start;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.back-btn__text {
+    font-size: 16px;
+    line-height: 20px;
+    margin-left: 9px;
+}

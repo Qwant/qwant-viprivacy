@@ -3,6 +3,8 @@ import { settings } from './user-settings';
 /**
  * Default settings set
  */
+import { standard } from '../../common/qwant-settings';
+
 export const defaultSettings = {
     'general-settings': {
         'allow-acceptable-ads': true,
@@ -22,27 +24,11 @@ export const defaultSettings = {
         'user-rules-editor-wrap': settings.defaultProperties[settings.USER_RULES_EDITOR_WRAP],
     },
     'filters': {
-        'enabled-groups': [
-            1,
-            6,
-            7,
-        ],
-        'enabled-filters': [
-            2,
-            10,
-        ],
-        'custom-filters': [],
-        'user-filter': {
-            'rules': '',
-            'disabled-rules': '',
-            'enabled': true,
-        },
-        'whitelist': {
-            'inverted': false,
-            'domains': [],
-            'inverted-domains': [],
-            'enabled': true,
-        },
+        'enabled-groups': standard.filters['enabled-groups'],
+        'enabled-filters': standard.filters['enabled-filters'],
+        'custom-filters': standard.filters['custom-filters'],
+        'user-filter': standard.filters['user-filters'],
+        'whitelist': standard.filters['whitelist'],
     },
     'stealth': {
         'stealth_disable_stealth_mode': settings.defaultProperties[settings.DISABLE_STEALTH_MODE],

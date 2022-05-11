@@ -13,16 +13,15 @@ const config = getEnvConf(process.env.BUILD_ENV);
 const BACKGROUND_PATH = path.resolve(__dirname, '../../Extension/pages/background');
 const OPTIONS_PATH = path.resolve(__dirname, '../../Extension/pages/options');
 const POPUP_PATH = path.resolve(__dirname, '../../Extension/pages/popup');
-const FILTERING_LOG_PATH = path.resolve(__dirname, '../../Extension/pages/filtering-log');
-const FILTER_DOWNLOAD_PATH = path.resolve(__dirname, '../../Extension/pages/filter-download');
+// const FILTERING_LOG_PATH = path.resolve(__dirname, '../../Extension/pages/filtering-log');
+// const FILTER_DOWNLOAD_PATH = path.resolve(__dirname, '../../Extension/pages/filter-download');
 const CONTENT_SCRIPT_START_PATH = path.resolve(__dirname, '../../Extension/pages/content-script-start');
-const CONTENT_SCRIPT_END_PATH = path.resolve(__dirname, '../../Extension/pages/content-script-end');
-const THANKYOU_PATH = path.resolve(__dirname, '../../Extension/pages/thankyou');
-const ASSISTANT_PATH = path.resolve(__dirname, '../../Extension/pages/assistant');
-const FULLSCREEN_USER_RULES_PATH = path.resolve(__dirname, '../../Extension/pages/fullscreen-user-rules');
-const SAFEBROWSING_PATH = path.resolve(__dirname, '../../Extension/pages/safebrowsing');
+// const THANKYOU_PATH = path.resolve(__dirname, '../../Extension/pages/thankyou');
+// const ASSISTANT_PATH = path.resolve(__dirname, '../../Extension/pages/assistant');
+// const FULLSCREEN_USER_RULES_PATH = path.resolve(__dirname, '../../Extension/pages/fullscreen-user-rules');
+// const SAFEBROWSING_PATH = path.resolve(__dirname, '../../Extension/pages/safebrowsing');
 const AD_BLOCKED_PATH = path.resolve(__dirname, '../../Extension/pages/ad-blocked');
-const EDITOR_PATH = path.resolve(__dirname, '../../Extension/src/pages/common/components/Editor');
+// const EDITOR_PATH = path.resolve(__dirname, '../../Extension/src/pages/common/components/Editor');
 
 const OUTPUT_PATH = config.outputPath;
 
@@ -52,7 +51,7 @@ export const genCommonConfig = (browserConfig) => {
                     'vendors/react',
                     'vendors/mobx',
                     'vendors/xstate',
-                    'shared/editor',
+                    // 'shared/editor',
                 ],
             },
             'pages/popup': {
@@ -62,61 +61,58 @@ export const genCommonConfig = (browserConfig) => {
                     'vendors/mobx',
                 ],
             },
-            'pages/filtering-log': {
-                import: FILTERING_LOG_PATH,
-                dependOn: [
-                    'vendors/react',
-                    'vendors/mobx',
-                    'vendors/xstate',
-                ],
-            },
-            'pages/filter-download': {
-                import: FILTER_DOWNLOAD_PATH,
-                runtime: false,
-            },
+            // 'pages/filtering-log': {
+            //     import: FILTERING_LOG_PATH,
+            //     dependOn: [
+            //         'vendors/react',
+            //         'vendors/mobx',
+            //         'vendors/xstate',
+            //     ],
+            // },
+            // 'pages/filter-download': {
+            //     import: FILTER_DOWNLOAD_PATH,
+            //     runtime: false,
+            // },
             'pages/content-script-start': {
                 import: CONTENT_SCRIPT_START_PATH,
                 runtime: false,
             },
-            'pages/content-script-end': {
-                import: CONTENT_SCRIPT_END_PATH,
-                runtime: false,
-            },
-            'pages/thankyou': {
-                import: THANKYOU_PATH,
-                runtime: false,
-            },
-            'pages/assistant': {
-                import: ASSISTANT_PATH,
-                runtime: false,
-            },
-            'pages/fullscreen-user-rules': {
-                import: FULLSCREEN_USER_RULES_PATH,
-                dependOn: [
-                    'vendors/react',
-                    'vendors/mobx',
-                    'vendors/xstate',
-                    'shared/editor',
-                ],
-            },
-            'pages/safebrowsing': {
-                import: SAFEBROWSING_PATH,
-                dependOn: [
-                    'vendors/react',
-                ],
-            },
+            // 'pages/thankyou': {
+            //    import: THANKYOU_PATH,
+            //    runtime: false,
+            // },
+
+            // 'pages/assistant': {
+            //     import: ASSISTANT_PATH,
+            //     runtime: false,
+            // },
+            // 'pages/fullscreen-user-rules': {
+            //     import: FULLSCREEN_USER_RULES_PATH,
+            //     dependOn: [
+            //         'vendors/react',
+            //         'vendors/mobx',
+            //         'vendors/xstate',
+            //         'shared/editor',
+            //     ],
+            // },
+            // 'pages/safebrowsing': {
+            //     import: SAFEBROWSING_PATH,
+            //     dependOn: [
+            //         'vendors/react',
+            //     ],
+            // },
             'pages/ad-blocked': {
                 import: AD_BLOCKED_PATH,
                 dependOn: [
                     'vendors/react',
                 ],
             },
-            'shared/editor': {
-                import: EDITOR_PATH,
-                dependOn: [
-                    'vendors/react',
-                ],
-            },
+            // 'shared/editor': {
+            //    import: EDITOR_PATH,
+            //    dependOn: [
+            //        'vendors/react',
+            //    ],
+            // },
             'vendors/react': ['react', 'react-dom'],
             'vendors/mobx': ['mobx'],
             'vendors/xstate': ['xstate'],
@@ -140,7 +136,6 @@ export const genCommonConfig = (browserConfig) => {
                 {
                     include: [
                         path.resolve(__dirname, '../../Extension/src/background/filter/request-filter.js'),
-                        path.resolve(__dirname, '../../Extension/pages/content-script-end/index.js'),
                     ],
                     use: [{
                         loader: 'preprocess-loader',
@@ -194,6 +189,13 @@ export const genCommonConfig = (browserConfig) => {
                 {
                     test: /\.(woff|woff2|eot|ttf|otf)$/,
                     type: 'asset/resource',
+                }, {
+                    test: /\.(png|jpe?g|gif)$/i,
+                    use: [
+                        {
+                            loader: 'file-loader',
+                        },
+                    ],
                 },
             ],
         },
@@ -222,36 +224,36 @@ export const genCommonConfig = (browserConfig) => {
                 filename: 'pages/popup.html',
                 chunks: ['vendors/react', 'vendors/mobx', 'pages/popup'],
             }),
-            new HtmlWebpackPlugin({
-                ...htmlTemplatePluginCommonOptions,
-                template: path.join(FILTERING_LOG_PATH, 'index.html'),
-                filename: 'pages/filtering-log.html',
-                chunks: ['vendors/react', 'vendors/mobx', 'vendors/xstate', 'pages/filtering-log'],
-            }),
-            new HtmlWebpackPlugin({
-                ...htmlTemplatePluginCommonOptions,
-                template: path.join(FILTER_DOWNLOAD_PATH, 'index.html'),
-                filename: 'pages/filter-download.html',
-                chunks: ['pages/filter-download'],
-            }),
-            new HtmlWebpackPlugin({
-                ...htmlTemplatePluginCommonOptions,
-                template: path.join(FULLSCREEN_USER_RULES_PATH, 'index.html'),
-                filename: 'pages/fullscreen-user-rules.html',
-                chunks: ['vendors/react', 'vendors/mobx', 'vendors/xstate', 'shared/editor', 'pages/fullscreen-user-rules'],
-            }),
+            // new HtmlWebpackPlugin({
+            //     ...htmlTemplatePluginCommonOptions,
+            //     template: path.join(FILTERING_LOG_PATH, 'index.html'),
+            //     filename: 'pages/filtering-log.html',
+            //     chunks: ['vendors/react', 'vendors/mobx', 'vendors/xstate', 'pages/filtering-log'],
+            // }),
+            // new HtmlWebpackPlugin({
+            //     ...htmlTemplatePluginCommonOptions,
+            //     template: path.join(FILTER_DOWNLOAD_PATH, 'index.html'),
+            //     filename: 'pages/filter-download.html',
+            //     chunks: ['pages/filter-download'],
+            // }),
+            // new HtmlWebpackPlugin({
+            //     ...htmlTemplatePluginCommonOptions,
+            //     template: path.join(FULLSCREEN_USER_RULES_PATH, 'index.html'),
+            //     filename: 'pages/fullscreen-user-rules.html',
+            //     chunks: ['vendors/react', 'vendors/mobx', 'vendors/xstate', 'shared/editor', 'pages/fullscreen-user-rules'],
+            // }),
             new HtmlWebpackPlugin({
                 ...htmlTemplatePluginCommonOptions,
                 template: path.join(AD_BLOCKED_PATH, 'index.html'),
                 filename: 'pages/ad-blocked.html',
                 chunks: ['vendors/react', 'pages/ad-blocked'],
             }),
-            new HtmlWebpackPlugin({
-                ...htmlTemplatePluginCommonOptions,
-                template: path.join(SAFEBROWSING_PATH, 'index.html'),
-                filename: 'pages/safebrowsing.html',
-                chunks: ['vendors/react', 'pages/safebrowsing'],
-            }),
+            // new HtmlWebpackPlugin({
+            //     ...htmlTemplatePluginCommonOptions,
+            //     template: path.join(SAFEBROWSING_PATH, 'index.html'),
+            //     filename: 'pages/safebrowsing.html',
+            //     chunks: ['vendors/react', 'pages/safebrowsing'],
+            // }),
             new CopyWebpackPlugin({
                 patterns: [
                     {

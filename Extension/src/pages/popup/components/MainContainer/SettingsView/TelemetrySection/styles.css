@@ -1,0 +1,12 @@
+.telemetry-section {
+    display: flex;
+    margin-top: 12px;
+    margin-bottom: -16px;
+}
+
+.telemetry-section label {
+    margin-left: 4px;
+    font-size: 12px;
+    line-height: 1.33;
+    color: #4b5058;
+}

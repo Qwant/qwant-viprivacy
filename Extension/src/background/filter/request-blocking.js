@@ -30,7 +30,8 @@ import { documentFilterService } from './services/document-filter';
 import { redirectService } from './services/redirect-service';
 import { allowlist } from './allowlist';
 import { browserUtils } from '../utils/browser-utils';
-import { stealthService } from './services/stealth-service';
+// import { stealthService } from './services/stealth-service';
+import { subscriptions } from './filters/subscription';
 
 export const webRequestService = (function () {
     const onRequestBlockedChannel = utils.channels.newChannel();
@@ -125,7 +126,7 @@ export const webRequestService = (function () {
             result.scripts = filteringApi.getScriptsStringForUrl(documentUrl, tab, cosmeticOptions);
 
             // add stealth dom signal script
-            result.scripts += stealthService.getSetDomSignalScript();
+            // result.scripts += stealthService.getSetDomSignalScript();
         } else {
             // In preload content script only ExtendedCss selectors are necessary.
             // Traditional css selectors would be injected via tabs.injectCss.
@@ -277,7 +278,7 @@ export const webRequestService = (function () {
             if (requestType !== RequestTypes.DOCUMENT) {
                 return { cancel: true };
             }
-        // check if request rule is blocked by rule and is redirect rule
+            // check if request rule is blocked by rule and is redirect rule
         } else if (requestRule && !requestRule.isAllowlist()) {
             if (requestRule.isOptionEnabled(TSUrlFilter.NetworkRuleOption.Redirect)) {
                 const redirectUrl = redirectService.createRedirectUrl(
@@ -576,7 +577,7 @@ export const webRequestService = (function () {
      * @param requestRule   rule
      * @return {object} Request rule if suitable by its own type and request type or null
      */
-    const postProcessRequest = function (tab, requestUrl, referrerUrl, requestType, requestRule) {
+    const postProcessRequest = function (tab, requestUrl, referrerUrl, requestType, requestRule, originUrl) {
         if (requestRule && !requestRule.isAllowlist()) {
             const isRequestBlockingRule = isRequestBlockedByRule(requestRule);
             const isReplaceRule = requestRule.isOptionEnabled(TSUrlFilter.NetworkRuleOption.Replace);
@@ -597,16 +598,27 @@ export const webRequestService = (function () {
                 requestRule = null;
             }
 
+            if (tab.tabId) {
+                // Log all requests for ratio computation
+                listeners.notifyListenersAsync(listeners.POST_PROCESS_REQUEST);
+            }
+
             if (requestRule) {
-                listeners.notifyListenersAsync(listeners.ADS_BLOCKED, requestRule, tab, 1);
+                const filter = subscriptions.getFilter(requestRule.getFilterListId());
+
                 const details = {
                     tabId: tab.tabId,
                     requestUrl,
                     referrerUrl,
                     requestType,
+                    rule: requestRule.getText(),
+                    filterId: requestRule.getFilterListId(),
+                    filter,
+                    originUrl,
                 };
-                details.rule = requestRule.getText();
-                details.filterId = requestRule.getFilterListId();
+
+                listeners.notifyListenersAsync(listeners.ADS_BLOCKED, requestRule, tab, 1, details);
+
                 onRequestBlockedChannel.notify(details);
             }
         }

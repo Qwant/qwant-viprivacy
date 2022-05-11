@@ -1,0 +1,23 @@
+.protection_level__section {
+    margin-bottom: 12px;
+}
+
+.protection_level__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+}
+
+.protection_level__bottom>div:first-child {
+    display: flex;
+    align-items: center;
+}
+
+.protection_level__bottom svg:first-child {
+    margin-right: 12px;
+}

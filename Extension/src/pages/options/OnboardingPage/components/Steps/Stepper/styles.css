@@ -1,0 +1,30 @@
+.stepper {
+    width: 100%;
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+}
+
+.stepper__right {
+    justify-self: end;
+}
+
+
+.indicators {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.indicators .indicator {
+    width: 8px;
+    height: 8px;
+    margin: 0 8px 0 0;
+    border-radius: 4px;
+    background-color: #c8cbd0;
+}
+
+.indicators .indicator-active {
+    background-color: var(--grey-black);
+}

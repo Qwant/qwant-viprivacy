@@ -39,7 +39,7 @@ import { filteringLog } from './filter/filtering-log';
 import { pageStats } from './filter/page-stats';
 import { subscriptions } from './filter/filters/subscription';
 import { filteringApi } from './filter/filtering-api';
-import { stealthService } from './filter/services/stealth-service';
+// import { stealthService } from './filter/services/stealth-service';
 import { prefs } from './prefs';
 import { allowlist } from './filter/allowlist';
 import { documentFilterService } from './filter/services/document-filter';
@@ -49,6 +49,8 @@ import { getCookieRulesDataForContentScript } from './filter/services/cookie-ser
 import { log } from '../common/log';
 import { fullscreenUserRulesEditor } from './fullscreen-user-rules-editor';
 import { editorStorage } from './utils/editor-storage';
+import { startTrackingBlocker } from '../../pages/background';
+import { getQwantSettings } from '../common/qwant-settings';
 
 const onPortConnection = (port) => {
     switch (true) {
@@ -163,7 +165,7 @@ const createMessageHandler = () => {
             requestFilterInfo: filteringApi.getRequestFilterInfo(),
             environmentOptions: {
                 isMacOs: browserUtils.isMacOs(),
-                canBlockWebRTC: stealthService.canBlockWebRTC(),
+                canBlockWebRTC: false, // stealthService.canBlockWebRTC(),
                 isChrome: browserUtils.isChromeBrowser(),
                 Prefs: {
                     locale: backgroundPage.app.getLocale(),
@@ -294,6 +296,42 @@ const createMessageHandler = () => {
             case MESSAGE_TYPES.CHANGE_USER_SETTING:
                 settings.setProperty(message.key, message.value);
                 break;
+            case MESSAGE_TYPES.PERMISSIONS_REJECTED: {
+                log.info('Permissions rejected');
+                window.localStorage.setItem('permissions-rejected', new Date().toISOString());
+                settings.setProperty('permissions-rejected', true);
+                break;
+            }
+
+            case MESSAGE_TYPES.CHANGE_PROTECTION_LEVEL: {
+                const { protectionLevel } = data;
+
+                log.info(`Protection level change: ${protectionLevel}`);
+                settings.setProperty('protection-level', protectionLevel);
+
+                const disabledFilterIds = application.getEnabledFilters().map((filter) => filter.filterId);
+                application.disableFilters(disabledFilterIds);
+                log.info(`Disabled active filters: ${disabledFilterIds.join(',')}`);
+
+                application.disableAllGroups(); // will be enabled back when we call addAndEnableFilters
+
+                const qwantSettings = getQwantSettings({ protectionLevel });
+                const filtersEnabled = qwantSettings.filters['enabled-filters'];
+                log.info(`Enabled filters: ${filtersEnabled.join(',')}`);
+
+                // eslint-disable-next-line max-len
+                const enabledFilters = await application.addAndEnableFilters(filtersEnabled, { forceRemote: false, forceGroupEnable: true });
+
+                return {
+                    enabledFilters,
+                    disabledFilterIds,
+                };
+            }
+
+            case MESSAGE_TYPES.CHECK_SETTINGS_APPLIED: {
+                const { protectionLevel } = data;
+                return application.areFilterSettingsApplied({ protectionLevel });
+            }
             case MESSAGE_TYPES.CHECK_REQUEST_FILTER_READY:
                 return { ready: filteringApi.isReady() };
             case MESSAGE_TYPES.ADD_AND_ENABLE_FILTER: {
@@ -414,19 +452,19 @@ const createMessageHandler = () => {
                 break;
             }
             case MESSAGE_TYPES.OPEN_THANKYOU_PAGE:
-                uiService.openThankYouPage();
+                // uiService.openThankYouPage();
                 break;
             case MESSAGE_TYPES.OPEN_EXTENSION_STORE:
-                uiService.openExtensionStore();
+                // uiService.openExtensionStore();
                 break;
             case MESSAGE_TYPES.OPEN_FILTERING_LOG:
-                uiService.openFilteringLog(message.tabId);
+                // uiService.openFilteringLog(message.tabId);
                 break;
             case MESSAGE_TYPES.SET_FILTERING_LOG_WINDOW_STATE:
                 filteringLogWindowState.setState(data.windowState);
                 break;
             case MESSAGE_TYPES.OPEN_FULLSCREEN_USER_RULES:
-                uiService.openFullscreenUserRules();
+                // uiService.openFullscreenUserRules();
                 break;
             case MESSAGE_TYPES.GET_FILTERING_LOG_DATA: {
                 return {
@@ -526,7 +564,7 @@ const createMessageHandler = () => {
                 return { requests };
             }
             case MESSAGE_TYPES.ON_OPEN_FILTERING_LOG_PAGE:
-                filteringLog.onOpenFilteringLogPage();
+                // filteringLog.onOpenFilteringLogPage();
                 break;
             case MESSAGE_TYPES.ON_CLOSE_FILTERING_LOG_PAGE:
                 filteringLog.onCloseFilteringLogPage();
@@ -560,8 +598,8 @@ const createMessageHandler = () => {
                 return filteringLog.synchronizeOpenTabs();
             }
             case MESSAGE_TYPES.ADD_FILTERING_SUBSCRIPTION: {
-                const { url, title } = message;
-                await uiService.openCustomFiltersModal(url, title);
+                // const { url, title } = message;
+                // await uiService.openCustomFiltersModal(url, title);
                 break;
             }
             // Popup methods
@@ -585,13 +623,13 @@ const createMessageHandler = () => {
                 break;
             }
             case MESSAGE_TYPES.OPEN_SITE_REPORT_TAB: {
-                const { url } = data;
-                uiService.openSiteReportTab(url);
+                // const { url } = data;
+                // uiService.openSiteReportTab(url);
                 break;
             }
             case MESSAGE_TYPES.OPEN_ABUSE_TAB: {
-                const { url } = data;
-                uiService.openAbuseTab(url);
+                // const { url } = data;
+                // uiService.openAbuseTab(url);
                 break;
             }
             case MESSAGE_TYPES.OPEN_SETTINGS_TAB:
@@ -605,6 +643,7 @@ const createMessageHandler = () => {
 
                 // There can't be data till localstorage is initialized
                 const stats = localStorage.isInitialized() ? pageStats.getStatisticsData() : {};
+                const installDate = localStorage.isInitialized() ? localStorage.getItem('install-date') : undefined;
 
                 if (tab) {
                     const frameInfo = frames.getFrameInfo(tab);
@@ -623,6 +662,7 @@ const createMessageHandler = () => {
                             hasCustomRulesToReset: await userrules.hasRulesForUrl(frameInfo.url),
                         },
                         settings: settings.getAllSettings(),
+                        installDate,
                     };
                 }
                 break;
@@ -697,6 +737,11 @@ const createMessageHandler = () => {
                 const { content } = data;
                 return TSUrlFilter.RuleConverter.convertRules(content);
             }
+            case MESSAGE_TYPES.START_TRACKING_BLOCKER:
+                return startTrackingBlocker();
+            case MESSAGE_TYPES.QWANT_SETTINGS_APPLIED:
+                // Hacky approach for now, but you can ignore
+                break;
             default:
                 // Unhandled message
                 throw new Error(`There is no such message type ${message.type}`);

@@ -1,0 +1,50 @@
+.main_section__wrapper {
+    width: 100%;
+}
+
+.main_section {
+    border-radius: 8px;
+    border: solid 1px var(--border);
+    transition: box-shadow 0.3s;
+    width: 100%;
+    max-width: 360px;
+    height: 123px;
+    cursor: pointer;
+}
+
+.main_section:hover {
+    box-shadow: 4px 4px 0 0 #c8cbd0;
+}
+
+.main_section_big {
+    height: 150px !important;
+}
+
+.main_section .top {
+    height: 44px;
+    padding: 12px;
+    padding-bottom: 0;
+    border-bottom: solid 1px var(--border);
+}
+
+.main_section_big .top {
+    height: 84px;
+}
+
+.main_section .bottom {
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 10px;
+}
+
+.main_section .top .title {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.33;
+}
+
+.main_section .top .text {
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.29;
+}

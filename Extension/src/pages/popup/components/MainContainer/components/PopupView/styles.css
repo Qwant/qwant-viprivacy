@@ -1,0 +1,16 @@
+.popup_view_container {
+    padding: 24px;
+    padding-top: 16px;
+}
+
+.popup_view_container>.title {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.33;
+}
+
+.popup_view_container>.subtitle {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.29;
+}

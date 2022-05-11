@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fffffa;
+    font-family: Helvetica, sans-serif;
+}
+
+.wrapper {
+    max-width: 690px;
+    margin: 0 auto;
+    color: var(--grey-black);
+    height: calc(100vh - 112px);
+
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin: 24px;
+
+    @media screen and (max-width: 720px) {
+        justify-content: flex-start;
+    }
+}
+
+.alert__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 48px;
+
+    @media screen and (max-width: 720px) {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.alert__buttons>button {
+    @media screen and (max-width: 720px) {
+        width: 100%;
+    }
+}
+
+.alert__buttons>button:first-child {
+    margin-bottom: 12px;
+
+    @media screen and (min-width: 721px) {
+        margin-bottom: 0;
+        margin-right: 12px;
+    }
+}
+
+.qwant_logo {
+    width: 30%;
+    max-width: 128px;
+    display: block;
+
+    @media screen and (max-width: 720px) {
+        margin-left: 24px;
+    }
+}
+
+.content_text {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.content_text_title {
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 1.22;
+    letter-spacing: 0.2px;
+    margin-bottom: 16px;
+}
+
+.content_text_description {
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.25;
+    color: #4b5058;
+}
+
+.content_text_url {
+    font-size: 14px;
+    width: 100%;
+    padding: 8px;
+    background-color: var(--white);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    margin-bottom: 8px;
+    text-align: center;
+}

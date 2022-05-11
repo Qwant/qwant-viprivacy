@@ -27,6 +27,15 @@ const Nav = observer(({ closeSidebar }) => {
                 to="/"
                 onClick={onClick}
             >
+                Onboarding
+            </NavLink>
+            <NavLink
+                className="nav__item"
+                exact
+                activeClassName="nav__item--active"
+                to="/general"
+                onClick={onClick}
+            >
                 {reactTranslator.getMessage('options_general_settings')}
             </NavLink>
             <NavLink

@@ -15,6 +15,7 @@
  * along with Adguard Browser Extension. If not, see <http://www.gnu.org/licenses/>.
  */
 
+import isEqual from 'lodash/isEqual';
 import { antiBannerService } from './filter/antibanner';
 import { prefs } from './prefs';
 import { log } from '../common/log';
@@ -25,7 +26,7 @@ import { listeners } from './notifier';
 import { ANTIBANNER_GROUPS_ID } from '../common/constants';
 import { customFilters } from './filter/filters/custom-filters';
 import { translator } from '../common/translators/translator';
-
+import { getQwantSettings } from '../common/qwant-settings';
 /**
  * AdGuard application class
  */
@@ -56,6 +57,7 @@ export const application = (() => {
         // These filters are enabled by default
         const filterIds = [
             utils.filters.ENGLISH_FILTER_ID,
+            utils.filters.FRENCH_FILTER_ID,
             utils.filters.SEARCH_AND_SELF_PROMO_FILTER_ID,
         ];
 
@@ -146,6 +148,16 @@ export const application = (() => {
         }
     };
 
+    const getEnabledGroupIds = () => {
+        return subscriptions.getGroups()
+            .filter(g => g.enabled)
+            .map(g => g.groupId).sort();
+    };
+
+    const getEnabledFilterIds = () => {
+        return getEnabledFilters().map((f) => f.filterId).sort();
+    };
+
     /**
      * Enable group
      * @param {number} groupId filter group identifier
@@ -176,6 +188,15 @@ export const application = (() => {
         }
 
         listeners.notifyListeners(listeners.FILTER_GROUP_ENABLE_DISABLE, group);
+    };
+
+    const disableAllGroups = () => {
+        const groupIds = subscriptions.getGroups().map(g => g.groupId);
+        log.info('Disable groups {0}', groupIds.join(','));
+
+        groupIds.forEach((groupId) => {
+            disableGroup(groupId);
+        });
     };
 
     /**
@@ -359,6 +380,18 @@ export const application = (() => {
         throw new Error('Error occurred during custom filter download');
     };
 
+    const areFilterSettingsApplied = ({ protectionLevel }) => {
+        const qwantSettings = getQwantSettings({ protectionLevel });
+        const filters = qwantSettings.filters['enabled-filters'].sort();
+        const groups = qwantSettings.filters['enabled-groups'].sort();
+
+        const enabledFilters = getEnabledFilterIds();
+        // TODO check if we really need to compare groups
+        const enabledGroups = getEnabledGroupIds();
+
+        return isEqual(filters, enabledFilters) && isEqual(groups, enabledGroups);
+    };
+
     return {
 
         start,
@@ -366,7 +399,6 @@ export const application = (() => {
         isInitialized,
 
         offerFilters,
-
         getEnabledFilters,
 
         isFilterEnabled,
@@ -379,11 +411,15 @@ export const application = (() => {
         uninstallFilters,
         removeFilter,
 
+        getEnabledGroupIds,
         enableGroup,
         disableGroup,
+        disableAllGroups,
 
         loadCustomFilter,
         loadCustomFilterInfo,
         getEnabledFiltersFromEnabledGroups,
+        areFilterSettingsApplied,
+
     };
 })();

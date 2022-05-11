@@ -11,7 +11,7 @@ import {
 import punycode from 'punycode/';
 
 import { messenger } from '../../services/messenger';
-import { POPUP_STATES, TIME_RANGES, VIEW_STATES } from '../constants';
+import { POPUP_STATES, TIME_RANGES } from '../constants';
 import { reactTranslator } from '../../../common/translators/reactTranslator';
 import { MESSAGE_TYPES } from '../../../common/constants';
 
@@ -38,13 +38,25 @@ class PopupStore {
     url = null;
 
     @observable
-    viewState = VIEW_STATES.ACTIONS;
+    annoyanceCountTotal = 0;
+
+    @observable
+    totalRequests = 0;
 
     @observable
     totalBlocked = 0;
 
     @observable
+    blockedDomains = {};
+
+    @observable
     totalBlockedTab = 0;
+
+    @observable
+    blockedDomainsTab = {};
+
+    @observable
+    totalBlockedCookieBannersTab = 0;
 
     @observable
     documentAllowlisted = null;
@@ -76,6 +88,9 @@ class PopupStore {
     @observable
     settings = null;
 
+    @observable
+    installDate = null;
+
     currentTabId = null;
 
     constructor() {
@@ -90,15 +105,22 @@ class PopupStore {
             currentWindow: true,
         });
         const currentTab = tabs?.[0];
-
         const response = await messenger.getTabInfoForPopup(currentTab?.id);
 
         runInAction(() => {
+            this.currentTabId = currentTab?.id;
+            this.isInitialDataReceived = true;
+
+            if (!response) {
+                return;
+            }
+
             const {
                 frameInfo,
                 options,
                 stats,
                 settings,
+                installDate,
             } = response;
 
             // frame info
@@ -106,7 +128,11 @@ class PopupStore {
             this.applicationAvailable = frameInfo.applicationAvailable;
             this.url = frameInfo.url;
             this.totalBlocked = frameInfo.totalBlocked;
+            this.totalRequests = frameInfo.totalRequests;
+            this.blockedDomains = frameInfo.blockedDomains;
             this.totalBlockedTab = frameInfo.totalBlockedTab;
+            this.annoyanceCountTotal = frameInfo.annoyanceCountTotal;
+            this.blockedDomainsTab = frameInfo.blockedDomainsTab;
             this.domainName = frameInfo.domainName;
             this.documentAllowlisted = frameInfo.documentAllowlisted;
             this.userAllowlisted = frameInfo.userAllowlisted;
@@ -124,8 +150,8 @@ class PopupStore {
             // settings
             this.settings = settings;
 
-            this.isInitialDataReceived = true;
-            this.currentTabId = currentTab?.id;
+            // Install date
+            this.installDate = installDate;
         });
     };
 
@@ -136,11 +162,6 @@ class PopupStore {
         runInAction(() => {
             this.applicationFilteringDisabled = state;
         });
-    };
-
-    @action
-    setViewState = (state) => {
-        this.viewState = state;
     };
 
     @computed
@@ -197,6 +218,7 @@ class PopupStore {
             this.documentAllowlisted = isAllowlisted;
             this.userAllowlisted = isAllowlisted;
             this.totalBlockedTab = 0;
+            this.blockedDomainsTab = {};
         });
     };
 
@@ -319,7 +341,10 @@ class PopupStore {
     @action
     updateBlockedStats = (tabInfo) => {
         this.totalBlocked = tabInfo.totalBlocked;
+        this.totalRequests = tabInfo.totalRequests;
         this.totalBlockedTab = tabInfo.totalBlockedTab;
+        this.blockedDomainsTab = tabInfo.blockedDomainsTab;
+        this.annoyanceCountTotal = tabInfo.annoyanceCountTotal;
     }
 
     @action
@@ -337,6 +362,14 @@ class PopupStore {
         }
 
         return this.settings.values[this.settings.names.APPEARANCE_THEME];
+    }
+
+    @computed
+    get protectionLevel() {
+        if (!this.settings) {
+            return null;
+        }
+        return this.settings.values[this.settings.names.PROTECTION_LEVEL];
     }
 }
 

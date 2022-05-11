@@ -1,0 +1,65 @@
+.steps {
+    max-width: 690px;
+    margin: auto;
+    margin-top: 24px;
+    color: var(--grey-black);
+}
+
+.steps .title {
+    display: flex;
+    margin-bottom: 24px;
+}
+
+.steps .title h1 {
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 1.22;
+    letter-spacing: 0.2px;
+    margin-bottom: 16px;
+}
+
+.steps .title .description {
+    font-size: 18px;
+    line-height: 1.22;
+    letter-spacing: -0.2px;
+    color: #050506;
+}
+
+.content-image {
+    width: 100%;
+    margin: auto;
+    border-radius: 8px;
+    background-color: #ffd6d7;
+    display: flex;
+    min-height: 250px;
+
+}
+
+.subtitle {
+    font-size: 18px;
+    line-height: 1.22;
+    letter-spacing: -0.2px;
+    margin-bottom: 32px;
+    margin-top: -24px;
+}
+
+.telemetry-wrapper {
+    padding: 12px;
+    border-radius: 8px;
+    border: solid 1px var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.telemetry-wrapper .telemetry_title {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.2;
+    letter-spacing: -0.4px;
+}
+
+.thank_you_arrow {
+    position: absolute;
+    right: 96px;
+}

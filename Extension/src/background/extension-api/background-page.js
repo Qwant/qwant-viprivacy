@@ -269,7 +269,7 @@ export const backgroundPage = (() => {
             }
 
             // https://developer.chrome.com/extensions/webRequest#event-onBeforeRequest
-            browser.webRequest.onBeforeRequest.addListener((details) => {
+            browser.webRequest?.onBeforeRequest?.addListener((details) => {
                 if (shouldSkipRequest(details)) {
                     return;
                 }
@@ -289,12 +289,12 @@ export const backgroundPage = (() => {
     const onBeforeSendHeadersExtraInfoSpec = ['requestHeaders', 'blocking'];
     const onHeadersReceivedExtraInfoSpec = ['responseHeaders', 'blocking'];
 
-    if (typeof browser.webRequest.OnBeforeSendHeadersOptions !== 'undefined'
+    if (browser.webRequest && typeof browser.webRequest.OnBeforeSendHeadersOptions !== 'undefined'
         && browser.webRequest.OnBeforeSendHeadersOptions.hasOwnProperty('EXTRA_HEADERS')) {
         onBeforeSendHeadersExtraInfoSpec.push('extraHeaders');
     }
 
-    if (typeof browser.webRequest.OnHeadersReceivedOptions !== 'undefined'
+    if (browser.webRequest && typeof browser.webRequest.OnHeadersReceivedOptions !== 'undefined'
         && browser.webRequest.OnHeadersReceivedOptions.hasOwnProperty('EXTRA_HEADERS')) {
         onHeadersReceivedExtraInfoSpec.push('extraHeaders');
     }
@@ -307,7 +307,7 @@ export const backgroundPage = (() => {
          * @param {Array.<String>} urls url match pattern https://developer.chrome.com/extensions/match_patterns
          */
         addListener(callback, urls) {
-            browser.webRequest.onHeadersReceived.addListener((details) => {
+            browser.webRequest?.onHeadersReceived?.addListener((details) => {
                 if (shouldSkipRequest(details)) {
                     return;
                 }
@@ -371,7 +371,7 @@ export const backgroundPage = (() => {
                 requestFilter = Object.assign(requestFilter, { urls });
             }
 
-            browser.webRequest.onBeforeSendHeaders.addListener((details) => {
+            browser.webRequest?.onBeforeSendHeaders?.addListener((details) => {
                 if (shouldSkipRequest(details)) {
                     return;
                 }
@@ -393,7 +393,7 @@ export const backgroundPage = (() => {
          * @param {String} urls url match pattern https://developer.chrome.com/extensions/match_patterns
          */
         addListener(callback, urls) {
-            browser.webRequest.onResponseStarted.addListener((details) => {
+            browser.webRequest?.onResponseStarted?.addListener((details) => {
                 if (shouldSkipRequest(details)) {
                     return;
                 }
@@ -411,7 +411,7 @@ export const backgroundPage = (() => {
          * @param {String} urls url match pattern https://developer.chrome.com/extensions/match_patterns
          */
         addListener(callback, urls) {
-            browser.webRequest.onErrorOccurred.addListener((details) => {
+            browser.webRequest?.onErrorOccurred?.addListener((details) => {
                 if (shouldSkipRequest(details)) {
                     return;
                 }
@@ -429,7 +429,7 @@ export const backgroundPage = (() => {
          * @param {String} urls url match pattern https://developer.chrome.com/extensions/match_patterns
          */
         addListener(callback, urls) {
-            browser.webRequest.onCompleted.addListener((details) => {
+            browser.webRequest?.onCompleted?.addListener((details) => {
                 if (shouldSkipRequest(details)) {
                     return;
                 }
@@ -447,7 +447,7 @@ export const backgroundPage = (() => {
          * @param {Array.<String>} urls url match pattern https://developer.chrome.com/extensions/match_patterns
          */
         addListener(callback, urls) {
-            browser.webRequest.onBeforeRedirect.addListener((details) => {
+            browser.webRequest?.onBeforeRedirect?.addListener((details) => {
                 if (shouldSkipRequest(details)) {
                     return;
                 }
@@ -521,23 +521,23 @@ export const backgroundPage = (() => {
 
     const webRequest = {
         onBeforeRequest,
-        handlerBehaviorChanged: browser.webRequest.handlerBehaviorChanged,
+        handlerBehaviorChanged: browser.webRequest?.handlerBehaviorChanged,
         onCompleted,
         onErrorOccurred,
         onHeadersReceived,
         onBeforeSendHeaders,
         onResponseStarted,
         onBeforeRedirect,
-        webSocketSupported: typeof browser.webRequest.ResourceType !== 'undefined'
+        webSocketSupported: browser.webRequest && typeof browser.webRequest.ResourceType !== 'undefined'
             && browser.webRequest.ResourceType.WEBSOCKET === 'websocket',
-        filterResponseData: browser.webRequest.filterResponseData,
+        filterResponseData: browser.webRequest?.filterResponseData,
     };
 
     const onCreatedNavigationTarget = {
 
         addListener(callback) {
             // https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/webNavigation/onCreatedNavigationTarget#Browser_compatibility
-            if (typeof browser.webNavigation.onCreatedNavigationTarget === 'undefined') {
+            if (!browser.webNavigation || typeof browser.webNavigation.onCreatedNavigationTarget === 'undefined') {
                 return;
             }
 
@@ -563,6 +563,7 @@ export const backgroundPage = (() => {
          * and handles event
          */
         addListener(callback) {
+            if (!browser.webNavigation) return;
             // https://developer.chrome.com/extensions/webNavigation#event-onCommitted
             browser.webNavigation.onCommitted.addListener((details) => {
                 // makes webNavigation.onCommitted details similar to webRequestDetails
@@ -586,7 +587,7 @@ export const backgroundPage = (() => {
     const webNavigation = {
         onCreatedNavigationTarget,
         onCommitted,
-        onDOMContentLoaded: browser.webNavigation.onDOMContentLoaded,
+        onDOMContentLoaded: browser.webNavigation?.onDOMContentLoaded,
     };
 
     const browserActionSupported = typeof browser.browserAction.setIcon !== 'undefined';
@@ -652,7 +653,7 @@ export const backgroundPage = (() => {
     };
 
     // eslint-disable-next-line prefer-destructuring
-    const contextMenus = browser.contextMenus;
+    // const contextMenus = browser.contextMenus;
 
     // eslint-disable-next-line prefer-destructuring
     const i18n = browser.i18n;
@@ -664,7 +665,7 @@ export const backgroundPage = (() => {
         webRequest,
         webNavigation,
         browserAction,
-        contextMenus,
+        // contextMenus,
         i18n,
     };
 })();

@@ -140,6 +140,12 @@ export const engine = (function () {
             return null;
         }
 
+        // circumvent a bug in engine lib
+        if (!frameUrl) {
+            log.warn('matchFrame: frameUrl not defined');
+            return null;
+        }
+
         return engine.matchFrame(frameUrl);
     };
 

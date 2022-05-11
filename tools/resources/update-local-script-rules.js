@@ -71,5 +71,4 @@ export const updateLocalScriptRules = async () => {
     await updateLocalScriptRulesForBrowser('chromium');
     await updateLocalScriptRulesForBrowser('edge');
     await updateLocalScriptRulesForBrowser('firefox');
-    await updateLocalScriptRulesForBrowser('opera');
 };

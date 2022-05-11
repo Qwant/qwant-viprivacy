@@ -22,7 +22,7 @@ import { log } from '../../../../common/log';
 import { utils } from '../../../utils/common';
 import { localStorage } from '../../../storage';
 import { backgroundPage } from '../../../extension-api/background-page';
-import { backend } from '../../filters/service-client';
+// import { backend } from '../../filters/service-client';
 import { settings } from '../../../settings/user-settings';
 import { LruCache } from '../../../utils/lru-cache';
 import { lazyGet } from '../../../utils/lazy';
@@ -275,13 +275,13 @@ const safebrowsing = (function () {
         }
 
         let response;
-        try {
-            response = await backend.lookupSafebrowsing(shortHashes);
-        } catch (e) {
-            log.error('Error response from safebrowsing lookup server for {0}', host);
-            suspendSafebrowsing();
-            return;
-        }
+        // try {
+        //     response = await backend.lookupSafebrowsing(shortHashes);
+        // } catch (e) {
+        //     log.error('Error response from safebrowsing lookup server for {0}', host);
+        //     suspendSafebrowsing();
+        //     return;
+        // }
 
         if (response && response.status >= 500) {
             // Error on server side, suspend request

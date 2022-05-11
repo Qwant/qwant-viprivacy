@@ -6,11 +6,15 @@ import { reactTranslator } from '../../../../common/translators/reactTranslator'
 import { MESSAGE_TYPES } from '../../../../common/constants';
 import { getParams } from '../../getParams';
 import { messenger } from '../../../services/messenger';
+import { Button } from '../../../common/components/Button';
+import { Header } from '../../../options/OnboardingPage/components/Header';
+import QwantLogoSquare from './assets/qwant_logo_square.png';
 
-import '../../styles/index.pcss';
+import '../../../popup/components/Popup/main.css';
+import './style.css';
 
 export const AdBlocked = () => {
-    const { rule, url } = getParams();
+    const { url } = getParams();
 
     const handleGoBack = useCallback((e) => {
         e.preventDefault();
@@ -23,36 +27,41 @@ export const AdBlocked = () => {
     }, [url]);
 
     return (
-        <div className="alert alert--gold" id="app">
-            <div className="alert__in">
-                <div className="alert__header alert__header--gold">
-                    <div className="alert__header-title">
-                        {reactTranslator.getMessage('blocking_pages_rule_header_title')}
+        <div>
+            <Header />
+            <div className="wrapper">
+                <div className="content">
+                    <img alt="" src={QwantLogoSquare} className="qwant_logo" />
+
+                    <div className="content_text">
+                        <div className="content_text_title">
+                            {reactTranslator.getMessage('blocking_pages_rule_content_title', {
+                                name: reactTranslator.getMessage('short_name'),
+                            })}
+                        </div>
+                        <div className="content_text_url">
+                            <code>
+                                {url}
+                            </code>
+                        </div>
+                        <div className="content_text_description">
+                            {reactTranslator.getMessage('blocking_pages_rule_content_description', {
+                                name: reactTranslator.getMessage('short_name'),
+                            })}
+                        </div>
+
                     </div>
-                </div>
-                <div className="alert__body">
-                    <a href="https://adguard.com" className="alert__logo" />
-                    <div className="hero hero--green" />
-                    <div className="alert__body-title">
-                        <span>
-                            {reactTranslator.getMessage('blocking_pages_rule_content_title')}
-                        </span>
-                    </div>
-                    <div className="alert__rule">
-                        {rule}
-                    </div>
-                    <div className="alert__btns">
-                        <button
-                            type="button"
-                            onClick={handleGoBack}
-                            className="button button--green alert__btn"
-                        >
-                            {reactTranslator.getMessage('blocking_pages_btn_go_back')}
-                        </button>
-                        <button type="button" onClick={handleProceed} className="button button--white alert__btn">
+
+                    <div className="alert__buttons">
+                        <Button color="secondary" onClick={handleGoBack}>
+                            {reactTranslator.getMessage('back')}
+                        </Button>
+
+                        <Button color="primary" onClick={handleProceed}>
                             {reactTranslator.getMessage('blocking_pages_btn_proceed')}
-                        </button>
+                        </Button>
                     </div>
+
                 </div>
             </div>
         </div>

@@ -11,7 +11,6 @@ import sortBy from 'lodash/sortBy';
 import classNames from 'classnames';
 
 import { Group } from './Group';
-import { SearchGroup } from './Search/SearchGroup';
 import { Filter } from './Filter';
 import { EmptyCustom } from './EmptyCustom';
 import { Search } from './Search';
@@ -21,7 +20,6 @@ import { reactTranslator } from '../../../../common/translators/reactTranslator'
 import { AddCustomModal } from './AddCustomModal';
 import { SettingsSection } from '../Settings/SettingsSection';
 import { Icon } from '../../../common/components/ui/Icon';
-import { SEARCH_FILTERS } from './Search/constants';
 import { Setting, SETTINGS_TYPES } from '../Settings/Setting';
 import { ANTIBANNER_GROUPS_ID } from '../../../../common/constants';
 
@@ -43,9 +41,6 @@ const Filters = observer(() => {
     const [urlToSubscribe, setUrlToSubscribe] = useState(decodeURIComponent(query.get(QUERY_PARAM_NAMES.SUBSCRIBE) || ''));
     const [customFilterTitle, setCustomFilterTitle] = useState(query.get(QUERY_PARAM_NAMES.TITLE));
 
-    // This state used to remove blinking while filters to render were not selected
-    const [groupDetermined, setGroupDetermined] = useState(false);
-
     const GROUP_DESCRIPTION = {
         0: reactTranslator.getMessage('group_description_custom'),
         1: reactTranslator.getMessage('group_description_adblocking'),
@@ -65,9 +60,6 @@ const Filters = observer(() => {
 
     useEffect(() => {
         settingsStore.setSelectedGroupId(query.get(QUERY_PARAM_NAMES.GROUP));
-        setGroupDetermined(true);
-        settingsStore.setSearchInput('');
-        settingsStore.setSearchSelect(SEARCH_FILTERS.ALL);
     }, [location.search, query, settingsStore]);
 
     const handleGroupSwitch = async ({ id, data }) => {
@@ -107,53 +99,11 @@ const Filters = observer(() => {
     const handleReturnToGroups = () => {
         history.push('/filters');
         settingsStore.setSelectedGroupId(null);
-        settingsStore.setSearchInput('');
-        settingsStore.setSearchSelect(SEARCH_FILTERS.ALL);
-        settingsStore.sortFilters();
     };
 
     const renderFilters = (filtersList) => {
         return filtersList
             .map((filter) => <Filter key={filter.filterId} filter={filter} />);
-    };
-
-    const renderGroupsOnSearch = (matchedFilters) => {
-        // collect search data as object where
-        // key is group id and value is searched filters
-        const searchData = matchedFilters
-            .reduce((acc, filter) => {
-                const { groupId } = filter;
-                if (typeof acc[groupId] === 'undefined') {
-                    acc[groupId] = [filter];
-                } else {
-                    acc[groupId].push(filter);
-                }
-                return acc;
-            }, {});
-        const affectedGroupsIds = Object.keys(searchData).map((id) => Number(id));
-        const groupsToRender = categories
-            .filter((group) => affectedGroupsIds.includes(group.groupId));
-        if (groupsToRender.length) {
-            return groupsToRender.map((group) => {
-                const filtersToShow = searchData[group.groupId];
-                return (
-                    <SearchGroup
-                        key={group.groupId}
-                        groupName={group.groupName}
-                        groupId={group.groupId}
-                        filtersToShow={filtersToShow}
-                        groupClickHandler={groupClickHandler(group.groupId)}
-                        checkboxHandler={handleGroupSwitch}
-                        checkboxValue={!!group.enabled}
-                    />
-                );
-            });
-        }
-        return (
-            <div className="filter__empty">
-                {reactTranslator.getMessage('options_filters_empty_title')}
-            </div>
-        );
     };
 
     const openModalHandler = useCallback(() => {
@@ -195,10 +145,6 @@ const Filters = observer(() => {
             </button>
         );
     };
-
-    if (!groupDetermined) {
-        return null;
-    }
 
     if (Number.isInteger(settingsStore.selectedGroupId)) {
         const selectedGroup = categories.find((group) => {
@@ -279,10 +225,7 @@ const Filters = observer(() => {
             title={reactTranslator.getMessage('options_filters')}
         >
             <FiltersUpdate />
-            <Search />
-            {settingsStore.isSearching
-                ? renderGroupsOnSearch(filtersToRender)
-                : renderGroups(categories)}
+            {renderGroups(categories)}
         </SettingsSection>
     );
 });

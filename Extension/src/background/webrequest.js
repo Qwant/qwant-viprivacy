@@ -29,7 +29,7 @@ import { prefs } from './prefs';
 import { frames } from './tabs/frames';
 import { listeners } from './notifier';
 import { webRequestService } from './filter/request-blocking';
-import { stealthService } from './filter/services/stealth-service';
+// import { stealthService } from './filter/services/stealth-service';
 import { contentFiltering } from './content-filtering';
 import { safebrowsing } from './filter/services/safebrowsing';
 import { uiService } from './ui-service';
@@ -155,6 +155,11 @@ const webrequestInit = function () {
             requestType,
         );
 
+        // TODO remove before release
+        // if (requestRule) {
+        //    log.info('Request rule: filterListId={0}, pattern={1}, allowlist={2}', requestRule.filterListId, requestRule.pattern.pattern, requestRule.isAllowlist());
+        // }
+
         if (!requestRule?.isDocumentAllowlistRule()) {
             cookieService.onBeforeRequest(requestDetails, getCookieRules(tab, requestUrl, referrerUrl) || []);
         }
@@ -165,6 +170,7 @@ const webrequestInit = function () {
             referrerUrl,
             requestType,
             requestRule,
+            originUrl,
         );
 
         if (requestRule) {
@@ -324,9 +330,9 @@ const webrequestInit = function () {
 
         cookieService.onBeforeSendHeaders(requestDetails);
 
-        if (stealthService.processRequestHeaders(requestId, requestHeaders)) {
-            requestHeadersModified = true;
-        }
+        // if (stealthService.processRequestHeaders(requestId, requestHeaders)) {
+        //    requestHeadersModified = true;
+        // }
 
         if (headersService.onBeforeSendHeaders(requestDetails, getRemoveHeaderRules(tab, requestUrl, getReferrerUrl(requestDetails)))) {
             requestHeadersModified = true;
@@ -612,7 +618,7 @@ const webrequestInit = function () {
                 }, 3000);
                 break;
             default:
-                // do noting
+            // do noting
         }
     });
 
@@ -790,7 +796,7 @@ const webrequestInit = function () {
                     case '\u2029':
                         return '\\u2029';
                     default:
-                        // do nothing
+                    // do nothing
                 }
             }
 
@@ -1049,10 +1055,10 @@ const webrequestInit = function () {
              */
             function isIframeWithoutSrc(frameUrl, frameId, mainFrameUrl) {
                 return (frameUrl === mainFrameUrl
-                        || frameUrl === 'about:blank'
-                        || frameUrl === 'about:srcdoc'
-                        // eslint-disable-next-line no-script-url
-                        || frameUrl.indexOf('javascript:') > -1)
+                    || frameUrl === 'about:blank'
+                    || frameUrl === 'about:srcdoc'
+                    // eslint-disable-next-line no-script-url
+                    || frameUrl.indexOf('javascript:') > -1)
                     && frameId !== MAIN_FRAME_ID;
             }
 
@@ -1096,17 +1102,17 @@ const webrequestInit = function () {
              * https://developer.chrome.com/extensions/webRequest
              * https://developer.chrome.com/extensions/webNavigation
              */
-            backgroundPage.webRequest.onHeadersReceived.addListener(prepareInjection, ['<all_urls>']);
-            backgroundPage.webRequest.onResponseStarted.addListener(tryInjectOnResponseStarted, ['<all_urls>']);
-            backgroundPage.webNavigation.onCommitted.addListener(tryInject);
-            backgroundPage.webRequest.onErrorOccurred.addListener(removeInjection, ['<all_urls>']);
-            backgroundPage.webNavigation.onDOMContentLoaded.addListener(tryInjectInIframesWithoutSrc);
+            backgroundPage.webRequest?.onHeadersReceived?.addListener(prepareInjection, ['<all_urls>']);
+            backgroundPage.webRequest?.onResponseStarted?.addListener(tryInjectOnResponseStarted, ['<all_urls>']);
+            backgroundPage.webNavigation?.onCommitted?.addListener(tryInject);
+            backgroundPage.webRequest?.onErrorOccurred?.addListener(removeInjection, ['<all_urls>']);
+            backgroundPage.webNavigation?.onDOMContentLoaded?.addListener(tryInjectInIframesWithoutSrc);
             // In the current Firefox version (60.0.2), the onCommitted even fires earlier than
             // onHeadersReceived for SUBDOCUMENT requests
             // This is true only for SUBDOCUMENTS i.e. iframes
             // so we inject code when onCompleted event fires
             if (browserUtils.isFirefoxBrowser()) {
-                backgroundPage.webRequest.onCompleted.addListener((details) => { tryInject(details, 'onCompleted'); }, ['<all_urls>']);
+                backgroundPage.webRequest?.onCompleted?.addListener((details) => { tryInject(details, 'onCompleted'); }, ['<all_urls>']);
             }
             // Remove injections when tab is closed
             tabsApi.onRemoved.addListener(injections.removeTabInjection);

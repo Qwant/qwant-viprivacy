@@ -1,14 +1,19 @@
 {
-  "name": "browser-extension",
-  "version": "4.0.168",
-  "description": "AdGuard Extension",
+  "name": "qwant-viprivacy",
+  "version": "0.0.2.10",
+  "description": "Qwant VIPrivacy",
+  "author": "extension@qwant.com",
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com:AdguardTeam/AdguardBrowserExtension.git"
+  },
   "scripts": {
     "dev": "cross-env BUILD_ENV=dev babel-node tools/bundle.js",
     "dev:watch": "cross-env BUILD_ENV=dev babel-node tools/bundle.js chrome --watch",
     "dev:watch:ff": "cross-env BUILD_ENV=dev babel-node tools/bundle.js firefox --watch",
     "beta": "cross-env BUILD_ENV=beta babel-node tools/bundle.js",
     "release": "cross-env BUILD_ENV=release babel-node tools/bundle.js",
-    "adguard-api": "cross-env BUILD_ENV=dev babel-node tools/bundle.js adguard-api",
     "test": "jest",
     "locales:download": "babel-node tools/locales.js download",
     "locales:upload": "babel-node tools/locales.js upload",
@@ -19,21 +24,19 @@
     "lint": "eslint . --ext .js,.jsx",
     "increment": "yarn version --patch --no-git-tag-version",
     "prepare": "husky install",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "beta:ff:upload": "yarn beta:ff:upload:update && yarn beta:ff:upload:xpi",
+    "beta:ff:upload:update": "s3cmd put --acl-public ./build/beta/update.json s3://firefox-beta",
+    "beta:ff:upload:xpi": "s3cmd put --acl-public ./build/beta/firefox.xpi s3://firefox-beta --content-type application/x-xpinstall -m application/x-xpinstall"
   },
   "lint-staged": {
     "*.{js,jsx}": [
       "eslint --fix"
     ]
   },
-  "repository": {
-    "type": "git",
-    "url": "ssh://git@github.com:AdguardTeam/AdguardBrowserExtension.git"
-  },
-  "author": "adguard@adguard.com",
-  "license": "GPL-3.0",
   "devDependencies": {
     "@babel/core": "^7.15.0",
+    "@babel/eslint-parser": "^7.17.0",
     "@babel/node": "^7.14.9",
     "@babel/plugin-proposal-class-properties": "^7.14.5",
     "@babel/plugin-proposal-decorators": "^7.14.5",
@@ -60,6 +63,7 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "file-loader": "^6.2.0",
     "form-data": "^4.0.0",
     "fs-extra": "^10.0.0",
     "html-webpack-plugin": "^5.3.2",
@@ -87,12 +91,12 @@
     "@adguard/filters-downloader": "^1.1.12",
     "@adguard/scriptlets": "^1.6.8",
     "@adguard/translate": "^0.2.5",
-    "@adguard/tsurlfilter": "^0.7.76",
+    "@adguard/tsurlfilter": "^0.7.74",
     "@babel/runtime": "^7.15.3",
+    "@elastic/apm-rum": "^5.10.2",
     "@xstate/react": "^1.5.1",
     "ace-builds": "^1.4.12",
     "ajv": "^8.6.2",
-    "c3": "0.4.15",
     "classnames": "^2.3.1",
     "crypto-browserify": "^3.12.0",
     "crypto-js": "^4.1.1",
@@ -111,11 +115,15 @@
     "react-dom": "^17.0.2",
     "react-modal": "^3.14.3",
     "react-resize-detector": "^6.7.5",
-    "react-router-dom": "^5.2.0",
+    "react-router-dom": "^6.3.0",
+    "react-spinners": "^0.11.0",
+    "react-switch": "^6.0.0",
+    "react-use": "^17.3.2",
     "react-virtualized-auto-sizer": "^1.0.5",
     "react-window": "^1.8.6",
     "stream-browserify": "^3.0.0",
     "url": "^0.11.0",
+    "use-error-boundary": "^2.0.6",
     "webextension-polyfill": "^0.8.0",
     "xstate": "^4.23.1"
   }

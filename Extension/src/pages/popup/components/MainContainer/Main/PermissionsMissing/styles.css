@@ -1,0 +1,38 @@
+.section-no-permission {
+    padding: 12px;
+    border: solid 1px var(--border);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: 1.29;
+}
+
+.section-no-permission>div:first-child {
+    flex: 1;
+    padding-right: 16px;
+}
+
+.section-default-browser {
+    background-color: var(--green);
+    color: var(--grey-black);
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+
+.permission_missing__title {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.2;
+    letter-spacing: -0.4px;
+    margin-bottom: 4px;
+}
+
+.section-enable-permissions {
+    background-color: var(--grey);
+}
+
+.section-enable-permissions .cta {
+    margin-top: 12px;
+}

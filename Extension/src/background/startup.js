@@ -22,20 +22,31 @@ import { allowlist } from './filter/allowlist';
 import { filteringLog } from './filter/filtering-log';
 import { uiService } from './ui-service';
 import { application } from './application';
+import { MESSAGE_TYPES } from '../common/constants';
+import { getQwantSettings } from '../common/qwant-settings';
 import { browser } from './extension-api/browser';
-import { stealthService } from './filter/services/stealth-service';
-import { ANTIBANNER_GROUPS_ID } from '../common/constants';
+import { settingsProvider } from './settings/settings-provider';
 
 /**
  * Extension initialize logic. Called from start.js
  */
 export const startup = async function () {
     async function onLocalStorageLoaded() {
+        const version = backgroundPage.app.getVersion();
+        const id = backgroundPage.app.getId();
+
         log.info(
-            'Starting adguard... Version: {0}. Id: {1}',
-            backgroundPage.app.getVersion(),
-            backgroundPage.app.getId(),
+            'Starting extension. Version="{0}", Id="{1}"',
+            version,
+            id,
         );
+
+        if (!localStorage.hasItem('install-date')) {
+            log.info('Extension first run');
+            localStorage.setItem('install-date', Date.now());
+        } else {
+            log.info('Extension installed on {0}', localStorage.getItem('install-date'));
+        }
 
         // Initialize popup button
         backgroundPage.browserAction.setPopup({
@@ -43,9 +54,8 @@ export const startup = async function () {
         });
 
         // Set uninstall page url
-        // eslint-disable-next-line max-len
-        const uninstallUrl = 'https://adguard.com/forward.html?action=adguard_uninstal_ext&from=background&app=browser_extension';
         try {
+            const uninstallUrl = backgroundPage.i18n.getMessage('uninstall_url');
             await browser.runtime.setUninstallURL(uninstallUrl);
         } catch (e) {
             log.error(e);
@@ -54,24 +64,32 @@ export const startup = async function () {
         allowlist.init();
         filteringLog.init();
         await uiService.init();
-        stealthService.init();
+        // stealthService.init();
 
         /**
          * Start application
          */
         application.start({
             async onInstall() {
-                // Process installation
-                /**
-                 * Show UI installation page
-                 */
-                uiService.openFiltersDownloadPage();
+                try {
+                    log.info('Apply default Qwant settings..');
+                    const qwantSettings = getQwantSettings({ protectionLevel: 'standard' });
 
-                // Retrieve filters and install them
-                const filterIds = application.offerFilters();
-                await application.addAndEnableFilters(filterIds);
-                // enable language-specific group by default
-                await application.enableGroup(ANTIBANNER_GROUPS_ID.LANGUAGE_FILTERS_GROUP_ID);
+                    const result = await settingsProvider.applySettingsBackup(JSON.stringify(qwantSettings));
+                    if (result) {
+                        log.info('Qwant settings applied successfully');
+                        setTimeout(() => {
+                            // TODO figure out how this works and how to avoid the 10s timeout
+                            browser.runtime.sendMessage({
+                                type: MESSAGE_TYPES.QWANT_SETTINGS_APPLIED,
+                            });
+                        }, 10000);
+                    } else {
+                        log.error('Error applying Qwant settings: unknown', qwantSettings);
+                    }
+                } catch (e) {
+                    log.error('Error applying Qwant settings: {0}', e.message);
+                }
             },
         });
     }

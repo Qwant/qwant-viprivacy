@@ -1,0 +1,30 @@
+.global_stats__section {
+    margin-bottom: 12px;
+}
+
+.global_stats__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.global_stats__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+    margin-right: 12px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.29;
+}
+
+.global_stats__container:first-child {
+    margin-right: 24px;
+}
+
+.global_stats__container .metric {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.25;
+}

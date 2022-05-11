@@ -1,0 +1,37 @@
+.tile-wrapper {
+    flex: 1;
+}
+
+.tile {
+    background-color: var(--green);
+    border: solid 1px var(--border);
+    border-radius: 8px;
+    color: var(--grey-black);
+
+    height: 64px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    padding: 0px 12px;
+}
+
+
+.tile .icon {
+    margin-right: 8px;
+}
+
+.tile .value {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.25;
+}
+
+.tile .label {
+    font-size: 14px;
+    line-height: 1.29;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

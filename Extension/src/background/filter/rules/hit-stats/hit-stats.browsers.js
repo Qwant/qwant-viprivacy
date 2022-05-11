@@ -105,7 +105,7 @@ const browsersHitStats = (function () {
      * Add 1 domain view to stats
      * @param domain
      */
-    const addDomainView = function (domain) {
+    const addDomainView_ = function (domain) {
         if (!domain) {
             return;
         }
@@ -128,6 +128,8 @@ const browsersHitStats = (function () {
         saveHitsCountStats(hitStatsHolder.hitStats);
     };
 
+    const addRuleHit = () => { };
+    const addDomainView = () => { };
     /**
      * Add 1 rule hit to stats
      * @param domain Domain of site where rule was applied
@@ -135,7 +137,7 @@ const browsersHitStats = (function () {
      * @param filterId
      * @param requestUrl Url to which rule was applied
      */
-    const addRuleHit = function (domain, ruleText, filterId, requestUrl) {
+    const addRuleHit_ = function (domain, ruleText, filterId, requestUrl) {
         if (!domain || !ruleText || !filterId) {
             return;
         }
@@ -199,7 +201,9 @@ const browsersHitStats = (function () {
 
     return {
         addRuleHit,
+        addRuleHit_,
         addDomainView,
+        addDomainView_,
         cleanup,
         getStats,
     };
