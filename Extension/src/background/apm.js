@@ -22,9 +22,8 @@ export const apm = (() => {
         log.info('APM agent starting locale={0}, version={1}, browser={2}, platform={3}', locale, version, browser, platform);
 
         agent = initApm({
-            // TODO replace with prod URL https://www.qwant.com/apm/
-            serverUrl: 'https://apm.dev-steam.c2.par1.kube.qwant.ninja:443',
-            serviceName: 'qwant-vip-extension',
+            serverUrl: 'https://www.qwant.com/apm/',
+            serviceName: 'qwant-viprivacy',
             serviceVersion: version,
             flushInterval: 100,
             active,
