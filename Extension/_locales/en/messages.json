@@ -45,10 +45,10 @@
     "message": "%count% items blocked"
   },
   "popup_main_nbr_blocked_elements_domain": {
-    "message": "on <b>%domain%</b>"
+    "message": "on <b>%domain%</b>."
   },
   "popup_main_problem_disable_protection": {
-    "message": "A problem on this site. Try to deactivate"
+    "message": "A problem on this site ? Try to deactivate."
   },
   "global_stats": {
     "message": "Cumulative statistics"
@@ -123,16 +123,16 @@
     "message": "I understand"
   },
   "onboarding_stepper_lets_go": {
-    "message": "Lets go!"
+    "message": "Let's go!"
   },
   "onboarding_stepper_next_step": {
     "message": "Next step"
   },
   "onboarding_step_request_permissions_title": {
-    "message": "Browse safely with Qwant VIP"
+    "message": "Browse safely with Qwant VIPrivacy"
   },
   "onboarding_step_request_permissions_description": {
-    "message": "Qwant VIPrivacy blocks trackers and refuses cookies for you. Your personal data is protected on all sites when you browse. Click \"Authorize\" to enable the protection. If you ignore this step, Qwant V.I.Privacy will not be installed. "
+    "message": "Qwant VIPrivacy blocks trackers and refuses cookies for you. Your personal data is protected on all sites when you browse. Click \"Authorize\" to enable the protection. If you ignore this step, Qwant VIPrivacy will not be installed."
   },
   "onboarding_step_protection_level_title": {
     "message": "Choose your level of protection"

@@ -45,7 +45,7 @@
     "message": "%count% élément bloqué"
   },
   "popup_main_nbr_blocked_elements_domain": {
-    "message": "sur <b>%domain%</b>"
+    "message": "sur <b>%domain%</b>."
   },
   "popup_main_problem_disable_protection": {
     "message": "Un problème sur ce site? Essayez de désactiver."
@@ -159,7 +159,7 @@
     "message": "Merci, Qwant est votre moteur de recherche par défaut mais…"
   },
   "onboarding_step_permissions_rejected_subtitle": {
-    "message": " Attention vous n'êtes pas complètement protégé."
+    "message": "Vous n'avez pas activé la fonctionalité bloqueur de traqueurs & cookies."
   },
   "onboarding_step_permissions_rejected_description": {
     "message": " "
