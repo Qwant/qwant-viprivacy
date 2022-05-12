@@ -111,7 +111,7 @@
     "react-ace": "^9.4.3",
     "react-dom": "^17.0.2",
     "react-modal": "^3.14.3",
-    "react-resize-detector": "^6.7.5",
+    "react-resize-detector": "^7.0.0",
     "react-router-dom": "^6.3.0",
     "react-spinners": "^0.11.0",
     "react-switch": "^6.0.0",
