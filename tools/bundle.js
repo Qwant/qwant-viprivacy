@@ -25,10 +25,10 @@ const bundleFirefoxStandalone = () => {
     return bundleRunner(webpackConfig);
 };
 
-const bundleEdge = () => {
-    const webpackConfig = getWebpackConfig(BROWSERS.EDGE);
-    return bundleRunner(webpackConfig);
-};
+// const bundleEdge = () => {
+//    const webpackConfig = getWebpackConfig(BROWSERS.EDGE);
+//    return bundleRunner(webpackConfig);
+// };
 
 // const bundleOpera = () => {
 //     const webpackConfig = getWebpackConfig(BROWSERS.OPERA);
@@ -51,10 +51,10 @@ const bundleFirefoxXpi = async () => {
 const devPlan = [
     genValidators,
     copyExternals,
-    bundleChrome,
+    // bundleChrome,
     bundleFirefoxAmo,
     bundleFirefoxStandalone,
-    bundleEdge,
+    // bundleEdge,
     // bundleOpera,
     // bundleAdguardApi,
     buildInfo,
@@ -63,11 +63,11 @@ const devPlan = [
 const betaPlan = [
     genValidators,
     copyExternals,
-    bundleChrome,
+    // bundleChrome,
     // bundleChromeCrx,
     bundleFirefoxStandalone,
     bundleFirefoxXpi,
-    bundleEdge,
+    // bundleEdge,
     // bundleAdguardApi,
     // buildInfo,
 ];
@@ -75,9 +75,9 @@ const betaPlan = [
 const releasePlan = [
     genValidators,
     copyExternals,
-    bundleChrome,
+    // bundleChrome,
     bundleFirefoxAmo,
-    bundleEdge,
+    // bundleEdge,
     // bundleOpera,
     buildInfo,
 ];

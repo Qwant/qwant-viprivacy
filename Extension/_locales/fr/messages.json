@@ -1,6 +1,6 @@
 {
   "name": {
-    "message": "Qwant VIPrivacy"
+    "message": "Qwant VIPrivacy Android"
   },
   "short_name": {
     "message": "Qwant VIPrivacy"
@@ -33,7 +33,7 @@
     "message": "Bloque tous les traqueurs et cookies, peut modifier les fonctionnalités de certains sites."
   },
   "protection_level_disabled_description": {
-    "message": "La navigation protégée est désactivée, votre moteur de recherche par défaut reste Qwant."
+    "message": "La navigation protégée est désactivée."
   },
   "popup_main_protection_enabled": {
     "message": "Protection activée"

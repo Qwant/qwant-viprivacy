@@ -86,7 +86,7 @@
   "dependencies": {
     "@adguard/assistant": "^4.3.61",
     "@adguard/filters-downloader": "^1.1.12",
-    "@adguard/scriptlets": "^1.6.8",
+    "@adguard/scriptlets": "^1.6.6",
     "@adguard/translate": "^0.2.5",
     "@adguard/tsurlfilter": "^0.7.74",
     "@babel/runtime": "^7.15.3",

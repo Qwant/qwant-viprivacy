@@ -52,7 +52,7 @@ export const xpi = async (browser) => {
     const [downloadedXpi] = downloadedFiles;
     // Rename
     const basePath = path.dirname(downloadedXpi);
-    const xpiPath = path.join(basePath, 'firefox.xpi');
+    const xpiPath = path.join(basePath, 'firefox-android.xpi');
     await fs.rename(downloadedXpi, xpiPath);
 
     // Revert manifest to prev state
@@ -61,5 +61,5 @@ export const xpi = async (browser) => {
     // create update.json
     let updateJsonTemplate = (await fs.readFile(FIREFOX_UPDATE_TEMPLATE)).toString();
     updateJsonTemplate = updateJsonTemplate.replace(/\%VERSION\%/g, version);
-    await fs.writeFile(path.join(buildDir, 'update.json'), updateJsonTemplate);
+    await fs.writeFile(path.join(buildDir, 'update-android.json'), updateJsonTemplate);
 };

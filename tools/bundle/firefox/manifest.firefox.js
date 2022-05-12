@@ -26,13 +26,13 @@ export const firefoxManifest = {
     },
     'permissions': [
         'storage',
-    ],
-    'optional_permissions': [
         'tabs',
         '<all_urls>',
         'webRequest',
         'webRequestBlocking',
         'webNavigation',
         'cookies',
+    ],
+    'optional_permissions': [
     ],
 };

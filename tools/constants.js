@@ -8,9 +8,9 @@ export const ENVS = {
 };
 
 export const ENV_CONF = {
-    [ENVS.DEV]: { outputPath: 'dev', mode: 'development' },
-    [ENVS.BETA]: { outputPath: 'beta', mode: 'production' },
-    [ENVS.RELEASE]: { outputPath: 'release', mode: 'production' },
+    [ENVS.DEV]: { outputPath: 'dev-android', mode: 'production' },
+    [ENVS.BETA]: { outputPath: 'beta-android', mode: 'production' },
+    [ENVS.RELEASE]: { outputPath: 'release-android', mode: 'production' },
 };
 
 export const BROWSERS = {
@@ -62,9 +62,9 @@ export const BROWSERS_CONF = {
 };
 
 export const FIREFOX_APP_IDS_MAP = {
-    [ENVS.DEV]: 'qwantprivacypilot-dev@qwant.com',
-    [ENVS.BETA]: 'qwantprivacypilot-internal-beta-01@qwant.com',
-    [ENVS.RELEASE]: 'qwantprivacypilot-prod@qwant.com',
+    [ENVS.DEV]: 'qwantprivacypilot-android-dev@qwant.com',
+    [ENVS.BETA]: 'qwantprivacypilot-internal-android-beta@qwant.com',
+    [ENVS.RELEASE]: 'qwantprivacypilot-android-prod@qwant.com',
 };
 
 export const BUILD_PATH = path.resolve(__dirname, '../build');
@@ -82,4 +82,4 @@ export const LOCAL_SCRIPT_RULES_COMMENT = `By the rules of AMO we cannot use rem
 // artifacts constants
 export const FIREFOX_CREDENTIALS = path.resolve(__dirname, '../private/AdguardBrowserExtension/mozilla_credentials.json');
 export const FIREFOX_UPDATE_TEMPLATE = path.resolve(__dirname, './bundle/firefox/update_template.json');
-export const FIREFOX_WEBEXT_UPDATE_URL = 'https://firefox-beta.cellar-c2.services.clever-cloud.com/update.json';
+export const FIREFOX_WEBEXT_UPDATE_URL = 'https://firefox-beta.cellar-c2.services.clever-cloud.com/update-android.json';

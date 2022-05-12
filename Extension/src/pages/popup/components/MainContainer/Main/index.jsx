@@ -64,7 +64,7 @@ const Main = observer(({ store, settingsStore }) => {
 
     return (
         <div className="main">
-            <MainHeader isReady={isReady} showSettings />
+            <MainHeader />
             <div className="main__content">
                 {isReady ? (
                     <>

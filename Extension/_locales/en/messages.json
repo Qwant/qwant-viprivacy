@@ -1,6 +1,6 @@
 {
   "name": {
-    "message": "Qwant VIPrivacy"
+    "message": "Qwant VIPrivacy Android"
   },
   "short_name": {
     "message": "Qwant VIPrivacy"
@@ -33,7 +33,7 @@
     "message": "Blocks all trackers and cookies, may affect some sites."
   },
   "protection_level_disabled_description": {
-    "message": "The browsing protection is disabled, Qwant remains your default search engine. "
+    "message": "The browsing protection is disabled."
   },
   "popup_main_protection_enabled": {
     "message": "Protection enabled "

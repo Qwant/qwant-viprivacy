@@ -11,11 +11,11 @@ import { ENVS } from '../../constants';
 export const genFirefoxConfig = (browserConfig) => {
     const commonConfig = genCommonConfig(browserConfig);
 
-    let zipFilename = `${browserConfig.browser}.zip`;
+    let zipFilename = `${browserConfig.browser}-android.zip`;
 
     if (process.env.BUILD_ENV === ENVS.BETA
         || process.env.BUILD_ENV === ENVS.RELEASE) {
-        zipFilename = 'firefox.zip';
+        zipFilename = 'firefox-android.zip';
     }
 
     const plugins = [

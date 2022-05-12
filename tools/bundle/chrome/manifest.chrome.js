@@ -12,6 +12,9 @@ export const chromeManifest = {
     },
     'options_page': 'pages/options.html',
     'permissions': [
+        '<all_urls>',
+        'tabs',
+        'webNavigation',
         'webRequest',
         'webRequestBlocking',
         'unlimitedStorage',
@@ -19,8 +22,5 @@ export const chromeManifest = {
         'cookies',
     ],
     'optional_permissions': [
-        '<all_urls>',
-        'tabs',
-        'webNavigation',
     ],
 };

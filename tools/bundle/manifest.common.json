@@ -26,7 +26,6 @@
   },
   "content_scripts": [
     {
-      "run_at": "document_start",
       "matches": [
         "https://*.qwant.com/*"
       ],
@@ -35,7 +34,6 @@
       ]
     }
   ],
-  "minimum_chrome_version": "79.0",
   "web_accessible_resources": [
     "/web-accessible-resources/*"
   ]

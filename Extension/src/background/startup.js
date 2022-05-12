@@ -24,7 +24,6 @@ import { uiService } from './ui-service';
 import { application } from './application';
 import { MESSAGE_TYPES } from '../common/constants';
 import { getQwantSettings } from '../common/qwant-settings';
-import { browser } from './extension-api/browser';
 import { settingsProvider } from './settings/settings-provider';
 
 /**
@@ -53,18 +52,9 @@ export const startup = async function () {
             popup: backgroundPage.getURL('pages/popup.html'),
         });
 
-        // Set uninstall page url
-        try {
-            const uninstallUrl = backgroundPage.i18n.getMessage('uninstall_url');
-            await browser.runtime.setUninstallURL(uninstallUrl);
-        } catch (e) {
-            log.error(e);
-        }
-
         allowlist.init();
         filteringLog.init();
         await uiService.init();
-        // stealthService.init();
 
         /**
          * Start application

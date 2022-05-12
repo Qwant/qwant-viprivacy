@@ -1,10 +1,10 @@
 {
   "addons": {
-    "qwantprivacypilot-internal-beta-01@qwant.com": {
+    "qwantprivacypilot-internal-android-beta@qwant.com": {
       "updates": [
         {
           "version": "%VERSION%",
-          "update_link": "https://firefox-beta.cellar-c2.services.clever-cloud.com/firefox.xpi",
+          "update_link": "https://firefox-beta.cellar-c2.services.clever-cloud.com/firefox-android.xpi",
           "applications": {
             "gecko": {
               "strict_min_version": "78.0"
