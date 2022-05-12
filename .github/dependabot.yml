@@ -1,0 +1,16 @@
+# Please see the documentation for all configuration options:
+# https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+
+version: 2
+updates:
+  - package-ecosystem: "npm" 
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "wednesday"
+    allow:
+      - dependency-name: "@adguard/*"
+      - dependency-name: "react*"
+      - dependency-name: "lodash"
+      - dependency-name: "webextension-polyfill"
+      - dependency-name: "webextension-polyfill"
