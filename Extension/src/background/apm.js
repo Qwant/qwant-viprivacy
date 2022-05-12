@@ -23,7 +23,7 @@ export const apm = (() => {
 
         agent = initApm({
             serverUrl: 'https://www.qwant.com/apm/',
-            serviceName: 'qwant-viprivacy',
+            serviceName: 'qwant-viprivacy-android',
             serviceVersion: version,
             flushInterval: 100,
             active,
