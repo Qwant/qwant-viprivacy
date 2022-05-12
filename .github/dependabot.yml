@@ -3,7 +3,7 @@
 
 version: 2
 updates:
-  - package-ecosystem: "npm" 
+  - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "weekly"
@@ -13,4 +13,5 @@ updates:
       - dependency-name: "react*"
       - dependency-name: "lodash"
       - dependency-name: "webextension-polyfill"
-      - dependency-name: "webextension-polyfill"
+      - dependency-name: "web-ext"
+      - dependency-name: "jest"
