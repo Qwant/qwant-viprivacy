@@ -83,6 +83,12 @@
   "popup_settings_telemetry_label": {
     "message": "Aidez Qwant à améliorer l'extension en envoyant anonymement des rapports d'erreur et des statistiques d'usage."
   },
+  "popup_settings_telemetry_learn_more": {
+    "message": "Voir plus"
+  },
+  "popup_settings_telemetry_learn_more_link": {
+    "message": "https://github.com/Qwant/qwant-viprivacy#privacy"
+  },
   "popup_stats_table_domains_label": {
     "message": "Domaines"
   },

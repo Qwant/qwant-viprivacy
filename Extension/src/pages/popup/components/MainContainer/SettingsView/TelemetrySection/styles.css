@@ -10,3 +10,7 @@
     line-height: 1.33;
     color: #4b5058;
 }
+
+.telemetry-section a {
+    margin-left: 4px;
+}
