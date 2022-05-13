@@ -17,8 +17,8 @@
 
 import { localStorage } from '../../../storage';
 import { settings } from '../../../settings/user-settings';
-import { application } from '../../../application';
-import { backend } from '../../filters/service-client';
+// import { application } from '../../../application';
+// import { backend } from '../../filters/service-client';
 import { log } from '../../../../common/log';
 import { utils } from '../../../utils/common';
 import { lazyGet, lazyGetClear } from '../../../utils/lazy';
@@ -29,7 +29,7 @@ import { lazyGet, lazyGetClear } from '../../../utils/lazy';
  * More info about ad filters stats: http://adguard.com/en/filter-rules-statistics.html
  */
 const browsersHitStats = (function () {
-    const MAX_PAGE_VIEWS_COUNT = 20;
+    // const MAX_PAGE_VIEWS_COUNT = 20;
     const HITS_COUNT_PROP = 'filters-hit-count';
     const HITS_PROP = 'h';
 
@@ -73,12 +73,12 @@ const browsersHitStats = (function () {
      * Sends hit stats to backend server
      */
     function sendStats() {
-        const overallViews = hitStatsHolder.hitStats.views || 0;
-        if (overallViews < MAX_PAGE_VIEWS_COUNT) {
-            return;
-        }
-        const enabledFilters = application.getEnabledFilters();
-        backend.sendHitStats(JSON.stringify(hitStatsHolder.hitStats), enabledFilters);
+        // const overallViews = hitStatsHolder.hitStats.views || 0;
+        // if (overallViews < MAX_PAGE_VIEWS_COUNT) {
+        //    return;
+        // }
+        // const enabledFilters = application.getEnabledFilters();
+        // backend.sendHitStats(JSON.stringify(hitStatsHolder.hitStats), enabledFilters);
         cleanup();
     }
 

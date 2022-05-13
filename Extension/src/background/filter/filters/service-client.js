@@ -19,7 +19,7 @@
 import FiltersDownloader from '@adguard/filters-downloader';
 import { utils } from '../../utils/common';
 import { backgroundPage } from '../../extension-api/background-page';
-import { prefs } from '../../prefs';
+// import { prefs } from '../../prefs';
 import { log } from '../../../common/log';
 import { browserUtils } from '../../utils/browser-utils';
 import { lazyGet } from '../../utils/lazy';
@@ -422,19 +422,19 @@ export const backend = (function () {
      * @param messageType   Message type
      * @param comment       Message text
      */
-    const sendUrlReport = function (url, messageType, comment) {
-        let params = `url=${encodeURIComponent(url)}`;
-        params += `&messageType=${encodeURIComponent(messageType)}`;
-        if (comment) {
-            params += `&comment=${encodeURIComponent(comment)}`;
-        }
-        // params = addKeyParameter(params);
+    // const sendUrlReport = function (url, messageType, comment) {
+    //    let params = `url=${encodeURIComponent(url)}`;
+    //    params += `&messageType=${encodeURIComponent(messageType)}`;
+    //    if (comment) {
+    //        params += `&comment=${encodeURIComponent(comment)}`;
+    //    }
+    //    // params = addKeyParameter(params);
 
-        const request = new XMLHttpRequest();
-        request.open('POST', settings.reportUrl);
-        request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-        request.send(params);
-    };
+    //    const request = new XMLHttpRequest();
+    //    request.open('POST', settings.reportUrl);
+    //    request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    //    request.send(params);
+    // };
 
     /**
      * Sends filter hits stats to backend server.
@@ -445,23 +445,23 @@ export const backend = (function () {
      * @param stats             Stats
      * @param enabledFilters    List of enabled filters
      */
-    const sendHitStats = function (stats, enabledFilters) {
-        let params = `stats=${encodeURIComponent(stats)}`;
-        params += `&v=${encodeURIComponent(backgroundPage.app.getVersion())}`;
-        params += `&b=${encodeURIComponent(prefs.browser)}`;
-        if (enabledFilters) {
-            for (let i = 0; i < enabledFilters.length; i += 1) {
-                const filter = enabledFilters[i];
-                params += `&f=${encodeURIComponent(`${filter.filterId},${filter.version}`)}`;
-            }
-        }
-        // params = addKeyParameter(params);
+    // const sendHitStats = function (stats, enabledFilters) {
+    //    let params = `stats=${encodeURIComponent(stats)}`;
+    //    params += `&v=${encodeURIComponent(backgroundPage.app.getVersion())}`;
+    //    params += `&b=${encodeURIComponent(prefs.browser)}`;
+    //    if (enabledFilters) {
+    //        for (let i = 0; i < enabledFilters.length; i += 1) {
+    //            const filter = enabledFilters[i];
+    //            params += `&f=${encodeURIComponent(`${filter.filterId},${filter.version}`)}`;
+    //        }
+    //    }
+    //    // params = addKeyParameter(params);
 
-        const request = new XMLHttpRequest();
-        request.open('POST', settings.ruleStatsUrl);
-        request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-        request.send(params);
-    };
+    //    const request = new XMLHttpRequest();
+    //    request.open('POST', settings.ruleStatsUrl);
+    //    request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    //    request.send(params);
+    // };
 
     /**
      * Configures backend's URLs
@@ -531,8 +531,8 @@ export const backend = (function () {
         // downloadI18nMetadataFromBackend,
         // lookupSafebrowsing,
 
-        sendUrlReport,
-        sendHitStats,
+        // sendUrlReport,
+        // sendHitStats,
 
         configure,
     };
