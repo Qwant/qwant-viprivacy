@@ -41,7 +41,7 @@ export const backend = (function () {
         },
 
         // Url for load filters metadata and rules
-        // https://f.qwant.com/tracking-protection/chrome_filter_102.txt
+        // https://f.qwant.com/tracking-protection/firefox_filter_102.txt
         get filtersUrl() {
             return lazyGet(this, 'filtersUrl', () => {
                 if (browserUtils.isFirefoxBrowser()) {
@@ -50,7 +50,7 @@ export const backend = (function () {
                 if (browserUtils.isEdgeBrowser()) {
                     return 'https://f.qwant.com/tracking-protection/edge_';
                 }
-                return 'https://f.qwant.com/tracking-protection/chrome_'; // chromium
+                return 'https://f.qwant.com/tracking-protection/chromium_';
             });
         },
 
