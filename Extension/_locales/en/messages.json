@@ -81,7 +81,7 @@
     "message": "https://fr.surveymonkey.com/r/X6C38SF"
   },
   "popup_settings_telemetry_label": {
-    "message": "Help Qwant improve the extension by sending anonymous error reports and usage statistics"
+    "message": "Help Qwant improve the extension by sending anonymous error reports and usage statistics."
   },
   "popup_settings_telemetry_learn_more": {
     "message": "Learn more"
@@ -165,7 +165,7 @@
     "message": "Thank you, Qwant is your default search engine but…"
   },
   "onboarding_step_permissions_rejected_subtitle": {
-    "message": "Beware you are not completely protected."
+    "message": "Cookie and tracker blocker feature is not active."
   },
   "onboarding_step_permissions_rejected_description": {
     "message": " "
