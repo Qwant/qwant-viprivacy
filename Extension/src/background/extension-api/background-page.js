@@ -632,7 +632,7 @@ export const backgroundPage = (() => {
             }
 
             try {
-                await browser.browserAction.setIcon({ tabId, imageData: icon });
+                await browser.browserAction.setIcon({ tabId, path: icon });
             } catch (e) {
                 log.debug(new Error(e.message));
                 return;
