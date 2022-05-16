@@ -14,9 +14,9 @@
  * You should have received a copy of the GNU General Public License
  * along with Adguard Browser Extension. If not, see <http://www.gnu.org/licenses/>.
  */
-import {
-    formatISO, getISOWeeksInYear, getYear, getMonth,
-} from 'date-fns';
+// import {
+//    formatISO, getISOWeeksInYear, getYear, getMonth,
+// } from 'date-fns';
 import { localStorage } from '../storage';
 import { utils } from '../utils/common';
 import { subscriptions } from './filters/subscription';
@@ -200,30 +200,30 @@ export const pageStats = (function () {
 
     const initBlockedDomainsStruct = (now, domain) => {
         return {
-            day: {
-                current: formatISO(now, { representation: 'date' }),
-                domains: {
-                    [domain]: 1,
-                },
-            },
-            week: {
-                current: `${getISOWeeksInYear(now)}-${getYear(now)}`,
-                domains: {
-                    [domain]: 1,
-                },
-            },
-            month: {
-                current: `${getMonth(now)}-${getYear(now)}`,
-                domains: {
-                    [domain]: 1,
-                },
-            },
-            year: {
-                current: getYear(now),
-                domains: {
-                    [domain]: 1,
-                },
-            },
+            // day: {
+            //    current: formatISO(now, { representation: 'date' }),
+            //    domains: {
+            //        [domain]: 1,
+            //    },
+            // },
+            // week: {
+            //    current: `${getISOWeeksInYear(now)}-${getYear(now)}`,
+            //    domains: {
+            //        [domain]: 1,
+            //    },
+            // },
+            // month: {
+            //    current: `${getMonth(now)}-${getYear(now)}`,
+            //    domains: {
+            //        [domain]: 1,
+            //    },
+            // },
+            // year: {
+            //    current: getYear(now),
+            //    domains: {
+            //        [domain]: 1,
+            //    },
+            // },
             total: {
                 domains: {
                     [domain]: 1,
@@ -260,43 +260,44 @@ export const pageStats = (function () {
         return domains;
     };
 
-    const updateBlockedDomainsStats = (blockedDomains, domain, now = new Date()) => {
+    const updateBlockedDomainsStats = (blockedDomains, domain) => {
         const result = blockedDomains || {};
 
         try {
-            if (!result.day || !result.week || !result.month || !result.year) {
-                return initBlockedDomainsStruct(now, domain);
-            }
+            // const now = new Date()
+            // if (!result.day || !result.week || !result.month || !result.year) {
+            //    return initBlockedDomainsStruct(now, domain);
+            // }
 
-            // Day
-            if (result.day.current === formatISO(now, { representation: 'date' })) {
-                result.day.domains = incrementDomainCount(result.day?.domains, domain);
-            } else {
-                result.day = initBlockedDomainsStruct(now, domain).day;
-            }
+            /// / Day
+            // if (result.day.current === formatISO(now, { representation: 'date' })) {
+            //    result.day.domains = incrementDomainCount(result.day?.domains, domain);
+            // } else {
+            //    result.day = initBlockedDomainsStruct(now, domain).day;
+            // }
 
-            // Week
-            if (result.week.current === `${getISOWeeksInYear(now)}-${getYear(now)}`) {
-                // eslint-disable-next-line max-len
-                result.week.domains = incrementDomainCount(result.week?.domains, domain);
-            } else {
-                result.week = initBlockedDomainsStruct(now, domain).week;
-            }
+            /// / Week
+            // if (result.week.current === `${getISOWeeksInYear(now)}-${getYear(now)}`) {
+            //    // eslint-disable-next-line max-len
+            //    result.week.domains = incrementDomainCount(result.week?.domains, domain);
+            // } else {
+            //    result.week = initBlockedDomainsStruct(now, domain).week;
+            // }
 
-            // Month
-            if (result.month.current === getMonth(now)) {
-                // eslint-disable-next-line max-len
-                result.month.domains = incrementDomainCount(result.month?.domains, domain);
-            } else {
-                result.month = initBlockedDomainsStruct(now, domain).month;
-            }
-            // Year
-            if (result.year.current === getYear(now)) {
-                // eslint-disable-next-line max-len
-                result.year.domains = incrementDomainCount(result.year?.domains, domain);
-            } else {
-                result.year = initBlockedDomainsStruct(now, domain).year;
-            }
+            /// / Month
+            // if (result.month.current === `${getMonth(now)}-${getYear(now)}`) {
+            //    // eslint-disable-next-line max-len
+            //    result.month.domains = incrementDomainCount(result.month?.domains, domain);
+            // } else {
+            //    result.month = initBlockedDomainsStruct(now, domain).month;
+            // }
+            /// / Year
+            // if (result.year.current === getYear(now)) {
+            //    // eslint-disable-next-line max-len
+            //    result.year.domains = incrementDomainCount(result.year?.domains, domain);
+            // } else {
+            //    result.year = initBlockedDomainsStruct(now, domain).year;
+            // }
 
             // Total
             if (result.total) {
