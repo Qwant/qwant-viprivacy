@@ -1,7 +1,7 @@
 &nbsp;
 
 <p align="center">
-  <img src="https://place-hold.it/300x150" width="300px" alt="Qwant VIPrivacy Browser Extension" />
+  <img src="https://user-images.githubusercontent.com/1442690/168590504-defc3ec9-0b78-4d85-b87f-bb76724ca665.png" width="300px" alt="Qwant VIPrivacy Browser Extension" />
 </p>
 <h3 align="center">Ad blocker with advanced privacy protection features</h3>
 <p align="center">
