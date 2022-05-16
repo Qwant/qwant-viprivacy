@@ -172,7 +172,9 @@ Qwant VIPrivacy uses APM ([Application Performance Monitoring](https://www.elast
 **TL;DR** This is the dashboard we use to obseve general, anoymized, trends and help keep an eye on the health of the extension.
 
 <details><summary>Screenshot</summary>
-  ![image](https://user-images.githubusercontent.com/1442690/168626607-61ef8f32-8398-4f18-bfc5-d3cc70eacae3.png)
+  
+![image](https://user-images.githubusercontent.com/1442690/168628853-57494bad-d90d-4969-af4d-468108eca1bb.png)
+
 </details> 
 
 APM is optional and can be fully turned off during the onboarding or at any time. Enabeling APM allows Qwant to resolve technical issues and bugs faster and provide a better user experience.
