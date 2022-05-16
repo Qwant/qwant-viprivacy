@@ -157,15 +157,31 @@ yarn locales:info
 
 <a id="fork"></a>
 
-## Fork
+## History of the codebase
 
-TODO: explain here the fork of [AdGuard](https://github.com/AdguardTeam/AdguardBrowserExtension).
+Qwant VIPrivacy is based on the excellent [Adguard Browser Extension](https://github.com/AdguardTeam/AdguardBrowserExtension). We chose to fork Adguard because it provides a solid basis for blocking trackers. We felt that it is a good starting point. It allows us to focus on providing a clean user-interface and curated defaults.
+
+Thank you to Adguard for providing a fantastic foundation for this project.
 
 <a id="privacy"></a>
 
 ## Privacy
 
-TODO: Explain here the privacy aspects.
+Qwant VIPrivacy uses APM ([Application Performance Monitoring](https://www.elastic.co/guide/en/apm/guide/current/apm-overview.html))to report bugs, catch errors and perform basic stats. Qwant VIPrivacy does not collect any PII (Personally Identifiable Information).
+
+**TL;DR** This is the dashboard we use to obseve general, anoymized, trends and help keep an eye on the health of the extension.
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/1442690/168625417-b09fa0a7-caf3-49fd-aad4-2af3efb1ee08.png" width="600px" alt="APM Dashboard" />
+</p>
+
+APM is optional and can be fully turned off during the onboarding or at any time. Enabeling APM allows Qwant to resolve technical issues and bugs faster and provide a better user experience.
+
+The basic information that goes through APM:
+- Browser Type (Firefox, Chrome, Edge, etc...)
+- Extension version (v1, v2, etc...)
+- Basic stats (Do people prefer the "standard" or "strict" level of protection, etc..)
+- Technical error reports (Did we make a mistake and how can we fix it)
 
 <a id="license"></a>
 
