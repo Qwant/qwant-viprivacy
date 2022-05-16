@@ -138,10 +138,10 @@
     "message": "Naviguez protégé sur internet avec  Qwant VIPrivacy"
   },
   "onboarding_step_request_permissions_description": {
-    "message": "Qwant VIPrivacy c'est moins de cookies et les traqueurs bloqués lors de votre navigation. Vos données personnelles seront protégées sur tous les sites internet. Cliquez sur \"Autoriser\" pour ouvrir la pop-up d'autorisation dans le navigateur. Si vous ignorez cette étape, vous serez redirigé vers la page précédente et Qwant VIPrivacy ne sera pas installé."
+    "message": "Qwant VIPrivacy c'est moins de cookies et les traqueurs bloqués lors de votre navigation. Vos données personnelles sont protégées sur tous les sites. Cliquez sur \"Demander l'autorisation\" pour ouvrir la fênetre dans le navigateur. Si vous ignorez cette étape, vous serez redirigé vers la page précédente et Qwant VIPrivacy ne sera pas installé."
   },
   "onboarding_step_protection_level_title": {
-    "message": "Choisissez votre niveau de protection."
+    "message": "Choisissez votre niveau de protection"
   },
   "onboarding_step_protection_level_description": {
     "message": "Vous pourrez modifier votre choix à tout moment en cliquant sur l'icône Qwant VIPrivacy."

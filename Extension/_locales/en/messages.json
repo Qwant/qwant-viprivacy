@@ -111,7 +111,7 @@
     "message": "The protection is disabled"
   },
   "missing_permissions_disabled_description": {
-    "message": "Your data remains confidential when your search on Qwant, but the trackers and cookies blocking is not activated."
+    "message": "Your data remains confidential when you search on Qwant, but the trackers and cookies blocking is not activated."
   },
   "missing_permissions_cta_button_popup": {
     "message": "Enable protection"
