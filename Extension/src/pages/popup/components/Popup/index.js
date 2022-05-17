@@ -1,6 +1,7 @@
 import React from 'react';
 import { observer } from 'mobx-react';
 import { useErrorBoundary } from 'use-error-boundary';
+import { useLocation } from 'react-router-dom';
 
 import { popupStore } from '../../stores/PopupStore';
 import { rootStore } from '../../../options/stores/RootStore';
@@ -11,6 +12,7 @@ import { apm } from '../../../../background/apm';
 import './main.css';
 
 export const Popup = observer(() => {
+    const { pathname } = useLocation();
     const { settingsStore } = React.useContext(rootStore);
     const { ErrorBoundary, didCatch, error } = useErrorBoundary();
     const { getPopupData, updateBlockedStats } = React.useContext(popupStore);
@@ -24,6 +26,16 @@ export const Popup = observer(() => {
             await getPopupData();
         })();
     }, [getPopupData]);
+
+    React.useEffect(() => {
+        if (!pathname) return;
+
+        const transaction = window?.apm?.startTransaction(`popup-navigate-${pathname.replace('/', '')}`);
+        if (transaction) {
+            transaction.result = 'success';
+            transaction.end();
+        }
+    }, [pathname]);
 
     // subscribe to stats change
     React.useEffect(() => {

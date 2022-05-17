@@ -69,7 +69,7 @@
 }
 
 .primary:hover {
-    background-color: #4B5058;
+    background-color: var(--grey-darker);
 }
 
 .secondary {

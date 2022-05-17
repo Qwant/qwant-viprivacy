@@ -5,12 +5,23 @@
 }
 
 .telemetry-section label {
-    margin-left: 4px;
     font-size: 12px;
+    margin-left: 4px;
     line-height: 1.33;
-    color: #4b5058;
+    color: var(--grey-darker);
 }
 
 .telemetry-section a {
     margin-left: 4px;
+    text-decoration: none;
+    color: var(--grey-darker);
+}
+
+.telemetry-section a:visited {
+    text-decoration: none;
+    color: var(--grey-darker);
+}
+
+.telemetry-section a:hover {
+    text-decoration: underline;
 }
