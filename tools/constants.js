@@ -80,6 +80,6 @@ export const LOCAL_SCRIPT_RULES_COMMENT = `By the rules of AMO we cannot use rem
 3. We also allow "User rules" to work since those rules are added manually by the user. This way filters maintainers can test new rules before including them in the filters.`;
 
 // artifacts constants
-export const FIREFOX_CREDENTIALS = path.resolve(__dirname, '../private/AdguardBrowserExtension/mozilla_credentials.json');
+export const FIREFOX_CREDENTIALS = path.resolve(__dirname, '../private/mozilla_credentials.json');
 export const FIREFOX_UPDATE_TEMPLATE = path.resolve(__dirname, './bundle/firefox/update_template.json');
 export const FIREFOX_WEBEXT_UPDATE_URL = 'https://firefox-beta.cellar-c2.services.clever-cloud.com/update.json';
