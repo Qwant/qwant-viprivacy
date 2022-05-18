@@ -1,6 +1,7 @@
 import React from 'react';
 import { observer } from 'mobx-react';
 import { useMachine } from '@xstate/react';
+import { useBeforeUnload } from 'react-use';
 
 import { Header } from './components/Header';
 
@@ -28,6 +29,12 @@ export const OnboardingPage = observer(() => {
     const { settings, protectionLevel } = settingsStore;
     const key = settings?.names?.DISABLE_COLLECT_HITS;
     const disableCollectHit = key ? settings?.values[key] || false : false;
+
+    const warnOnPageClose = isLoading
+        || (state.value !== States.REQUEST_PERMISSIONS
+            && state.value !== States.THANK_YOU
+            && state.value !== States.PERMISSIONS_REJECTED);
+    useBeforeUnload(warnOnPageClose);
 
     React.useEffect(() => {
         (async () => {
