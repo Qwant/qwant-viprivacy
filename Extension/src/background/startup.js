@@ -26,6 +26,8 @@ import { MESSAGE_TYPES } from '../common/constants';
 import { getQwantSettings } from '../common/qwant-settings';
 import { browser } from './extension-api/browser';
 import { settingsProvider } from './settings/settings-provider';
+import { settings } from './settings/user-settings';
+import { apm } from './apm';
 
 /**
  * Extension initialize logic. Called from start.js
@@ -35,11 +37,20 @@ export const startup = async function () {
         const version = backgroundPage.app.getVersion();
         const id = backgroundPage.app.getId();
 
+        const enableAPM = settings.collectHitsCount();
+
         log.info(
-            'Starting extension. Version="{0}", Id="{1}"',
+            'Starting extension. Version="{0}", Id="{1}", APM="{2}"',
             version,
             id,
+            enableAPM,
         );
+
+        if (enableAPM) {
+            apm.init(true);
+        } else {
+            log.warn('APM disabled');
+        }
 
         if (!localStorage.hasItem('install-date')) {
             log.info('Extension first run');
