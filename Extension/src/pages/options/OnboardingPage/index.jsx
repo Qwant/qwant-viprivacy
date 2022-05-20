@@ -152,8 +152,14 @@ export const OnboardingPage = observer(() => {
     };
 
     const updateTelemetry = async (enabled) => {
+        const transaction = window?.apm?.startTransaction(`options-telemetry-toggle-${enabled ? 'enabled' : 'disabled'}`);
         await messenger.changeUserSetting('hits-count-disabled', !enabled);
         await settingsStore.requestOptionsData();
+
+        if (transaction) {
+            transaction.result = 'success';
+            transaction.end();
+        }
     };
 
     const onForward = async (e) => {
