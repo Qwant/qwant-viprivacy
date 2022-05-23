@@ -10,7 +10,7 @@ const common = {
     },
     'extension-specific-settings': {
         'use-optimized-filters': false,
-        'collect-hits-count': false,
+        'collect-hits-count': true,
         'show-context-menu': false,
         'show-info-about-adguard': false,
         'show-app-updated-info': false,
