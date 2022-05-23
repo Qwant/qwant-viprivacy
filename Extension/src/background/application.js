@@ -383,13 +383,10 @@ export const application = (() => {
     const areFilterSettingsApplied = ({ protectionLevel }) => {
         const qwantSettings = getQwantSettings({ protectionLevel });
         const filters = qwantSettings.filters['enabled-filters'].sort();
-        const groups = qwantSettings.filters['enabled-groups'].sort();
 
         const enabledFilters = getEnabledFilterIds();
-        // TODO check if we really need to compare groups
-        const enabledGroups = getEnabledGroupIds();
 
-        return isEqual(filters, enabledFilters) && isEqual(groups, enabledGroups);
+        return isEqual(filters, enabledFilters);
     };
 
     return {

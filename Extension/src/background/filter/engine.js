@@ -117,13 +117,15 @@ export const engine = (function () {
 
         const result = engine.matchRequest(request, frameRule);
 
-        log.debug(
-            'Result {0} found for url: {1}, document: {2}, requestType: {3}',
-            result.getBasicResult(),
-            requestUrl,
-            frameUrl,
-            requestType,
-        );
+        if (result?.getBasicResult()) {
+            log.debug(
+                'Result {0} found for url: {1}, document: {2}, requestType: {3}',
+                result.getBasicResult(),
+                requestUrl,
+                frameUrl,
+                requestType,
+            );
+        }
 
         return result;
     };
