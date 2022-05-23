@@ -50,8 +50,15 @@ const SettingsView = observer(({ store, settingsStore }) => {
     };
 
     const onUpdateTelemetry = async (value) => {
+        const transaction = window?.apm?.startTransaction(`popup-telemetry-toggle-${value ? 'disabled' : 'enabled'}`);
+
         await messenger.changeUserSetting('hits-count-disabled', value);
         await settingsStore.requestOptionsData();
+
+        if (transaction) {
+            transaction.result = 'success';
+            transaction.end();
+        }
     };
 
     const title = reactTranslator.getMessage('protection_level');

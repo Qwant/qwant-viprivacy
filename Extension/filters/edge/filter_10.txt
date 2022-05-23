@@ -1,8 +1,8 @@
-! Checksum: MHgN/YUYR3zZHNXZ2AgoBw
+! Checksum: UJqBCuD8fykfI5LXrIjaiQ
 ! Title: Filter unblocking search ads and self-promotion
 ! Description: Filter that unblocks search (Duckduckgo, Google, Bing, Yahoo) and self-promo ads. Self-promotion definition: when an ad on a website is promoting this very website or other websites/social media/etc closely related to it, such ad is considered a self-promoting one.
-! Version: 2.0.1.63
-! TimeUpdated: 2022-03-30T11:30:14+00:00
+! Version: 2.0.1.71
+! TimeUpdated: 2022-05-13T18:30:14+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -100,6 +100,7 @@ bing.com#@#li[class=""][data-bm][style*="margin-bottom"]
 !
 ! Bing
 !
+bing.com#@#.shop_page .br-poleoffcarousel
 bing.com#@#.adsMvC
 bing.com#@#a[href*="/aclick?ld="]:not(.vsp_ads)
 bing.com#@##b_content > div#pole > div[class="ra_car_block ra_pole"] > div.ra_car_container
@@ -109,8 +110,10 @@ bing.com#@#.sb_adTA
 bing.com#@#.b_adPATitleBlock
 bing.com#@#.b_adPATitleBlock + div
 bing.com#@##b_content > main > #b_results > li:not(.b_algo):not(.b_ans):not(.b_mop):not(.b_pag)
-bing.com#@?##b_results > li.b_algo:has(> .b_caption > p:matches-css-before(content: /^(Ad|Ann\.|Annonce|Anúncio|Anzeige|Reklama|Реклама|Reclamă|Publicidade)$/))
+bing.com#@?##b_results > li.b_algo:has(> .b_caption > p:matches-css-before(content: /^(Ad|Ann\.|Annonce|AnÃºncio|Anzeige|Reklama|Ð ÐµÐºÐ»Ð°Ð¼Ð°|ReclamÄƒ|Publicidade)$/))
 bing.com#@?##b_results > li:has(> h2 + .b_caption > div.b_attribution:not([u]) + p[class])
+bing.com#@?##b_results > .b_algo:has(> .b_caption > .b_attribution:matches-css-before(content: /url\(data:image/))
+bing.com#@#.b_spa_adblock
 @@||r.bat.bing.com/?ld=
 !
 ! Yahoo
@@ -193,7 +196,7 @@ yandex.md,yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yande
 !
 ! Yandex.Maps - search results
 yandex.md,yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua#@$#.search-direct-snippet-view { position: absolute!important; left: -3000px!important; }
-! Yandex.Недвижимость
+! Yandex.ÐÐµÐ´Ð²Ð¸Ð¶Ð¸Ð¼Ð¾ÑÑ‚ÑŒ
 !
 ! Yandex.Rabota
 ! Ads in the search results
@@ -243,6 +246,11 @@ amazon.*#@?##WrapperDivToHideBTF > div[cel_widget_id]:has(> div[data-a-remove-bo
 amazon.*#@#div[class*="btf_ad-placements-"]
 amazon.*#@#div[data-csm-widget-type="sponsored-products-mobile-grid-card"]
 amazon.*#@#div[data-cel-widget^="MAIN-SHOPPING_ADVISER-"]
+amazon.*#@#.s-search-results > div[data-asin] div[data-component-props*="Sponsored"]
+amazon.*#@?#.s-search-results > div[data-asin]:has(> div[class] > div[cel_widget_id] > div[data-component-props*="Sponsored"])
+!
+! https://github.com/AdguardTeam/AdguardFilters/issues/117527
+buscape.com.br#@#div[class^="Hits_SponsoredWrapper__"]
 !
 ! Mediafire premium upgrade
 mediafire.com#@##upsellBox
@@ -275,7 +283,7 @@ ebay.com,ebay.co.uk,ebay.com.au#@?#div[itemtype="https://schema.org/Product"] di
 ebay.com,ebay.co.uk,ebay.com.au#@?#div[itemtype="https://schema.org/Product"] div[id^="merch_html_"]:has(> div[id] h2.mfe-card-group-title:contains(sponsored))
 !
 ! yaani.com.tr
-yaani.com.tr#@#.shoppingWidget
+yaani.com.tr#@##content > div[advicetype="Shopping"] > .shoppingWidget
 ! fresheye.com search
 news.fresheye.com#@#.bk2.spsite
 ! Rakuten web search
@@ -304,10 +312,13 @@ org.rambler.ru#@#.ad-serp-item
 3g2upl4pq6kufc4m.onion,duckduckgo.com#@#.highlight_sponsored
 3g2upl4pq6kufc4m.onion,duckduckgo.com#@##ads
 3g2upl4pq6kufc4m.onion,duckduckgo.com#@#.js-results-ads
+3g2upl4pq6kufc4m.onion,duckduckgo.com#@#.results--ads
 ! Ecosia search
 ecosia.org#@#.results-ads
 ecosia.org#@#.card-ad
 ecosia.org#@#.js-ad
+! Presearch Search
+presearch.org#@#div[x-data*="keywordAdFirst"]
 ! Deutsche Internet Suchmaschine
 suchmaschine.com#@##ypa-top-wrap > iframe[src^="http://partnerads.ysm.yahoo.com/ypa/?"]
 ! Ecosia Search
@@ -315,6 +326,10 @@ suchmaschine.com#@##ypa-top-wrap > iframe[src^="http://partnerads.ysm.yahoo.com/
 ! Qwant search
 qwant.com#@?#.results-container > div.result:has(> div.url > span.info:contains(Annonce))
 lite.qwant.com#@?#.content > article.result:has(> p > span.ad)
+! Oscobo.com Search
+oscobo.com#@?##results-list > .result:has(> a > .cite > .ba)
+! Swisscows.com Search
+swisscows.com#@#.web-results > .a11t
 ! comss.ru
 comss.ru#@##main > .flat td[style*="180px"] > .block
 comss.ru#@##main > .flat td[style*="260px"] > .av:nth-child(2)
@@ -362,3 +377,17 @@ adda247.com#@#div[id^="google_ads_iframe_"]
 www.tf1.fr#@#div[class^="MaxBanner_container_"]
 !
 !#safari_cb_affinity
+
+qwant.com#@#div[data-testid^="snippet"]
+qwant.com#@#a[href^="https://qwa.qwant.com/ck.php"]
+qwant.com#@#.result--ext
+qwant.com#@#div[class^="HomeFlag-module__CommercialFlagContainer"]
+qwant.com#@#a[href^="https://www.bing.com/aclick?"]
+@@||qwant.com/impression/
+@@||qwant.com/action/
+@@||qwant.com/apm/
+@@||api.qwant.com
+@@||about.qwant.com/
+@@||qwant.com^$domain=about.qwant.com
+@@||qwant.ninja
+@@||qwant.plive

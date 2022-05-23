@@ -72,7 +72,7 @@ export const BUILD_PATH = path.resolve(__dirname, '../build');
 // filters constants
 export const METADATA_DOWNLOAD_URL_FORMAT = 'https://f.qwant.com/tracking-protection/%browser_filters.json';
 export const FILTERS_DEST = 'Extension/filters/%browser';
-export const ADGUARD_FILTERS_IDS = [3, 10, 15, 17, 118, 122, 207, 208, 4, 14, 201, 225, 239];
+export const ADGUARD_FILTERS_IDS = [2, 16, 113, 3, 10, 15, 17, 118, 122, 207, 208, 4, 14, 201, 225, 239];
 export const LOCAL_SCRIPT_RULES_COMMENT = `By the rules of AMO we cannot use remote scripts (and our JS rules can be counted as such). Because of that we use the following approach (that was accepted by AMO reviewers):
 
 1. We pre-build JS rules from AdGuard filters into the add-on (see the file called "local_script_rules.json").
@@ -80,6 +80,6 @@ export const LOCAL_SCRIPT_RULES_COMMENT = `By the rules of AMO we cannot use rem
 3. We also allow "User rules" to work since those rules are added manually by the user. This way filters maintainers can test new rules before including them in the filters.`;
 
 // artifacts constants
-export const FIREFOX_CREDENTIALS = path.resolve(__dirname, '../private/AdguardBrowserExtension/mozilla_credentials.json');
+export const FIREFOX_CREDENTIALS = path.resolve(__dirname, '../private/mozilla_credentials.json');
 export const FIREFOX_UPDATE_TEMPLATE = path.resolve(__dirname, './bundle/firefox/update_template.json');
 export const FIREFOX_WEBEXT_UPDATE_URL = 'https://firefox-beta.cellar-c2.services.clever-cloud.com/update-android.json';
