@@ -3,6 +3,10 @@
     margin: auto;
     margin-top: 24px;
     color: var(--grey-black);
+
+    @media (max-height: 800px) {
+        margin-top: 0;
+    }
 }
 
 .steps .title {
@@ -16,6 +20,10 @@
     line-height: 1.22;
     letter-spacing: 0.2px;
     margin-bottom: 16px;
+
+    @media (max-height: 800px) {
+        font-size: 28px;
+    }
 }
 
 .steps .title .description {
@@ -23,6 +31,10 @@
     line-height: 1.22;
     letter-spacing: -0.2px;
     color: #050506;
+
+    @media (max-height: 800px) {
+        font-size: 16px;
+    }
 }
 
 .content-image {
@@ -39,6 +51,10 @@
     letter-spacing: -0.2px;
     margin-bottom: 32px;
     margin-top: -24px;
+
+    @media (max-height: 800px) {
+        font-size: 16px;
+    }
 }
 
 .telemetry-wrapper {
@@ -60,4 +76,5 @@
 .thank_you_arrow {
     position: absolute;
     right: 96px;
+    z-index: 2;
 }

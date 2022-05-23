@@ -4,12 +4,15 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
+
+    @media (max-height: 800px) {
+        margin-top: 24px;
+    }
 }
 
 .stepper__right {
     justify-self: end;
 }
-
 
 .indicators {
     display: flex;
