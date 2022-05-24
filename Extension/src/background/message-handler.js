@@ -636,7 +636,7 @@ const createMessageHandler = () => {
                 uiService.openSettingsTab();
                 break;
             case MESSAGE_TYPES.OPEN_ASSISTANT:
-                uiService.openAssistant();
+                // uiService.openAssistant();
                 break;
             case MESSAGE_TYPES.GET_TAB_INFO_FOR_POPUP: {
                 const tab = await tabsApi.getActive(data.tabId);

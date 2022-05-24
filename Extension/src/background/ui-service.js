@@ -34,7 +34,7 @@ import { userrules } from './filter/userrules';
 import { browserUtils } from './utils/browser-utils';
 import { log } from '../common/log';
 import { runtimeImpl } from '../common/common-script';
-import { MESSAGE_TYPES } from '../common/constants';
+// import { MESSAGE_TYPES } from '../common/constants';
 import { translator } from '../common/translators/translator';
 
 /**
@@ -167,7 +167,6 @@ export const uiService = (function () {
                     }
                 }
             }
-            // console.log('setBrowserAction', { badge });
             await backgroundPage.browserAction.setBrowserAction(tab, icon, badge, badgeColor, browserActionTitle);
         } catch (ex) {
             log.error('Error while updating icon for tab {0}: {1}', tab.tabId, new Error(ex));
@@ -934,22 +933,22 @@ export const uiService = (function () {
         };
     })();
 
-    const initAssistant = async (selectElement) => {
-        const options = {
-            addRuleCallbackName: MESSAGE_TYPES.CONTENT_SCRIPT_ADD_USER_RULE,
-            selectElement,
-            token: getAssistantToken(),
-        };
+    // const initAssistant = async (selectElement) => {
+    //    const options = {
+    //        addRuleCallbackName: MESSAGE_TYPES.CONTENT_SCRIPT_ADD_USER_RULE,
+    //        selectElement,
+    //        token: getAssistantToken(),
+    //    };
 
-        // init assistant
-        const tab = await tabsApi.getActive();
-        if (tab) {
-            tabsApi.sendMessage(tab.tabId, {
-                type: 'initAssistant',
-                options,
-            });
-        }
-    };
+    //    // init assistant
+    //    const tab = await tabsApi.getActive();
+    //    if (tab) {
+    //        tabsApi.sendMessage(tab.tabId, {
+    //            type: 'initAssistant',
+    //            options,
+    //        });
+    //    }
+    // };
 
     /**
      * The `openAssistant` function uses the `tabs.executeScript` function to inject
@@ -959,14 +958,16 @@ export const uiService = (function () {
      *
      * @param {boolean} selectElement - if true select the element on which the Mousedown event was
      */
-    const openAssistant = async (selectElement) => {
-        // Load Assistant code to the active tab immediately
-        await tabsApi.executeScriptFile(null, { file: '/pages/assistant.js' });
-        await initAssistant(selectElement);
-    };
+    // const openAssistant = async (selectElement) => {
+    //    // Load Assistant code to the active tab immediately
+    //    await tabsApi.executeScriptFile(null, { file: '/pages/assistant.js' });
+    //    await initAssistant(selectElement);
+    // };
 
-    const shouldResetBadge = ({ url, originUrl }) => {
-        return utils.url.getDomainName(url) !== utils.url.getDomainName(originUrl);
+    const shouldResetBadge = ({ previousUrl, originUrl }) => {
+        if (!previousUrl || !originUrl) return false;
+
+        return utils.url.getDomainName(previousUrl) === utils.url.getDomainName(originUrl);
     };
 
     const init = async () => {
@@ -1011,7 +1012,7 @@ export const uiService = (function () {
 
             const activeTab = await tabsApi.getActive();
 
-            if (activeTab && shouldResetBadge({ url: activeTab.url, originUrl: details.originUrl })) {
+            if (activeTab && shouldResetBadge({ previousUrl: activeTab?.metadata?.previousUrl, originUrl: details.originUrl })) {
                 frames.resetBlockedAdsCount(tab);
                 return;
             }
@@ -1118,7 +1119,7 @@ export const uiService = (function () {
 
         changeApplicationFilteringDisabled,
         checkFiltersUpdates,
-        openAssistant,
+        // openAssistant,
         openTab,
 
         showAlertMessagePopup,
