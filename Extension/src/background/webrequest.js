@@ -171,6 +171,7 @@ const webrequestInit = function () {
             requestType,
             requestRule,
             originUrl,
+            requestDetails,
         );
 
         if (requestRule) {

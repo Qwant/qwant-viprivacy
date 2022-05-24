@@ -198,6 +198,26 @@ export const pageStats = (function () {
     //    return result;
     // };
 
+    const pruneBlockedDomainsStats = (stats) => {
+        const MAX_DOMAINS_COUNT = 30;
+        const domainsCount = Object.keys(stats.total.domains).length;
+
+        if (domainsCount < MAX_DOMAINS_COUNT) return stats;
+
+        const domains = {};
+
+        Object.keys(stats.total.domains)
+            .map((domain) => (
+                { domain, count: stats.total.domains[domain] }
+            ))
+            .sort((a, b) => b.count - a.count).slice(0, MAX_DOMAINS_COUNT)
+            .forEach(({ domain, count }) => {
+                domains[domain] = count;
+            });
+
+        return { ...stats, total: { domains } };
+    };
+
     const initBlockedDomainsStruct = (now, domain) => {
         return {
             // day: {
@@ -233,8 +253,8 @@ export const pageStats = (function () {
     };
 
     /**
-   * Blocked types to filters relation dictionary
-   */
+    * Blocked types to filters relation dictionary
+    */
     const createStatsData = function (now, type, blocked, details) {
         const result = Object.create(null);
 
@@ -314,12 +334,10 @@ export const pageStats = (function () {
             );
         }
 
-        return result;
+        return pruneBlockedDomainsStats(result);
     };
 
     const updateStatsData = function (now, type, blocked, current, details) {
-        // const currentDate = new Date(current.updated);
-
         const result = current;
         result.updated = now.getTime();
 
