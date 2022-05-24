@@ -18,6 +18,10 @@ export const TelemetrySection = ({
                 reactTranslator.getMessage('popup_settings_telemetry_learn_more_link'),
             ),
         });
+
+        setTimeout(() => {
+            window.close();
+        }, 1);
     };
 
     return (
