@@ -16,11 +16,14 @@ const LIST_SIZE = 8;
 
 const TabStatsView = observer(({ store }) => {
     const totalBlockedDomains = Object.keys(store.blockedDomainsTab).length;
-    const { currentSite } = store || {};
+    const { currentSite, totalBlockedTab = 0 } = store || {};
 
     const list = Object.keys(store.blockedDomainsTab).map((domain) => (
         { domain, count: store.blockedDomainsTab[domain] }
     )).sort((a, b) => b.count - a.count).slice(0, LIST_SIZE);
+
+    const domainCount = list.reduce((prev, current) => prev + current.count, 0);
+    const count = totalBlockedTab >= domainCount ? totalBlockedTab : domainCount;
 
     const title = reactTranslator.getMessage('popup_stats_blocked_elements');
     const subtitle = isWebURL(currentSite) ? currentSite : null;
@@ -36,7 +39,7 @@ const TabStatsView = observer(({ store }) => {
                     />
                     <Tile
                         icon={<Shield />}
-                        value={formatCounter(store.totalBlockedTab)}
+                        value={formatCounter(count)}
                         label={reactTranslator.getMessage('popup_stats_trackers')}
                     />
                 </div>

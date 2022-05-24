@@ -167,7 +167,6 @@ export const uiService = (function () {
                     }
                 }
             }
-            // console.log('setBrowserAction', { badge });
             await backgroundPage.browserAction.setBrowserAction(tab, icon, badge, badgeColor, browserActionTitle);
         } catch (ex) {
             log.error('Error while updating icon for tab {0}: {1}', tab.tabId, new Error(ex));
@@ -965,8 +964,18 @@ export const uiService = (function () {
         await initAssistant(selectElement);
     };
 
-    const shouldResetBadge = ({ url, originUrl }) => {
-        return utils.url.getDomainName(url) !== utils.url.getDomainName(originUrl);
+    const shouldResetBadge = ({
+        activeTab, previousUrl, originUrl, requestDetails,
+    }) => {
+        if (!previousUrl || !originUrl) {
+            return false;
+        }
+
+        const isFromPreviousURL = utils.url.getDomainName(activeTab.metadata.previousUrl) === utils.url.getDomainName(requestDetails.originUrl);
+
+        const isFromSameOrigin = utils.url.getDomainName(requestDetails.originUrl) === utils.url.getDomainName(activeTab.url);
+
+        return isFromPreviousURL && !isFromSameOrigin;
     };
 
     const init = async () => {
@@ -1011,7 +1020,12 @@ export const uiService = (function () {
 
             const activeTab = await tabsApi.getActive();
 
-            if (activeTab && shouldResetBadge({ url: activeTab.url, originUrl: details.originUrl })) {
+            if (activeTab && shouldResetBadge({
+                previousUrl: activeTab?.metadata?.previousUrl,
+                originUrl: details.originUrl,
+                requestDetails: details.requestDetails,
+                activeTab,
+            })) {
                 frames.resetBlockedAdsCount(tab);
                 return;
             }

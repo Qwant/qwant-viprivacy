@@ -577,7 +577,14 @@ export const webRequestService = (function () {
      * @param requestRule   rule
      * @return {object} Request rule if suitable by its own type and request type or null
      */
-    const postProcessRequest = function (tab, requestUrl, referrerUrl, requestType, requestRule, originUrl) {
+    const postProcessRequest = function (
+        tab,
+        requestUrl,
+        referrerUrl,
+        requestType,
+        requestRule,
+        originUrl, requestDetails,
+    ) {
         if (requestRule && !requestRule.isAllowlist()) {
             const isRequestBlockingRule = isRequestBlockedByRule(requestRule);
             const isReplaceRule = requestRule.isOptionEnabled(TSUrlFilter.NetworkRuleOption.Replace);
@@ -615,6 +622,7 @@ export const webRequestService = (function () {
                     filterId: requestRule.getFilterListId(),
                     filter,
                     originUrl,
+                    requestDetails,
                 };
 
                 listeners.notifyListenersAsync(listeners.ADS_BLOCKED, requestRule, tab, 1, details);
