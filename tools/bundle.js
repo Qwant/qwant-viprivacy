@@ -15,10 +15,10 @@ const bundleChrome = (watch) => {
     return bundleRunner(webpackConfig, watch);
 };
 
-const bundleFirefoxAmo = (watch) => {
-    const webpackConfig = getWebpackConfig(BROWSERS.FIREFOX_AMO);
-    return bundleRunner(webpackConfig, watch);
-};
+// const bundleFirefoxAmo = (watch) => {
+//    const webpackConfig = getWebpackConfig(BROWSERS.FIREFOX_AMO);
+//    return bundleRunner(webpackConfig, watch);
+// };
 
 const bundleFirefoxStandalone = () => {
     const webpackConfig = getWebpackConfig(BROWSERS.FIREFOX_STANDALONE);
@@ -52,7 +52,7 @@ const devPlan = [
     genValidators,
     copyExternals,
     // bundleChrome,
-    bundleFirefoxAmo,
+    // bundleFirefoxAmo,
     bundleFirefoxStandalone,
     // bundleEdge,
     // bundleOpera,
@@ -76,7 +76,7 @@ const releasePlan = [
     genValidators,
     copyExternals,
     // bundleChrome,
-    bundleFirefoxAmo,
+    // bundleFirefoxAmo,
     // bundleEdge,
     // bundleOpera,
     buildInfo,
@@ -134,14 +134,14 @@ const chrome = async (watch) => {
     }
 };
 
-const firefox = async (watch) => {
-    try {
-        await bundleFirefoxAmo(watch);
-    } catch (e) {
-        console.error(e);
-        process.exit(1);
-    }
-};
+// const firefox = async (watch) => {
+//    try {
+//        await bundleFirefoxAmo(watch);
+//    } catch (e) {
+//        console.error(e);
+//        process.exit(1);
+//    }
+// };
 
 program
     .option('--watch', 'Builds in watch mode', false);
@@ -153,12 +153,12 @@ program
         chrome(program.watch);
     });
 
-program
-    .command('firefox')
-    .description('Builds extension for firefox browser')
-    .action(() => {
-        firefox(program.watch);
-    });
+// program
+//    .command('firefox')
+//    .description('Builds extension for firefox browser')
+//    .action(() => {
+//        firefox(program.watch);
+//    });
 
 // program
 //     .command('adguard-api')
