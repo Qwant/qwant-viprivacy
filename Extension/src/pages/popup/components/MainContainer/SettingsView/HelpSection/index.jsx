@@ -24,6 +24,7 @@ const HelpLink = ({
 }) => {
     const openTab = () => {
         browser.tabs.create({ url: reactTranslator.getMessage(url), active: true });
+        setTimeout(() => { window.close(); }, 1);
     };
 
     return (

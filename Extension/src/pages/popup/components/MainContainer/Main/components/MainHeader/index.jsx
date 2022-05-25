@@ -26,6 +26,7 @@ const QwantLogo = () => (
 export const MainHeader = () => {
     const openTab = (url) => {
         browser.tabs.create({ active: true, url });
+        setTimeout(() => { window.close(); }, 1);
     };
 
     const onClose = () => {
