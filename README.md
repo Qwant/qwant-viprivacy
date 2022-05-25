@@ -3,9 +3,8 @@
 <p align="center">
   <img src="https://user-images.githubusercontent.com/1442690/168590504-defc3ec9-0b78-4d85-b87f-bb76724ca665.png" width="300px" alt="Qwant VIPrivacy Browser Extension" />
 </p>
-<h3 align="center">Ad blocker with advanced privacy protection features</h3>
 <p align="center">
-  Qwant VIPrivacy is a fast and lightweight ad blocking browser extension<br/>that effectively blocks all types of ads and trackers.
+  Qwant VIPrivacy sets qwant.com as your default search engine, blocks most trackers and refuses cookies for you to protect your personal data all along your browsing.
 </p>
 
 <p align="center">
@@ -167,7 +166,7 @@ Thank you to Adguard for providing a fantastic foundation for this project.
 
 ## Privacy
 
-Qwant VIPrivacy uses APM ([Application Performance Monitoring](https://www.elastic.co/guide/en/apm/guide/current/apm-overview.html))to report bugs, catch errors and perform basic stats. Qwant VIPrivacy does not collect any PII (Personally Identifiable Information).
+Qwant VIPrivacy uses [Application Performance Monitoring](https://www.elastic.co/guide/en/apm/guide/current/apm-overview.html) to report bugs, catch errors and perform basic stats. Qwant VIPrivacy does not collect any Personally Identifiable Informationz.
 
 **TL;DR** This is the dashboard we use to observe general, anonymize, trends and help keep an eye on the health of the extension.
 
@@ -180,6 +179,7 @@ Qwant VIPrivacy uses APM ([Application Performance Monitoring](https://www.elast
 APM is optional and can be fully turned off during the onboarding or at any time. Enabling APM allows Qwant to resolve technical issues and bugs faster and provide a better user experience.
 
 The basic information that goes through APM:
+
 - Browser Type (Firefox, Chrome, Edge, etc...)
 - Extension version (v1, v2, etc...)
 - Basic stats (Do people prefer the "standard" or "strict" level of protection, etc..)
