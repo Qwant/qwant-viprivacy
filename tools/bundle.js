@@ -76,6 +76,8 @@ const releasePlan = [
     genValidators,
     copyExternals,
     // bundleChrome,
+    bundleFirefoxStandalone,
+    bundleFirefoxXpi,
     // bundleFirefoxAmo,
     // bundleEdge,
     // bundleOpera,

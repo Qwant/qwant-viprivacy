@@ -16,9 +16,9 @@ import { version } from '../../package.json';
 // We sign only beta build, because we do not publish it the AMO store
 export const xpi = async (browser) => {
     const buildEnv = process.env.BUILD_ENV;
-    if (buildEnv !== ENVS.BETA) {
-        throw new Error('Xpi is build only for beta');
-    }
+    // if (buildEnv !== ENVS.BETA ) {
+    //    throw new Error('Xpi is build only for beta');
+    // }
 
     const envConf = getEnvConf(buildEnv);
     const browserConf = getBrowserConf(browser);
