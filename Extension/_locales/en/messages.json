@@ -3,10 +3,10 @@
     "message": "Qwant VIPrivacy"
   },
   "short_name": {
-    "message": "Qwant VIPrivacy"
+    "message": "Qwant VIP"
   },
   "description": {
-    "message": "Qwant VIPrivacy sets qwant.com as your default search engine, blocks most trackers and refuses cookies for you to protect your personal data all along your browsing."
+    "message": "Qwant VIPrivacy sets qwant.com as your default search engine, blocks trackers for you to protect your personal data while you browse"
   },
   "your_browser": {
     "message": "your browser"

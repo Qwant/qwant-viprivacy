@@ -16,11 +16,9 @@ export const edgeManifest = {
         'webRequestBlocking',
         'unlimitedStorage',
         'storage',
-        'cookies',
     ],
     'optional_permissions': [
         '<all_urls>',
-        'tabs',
         'webNavigation',
     ],
 };

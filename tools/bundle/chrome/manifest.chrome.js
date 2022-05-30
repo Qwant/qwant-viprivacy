@@ -16,11 +16,9 @@ export const chromeManifest = {
         'webRequestBlocking',
         'unlimitedStorage',
         'storage',
-        'cookies',
     ],
     'optional_permissions': [
         '<all_urls>',
-        'tabs',
         'webNavigation',
     ],
 };

@@ -28,11 +28,9 @@ export const firefoxManifest = {
         'storage',
     ],
     'optional_permissions': [
-        'tabs',
         '<all_urls>',
         'webRequest',
         'webRequestBlocking',
         'webNavigation',
-        'cookies',
     ],
 };

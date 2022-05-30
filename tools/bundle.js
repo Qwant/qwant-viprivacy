@@ -75,11 +75,11 @@ const betaPlan = [
 const releasePlan = [
     genValidators,
     copyExternals,
-    bundleChrome,
-    bundleFirefoxAmo,
+    // bundleChrome,
+    // bundleFirefoxAmo,
     bundleEdge,
     // bundleOpera,
-    buildInfo,
+    // buildInfo,
 ];
 
 const runBuild = async (tasks) => {
