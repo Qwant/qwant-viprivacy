@@ -62,9 +62,9 @@ export const BROWSERS_CONF = {
 };
 
 export const FIREFOX_APP_IDS_MAP = {
-    [ENVS.DEV]: 'qwantprivacypilot-dev@qwant.com',
-    [ENVS.BETA]: 'qwantprivacypilot-internal-beta-01@qwant.com',
-    [ENVS.RELEASE]: 'qwantprivacypilot-prod@qwant.com',
+    [ENVS.DEV]: 'qwant-vip-dev@qwant.com',
+    [ENVS.BETA]: 'qwant-vip-beta@qwant.com',
+    [ENVS.RELEASE]: 'qwant-vip@qwant.com',
 };
 
 export const BUILD_PATH = path.resolve(__dirname, '../build');
