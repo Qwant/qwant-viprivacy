@@ -1,7 +1,7 @@
 &nbsp;
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/1442690/168590504-defc3ec9-0b78-4d85-b87f-bb76724ca665.png" width="300px" alt="Qwant VIPrivacy Browser Extension" />
+  <img src="https://user-images.githubusercontent.com/1442690/171180389-ad92ff55-0da7-4929-98b0-eff7a67e1765.png" width="300px" alt="Qwant VIPrivacy Browser Extension" />
 </p>
 <h3 align="center">Qwant VIPrivacy: protected browsing, enhanced privacy</h3>
 <p align="center">
