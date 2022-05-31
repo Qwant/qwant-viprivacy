@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { reactTranslator } from '../../common/translators/reactTranslator';
 
 import { AdBlocked } from './components/AdBlocked';
-import { SafeBrowsing } from './components/SafeBrowsing';
+// import { SafeBrowsing } from './components/SafeBrowsing';
 
 export const adBlocked = {
     init: () => {
@@ -16,13 +16,13 @@ export const adBlocked = {
     },
 };
 
-export const safeBrowsing = {
-    init: () => {
-        document.title = reactTranslator.getMessage('blocking_pages_page_title');
+// export const safeBrowsing = {
+//    init: () => {
+//        document.title = reactTranslator.getMessage('blocking_pages_page_title');
 
-        ReactDOM.render(
-            <SafeBrowsing />,
-            document.getElementById('root'),
-        );
-    },
-};
+//        ReactDOM.render(
+//            <SafeBrowsing />,
+//            document.getElementById('root'),
+//        );
+//    },
+// };

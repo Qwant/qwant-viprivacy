@@ -15,8 +15,6 @@
  * along with Adguard Browser Extension. If not, see <http://www.gnu.org/licenses/>.
  */
 
-import Nanobar from 'nanobar';
-
 import { contentPage } from '../content-script/content-script';
 import { MESSAGE_TYPES } from '../common/constants';
 
@@ -24,14 +22,7 @@ import '../common/i18n'; // !!! DO NOT REMOVE, THIS MODULE HANDLES TRANSLATIONS
 
 export const init = () => {
     document.addEventListener('DOMContentLoaded', () => {
-        const nanobar = new Nanobar({
-            classname: 'adg-progress-bar',
-        });
-
-        nanobar.go(15);
-
         function onLoaded() {
-            nanobar.go(100);
             setTimeout(() => {
                 if (window) {
                     contentPage.sendMessage({ type: MESSAGE_TYPES.OPEN_THANKYOU_PAGE });

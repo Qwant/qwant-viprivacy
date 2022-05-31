@@ -1,18 +1,26 @@
 export const edgeManifest = {
+    'chrome_settings_overrides': {
+        'search_provider': {
+            'name': 'Qwant',
+            'keyword': 'www.qwant.com',
+            'search_url': 'https://www.qwant.com/?q={searchTerms}&client=ext-edge-sb',
+            'favicon_url': 'https://www.qwant.com/favicon.ico',
+            'suggest_url': 'https://api.qwant.com/api/suggest/?q={searchTerms}&client=opensearch',
+            'encoding': 'UTF-8',
+            'is_default': true,
+        },
+    },
     'options_page': 'pages/options.html',
-    'devtools_page': 'pages/devtools.html',
     'permissions': [
-        'tabs',
-        '<all_urls>',
         'webRequest',
         'webRequestBlocking',
-        'webNavigation',
-        'storage',
         'unlimitedStorage',
-        'contextMenus',
+        'storage',
         'cookies',
     ],
     'optional_permissions': [
-        'privacy',
+        '<all_urls>',
+        'tabs',
+        'webNavigation',
     ],
 };

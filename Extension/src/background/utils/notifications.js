@@ -15,7 +15,7 @@
  * along with Adguard Browser Extension. If not, see <http://www.gnu.org/licenses/>.
  */
 
-import browser from 'webextension-polyfill';
+// import browser from 'webextension-polyfill';
 import { backgroundPage } from '../extension-api/background-page';
 import { tabsApi } from '../tabs/tabs-api';
 import { uiService } from '../ui-service';
@@ -164,9 +164,7 @@ export const notifications = (function () {
      * @property {string} badgeText;
      * @property {string} type;
      */
-    const notifications = {
-        birthday13: birthday13Notification,
-    };
+    const notifications = {};
 
     /**
      * Gets the last time a notification was shown.
@@ -181,58 +179,58 @@ export const notifications = (function () {
         return lastTime;
     };
 
-    const normalizeLanguage = (locale) => {
-        if (!locale) {
-            return null;
-        }
+    // const normalizeLanguage = (locale) => {
+    //     if (!locale) {
+    //         return null;
+    //     }
 
-        return locale.toLowerCase().replace('-', '_');
-    };
+    //     return locale.toLowerCase().replace('-', '_');
+    // };
 
     /**
      * Scans notification locales and returns the one matching navigator.language
      * @param {*} notification notification object
      * @returns {string} matching text or null
      */
-    const getNotificationText = function (notification) {
-        const language = normalizeLanguage(browser.i18n.getUILanguage());
+    // const getNotificationText = function (notification) {
+    //     const language = normalizeLanguage(browser.i18n.getUILanguage());
 
-        if (!language) {
-            return null;
-        }
+    //     if (!language) {
+    //         return null;
+    //     }
 
-        const languageCode = language.split('_')[0];
-        if (!languageCode) {
-            return null;
-        }
+    //     const languageCode = language.split('_')[0];
+    //     if (!languageCode) {
+    //         return null;
+    //     }
 
-        return notification.locales[language] || notification.locales[languageCode];
-    };
+    //     return notification.locales[language] || notification.locales[languageCode];
+    // };
 
     /**
      * Scans notifications list and prepares them to be used (or removes expired)
      */
-    const initNotifications = function () {
-        const notificationsKeys = Object.keys(notifications);
+    // const initNotifications = function () {
+    //     const notificationsKeys = Object.keys(notifications);
 
-        for (let i = 0; i < notificationsKeys.length; i += 1) {
-            const notificationKey = notificationsKeys[i];
-            const notification = notifications[notificationKey];
+    //     for (let i = 0; i < notificationsKeys.length; i += 1) {
+    //         const notificationKey = notificationsKeys[i];
+    //         const notification = notifications[notificationKey];
 
-            notification.text = getNotificationText(notification);
+    //         notification.text = getNotificationText(notification);
 
-            const to = new Date(notification.to).getTime();
-            const expired = new Date().getTime() > to;
+    //         const to = new Date(notification.to).getTime();
+    //         const expired = new Date().getTime() > to;
 
-            if (!notification.text || expired) {
-                // Remove expired and invalid
-                delete notifications[notificationKey];
-            }
-        }
-    };
+    //         if (!notification.text || expired) {
+    //             // Remove expired and invalid
+    //             delete notifications[notificationKey];
+    //         }
+    //     }
+    // };
 
     // Prepare the notifications
-    initNotifications();
+    // initNotifications();
 
     let currentNotification;
     let notificationCheckTime;

@@ -17,8 +17,8 @@
 
 import { localStorage } from '../../../storage';
 import { settings } from '../../../settings/user-settings';
-import { application } from '../../../application';
-import { backend } from '../../filters/service-client';
+// import { application } from '../../../application';
+// import { backend } from '../../filters/service-client';
 import { log } from '../../../../common/log';
 import { utils } from '../../../utils/common';
 import { lazyGet, lazyGetClear } from '../../../utils/lazy';
@@ -29,7 +29,7 @@ import { lazyGet, lazyGetClear } from '../../../utils/lazy';
  * More info about ad filters stats: http://adguard.com/en/filter-rules-statistics.html
  */
 const browsersHitStats = (function () {
-    const MAX_PAGE_VIEWS_COUNT = 20;
+    // const MAX_PAGE_VIEWS_COUNT = 20;
     const HITS_COUNT_PROP = 'filters-hit-count';
     const HITS_PROP = 'h';
 
@@ -73,12 +73,12 @@ const browsersHitStats = (function () {
      * Sends hit stats to backend server
      */
     function sendStats() {
-        const overallViews = hitStatsHolder.hitStats.views || 0;
-        if (overallViews < MAX_PAGE_VIEWS_COUNT) {
-            return;
-        }
-        const enabledFilters = application.getEnabledFilters();
-        backend.sendHitStats(JSON.stringify(hitStatsHolder.hitStats), enabledFilters);
+        // const overallViews = hitStatsHolder.hitStats.views || 0;
+        // if (overallViews < MAX_PAGE_VIEWS_COUNT) {
+        //    return;
+        // }
+        // const enabledFilters = application.getEnabledFilters();
+        // backend.sendHitStats(JSON.stringify(hitStatsHolder.hitStats), enabledFilters);
         cleanup();
     }
 
@@ -105,7 +105,7 @@ const browsersHitStats = (function () {
      * Add 1 domain view to stats
      * @param domain
      */
-    const addDomainView = function (domain) {
+    const addDomainView_ = function (domain) {
         if (!domain) {
             return;
         }
@@ -128,6 +128,8 @@ const browsersHitStats = (function () {
         saveHitsCountStats(hitStatsHolder.hitStats);
     };
 
+    const addRuleHit = () => { };
+    const addDomainView = () => { };
     /**
      * Add 1 rule hit to stats
      * @param domain Domain of site where rule was applied
@@ -135,7 +137,7 @@ const browsersHitStats = (function () {
      * @param filterId
      * @param requestUrl Url to which rule was applied
      */
-    const addRuleHit = function (domain, ruleText, filterId, requestUrl) {
+    const addRuleHit_ = function (domain, ruleText, filterId, requestUrl) {
         if (!domain || !ruleText || !filterId) {
             return;
         }
@@ -199,7 +201,9 @@ const browsersHitStats = (function () {
 
     return {
         addRuleHit,
+        addRuleHit_,
         addDomainView,
+        addDomainView_,
         cleanup,
         getStats,
     };

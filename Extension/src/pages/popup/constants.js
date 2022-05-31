@@ -1,8 +1,3 @@
-export const VIEW_STATES = {
-    ACTIONS: 'actions',
-    STATS: 'stats',
-};
-
 export const POPUP_STATES = {
     APPLICATION_ENABLED: 'application.enabled',
     APPLICATION_FILTERING_DISABLED: 'application.filtering.disabled',

@@ -1,4 +1,4 @@
-! Checksum: rqdLg5VTpR2cnmVKGg+oPw
+! Checksum: X3kQnBQtlwl2eoGqtk1RuQ
 ! Title: AdGuard Safari filter
 ! Description: Special filter for Safari 9+ on iOS and Mac OS. We need a separate filter for Safari browser because it does not fully support our rules syntax. Already included in AdGuard Base filter.
 ! Version: 2.0.1.88
@@ -180,7 +180,7 @@ motorradonline.de#@#.mps-banner
 @@||it-times.de^$generichide
 ! http://freetvall.com/video/9kb116rwshsb/motors-tv http://www.estadiofutebol.com/gratis/motorstv
 @@||ib.adnxs.com/tt^$domain=televisaofutebol.com
-televisaofutebol.com#@#iframe[Width="300"][height="250"]
+televisaofutebol.com#@#iframe[width="300"][height="250"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/4906
 @@||mobilesringtones.com^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/4899
@@ -522,6 +522,7 @@ ad4msan.com#@##multi_ad
 ||vip.sc386.com^$third-party
 ! https://github.com/AdguardTeam/ExperimentalFilter/issues/1542
 ||adfox.ru^$third-party
+||i-vengo.com^$redirect=nooptext
 ||partner.mediametrics.ru^$third-party
 ! https://github.com/AdguardTeam/ExperimentalFilter/issues/1286
 http://*.*.space/v/$third-party
@@ -724,7 +725,7 @@ apfelpage.de##.a4promo_ad
 zhidao.baidu.com##div[class^="mm-content-box kmb5707e0 wm-"]
 ||entry.baidu.com/rp/home?
 ! http://forum.adguard.com/showthread.php?10163
-opensubtitles.org##iframe[Width="160"][height="700"]
+opensubtitles.org##iframe[width="160"][height="700"]
 ||ads*.opensubtitles.org^
 ! Ads in Moscow subway
 vmet.ro,wi-fi.ru###fullscreenBanner

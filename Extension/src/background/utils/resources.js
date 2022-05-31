@@ -52,7 +52,7 @@ export const resources = (function () {
             secrets.splice(pos, 1);
         };
 
-        browser.webRequest.onBeforeRequest.addListener(
+        browser.webRequest?.onBeforeRequest?.addListener(
             guard,
             {
                 urls: [`${root}${WEB_ACCESSIBLE_RESOURCES}/*`],

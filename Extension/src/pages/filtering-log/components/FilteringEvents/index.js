@@ -1,1 +1,0 @@
-export { FilteringEvents } from './FilteringEvents';

@@ -1,0 +1,27 @@
+.telemetry-section {
+    display: flex;
+    margin-top: 12px;
+    margin-bottom: -16px;
+}
+
+.telemetry-section label {
+    font-size: 12px;
+    margin-left: 4px;
+    line-height: 1.33;
+    color: var(--grey-darker);
+}
+
+.telemetry-section a {
+    margin-left: 4px;
+    text-decoration: none;
+    color: var(--grey-darker);
+}
+
+.telemetry-section a:visited {
+    text-decoration: none;
+    color: var(--grey-darker);
+}
+
+.telemetry-section a:hover {
+    text-decoration: underline;
+}

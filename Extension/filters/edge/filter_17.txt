@@ -1,4 +1,4 @@
-! Checksum: zSs1KfeGErISQEkmJsqxJg
+! Checksum: 9ImwGwOLy4fY9reNiuO43A
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
 ! Version: 2.0.2.34
@@ -136,6 +136,7 @@ $removeparam=fbclid
 ! In some cases, it's allowed to add content type and `$domain` modifiers.
 !
 ! Good: ||example.org^$removeparam=cx
+! Bad: ||example.org^$xmlhttprequest,redirect=noopvast-3.0 (for instance, should be in specific.txt)
 !
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/114505
@@ -749,6 +750,8 @@ $removeparam=dclid
 !
 ! TEMPORARY
 ! https://github.com/AdguardTeam/tsurlfilter/issues/24
+!+ PLATFORM(ext_chromium, ext_ff, ext_opera)
+@@||userscript.zone^$removeparam=utm_campaign
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/110571
 @@||data.amazon.*/api/marketplaces/*/cart/carts/retail/items$removeparam=ref

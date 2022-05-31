@@ -22,6 +22,8 @@ class Messenger {
         if (response) {
             log.debug('Response type:', type);
             log.debug('Response data:', response);
+        } else {
+            log.debug('Response: none');
         }
 
         return response;
@@ -304,6 +306,25 @@ class Messenger {
 
     async convertRuleText(content) {
         return this.sendMessage(MESSAGE_TYPES.CONVERT_RULES_TEXT, { content });
+    }
+
+    async changeProtectionLevel(protectionLevel) {
+        return this.sendMessage(MESSAGE_TYPES.CHANGE_PROTECTION_LEVEL, { protectionLevel });
+    }
+
+    async savePermissionsRejected() {
+        return this.sendMessage(MESSAGE_TYPES.PERMISSIONS_REJECTED, {});
+    }
+
+    async checkSettingsApplied(protectionLevel) {
+        return this.sendMessage(MESSAGE_TYPES.CHECK_SETTINGS_APPLIED, { protectionLevel });
+    }
+
+    async applyQwantSettings(protectionLevel) {
+        const value = await this.checkSettingsApplied(protectionLevel);
+        if (!value) {
+            this.changeProtectionLevel(protectionLevel);
+        }
     }
 }
 

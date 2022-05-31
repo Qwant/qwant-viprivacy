@@ -42,7 +42,7 @@ export const subscriptions = (() => {
      * @type {string}
      */
     const METADATA_STORAGE_KEY = 'filters-metadata';
-    const I18N_METADATA_STORAGE_KEY = 'filters-i18n-metadata';
+    // const I18N_METADATA_STORAGE_KEY = 'filters-i18n-metadata';
 
     /**
      * Updates filters version and state info.
@@ -219,18 +219,18 @@ export const subscriptions = (() => {
      * @param i18nMetadata
      * @private
      */
-    const applyFilterTagLocalization = (tag, i18nMetadata) => {
-        const { tagId } = tag;
-        const localizations = i18nMetadata[tagId];
-        if (localizations) {
-            const locale = utils.i18n.normalize(localizations, backgroundPage.app.getLocale());
-            const localization = localizations[locale];
-            if (localization) {
-                tag.name = localization.name;
-                tag.description = localization.description;
-            }
-        }
-    };
+    // const applyFilterTagLocalization = (tag, i18nMetadata) => {
+    //     const { tagId } = tag;
+    //     const localizations = i18nMetadata[tagId];
+    //     if (localizations) {
+    //         const locale = utils.i18n.normalize(localizations, backgroundPage.app.getLocale());
+    //         const localization = localizations[locale];
+    //         if (localization) {
+    //             tag.name = localization.name;
+    //             tag.description = localization.description;
+    //         }
+    //     }
+    // };
 
     /**
      * Localize filter
@@ -238,97 +238,97 @@ export const subscriptions = (() => {
      * @param i18nMetadata
      * @private
      */
-    const applyFilterLocalization = (filter, i18nMetadata) => {
-        const { filterId } = filter;
-        const localizations = i18nMetadata[filterId];
-        if (localizations) {
-            const locale = utils.i18n.normalize(localizations, backgroundPage.app.getLocale());
-            const localization = localizations[locale];
-            if (localization) {
-                filter.name = localization.name;
-                filter.description = localization.description;
-            }
-        }
-    };
+    // const applyFilterLocalization = (filter, i18nMetadata) => {
+    //     const { filterId } = filter;
+    //     const localizations = i18nMetadata[filterId];
+    //     if (localizations) {
+    //         const locale = utils.i18n.normalize(localizations, backgroundPage.app.getLocale());
+    //         const localization = localizations[locale];
+    //         if (localization) {
+    //             filter.name = localization.name;
+    //             filter.description = localization.description;
+    //         }
+    //     }
+    // };
 
     /**
      * Localize group
      * @param group
      * @param i18nMetadata
      * @private
-     */
-    const applyGroupLocalization = (group, i18nMetadata) => {
-        const { groupId } = group;
-        const localizations = i18nMetadata[groupId];
-        if (localizations) {
-            const locale = utils.i18n.normalize(localizations, backgroundPage.app.getLocale());
-            const localization = localizations[locale];
-            if (localization) {
-                group.groupName = localization.name;
-            }
-        }
-    };
+    //  */
+    // const applyGroupLocalization = (group, i18nMetadata) => {
+    //     const { groupId } = group;
+    //     const localizations = i18nMetadata[groupId];
+    //     if (localizations) {
+    //         const locale = utils.i18n.normalize(localizations, backgroundPage.app.getLocale());
+    //         const localization = localizations[locale];
+    //         if (localization) {
+    //             group.groupName = localization.name;
+    //         }
+    //     }
+    // };
 
     /**
      * Refreshes subscription's objects with i18n metadata
      * @param i18nMetadata
      */
-    const saveI18nMetadata = (i18nMetadata) => {
-        const tagsI18n = i18nMetadata.tags;
-        const filtersI18n = i18nMetadata.filters;
-        const groupsI18n = i18nMetadata.groups;
+    // const saveI18nMetadata = (i18nMetadata) => {
+    //     const tagsI18n = i18nMetadata.tags;
+    //     const filtersI18n = i18nMetadata.filters;
+    //     const groupsI18n = i18nMetadata.groups;
 
-        const { tags, groups, filters } = metadataCache.getData();
+    //     const { tags, groups, filters } = metadataCache.getData();
 
-        for (let i = 0; i < tags.length; i += 1) {
-            applyFilterTagLocalization(tags[i], tagsI18n);
-        }
+    //     for (let i = 0; i < tags.length; i += 1) {
+    //         applyFilterTagLocalization(tags[i], tagsI18n);
+    //     }
 
-        for (let j = 0; j < filters.length; j += 1) {
-            applyFilterLocalization(filters[j], filtersI18n);
-        }
+    //     for (let j = 0; j < filters.length; j += 1) {
+    //         applyFilterLocalization(filters[j], filtersI18n);
+    //     }
 
-        for (let k = 0; k < groups.length; k += 1) {
-            applyGroupLocalization(groups[k], groupsI18n);
-        }
+    //     for (let k = 0; k < groups.length; k += 1) {
+    //         applyGroupLocalization(groups[k], groupsI18n);
+    //     }
 
-        metadataCache.setData({ tags, groups, filters });
-    };
+    //     metadataCache.setData({ tags, groups, filters });
+    // };
 
     /**
      * Loads groups and filters localizations
      * @return {Promise} returns promise
      */
-    const loadMetadataI18n = async () => {
-        log.info('Loading filters i18n metadata..');
+    // const loadMetadataI18n = async () => {
+    //     log.info('Loading filters i18n metadata..');
 
-        let metadata;
+    //     let metadata;
 
-        // Load from storage first
-        const data = localStorage.getItem(I18N_METADATA_STORAGE_KEY);
-        if (data) {
-            metadata = JSON.parse(data);
-        } else {
-            metadata = await backend.getLocalFiltersI18Metadata();
-        }
+    //     // Load from storage first
+    //     const data = localStorage.getItem(I18N_METADATA_STORAGE_KEY);
+    //     if (data) {
+    //         metadata = JSON.parse(data);
+    //     } else {
+    //         metadata = await backend.getLocalFiltersI18Metadata();
+    //     }
 
-        saveI18nMetadata(metadata);
+    //     saveI18nMetadata(metadata);
 
-        log.info('Filters i18n metadata loaded');
-    };
+    //     log.info('Filters i18n metadata loaded');
+    // };
 
     /**
      * Reloads i18n metadata localizations from backend
      * @returns {Promise} returns promise
      */
-    const reloadI18nMetadataFromBackend = async () => {
-        const metadata = await backend.downloadI18nMetadataFromBackend();
-        localStorage.setItem(I18N_METADATA_STORAGE_KEY, JSON.stringify(metadata));
+    // const reloadI18nMetadataFromBackend = async () => {
+    //     const metadata = await backend.downloadI18nMetadataFromBackend();
+    //     localStorage.setItem(I18N_METADATA_STORAGE_KEY, JSON.stringify(metadata));
 
-        saveI18nMetadata(metadata);
+    //     saveI18nMetadata(metadata);
 
-        log.info('Filters i18n metadata reloaded from backend');
-    };
+    //     log.info('Filters i18n metadata reloaded from backend');
+    // };
 
     /**
      * Loads script rules from local file
@@ -361,7 +361,7 @@ export const subscriptions = (() => {
     const init = async function () {
         try {
             await loadMetadata();
-            await loadMetadataI18n();
+            // await loadMetadataI18n();
             await loadLocalScriptRules();
             await loadRedirectSources();
         } catch (e) {
@@ -467,7 +467,7 @@ export const subscriptions = (() => {
     return {
         init,
         reloadMetadataFromBackend,
-        reloadI18nMetadataFromBackend,
+        // reloadI18nMetadataFromBackend,
         loadFiltersVersionAndStateInfo,
         loadGroupsStateInfo,
 
