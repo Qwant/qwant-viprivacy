@@ -77,7 +77,7 @@ const releasePlan = [
     copyExternals,
     // bundleChrome,
     // bundleFirefoxAmo,
-    bundleEdge,
+    // bundleEdge,
     // bundleOpera,
     // buildInfo,
 ];
