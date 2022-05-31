@@ -7,14 +7,19 @@ import { tabsApi } from '../../src/background/tabs/tabs-api';
 import { filtersUpdate } from '../../src/background/filter/filters/filters-update';
 import { userrules } from '../../src/background/filter/userrules';
 
-start();
-webrequest.init();
-requestSanitizer.init();
-localeDetect.init();
-messageHandler.init();
+export const startTrackingBlocker = async () => {
+    await start();
+    webrequest.init();
+    requestSanitizer.init();
 
-window.adguard = {
-    tabs: tabsApi,
-    filtersUpdate,
-    userrules,
+    localeDetect.init();
+    messageHandler.init();
+
+    window.adguard = {
+        tabs: tabsApi,
+        filtersUpdate,
+        userrules,
+    };
 };
+
+startTrackingBlocker();

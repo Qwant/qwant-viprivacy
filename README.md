@@ -1,141 +1,106 @@
 &nbsp;
-<p align="center">
-  <img src="https://cdn.adguard.com/public/Adguard/Common/adguard_extension.svg" width="300px" alt="AdGuard Browser Extension" />
-</p>
-<h3 align="center">Ad blocker with advanced privacy protection features</h3>
-<p align="center">
-  AdGuard is a fast and lightweight ad blocking browser extension<br/>that effectively blocks all types of ads and trackers.
-</p>
-
 
 <p align="center">
-    <a href="https://adguard.com/">AdGuard.com</a> |
-    <a href="https://reddit.com/r/Adguard">Reddit</a> |
-    <a href="https://twitter.com/AdGuard">Twitter</a> |
-    <a href="https://t.me/adguard_en">Telegram</a>
-    <br /><br />
-    </a>
-    <a href="https://github.com/AdguardTeam/AdguardBrowserExtension/releases">
-        <img src="https://img.shields.io/github/release/AdguardTeam/AdguardBrowserExtension/all.svg" alt="Latest release" />
-    </a>
+  <img src="https://user-images.githubusercontent.com/1442690/171180389-ad92ff55-0da7-4929-98b0-eff7a67e1765.png" width="300px" alt="Qwant VIPrivacy Browser Extension" />
+</p>
+<h3 align="center">Qwant VIPrivacy: protected browsing, enhanced privacy</h3>
+<p align="center">
+  On a web where we are permanently tracked, our solution is Qwant VIPrivacy
+  <br/>
+  3 features that protect you during your browsing, in 1 single product
 </p>
 
-<br />
-
 <p align="center">
-    <img src="https://cdn.adguard.com/public/Adguard/Common/adguard_extension_4_settings.png" width="800" />
+    <a href="https://qwant.com/">Qwant.com</a> |
+    <a href="https://twitter.com/Qwant_FR">Twitter</a> |
+    <a href="https://t.me/ClubQwant">Telegram</a>
 </p>
 
 <hr />
+<br />
 
-AdGuard is a fast and lightweight ad blocking browser extension that effectively blocks all types of ads and trackers on all web pages. We focus on advanced privacy protection features to not just block known trackers, but prevent web sites from building your shadow profile. Unlike its standalone counterparts (AG for Windows, Mac), the browser extension is completely free and open source. You can learn more about [the difference](https://adguard.com/compare.html) here.
+- [Installation](#installation)
+  - [Chrome and Chromium-based browsers](#installation-chrome)
+  - [Firefox](#installation-firefox)
+  - [Microsoft Edge](#installation-edge)
+- [Reporting issues](#contribution-reporting)
+- [Development](#dev)
+  - [Requirements](#dev-requirements)
+  - [How to build](#dev-build)
+  - [Linter](#dev-linter)
+  - [Localizations](#dev-localizations)
+- [Minimum supported browser versions](#minimum-supported-browser-versions)
+- [Fork](#fork)
+- [Privacy](#privacy)
+- [License](#license)
 
-> AdGuard does not collect any information about you, and does not participate in any acceptable ads program. The only source of income we have is selling premium versions of our software, and we intend to keep it that way.
-
-* [Installation](#installation)
-  * [Chrome and Chromium-based browsers](#installation-chrome)
-  * [Firefox](#installation-firefox)
-  * [Opera](#installation-opera)
-  * [Microsoft Edge](#installation-edge)
-* [Contribution](#contribution)
-  * [Translating AdGuard](#contribution-translating)
-  * [Testing AdGuard](#contribution-testing)
-  * [Reporting issues](#contribution-reporting)
-  * [Other options](#contribution-other)
-* [Development](#dev)
-  * [Requirements](#dev-requirements)
-  * [How to build](#dev-build)
-  * [Linter](#dev-linter)
-  * [Update localizations](#dev-localizations)
-* [Minimum supported browser versions](#minimum-supported-browser-versions)
+<br />
+<hr />
 
 <a id="installation"></a>
+
 ## Installation
 
 <a id="installation-chrome"></a>
+
 ### Chrome and Chromium-based browsers
-You can get the latest available AdGuard Extension version from the [Chrome Web Store](https://agrd.io/extension_chrome).
+
+You can get the latest available Qwant VIPrivacy Extension version from the [Chrome Web Store](https://chrome.google.com/webstore/detail/qwant/hnlkiofnhhoahaiimdicppgemmmomijo).
 
 <a id="installation-firefox"></a>
-### Firefox
-You can get the latest version of AdGuard Extension from the [Mozilla Add-ons website](https://agrd.io/extension_firefox).
 
-<a id="installation-opera"></a>
-### Opera
-Opera is basically a Chromium browser, but it maintains its own add-ons store. You can get AdGuard Extension [from there](https://agrd.io/extension_opera).
+### Firefox
+
+You can get the latest version of Qwant VIPrivacy Extension from the [Mozilla Add-ons website](https://addons.mozilla.org/fr/firefox/addon/qwantcom-for-firefox/).
 
 <a id="installation-edge"></a>
+
 ### Microsoft Edge
-The latest stable version of AdGuard browser extension is available in [Microsoft Store](https://agrd.io/extension_edge).
 
-<a id="contribution"></a>
-## Contribution
-
-We are blessed to have a community that does not only love AdGuard, but also gives back. A lot of people volunteer in various ways to make other users' experience with AdGuard better, and you can join them!
-
-We, on our part, can only be happy to reward the most active members of the community. So, what can you do?
-
-<a id="contribution-translating"></a>
-### Translating AdGuard
-
-If you want to help with AdGuard translations, please learn more about translating our products here: https://kb.adguard.com/en/general/adguard-translations
-
-<a id="contribution-testing"></a>
-### Testing AdGuard
-
-You can get a beta version of AdGuard Browser Extension for any browser. All necessary information on this topic can be found on a [dedicated page on our website](https://adguard.com/beta.html).
+The latest stable version of Qwant VIPrivacy browser extension is available in [Microsoft Store](https://microsoftedge.microsoft.com/addons/detail/qwant/eljplgljphmgjhnalbganhenlcapgnne).
 
 <a id="contribution-reporting"></a>
-### Reporting issues
 
-GitHub can be used to report a bug or to submit a feature request. To do so, go to [this page](https://github.com/AdguardTeam/AdguardBrowserExtension/issues) and click the *New issue* button.
+## Reporting issues
 
->**Note:** for the filter-related issues (missed ads, false positives etc.) use the [dedicated repository](https://github.com/AdguardTeam/AdguardFilters).
+GitHub can be used to report a bug or to submit a feature request. To do so, go to [this page](https://github.com/Qwant/qwant-viprivacy/issues) and click the _New issue_ button.
 
-<a id="contribution-other"></a>
-### Other options
-
-Here is a [dedicated page](https://adguard.com/contribute.html) for those who are willing to contribute.
-
-<a id="dev"></a>
-## Development
-
-> Since version 4.0, Adguard browser extension uses opensource [tsurlfilter](https://github.com/AdguardTeam/tsurlfilter) library for implementing content blocking rules.
+> **Note:** For filter-related issues (missed ads, false positives, broken pages etc.) open an issue in the [dedicated repository](https://github.com/AdguardTeam/AdguardFilters).
 
 <a id="dev-requirements"></a>
+
+## Development
+
 ### Requirements
 
-- [node.js LTS](https://nodejs.org/en/download/)
-- NPM v8
-- [yarn v1.22](https://yarnpkg.com/en/docs/install/)
+- [Node.js LTS](https://nodejs.org/en/download/)
+- [Yarn v1.22](https://yarnpkg.com/en/docs/install/)
 
 Install local dependencies by running:
+
 ```
-  yarn install
+yarn install
 ```
 
 <a id="dev-build"></a>
-### How to build
 
-**How to run tests**
-```
-  yarn test
-```
+### How to build
 
 **Building the dev version**
 
 Run the following command:
+
 ```
-  yarn dev
+yarn dev
 ```
 
 This will create a build directory with unpacked extensions for all browsers:
+
 ```
-  build/dev/chrome
   build/dev/edge
+  build/dev/chrome
   build/dev/firefox-amo
   build/dev/firefox-standalone
-  build/dev/opera
 ```
 
 **Building the beta and release versions**
@@ -143,66 +108,87 @@ This will create a build directory with unpacked extensions for all browsers:
 Before building the release version, you should manually download necessary resources: filters and public suffix list.
 
 ```
-  yarn resources
+yarn resources
 ```
 
-```
-  CREDENTIALS_PASSWORD=<password> yarn beta
-  CREDENTIALS_PASSWORD=<password> yarn release
-```
-You will need to put certificate.pem and mozilla_credentials.json files to the `./private` directory. This build will create unpacked extensions and then pack them (crx for Chrome, xpi for Firefox).
+You will need to put `mozilla_credentials.json` file in the `./private` directory. This build will create unpacked extensions and then pack them (xpi for Firefox).
 
-**Building the sample extension with API**
-
-Run the following command:
-```
-yarn adguard-api
-```
-This will create a build directory with unpacked sample extension for chromium browsers:
+**How to run tests**
 
 ```
-build/dev/adguard-api
+yarn test
 ```
 
 <a id="dev-linter"></a>
+
 ### Linter
-Despite our code may not currently comply with new style configuration,
-please, setup `eslint` in your editor to follow up with it `.eslintrc`
+
+Setup `eslint` in your editor to follow up with `.eslintrc`. Linting runs on every commit.
+
+Or you can validate linting rules manually:
+
+```
+yarn lint
+```
 
 <a id="dev-localizations"></a>
-### Update localizations
 
-To download and append localizations run:
-```
-  yarn locales:download
-```
-
-To upload new phrases to crowdin you need the file with phrases `./Extension/_locales/en/messages.json`. Then run:
-```
-  yarn locales:upload
-```
-
-To remove old messages from locale messages run:
-```
-  yarn locales:renew
-```
+### Localizations
 
 To validate translations run:
+
 ```
-  yarn locales:validate
+yarn locales:validate
 ```
 
 To show locales info run:
+
 ```
-  yarn locales:info
+yarn locales:info
 ```
 
 <a id="minimum-supported-browser-versions"></a>
 
 ## Minimum supported browser versions
-| Browser                 	| Version 	 |
-|-------------------------	|:---------:|
-| Chromium Based Browsers 	|  79   	   |
-| Firefox                 	|  78   	   |
-| Opera                   	|  66   	   |
-| Edge                    	|  79   	   |
+
+| Browser                 | Version |
+| ----------------------- | :-----: |
+| Chromium Based Browsers |   79    |
+| Firefox                 |   78    |
+| Edge                    |   79    |
+
+<a id="fork"></a>
+
+## History of the codebase
+
+Qwant VIPrivacy is based on the excellent [Adguard Browser Extension](https://github.com/AdguardTeam/AdguardBrowserExtension). We chose to fork Adguard because it provides a solid basis for blocking trackers. We felt that it is a good starting point. It allows us to focus on providing a clean user-interface and curated defaults.
+
+Thank you to Adguard for providing a fantastic foundation for this project.
+
+<a id="privacy"></a>
+
+## Privacy
+
+Qwant VIPrivacy uses APM ([Application Performance Monitoring](https://www.elastic.co/guide/en/apm/guide/current/apm-overview.html)) to report bugs, catch errors and perform basic stats. Qwant VIPrivacy does not collect any PII (Personally Identifiable Information).
+
+**TL;DR** This is the dashboard we use to observe general, ananymous, trends and help keep an eye on the health of the extension.
+
+<details><summary>Screenshot</summary>
+
+![image](https://user-images.githubusercontent.com/1442690/168628853-57494bad-d90d-4969-af4d-468108eca1bb.png)
+
+</details>
+
+APM is optional and can be fully turned off during the onboarding or at any time. Enabling APM allows Qwant to resolve technical issues and bugs faster and provide a better user experience.
+
+The basic information that goes through APM:
+- Browser Type (Firefox, Chrome, Edge, etc...)
+- Extension version (v1, v2, etc...)
+- Basic stats (Do people prefer the "standard" or "strict" level of protection, etc..)
+- Technical error reports (Did we make a mistake and how can we fix it)
+
+<a id="license"></a>
+
+## License
+
+GNU General Public License v3.0

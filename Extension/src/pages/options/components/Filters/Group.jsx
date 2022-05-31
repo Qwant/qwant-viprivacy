@@ -10,8 +10,8 @@ import './group.pcss';
 const renderEnabledFilters = (enabledFilters) => {
     const enabledFiltersNames = enabledFilters.map((filter) => filter.name);
     const SLICE_POINT = 3;
-    const displayable = enabledFiltersNames.slice(0, SLICE_POINT);
-    const countable = enabledFiltersNames.slice(SLICE_POINT);
+    const displayable = enabledFiltersNames?.slice(0, SLICE_POINT);
+    const countable = enabledFiltersNames?.slice(SLICE_POINT);
 
     if (countable.length > 0) {
         return (
@@ -82,6 +82,8 @@ const Group = ({
                     />
                     <div className="setting__info">
                         <div className="setting__title group__title">
+                            {groupId}
+                            -
                             {groupName}
                         </div>
                         <div className="setting__desc">

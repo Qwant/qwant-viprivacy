@@ -242,7 +242,7 @@ export const filtersUpdate = (() => {
         log.info('Downloading metadata from backend..');
 
         await subscriptions.reloadMetadataFromBackend();
-        await subscriptions.reloadI18nMetadataFromBackend();
+        // await subscriptions.reloadI18nMetadataFromBackend();
 
         log.info('Metadata updated from backend');
     };

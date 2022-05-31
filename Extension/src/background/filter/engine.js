@@ -117,13 +117,15 @@ export const engine = (function () {
 
         const result = engine.matchRequest(request, frameRule);
 
-        log.debug(
-            'Result {0} found for url: {1}, document: {2}, requestType: {3}',
-            result.getBasicResult(),
-            requestUrl,
-            frameUrl,
-            requestType,
-        );
+        if (result?.getBasicResult()) {
+            log.debug(
+                'Result {0} found for url: {1}, document: {2}, requestType: {3}',
+                result.getBasicResult(),
+                requestUrl,
+                frameUrl,
+                requestType,
+            );
+        }
 
         return result;
     };
@@ -137,6 +139,12 @@ export const engine = (function () {
     const matchFrame = (frameUrl) => {
         if (!isReady()) {
             log.warn('Filtering engine is not ready');
+            return null;
+        }
+
+        // circumvent a bug in engine lib
+        if (!frameUrl) {
+            log.warn('matchFrame: frameUrl not defined');
             return null;
         }
 

@@ -62,23 +62,6 @@ export const browserUtils = (function () {
     };
 
     const browserUtils = {
-        getClientId() {
-            let clientId = localStorage.getItem('client-id');
-            if (!clientId) {
-                const result = [];
-                const suffix = (Date.now()) % 1e8;
-                const symbols = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234567890';
-                for (let i = 0; i < 8; i += 1) {
-                    const symbol = symbols[Math.floor(Math.random() * symbols.length)];
-                    result.push(symbol);
-                }
-                clientId = result.join('') + suffix;
-                localStorage.setItem('client-id', clientId);
-            }
-
-            return clientId;
-        },
-
         /**
          * Checks if version matches simple (without labels) semantic versioning scheme
          * https://semver.org/
@@ -170,6 +153,14 @@ export const browserUtils = (function () {
 
         isMacOs() {
             return navigator.platform.toUpperCase().indexOf('MAC') >= 0;
+        },
+
+        getBrowser() {
+            return prefs.browser;
+        },
+
+        getPlatform() {
+            return prefs.platform;
         },
 
         /**
@@ -290,13 +281,11 @@ export const browserUtils = (function () {
          * Returns extension params: clientId, version and locale
          */
         getExtensionParams() {
-            const clientId = encodeURIComponent(this.getClientId());
             const locale = encodeURIComponent(backgroundPage.app.getLocale());
             const version = encodeURIComponent(backgroundPage.app.getVersion());
             const id = encodeURIComponent(backgroundPage.app.getId());
             const params = [];
             params.push(`v=${version}`);
-            params.push(`cid=${clientId}`);
             params.push(`lang=${locale}`);
             params.push(`id=${id}`);
             return params;

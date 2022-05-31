@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable no-nested-ternary */
 
 import { MESSAGE_TYPES } from '../common/constants';

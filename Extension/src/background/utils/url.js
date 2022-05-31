@@ -102,6 +102,16 @@ export const url = (function () {
             return this.getCroppedDomainName(host);
         },
 
+        getDomainFromURL(url) {
+            if (!url) return null;
+            const parsed = new URL(url);
+            const urlParts = parsed.hostname.replace('www.', '').split('.');
+            return urlParts
+                .slice(0)
+                .slice(-(urlParts.length === 4 ? 3 : 2))
+                .join('.');
+        },
+
         getCroppedDomainName(host) {
             return strings.startWith(host, 'www.') ? host.substring(4) : host;
         },

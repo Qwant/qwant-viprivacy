@@ -1,0 +1,7 @@
+:root {
+    --qwant-extension-installed: 1;
+}
+
+.home__snippet__extension {
+    display: none !important;
+}

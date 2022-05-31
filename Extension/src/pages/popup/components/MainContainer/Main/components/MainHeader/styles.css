@@ -1,0 +1,20 @@
+.main__header {
+    height: 36px;
+    background-color: var(--blue);
+
+    padding: 18px 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main__header>.settings {
+    user-select: none;
+    cursor: pointer;
+}
+
+.main__header>.logo {
+    cursor: pointer;
+    margin-top: 4px;
+}

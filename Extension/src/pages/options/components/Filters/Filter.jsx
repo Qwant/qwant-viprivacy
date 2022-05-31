@@ -134,6 +134,8 @@ const Filter = observer(({ filter }) => {
                         <div className="setting__inner">
                             <div className="filter__title">
                                 <span className="filter__title-in">
+                                    {filterId}
+                                    {' - '}
                                     <HighlightSearch string={name} />
                                 </span>
                                 <span className="filter__controls">

@@ -10,10 +10,6 @@ import { cliLog } from '../cli-log';
 import {
     METADATA_DOWNLOAD_URL_FORMAT,
     FILTERS_DEST,
-    METADATA_I18N_DOWNLOAD_URL_FORMAT,
-    FILTER_DOWNLOAD_URL_FORMAT,
-    OPTIMIZED_FILTER_DOWNLOAD_URL_FORMAT,
-    ADGUARD_FILTERS_IDS,
 } from '../constants';
 
 const CHECKSUM_PATTERN = /^\s*!\s*checksum[\s-:]+([\w\+/=]+).*[\r\n]+/i;
@@ -33,26 +29,6 @@ const getUrlsOfFiltersResources = (browser) => {
         url: METADATA_DOWNLOAD_URL_FORMAT.replace('%browser', browser),
         file: 'filters.json',
     });
-
-    meta.push({
-        url: METADATA_I18N_DOWNLOAD_URL_FORMAT.replace('%browser', browser),
-        file: 'filters_i18n.json',
-    });
-
-    // eslint-disable-next-line no-restricted-syntax
-    for (const filterId of ADGUARD_FILTERS_IDS) {
-        filters.push({
-            url: FILTER_DOWNLOAD_URL_FORMAT.replace('%browser', browser).replace('%filter', filterId),
-            file: `filter_${filterId}.txt`,
-            validate: true,
-        });
-
-        filtersMobile.push({
-            url: OPTIMIZED_FILTER_DOWNLOAD_URL_FORMAT.replace('%browser', browser).replace('%s', filterId),
-            file: `filter_mobile_${filterId}.txt`,
-            validate: true,
-        });
-    }
 
     return [
         ...meta,
@@ -135,5 +111,4 @@ export const downloadFilters = async () => {
     await startDownload('chromium');
     await startDownload('edge');
     await startDownload('firefox');
-    await startDownload('opera');
 };

@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Create a bug report to help us improve AdGuard Browser Extension
+about: Create a bug report to help us improve Qwant VIPrivacy Browser Extension
 ---
 
 <!--  As an open-source project with a dedicated but small maintainer team, it can sometimes take a long time for issues to be addressed so please be patient and we will get back to you as soon as we can.
@@ -18,16 +18,14 @@ Please answer the following questions for yourself before submitting an issue. *
 
 <!--- Please include all relevant details about the environment you experienced the bug in -->
 
-- **AdGuard version:**
-  - <!-- (e.g. AdGuard v3.2.1) -->
+- **Qwant VIPrivacy version:**
+  - <!-- (e.g. v3.2.1) -->
 - **Browser and version:**
   - <!-- (e.g. Chrome 75) -->
 - **Operating system and version:**
   - <!-- (e.g. Windows 10) -->
-- **Filters you use in AdGuard:**
-  - <!-- (e.g. Base filter, Social filter, etc) -->
-- **Stealth Mode settings:**
-  - <!-- (if it's enabled) -->
+- **Protection mode you use in Qwant VIPrivacy:**
+  - <!-- (e.g. Standard, Strict, Disabled) -->
 - **Other browser extensions:**
   - <!-- (list other extensions you have installed) -->
 

@@ -16,12 +16,32 @@
  */
 
 import { log } from '../common/log';
+import { browser } from './extension-api/browser';
 import { startup } from './startup';
+import { hasAllOptionalPermissions } from './utils/optional-permissions';
 
 /**
  * Extension startup entry point
  */
-export const start = () => {
-    log.info('Initializing adguard');
-    startup();
+export const start = async () => {
+    try {
+        log.info('Initializing');
+        const isPermissionsGranted = await hasAllOptionalPermissions();
+        if (isPermissionsGranted) {
+            log.info('Extensions has required permissions');
+            await startup();
+            return true;
+        }
+        log.info('Extensions missing required permissions');
+        const arePermissionsRejected = localStorage?.getItem('permissions-rejected');
+        if (arePermissionsRejected) {
+            log.info('Permissions were previously rejected. Option page wont open. date={0}', arePermissionsRejected);
+        } else {
+            browser.runtime.openOptionsPage();
+        }
+        return false;
+    } catch (e) {
+        log.error(e);
+        return false;
+    }
 };

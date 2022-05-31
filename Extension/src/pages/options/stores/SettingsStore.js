@@ -105,6 +105,11 @@ class SettingsStore {
     @action
     async requestOptionsData(firstRender) {
         const data = await messenger.getOptionsData();
+        if (!data) {
+            log.error('requestOptionsData: messenger.getOptionsData empty response. firstRender={0}', firstRender);
+            return;
+        }
+
         runInAction(() => {
             this.settings = data.settings;
             // on first render we sort filters to show enabled on the top
@@ -216,7 +221,7 @@ class SettingsStore {
     setSetting(filtersId, settingKey, filters) {
         const relatedFilter = filters
             .find((f) => f.filterId === filtersId);
-        this[settingKey] = !!(relatedFilter.enabled);
+        this[settingKey] = !!relatedFilter?.enabled || false;
     }
 
     @action
@@ -272,12 +277,12 @@ class SettingsStore {
                 && this.isAllowAcceptableAdsFilterEnabled()) {
                 this.allowAcceptableAds = enabled;
             } else if (groupId === ANTIBANNER_GROUPS_ID.PRIVACY_FILTERS_GROUP_ID) {
-                if (this.isBlockKnownTrackersFilterEnabled()) {
-                    this.blockKnownTrackers = enabled;
-                }
-                if (this.isStripTrackingParametersFilterEnabled()) {
-                    this.stripTrackingParameters = enabled;
-                }
+                // if (this.isBlockKnownTrackersFilterEnabled()) {
+                //     this.blockKnownTrackers = enabled;
+                // }
+                // if (this.isStripTrackingParametersFilterEnabled()) {
+                //     this.stripTrackingParameters = enabled;
+                // }
             }
             this.categories.forEach((group) => {
                 if (group.groupId === groupId) {
@@ -536,6 +541,7 @@ class SettingsStore {
                 }
 
                 if (filter.tagsDetails) {
+                    // eslint-disable-next-line max-len
                     const tagKeywordIsMatching = filter.tagsDetails.some((tag) => `#${tag.keyword}`.match(searchQuery));
                     if (tagKeywordIsMatching) {
                         return true;
@@ -628,6 +634,21 @@ class SettingsStore {
     @action
     setAllowlistSizeReset(value) {
         this.allowlistSizeReset = value;
+    }
+
+    @computed
+    get protectionLevel() {
+        return this?.settings?.values?.['protection-level'];
+    }
+
+    @computed
+    get arePermissionsRejected() {
+        return !!this?.settings?.values?.['permissions-rejected'];
+    }
+
+    @action
+    async setProtectionLevel(value) {
+        this.updateSetting('protection-level', value);
     }
 }
 

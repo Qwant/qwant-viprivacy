@@ -1,0 +1,28 @@
+.protection_status__section {
+    margin-bottom: 12px;
+}
+
+.protection_status__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.protection_status__bottom>.right-side {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.25;
+    text-align: right;
+    display: flex;
+    align-items: center;
+}
+
+.protection_status__bottom>.right-side>.total_blocked_count {
+    padding-right: 2px;
+}
+
+.protection_status_count_domain {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}

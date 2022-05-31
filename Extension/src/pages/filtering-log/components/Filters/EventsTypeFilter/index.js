@@ -1,1 +1,0 @@
-export { EventsTypeFilter } from './EventsTypeFilter';

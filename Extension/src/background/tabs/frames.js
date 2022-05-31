@@ -249,8 +249,12 @@ export const frames = (function () {
 
         const adguardProductName = '';
 
+        const totalRequests = pageStats.getTotalRequests() || 0;
         const totalBlocked = pageStats.getTotalBlocked() || 0;
         const totalBlockedTab = tabsApi.getTabMetadata(tabId, 'blocked') || 0;
+        const blockedDomainsTab = tabsApi.getTabMetadata(tabId, 'blocked-domains-tab') || {};
+        const blockedDomains = pageStats.getBlockedDomains() || {};
+        const annoyanceCountTotal = pageStats.getAnnoyanceCountTotal() || 0;
         const applicationFilteringDisabled = settings.isFilteringDisabled();
 
         if (applicationAvailable) {
@@ -258,7 +262,7 @@ export const frames = (function () {
             if (documentAllowlisted) {
                 const rule = getFrameRule(tab);
                 userAllowlisted = utils.filters.isAllowlistFilterRule(rule)
-                        || utils.filters.isUserFilterRule(rule);
+                    || utils.filters.isUserFilterRule(rule);
                 frameRule = {
                     filterId: rule.getFilterListId(),
                     ruleText: rule.getText(),
@@ -282,7 +286,11 @@ export const frames = (function () {
             frameRule,
             adguardProductName,
             totalBlockedTab,
+            blockedDomainsTab,
             totalBlocked,
+            totalRequests,
+            blockedDomains,
+            annoyanceCountTotal,
         };
     };
 
@@ -302,10 +310,35 @@ export const frames = (function () {
         return blocked;
     };
 
+    const updateTotalRequestCount = () => {
+        pageStats.updateTotalRequests(1);
+    };
+
+    const updateBlockedDomains = ({ tab, details }) => {
+        const domains = tabsApi.getTabMetadata(tab.tabId, 'blocked-domains-tab') || {};
+
+        // is group Annoyances or tag purpose:annoyances or tag purpose:cookies
+        const { requestUrl } = details;
+
+        const domain = pageStats.getDomainFromURL(requestUrl);
+
+        if (!domain) { return domains; }
+
+        if (domains[domain]) {
+            domains[domain] += 1;
+        } else {
+            domains[domain] = 1;
+        }
+        tabsApi.updateTabMetadata(tab.tabId, { 'blocked-domains-tab': domains });
+        pageStats.updateBlockedDomains(domain);
+
+        return domains;
+    };
+
     /**
-     * Reset count of blocked requests for tab or overall stats
-     * @param tab - Tab (optional)
-     */
+ * Reset count of blocked requests for tab or overall stats
+ * @param tab - Tab (optional)
+ */
     const resetBlockedAdsCount = function (tab) {
         if (tab) {
             tabsApi.updateTabMetadata(tab.tabId, { blocked: 0 });
@@ -315,18 +348,18 @@ export const frames = (function () {
     };
 
     /**
-     * Is tab in incognito mode?
-     * @param tab Tab
-     */
+ * Is tab in incognito mode?
+ * @param tab Tab
+ */
     const isIncognitoTab = function (tab) {
         return tabsApi.isIncognito(tab.tabId);
     };
 
     /**
-     * Checks if we should process request further
-     * @param {object} tab
-     * @returns {boolean}
-     */
+ * Checks if we should process request further
+ * @param {object} tab
+ * @returns {boolean}
+ */
     const shouldStopRequestProcess = tab => isTabProtectionDisabled(tab) || isTabAllowlisted(tab);
 
     // Records frames on application initialization
@@ -353,9 +386,11 @@ export const frames = (function () {
         recordFrameReferrerHeader,
         getFrameInfo,
         updateBlockedAdsCount,
+        updateBlockedDomains,
         resetBlockedAdsCount,
         isIncognitoTab,
         shouldStopRequestProcess,
         checkAndRecordMainFrame,
+        updateTotalRequestCount,
     };
 })();

@@ -73,6 +73,10 @@ export const settings = (() => {
         /* UI misc */
         HIDE_RATE_BLOCK: 'hide-rate-block',
         USER_RULES_EDITOR_WRAP: 'user-rules-editor-wrap',
+
+        /* Protection level */
+        PROTECTION_LEVEL: 'protection-level',
+        PERMISSIONS_REJECTED: 'permissions-rejected',
     };
 
     const properties = Object.create(null);
@@ -87,14 +91,14 @@ export const settings = (() => {
                 // Initialize default properties
                 const defaults = Object.fromEntries(Object.keys(settings).map(name => ([name, false])));
 
-                defaults[settings.DISABLE_SHOW_ADGUARD_PROMO_INFO] = (!browserUtils.isWindowsOs() && !browserUtils.isMacOs()) || browserUtils.isEdgeBrowser();
+                defaults[settings.DISABLE_SHOW_ADGUARD_PROMO_INFO] = true;
                 defaults[settings.DISABLE_SAFEBROWSING] = true;
-                defaults[settings.DISABLE_COLLECT_HITS] = true;
+                defaults[settings.DISABLE_COLLECT_HITS] = false;
                 defaults[settings.DEFAULT_ALLOWLIST_MODE] = true;
                 defaults[settings.ALLOWLIST_ENABLED] = true;
                 defaults[settings.USE_OPTIMIZED_FILTERS] = prefs.mobile;
                 defaults[settings.DISABLE_DETECT_FILTERS] = false;
-                defaults[settings.DISABLE_SHOW_APP_UPDATED_NOTIFICATION] = false;
+                defaults[settings.DISABLE_SHOW_APP_UPDATED_NOTIFICATION] = true;
                 defaults[settings.FILTERS_UPDATE_PERIOD] = DEFAULT_FILTERS_UPDATE_PERIOD;
                 defaults[settings.DISABLE_STEALTH_MODE] = true;
                 defaults[settings.HIDE_REFERRER] = true;
@@ -106,10 +110,12 @@ export const settings = (() => {
                 defaults[settings.SELF_DESTRUCT_THIRD_PARTY_COOKIES_TIME] = DEFAULT_THIRD_PARTY_COOKIES_SELF_DESTRUCT_MIN;
                 defaults[settings.SELF_DESTRUCT_FIRST_PARTY_COOKIES] = false;
                 defaults[settings.SELF_DESTRUCT_FIRST_PARTY_COOKIES_TIME] = DEFAULT_FIRST_PARTY_COOKIES_SELF_DESTRUCT_MIN;
-                defaults[settings.APPEARANCE_THEME] = APPEARANCE_THEMES.SYSTEM;
+                defaults[settings.APPEARANCE_THEME] = APPEARANCE_THEMES.LIGHT; // SYSTEM
                 defaults[settings.USER_FILTER_ENABLED] = true;
                 defaults[settings.HIDE_RATE_BLOCK] = false;
                 defaults[settings.USER_RULES_EDITOR_WRAP] = false;
+                defaults[settings.DISABLE_SHOW_CONTEXT_MENU] = true;
+                defaults[settings.PROTECTION_LEVEL] = 'standard';
                 return defaults;
             });
         },
@@ -277,6 +283,14 @@ export const settings = (() => {
         return getProperty(settings.ALLOWLIST_ENABLED);
     };
 
+    const getProtectionLevel = () => {
+        return getProperty(settings.PROTECTION_LEVEL);
+    };
+
+    const setProtectionLevel = (state) => {
+        setProperty(settings.PROTECTION_LEVEL, state);
+    };
+
     /**
      * Sets filters update period after conversion in number
      * @param period
@@ -442,6 +456,10 @@ export const settings = (() => {
 
     // Default properties
     api.defaultProperties = defaultProperties.defaults;
+
+    // Protection level
+    api.getProtectionLevel = getProtectionLevel;
+    api.setProtectionLevel = setProtectionLevel;
 
     return api;
 })();

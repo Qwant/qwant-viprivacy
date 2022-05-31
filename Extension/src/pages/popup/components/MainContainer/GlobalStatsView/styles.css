@@ -1,0 +1,27 @@
+.tiles {
+    display: flex;
+    margin-top: 12px;
+}
+
+.tiles>div:first-child {
+    margin-right: 12px;
+}
+
+select.time-frame {
+    width: 127px;
+    height: 34px;
+    padding: 8px;
+    border-radius: 8px;
+    border: solid 2px #000;
+    background-color: #fff;
+    text-transform: capitalize;
+    float: right;
+}
+
+/*.global_stats_container {
+    min-height: 450px;
+
+    @media (pointer:none), (pointer:coarse) {
+        min-height: unset;
+    }
+}*/

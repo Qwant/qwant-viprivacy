@@ -1,0 +1,15 @@
+.navbar {
+    height: 60px;
+    padding-top: 20px;
+    background-color: var(--blue);
+    border-bottom: 2px solid #050506;
+}
+
+.navbar div {
+    max-width: 690px;
+    margin: auto;
+
+    @media screen and (max-width: 720px) {
+        margin-left: 24px;
+    }
+}

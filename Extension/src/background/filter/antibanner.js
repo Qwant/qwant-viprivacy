@@ -27,7 +27,7 @@ import { rulesStorage } from '../storage';
 import { filtersUpdate } from './filters/filters-update';
 import { customFilters } from './filters/custom-filters';
 import { engine } from './engine';
-import { stealthService } from './services/stealth-service';
+// import { stealthService } from './services/stealth-service';
 import { userrules } from './userrules';
 
 /**
@@ -128,6 +128,7 @@ export const antiBannerService = (() => {
                     await options.onInstall();
                 }
             } else if (runInfo.isUpdate) {
+                // HERE
                 // Updating storage schema on extension update (if needed)
                 await applicationUpdateService.onUpdate(runInfo);
                 await initRequestFilter();
@@ -299,6 +300,8 @@ export const antiBannerService = (() => {
          * @return {boolean}
          */
         const hasFilterRules = (rulesFilterMap, filterId) => {
+            if (!rulesFilterMap) return false;
+
             const enabledFilterIds = Object.keys(rulesFilterMap);
             const foundFilterId = enabledFilterIds.find(enabledFilterId => enabledFilterId === filterId);
             if (foundFilterId) {
@@ -344,7 +347,7 @@ export const antiBannerService = (() => {
              * If no one of filters is enabled, don't reload rules,
              * except when there are enabled stealth mode rules
              */
-            if (isEmptyRulesFilterMap(rulesFilterMap) && !stealthService.hasFilterRules()) {
+            if (isEmptyRulesFilterMap(rulesFilterMap)) {
                 return;
             }
 
@@ -371,21 +374,23 @@ export const antiBannerService = (() => {
                 // To number
                 filterId = Number(filterId);
 
-                const isTrustedFilter = subscriptions.isTrustedFilter(filterId);
-                const rulesTexts = rulesFilterMap[filterId].join('\n');
+                if (!Number.isNaN(filterId)) {
+                    const isTrustedFilter = subscriptions.isTrustedFilter(filterId);
+                    const rulesTexts = rulesFilterMap[filterId].join('\n');
 
-                const filterList = new TSUrlFilter.StringRuleList(
-                    filterId,
-                    rulesTexts,
-                    false,
-                    !isTrustedFilter,
-                    !isTrustedFilter,
-                );
+                    const filterList = new TSUrlFilter.StringRuleList(
+                        filterId,
+                        rulesTexts,
+                        false,
+                        !isTrustedFilter,
+                        !isTrustedFilter,
+                    );
 
-                if (filterId === utils.filters.USER_FILTER_ID) {
-                    userFilterList = filterList;
-                } else {
-                    lists.push(filterList);
+                    if (filterId === utils.filters.USER_FILTER_ID) {
+                        userFilterList = filterList;
+                    } else {
+                        lists.push(filterList);
+                    }
                 }
             }
 
@@ -396,8 +401,8 @@ export const antiBannerService = (() => {
             }
 
             // append stealth mode rules
-            const stealthModeList = stealthService.getStealthModeRuleList();
-            lists.push(stealthModeList);
+            // const stealthModeList = stealthService.getStealthModeRuleList();
+            // lists.push(stealthModeList);
 
             await engine.startEngine(lists);
 

@@ -1,0 +1,15 @@
+.icon-round {
+  width: 32px;
+  height: 32px;
+  border-radius: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+}
+
+.icon-round img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}

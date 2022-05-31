@@ -46,7 +46,6 @@ export const genSampleApiConfig = (browserConfig) => {
                 {
                     include: [
                         path.resolve(__dirname, '../../../Extension/src/filter/request-filter.js'),
-                        path.resolve(__dirname, '../../../Extension/pages/content-script-end/index.js'),
                     ],
                     use: [{
                         loader: 'preprocess-loader',
@@ -90,11 +89,11 @@ export const genSampleApiConfig = (browserConfig) => {
                         from: 'adguard-api.md',
                         to: 'adguard-api.md',
                     },
-                    {
-                        context: 'Extension',
-                        from: 'filters/chromium/filters_i18n.json',
-                        to: 'adguard',
-                    },
+                    // {
+                    //    context: 'Extension',
+                    //    from: 'filters/chromium/filters_i18n.json',
+                    //    to: 'adguard',
+                    // },
                     {
                         context: 'Extension',
                         from: 'filters/chromium/filters.json',

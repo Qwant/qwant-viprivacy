@@ -9,9 +9,10 @@ export const workaround = (function () {
          *
          * @param blocked Blocked requests count
          */
-        getBlockedCountText(blocked) {
+        getBlockedCountText(blocked, isFirefoxBrowser) {
+            const MAX = isFirefoxBrowser ? 99 : 999;
             let blockedText = blocked === '0' ? '' : blocked;
-            if (blocked - 0 > 99) {
+            if (blocked - 0 > MAX) {
                 blockedText = '\u221E';
             }
 

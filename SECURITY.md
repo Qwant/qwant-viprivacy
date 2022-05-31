@@ -2,4 +2,4 @@
 
 ## Reporting a Vulnerability
 
-Please report security issues to `devteam@adguard.com`
+Please report security issues to `ssi@qwant.com`

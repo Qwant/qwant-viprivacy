@@ -32,12 +32,7 @@ export const xpi = async (browser) => {
     updatedManifest.applications.gecko.update_url = FIREFOX_WEBEXT_UPDATE_URL;
     await fs.writeFile(manifestPath, JSON.stringify(updatedManifest, null, 4));
 
-    // require called here in order to escape errors, until this module is really necessary
-    // eslint-disable-next-line global-require, import/no-unresolved
-    const cryptor = require('../../private/cryptor/dist');
-    const credentialsContent = await cryptor(process.env.CREDENTIALS_PASSWORD)
-        .getDecryptedContent(FIREFOX_CREDENTIALS);
-    const { apiKey, apiSecret } = JSON.parse(credentialsContent);
+    const { apiKey, apiSecret } = JSON.parse(await fs.readFile(FIREFOX_CREDENTIALS, 'utf-8'));
 
     const { downloadedFiles } = await webExt.cmd.sign({
         apiKey,
@@ -45,6 +40,7 @@ export const xpi = async (browser) => {
         sourceDir,
         artifactsDir: buildDir,
         timeout: 15 * 60 * 1000, // 15 minutes
+        channel: buildEnv === ENVS.RELEASE ? 'listed' : 'unlisted',
     }, {
         shouldExitProgram: false,
     });

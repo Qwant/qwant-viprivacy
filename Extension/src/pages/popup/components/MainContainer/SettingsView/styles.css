@@ -1,0 +1,16 @@
+.protection-list {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.telemetry {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.telemetry-switch {
+    display: inline-block;
+}
