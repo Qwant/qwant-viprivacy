@@ -43,7 +43,7 @@
 
 <a id="installation-chrome"></a>
 
-### Chrome and Chromium-based browsers
+### Chrome and Chromium-based browsers (to be released soon)
 
 You can get the latest available Qwant VIPrivacy Extension version from the [Chrome Web Store](https://chrome.google.com/webstore/detail/qwant/hnlkiofnhhoahaiimdicppgemmmomijo).
 
@@ -55,7 +55,7 @@ You can get the latest version of Qwant VIPrivacy Extension from the [Mozilla Ad
 
 <a id="installation-edge"></a>
 
-### Microsoft Edge
+### Microsoft Edge (to be released soon)
 
 The latest stable version of Qwant VIPrivacy browser extension is available in [Microsoft Store](https://microsoftedge.microsoft.com/addons/detail/qwant/eljplgljphmgjhnalbganhenlcapgnne).
 
