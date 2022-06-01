@@ -33,10 +33,14 @@ export const start = async () => {
             return true;
         }
         log.info('Extensions missing required permissions');
+        const optionsPageOpened = localStorage.getItem('options-page-opened');
         const arePermissionsRejected = localStorage?.getItem('permissions-rejected');
-        if (arePermissionsRejected) {
-            log.info('Permissions were previously rejected. Option page wont open. date={0}', arePermissionsRejected);
+        if (arePermissionsRejected || optionsPageOpened) {
+            // eslint-disable-next-line max-len
+            log.info('Permissions were previously rejected. Option page wont open. permissions-rejected={0}, options-open={1}',
+                arePermissionsRejected, optionsPageOpened);
         } else {
+            localStorage.setItem('options-page-opened', Date.now());
             browser.runtime.openOptionsPage();
         }
         return false;
