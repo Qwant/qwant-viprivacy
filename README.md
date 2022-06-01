@@ -7,7 +7,7 @@
 <p align="center">
   On a web where we are permanently tracked, our solution is Qwant VIPrivacy
   <br/>
-  3 features that protect you during your browsing, in 1 single product
+  Multiple features that protect you during your browsing
 </p>
 
 <p align="center">
