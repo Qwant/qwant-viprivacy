@@ -88,7 +88,7 @@
     "@adguard/filters-downloader": "^1.1.12",
     "@adguard/scriptlets": "^1.6.8",
     "@adguard/translate": "^0.2.5",
-    "@adguard/tsurlfilter": "^0.7.74",
+    "@adguard/tsurlfilter": "^1.0.3",
     "@babel/runtime": "^7.15.3",
     "@elastic/apm-rum": "^5.10.2",
     "@xstate/react": "^1.5.1",
