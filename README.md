@@ -1,10 +1,13 @@
 &nbsp;
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/1442690/168590504-defc3ec9-0b78-4d85-b87f-bb76724ca665.png" width="300px" alt="Qwant VIPrivacy Browser Extension" />
+  <img src="https://user-images.githubusercontent.com/1442690/171180389-ad92ff55-0da7-4929-98b0-eff7a67e1765.png" width="300px" alt="Qwant VIPrivacy Browser Extension" />
 </p>
+<h3 align="center">Qwant VIPrivacy: protected browsing, enhanced privacy</h3>
 <p align="center">
-  Qwant VIPrivacy sets qwant.com as your default search engine, blocks most trackers and refuses cookies for you to protect your personal data all along your browsing.
+  On a web where we are permanently tracked, our solution is Qwant VIPrivacy
+  <br/>
+  3 features that protect you during your browsing, in 1 single product
 </p>
 
 <p align="center">
@@ -62,7 +65,7 @@ The latest stable version of Qwant VIPrivacy browser extension is available in [
 
 GitHub can be used to report a bug or to submit a feature request. To do so, go to [this page](https://github.com/Qwant/qwant-viprivacy/issues) and click the _New issue_ button.
 
-> **Note:** for the filter-related issues (missed ads, false positives etc.) use the [dedicated repository](https://github.com/AdguardTeam/AdguardFilters).
+> **Note:** For filter-related issues (missed ads, false positives, broken pages etc.) open an issue in the [dedicated repository](https://github.com/AdguardTeam/AdguardFilters).
 
 <a id="dev-requirements"></a>
 
@@ -166,9 +169,9 @@ Thank you to Adguard for providing a fantastic foundation for this project.
 
 ## Privacy
 
-Qwant VIPrivacy uses [Application Performance Monitoring](https://www.elastic.co/guide/en/apm/guide/current/apm-overview.html) to report bugs, catch errors and perform basic stats. Qwant VIPrivacy does not collect any Personally Identifiable Informationz.
+Qwant VIPrivacy uses APM ([Application Performance Monitoring](https://www.elastic.co/guide/en/apm/guide/current/apm-overview.html)) to report bugs, catch errors and perform basic stats. Qwant VIPrivacy does not collect any PII (Personally Identifiable Information).
 
-**TL;DR** This is the dashboard we use to observe general, anonymize, trends and help keep an eye on the health of the extension.
+**TL;DR** This is the dashboard we use to observe general, ananymous, trends and help keep an eye on the health of the extension.
 
 <details><summary>Screenshot</summary>
 
