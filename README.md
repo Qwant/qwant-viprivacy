@@ -32,7 +32,7 @@
 - [Minimum supported browser versions](#minimum-supported-browser-versions)
 - [Fork](#fork)
 - [Privacy](#privacy)
-- [Filter lists](#filter-lists)
+- [Protection Level](#protection-level)
 - [License](#license)
 
 <br />
@@ -189,18 +189,18 @@ The basic information that goes through APM:
 - Basic stats (Do people prefer the "standard" or "strict" level of protection, etc..)
 - Technical error reports (Did we make a mistake and how can we fix it)
 
-<a id="filter-lists"></a>
+<a id="protection-level"></a>
 
-## Filter lists
+## Protection level
 
-Qwant VIPrivacy relies on a number of well-known and community trusted filter lists. 
-Chaning protection levels will basically change the combinations of enabled filter lists. 
+Qwant VIPrivacy relies on a number of well-known and community-trusted lists.
 
-We curated the filter lists in `Standard Mode` to offer the best tracking protection with minimal breakage to the browsing experience. On the other hand, `Strict Mode` offers a more advanced tracking protection, however some pages could break (social-media login, certain cookie dialogs, etc).
+These lists include the rules used to block detected trackers. Changing protection-levels essentially changes which lists are used.
+
+We hand-picked the lists in `Standard Mode` to offer the best tracking protection with the least impact on the browsing experience. On the other hand, `Strict Mode` offers a more advanced tracking protection, however some pages may not display properly (social-media login, certain cookie banners, etc).
 
 
-<details>
-  <summary>Filter lists table</summary>
+### Protection level lists
   
 |  Id 	|                       Name                      	|                             Homepage                             	|   Level  	|
 |:---:	|:-----------------------------------------------:	|:----------------------------------------------------------------:	|:--------:	|
@@ -218,7 +218,6 @@ We curated the filter lists in `Standard Mode` to offer the best tracking protec
 | 225 	| Fanboy's Anti-Facebook List                     	| https://www.fanboy.co.nz/                                        	|  Strict  	|
 | 239 	| Fanboy's Anti-thirdparty Fonts                  	| https://www.fanboy.co.nz/                                        	|  Strict  	|
 
-</details>
   
 <a id="license"></a>
 
