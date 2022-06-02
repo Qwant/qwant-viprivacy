@@ -171,7 +171,7 @@ Thank you to Adguard for providing a fantastic foundation for this project.
 
 Qwant VIPrivacy uses APM ([Application Performance Monitoring](https://www.elastic.co/guide/en/apm/guide/current/apm-overview.html)) to report bugs, catch errors and perform basic stats. Qwant VIPrivacy does not collect any PII (Personally Identifiable Information).
 
-**TL;DR** This is the dashboard we use to observe general, ananymous, trends and help keep an eye on the health of the extension.
+**TL;DR** This is the dashboard we use to observe general, anonymous, trends and help keep an eye on the health of the extension.
 
 <details><summary>Screenshot</summary>
 
