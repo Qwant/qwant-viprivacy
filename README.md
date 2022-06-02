@@ -32,6 +32,7 @@
 - [Minimum supported browser versions](#minimum-supported-browser-versions)
 - [Fork](#fork)
 - [Privacy](#privacy)
+- [Filter lists](#filter-lists)
 - [License](#license)
 
 <br />
@@ -188,6 +189,37 @@ The basic information that goes through APM:
 - Basic stats (Do people prefer the "standard" or "strict" level of protection, etc..)
 - Technical error reports (Did we make a mistake and how can we fix it)
 
+<a id="filter-lists"></a>
+
+## Filter lists
+
+Qwant VIPrivacy relies on a number of well-known and community trusted filter lists. 
+Chaning protection levels will basically change the combinations of enabled filter lists. 
+
+We curated the filter lists in `Standard Mode` to offer the best tracking protection with minimal breakage to the browsing experience. On the other hand, `Strict Mode` offers a more advanced tracking protection, however some pages could break (social-media login, certain cookie dialogs, etc).
+
+
+<details>
+  <summary>Filter lists table</summary>
+  
+|  Id 	|                       Name                      	|                             Homepage                             	|   Level  	|
+|:---:	|:-----------------------------------------------:	|:----------------------------------------------------------------:	|:--------:	|
+|  3  	| AdGuard Tracking Protection filter              	| https://kb.adguard.com/general/adguard-ad-filters                	| Standard 	|
+|  10 	| Filter unblocking search ads and self-promotion 	| https://kb.adguard.com/general/search-ads-and-self-promotion     	| Standard 	|
+|  15 	| AdGuard DNS filter                              	| https://kb.adguard.com/general/adguard-ad-filters                	| Standard 	|
+|  17 	| AdGuard URL Tracking filter                     	| https://kb.adguard.com/general/adguard-ad-filters                	| Standard 	|
+| 118 	| EasyPrivacy                                     	| https://easylist.to/                                             	| Standard 	|
+| 122 	| Fanboy's Annoyances                             	| https://easylist.to/                                             	| Standard 	|
+| 207 	| Adblock Warning Removal List                    	| https://easylist.to/                                             	| Standard 	|
+| 208 	| Online Malicious URL Blocklist                  	| https://gitlab.com/curben/urlhaus-filter#malicious-url-blocklist 	| Standard 	|
+|  4  	| AdGuard Social Media filter                     	| https://kb.adguard.com/general/adguard-ad-filters                	|  Strict  	|
+|  14 	| AdGuard Annoyances filter                       	| https://kb.adguard.com/general/adguard-ad-filters                	|  Strict  	|
+| 201 	| Web Annoyances Ultralist                        	| https://github.com/yourduskquibbles/webannoyances/               	|  Strict  	|
+| 225 	| Fanboy's Anti-Facebook List                     	| https://www.fanboy.co.nz/                                        	|  Strict  	|
+| 239 	| Fanboy's Anti-thirdparty Fonts                  	| https://www.fanboy.co.nz/                                        	|  Strict  	|
+
+</details>
+  
 <a id="license"></a>
 
 ## License
