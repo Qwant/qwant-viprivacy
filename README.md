@@ -200,24 +200,6 @@ These lists include the rules used to block detected trackers. Changing protecti
 We hand-picked the lists in `Standard Mode` to offer the best tracking protection with the least impact on the browsing experience. On the other hand, `Strict Mode` offers a more advanced tracking protection, however some pages may not display properly (social-media login, certain cookie banners, etc).
 
 
-### Protection level lists
-  
-|  Id 	|                       Name                      	|                             Homepage                             	|   Level  	|
-|:---:	|:-----------------------------------------------:	|:----------------------------------------------------------------:	|:--------:	|
-|  3  	| AdGuard Tracking Protection filter              	| https://kb.adguard.com/general/adguard-ad-filters                	| Standard 	|
-|  10 	| Filter unblocking search ads and self-promotion 	| https://kb.adguard.com/general/search-ads-and-self-promotion     	| Standard 	|
-|  15 	| AdGuard DNS filter                              	| https://kb.adguard.com/general/adguard-ad-filters                	| Standard 	|
-|  17 	| AdGuard URL Tracking filter                     	| https://kb.adguard.com/general/adguard-ad-filters                	| Standard 	|
-| 118 	| EasyPrivacy                                     	| https://easylist.to/                                             	| Standard 	|
-| 122 	| Fanboy's Annoyances                             	| https://easylist.to/                                             	| Standard 	|
-| 207 	| Adblock Warning Removal List                    	| https://easylist.to/                                             	| Standard 	|
-| 208 	| Online Malicious URL Blocklist                  	| https://gitlab.com/curben/urlhaus-filter#malicious-url-blocklist 	| Standard 	|
-|  4  	| AdGuard Social Media filter                     	| https://kb.adguard.com/general/adguard-ad-filters                	|  Strict  	|
-|  14 	| AdGuard Annoyances filter                       	| https://kb.adguard.com/general/adguard-ad-filters                	|  Strict  	|
-| 201 	| Web Annoyances Ultralist                        	| https://github.com/yourduskquibbles/webannoyances/               	|  Strict  	|
-| 225 	| Fanboy's Anti-Facebook List                     	| https://www.fanboy.co.nz/                                        	|  Strict  	|
-| 239 	| Fanboy's Anti-thirdparty Fonts                  	| https://www.fanboy.co.nz/                                        	|  Strict  	|
-
   
 <a id="license"></a>
 
