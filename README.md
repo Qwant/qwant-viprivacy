@@ -5,7 +5,7 @@
 </p>
 <h3 align="center">Qwant VIPrivacy: protected browsing, enhanced privacy</h3>
 <p align="center">
-  On a web where we are permanently tracked, our solution is Qwant VIPrivacy
+  In a world wide web where we are permanently tracked, the solution is Qwant VIPrivacy
   <br/>
   3 features that protect you during your browsing, in 1 single product
 </p>
@@ -171,7 +171,7 @@ Thank you to Adguard for providing a fantastic foundation for this project.
 
 Qwant VIPrivacy uses APM ([Application Performance Monitoring](https://www.elastic.co/guide/en/apm/guide/current/apm-overview.html)) to report bugs, catch errors and perform basic stats. Qwant VIPrivacy does not collect any PII (Personally Identifiable Information).
 
-**TL;DR** This is the dashboard we use to observe general, ananymous, trends and help keep an eye on the health of the extension.
+**TL;DR** This is the dashboard we use to observe general, anonymous trends and help keep an eye on the health of the extension.
 
 <details><summary>Screenshot</summary>
 
@@ -179,7 +179,7 @@ Qwant VIPrivacy uses APM ([Application Performance Monitoring](https://www.elast
 
 </details>
 
-APM is optional and can be fully turned off during the onboarding or at any time. Enabling APM allows Qwant to resolve technical issues and bugs faster and provide a better user experience.
+APM is optional and can be completely turned off during the onboarding or at any time. Enabling APM allows Qwant to resolve technical issues and bugs faster and provide a better user experience.
 
 The basic information that goes through APM:
 
