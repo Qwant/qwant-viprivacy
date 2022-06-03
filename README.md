@@ -195,12 +195,10 @@ The basic information that goes through APM:
 
 Qwant VIPrivacy relies on a number of well-known and community-trusted lists.
 
-These lists include the rules used to block detected trackers. Changing protection-levels essentially changes which lists are used.
+These lists include rules used to detect and block trackers. Changing protection-levels essentially changes which lists are used.
 
 We hand-picked the lists in `Standard Mode` to offer the best tracking protection with the least impact on the browsing experience. On the other hand, `Strict Mode` offers a more advanced tracking protection, however some pages may not display properly (social-media login, certain cookie banners, etc).
 
-
-  
 <a id="license"></a>
 
 ## License
