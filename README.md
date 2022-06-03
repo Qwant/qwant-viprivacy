@@ -32,6 +32,7 @@
 - [Minimum supported browser versions](#minimum-supported-browser-versions)
 - [Fork](#fork)
 - [Privacy](#privacy)
+- [Protection Level](#protection-level)
 - [License](#license)
 
 <br />
@@ -187,6 +188,16 @@ The basic information that goes through APM:
 - Extension version (v1, v2, etc...)
 - Basic stats (Do people prefer the "standard" or "strict" level of protection, etc..)
 - Technical error reports (Did we make a mistake and how can we fix it)
+
+<a id="protection-level"></a>
+
+## Protection level
+
+Qwant VIPrivacy relies on a number of well-known and community-trusted lists.
+
+These lists include rules used to detect and block trackers. Changing protection-levels essentially changes which lists are used.
+
+We hand-picked the lists in `Standard Mode` to offer the best tracking protection with the least impact on the browsing experience. On the other hand, `Strict Mode` offers a more advanced tracking protection, however some pages may not display properly (social-media login, certain cookie banners, etc).
 
 <a id="license"></a>
 
