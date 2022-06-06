@@ -108,7 +108,7 @@ export const settings = (() => {
                 defaults[settings.SELF_DESTRUCT_THIRD_PARTY_COOKIES_TIME] = 2880;
                 defaults[settings.SELF_DESTRUCT_FIRST_PARTY_COOKIES] = false;
                 defaults[settings.SELF_DESTRUCT_FIRST_PARTY_COOKIES_TIME] = 4320;
-                defaults[settings.APPEARANCE_THEME] = APPEARANCE_THEMES.LIGHT; // SYSTEM
+                defaults[settings.APPEARANCE_THEME] = APPEARANCE_THEMES.LIGHT;
                 defaults[settings.USER_FILTER_ENABLED] = true;
                 defaults[settings.HIDE_RATE_BLOCK] = false;
                 defaults[settings.USER_RULES_EDITOR_WRAP] = false;

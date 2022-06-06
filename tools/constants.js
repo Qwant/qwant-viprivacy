@@ -25,7 +25,7 @@ export const BROWSERS_CONF = {
     [BROWSERS.CHROME]: {
         browser: BROWSERS.CHROME,
         remoteScripts: true,
-        devtools: true,
+        devtools: false,
         buildDir: BROWSERS.CHROME,
     },
     [BROWSERS.FIREFOX_STANDALONE]: {
@@ -49,7 +49,7 @@ export const BROWSERS_CONF = {
     [BROWSERS.EDGE]: {
         browser: BROWSERS.EDGE,
         remoteScripts: true,
-        devtools: true,
+        devtools: false,
         buildDir: BROWSERS.EDGE,
     },
 };
