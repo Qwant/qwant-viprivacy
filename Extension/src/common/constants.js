@@ -123,7 +123,6 @@ export const MESSAGE_TYPES = {
     SET_EDITOR_STORAGE_CONTENT: 'setEditorStorageContent',
     CONVERT_RULES_TEXT: 'convertRulesText',
     START_TRACKING_BLOCKER: 'startTrackingBlocker',
-    QWANT_SETTINGS_APPLIED: 'qwantSettingsApplied',
 };
 
 export const NOTIFIER_TYPES = {

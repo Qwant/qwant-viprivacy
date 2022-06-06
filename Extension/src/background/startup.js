@@ -22,7 +22,6 @@ import { allowlist } from './filter/allowlist';
 import { filteringLog } from './filter/filtering-log';
 import { uiService } from './ui-service';
 import { application } from './application';
-import { MESSAGE_TYPES } from '../common/constants';
 import { getQwantSettings } from '../common/qwant-settings';
 import { browser } from './extension-api/browser';
 import { settingsProvider } from './settings/settings-provider';
@@ -89,12 +88,6 @@ export const startup = async function () {
                     const result = await settingsProvider.applySettingsBackup(JSON.stringify(qwantSettings));
                     if (result) {
                         log.info('Qwant settings applied successfully');
-                        setTimeout(() => {
-                            // TODO figure out how this works and how to avoid the 10s timeout
-                            browser.runtime.sendMessage({
-                                type: MESSAGE_TYPES.QWANT_SETTINGS_APPLIED,
-                            });
-                        }, 10000);
                     } else {
                         log.error('Error applying Qwant settings: unknown', qwantSettings);
                     }
