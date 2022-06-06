@@ -1,8 +1,8 @@
 [Adblock Plus 2.0]
-! Checksum: bjWMcyIpgkUY1HKcWm1NJg
-! Version: 202205110844
+! Checksum: kwbB7V9zJ6pHoVUW6D5CRA
+! Version: 202205310844
 ! Title: Adblock Warning Removal List
-! Last modified: 11 May 2022 08:44 UTC
+! Last modified: 31 May 2022 08:44 UTC
 ! Expires: 1 days (update frequency)
 ! Homepage: https://easylist.to/
 ! Licence: https://easylist.to/pages/licence.html
@@ -87,6 +87,7 @@ biggestplayer.me##.soret
 spanishdict.com##.whitelist
 play44.net,videobug.net,videofun.me,vidzur.com,yucache.net##[style^="position: absolute; width: 100%;"]
 pkmods.com##body > div[style*="z-index"][style*="background"]
+leechyscripts.com##div[class^="chp_ads_block_modal"]
 strikeout.co,vipbox.sx,vipleague.co,vipleague.is##div[style="display: block;"]
 nexusmods.com##div[style="float: left; width: 728px; height: 90px; background: #313131;"]
 playonlinux.com##div[style="text-align:center;  border-radius:7px; width:160px;  border:1px solid #666666;  margin-left:5px;padding-right:5px;color:#FFF;  background-color:#666;font-family:Maven Pro,century gothic, arial, helvetica, sans serif;padding-top:94px;  height:600px;  padding-left:5px; font-size:18px; "]
@@ -415,8 +416,7 @@ photolessons.org###modal-adbmon-div
 ostroh.info###modal.modal-bg
 all-episodes.net###odin
 mover.uz###oframeplayer > [class][style^="display: block"]
-filmix.ac,filmix.beer,filmix.biz,filmix.buzz,filmix.cc,filmix.click,filmix.co,filmix.email,filmix.gay,filmix.ink,filmix.love,filmix.ltd,filmix.online,filmix.site,filmix.today,filmix.wiki,filmix.zone###oframeplayer > pjsdiv[style^="position: absolute; left:"][style*="display: block; visibility: visible;"] ~ pjsdiv[style^="position: absolute; left:"][style*="pointer-events: none; display: block; visibility:"]
-filmix.ac,filmix.beer,filmix.biz,filmix.buzz,filmix.cc,filmix.click,filmix.co,filmix.email,filmix.gay,filmix.ink,filmix.love,filmix.ltd,filmix.online,filmix.site,filmix.today,filmix.wiki,filmix.zone#?##oframeplayer > pjsdiv[style^="position: absolute; left:"][style*="display: block; visibility: visible;"]:-abp-contains(/adblock/i)
+filmix.ac,filmix.beer,filmix.biz,filmix.buzz,filmix.cc,filmix.click,filmix.co,filmix.email,filmix.gay,filmix.ink,filmix.love,filmix.ltd,filmix.online,filmix.site,filmix.today,filmix.wiki,filmix.zone###oframeplayer > #player_control_play-icon ~ pjsdiv[style^="position: absolute; left:"][style*="pointer-events: none; display: block; visibility:"]
 md4u.ru###pagecontent > div[style*="background-color"]
 alensat.org,forummikrotik.ru###phpbb-ads-ab
 3dsmaxvideo.ru,archicadvideo.ru,autocadvideo.ru,coreldrawvideo.ru,excelvideo.ru,kompasvideo.ru,photoshopvideo.ru,solidworksvideo.ru,wordvideo.ru###prozrachnyi2,#video_window2
@@ -445,7 +445,6 @@ exler.ru##.adblock-pls
 ##.adblock-stop
 zakon.kz##.adblock_alert
 tassbiz.ru##.adblock_notif
-ogorod.ru##.adblock_popup_warning
 hentaiz.org##.adblocker
 telesputnik.ru##.adbPopup
 kubik3.ru##.adbs
@@ -485,7 +484,7 @@ ivi.ru##.ivi-footer ~ div[class] > style + div[class]
 doctorrouter.ru##.jgcabd-container
 go.mail.ru##.js-adb-msg
 ppc.world##.js-detected-block
-dtf.ru,tjournal.ru,vc.ru##.layout__right-column > div[class*=" "][style] > div[class*=" "]
+dtf.ru,tjournal.ru,vc.ru##.layout__right-column > div[class*=" "][style] > div[class*=" "] > div:only-child
 anime-bit.ru##.layer_box > #header
 space.utema.ru##.main-content-padding > div[class]:not([itemprop])
 peers.tv##.moanerwrap
@@ -521,7 +520,7 @@ helpsetup.ru##.veramoy
 stalkerportaal.ru##.video_adsense
 e-xecutive.ru##.warning
 kinoprofi.net##.warning-adblock
-xn--80aikhbrhr.net,ÐºÐ¸Ð½Ð¾ÐºÑ€Ð°Ð´.net##.warning-adblock-box
+xn--80aikhbrhr.net,кинокрад.net##.warning-adblock-box
 forum.bestflowers.ru##.xenOverlay
 /cookie_check.min.js$domain=acetv.me
 /forum/docs/requests.js$script,domain=nnm-club.lib|nnm-club.me|nnm-club.ws|nnmclub.ro|nnmclub.to|nontorclub.in.net
@@ -585,7 +584,7 @@ liga.net#@#div[id^="div-gpt-ad"]
 acomics.ru##div[style*="/design/common/pic/please"]
 abc-people.com##div[style*="background-color"][style*="position"][style*="z-index"]
 sdamgia.ru##div[style="text-align:center; color:red; border: 0px solid black; font-size:16px"]
-anime.anidub.life,myanime.online,online.anidub.com#?#div[style^="position: fixed;"]:-abp-has(> :-abp-contains(ÐžÐ±Ð½Ð°Ñ€ÑƒÐ¶ÐµÐ½Ð° Ð±Ð»Ð¾ÐºÐ¸Ñ€Ð¾Ð²ÐºÐ° Ñ€ÐµÐºÐ»Ð°Ð¼Ñ‹))
+anime.anidub.life,myanime.online,online.anidub.com#?#div[style^="position: fixed;"]:-abp-has(> :-abp-contains(Обнаружена блокировка рекламы))
 pvcalc.ru##div[style^="position:fixed; top:0px; left:0px; opacity: 0.9;"]
 reshuege.ru,reshuoge.ru,reshuvpr.ru,sdamgia.ru##div[style^="text-align:center; color:red;"][style*="font-size:16px"]
 ph4.ru##div[style^="width: 728px; height: 90px;"]
@@ -611,7 +610,6 @@ bigpuzzle.ru##td[valign="top"][width="240px"][height="600"]
 ||gamemag.ru/assets/*/js.cookie.js
 ||helpsetup.ru/home/solnisko.php
 ||i140.ru/js/etxm*.js|$script
-||imageban.ru/template/js/nt.js
 ||ipprof.ru/wp-content/plugins/ad-blocking-advisor/
 ||kontrolnaya-rabota.ru^*/fuckadblock.$script
 ||kontrolnaya-rabota.ru^*/toastr.$script,stylesheet
