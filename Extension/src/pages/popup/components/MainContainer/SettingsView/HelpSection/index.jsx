@@ -22,7 +22,8 @@ const helpLinks = [
 const HelpLink = ({
     url, text,
 }) => {
-    const openTab = () => {
+    const openTab = (e) => {
+        e.preventDefault();
         browser.tabs.create({ url: reactTranslator.getMessage(url), active: true });
     };
 
