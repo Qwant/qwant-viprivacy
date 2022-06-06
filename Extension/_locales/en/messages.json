@@ -193,5 +193,8 @@
   },
   "uninstall_url": {
     "message": "https://www.surveymonkey.com/r/TPSHFH5"
+  },
+  "error_label": {
+    "message": "Error:"
   }
 }

@@ -3,19 +3,19 @@ import React from 'react';
 import { observer } from 'mobx-react';
 import { useNavigate } from 'react-router-dom';
 
-import { PermissionsMissing } from './PermissionsMissing';
+import { LoadingView } from './LoadingView';
 import { MainHeader } from './components/MainHeader';
-import { ProtectionStatus } from './components/ProtectionStatus';
-import { ProtectionLevel } from './components/ProtectionLevel';
 import { GlobalStats } from './components/GlobalStats';
+import { PermissionsMissing } from './PermissionsMissing';
+import { ProtectionLevel } from './components/ProtectionLevel';
+import { ProtectionStatus } from './components/ProtectionStatus';
 
+import { messenger } from '../../../../services/messenger';
 import { MESSAGE_TYPES } from '../../../../../common/constants';
-import { contentPage } from '../../../../../content-script/content-script';
-import { hasAllOptionalPermissions } from '../../../../../background/utils/optional-permissions';
 import { browser } from '../../../../../background/extension-api/browser';
+import { hasAllOptionalPermissions } from '../../../../../background/utils/optional-permissions';
 
 import './styles.css';
-import { LoadingView } from './LoadingView';
 
 const Main = observer(({ store, settingsStore }) => {
     const navigate = useNavigate();
@@ -26,9 +26,8 @@ const Main = observer(({ store, settingsStore }) => {
     React.useEffect(() => {
         const checkRequestFilterReady = async () => {
             setLoading(true);
-            const response = await contentPage.sendMessage({
-                type: MESSAGE_TYPES.CHECK_REQUEST_FILTER_READY,
-            });
+            const response = await messenger.sendMessage(MESSAGE_TYPES.CHECK_REQUEST_FILTER_READY);
+
             if (response?.ready) {
                 setLoading(false);
             } else {

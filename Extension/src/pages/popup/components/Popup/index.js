@@ -6,6 +6,7 @@ import { useLocation } from 'react-router-dom';
 import { popupStore } from '../../stores/PopupStore';
 import { rootStore } from '../../../options/stores/RootStore';
 import { messenger } from '../../../services/messenger';
+import ErrorView from '../MainContainer/ErrorView';
 import { MainContainer } from '../MainContainer/MainContainer';
 import { apm } from '../../../../background/apm';
 
@@ -22,9 +23,7 @@ export const Popup = observer(() => {
     const disableCollectHit = key ? settings?.values[key] || false : false;
 
     React.useEffect(() => {
-        (async () => {
-            await getPopupData();
-        })();
+        getPopupData();
     }, [getPopupData]);
 
     React.useEffect(() => {
@@ -50,9 +49,7 @@ export const Popup = observer(() => {
                     break;
             }
         };
-
         messenger.onMessage.addListener(messageHandler);
-
         return () => {
             messenger.onMessage.removeListener(messageHandler);
         };
@@ -67,14 +64,7 @@ export const Popup = observer(() => {
     }, [disableCollectHit]);
 
     if (didCatch) {
-        // TODO Handle Error state
-        return (
-            <p>
-                Error:
-                {' '}
-                {error.message}
-            </p>
-        );
+        return <ErrorView error={error} />;
     }
 
     return (
