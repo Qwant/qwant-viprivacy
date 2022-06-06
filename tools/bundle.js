@@ -43,11 +43,6 @@ const bundleFirefoxXpi = async () => {
     await xpi(BROWSERS.FIREFOX_STANDALONE);
 };
 
-// const bundleAdguardApi = async (watch) => {
-//     const webpackConfig = getWebpackConfig(BROWSERS.ADGUARD_API);
-//     return bundleRunner(webpackConfig, watch);
-// };
-
 const devPlan = [
     genValidators,
     copyExternals,
@@ -56,7 +51,6 @@ const devPlan = [
     bundleFirefoxStandalone,
     bundleEdge,
     // bundleOpera,
-    // bundleAdguardApi,
     buildInfo,
 ];
 
@@ -68,7 +62,6 @@ const betaPlan = [
     bundleFirefoxStandalone,
     bundleFirefoxXpi,
     bundleEdge,
-    // bundleAdguardApi,
     // buildInfo,
 ];
 
@@ -116,15 +109,6 @@ const main = async () => {
     }
 };
 
-// const adguardApi = async (watch) => {
-//     try {
-//         await bundleAdguardApi(watch);
-//     } catch (e) {
-//         console.error(e);
-//         process.exit(1);
-//     }
-// };
-
 const chrome = async (watch) => {
     try {
         await bundleChrome(watch);
@@ -159,13 +143,6 @@ program
     .action(() => {
         firefox(program.watch);
     });
-
-// program
-//     .command('adguard-api')
-//     .description('Builds sample extension with adguard api')
-//     .action(() => {
-//         adguardApi(program.watch);
-//     });
 
 program
     .description('By default builds for all platforms')

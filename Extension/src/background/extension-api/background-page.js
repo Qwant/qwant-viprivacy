@@ -24,6 +24,7 @@ import { browser } from './browser';
 import { prefs } from '../prefs';
 import { log } from '../../common/log';
 import { getIconImageData } from './iconsCache';
+import { browserUtils } from '../utils/browser-utils';
 
 export const backgroundPage = (() => {
     const runtime = (function () {
@@ -594,7 +595,7 @@ export const backgroundPage = (() => {
 
     const browserAction = {
         /* eslint-disable-next-line no-unused-vars */
-        async setBrowserAction(tab, icon, badge, badgeColor, title) {
+        async setBrowserAction(tab, icon, badge, badgeColor, badgeTextColor) {
             if (!browserActionSupported) {
                 return;
             }
@@ -611,6 +612,9 @@ export const backgroundPage = (() => {
 
                 if (badge) {
                     try {
+                        if (browserUtils.isFirefoxBrowser()) {
+                            browser.browserAction.setBadgeTextColor({ tabId, color: badgeTextColor });
+                        }
                         await browser.browserAction.setBadgeBackgroundColor({ tabId, color: badgeColor });
                     } catch (e) {
                         log.debug(new Error(e.message));
