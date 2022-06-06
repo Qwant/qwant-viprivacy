@@ -36,9 +36,9 @@ export const backend = (function () {
     const settings = {
 
         // Base url of our backend server
-        get backendUrl() {
-            return 'https://example.com'; // TODO
-        },
+        // get backendUrl() {
+        //    return 'https://example.com';
+        // },
 
         // Url for load filters metadata and rules
         // https://f.qwant.com/tracking-protection/firefox_filter_102.txt
@@ -80,9 +80,9 @@ export const backend = (function () {
         // },
 
         // URL for user complaints on missed ads or malware/phishing websites
-        get reportUrl() {
-            return `${this.backendUrl}/url-report.html`;
-        },
+        // get reportUrl() {
+        //    return `${this.backendUrl}/url-report.html`;
+        // },
 
         /**
          * URL for collecting filter rules statistics.
@@ -91,9 +91,9 @@ export const backend = (function () {
          * Filter rules stats are covered in our privacy policy and on also here:
          * http://adguard.com/en/filter-rules-statistics.html
          */
-        get ruleStatsUrl() {
-            return `${this.backendUrl}/rulestats.html`;
-        },
+        // get ruleStatsUrl() {
+        //    return `${this.backendUrl}/rulestats.html`;
+        // },
 
         /**
          * Browsing Security lookups. In case of Firefox lookups are disabled for HTTPS urls.
