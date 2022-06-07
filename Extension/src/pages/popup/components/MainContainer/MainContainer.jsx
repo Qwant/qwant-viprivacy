@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { observer } from 'mobx-react';
 import { Routes, Route, useLocation } from 'react-router-dom';
+
 import { popupStore } from '../../stores/PopupStore';
 import { rootStore } from '../../../options/stores/RootStore';
 import { messenger } from '../../../services/messenger';
@@ -22,11 +23,10 @@ export const MainContainer = observer(() => {
 
     React.useEffect(() => {
         (async () => {
-            if (protectionLevel) {
-                const isPermissionsGranted = await hasAllOptionalPermissions();
-                if (isPermissionsGranted) {
-                    await messenger.applyQwantSettings(protectionLevel);
-                }
+            if (!protectionLevel) return;
+            const isPermissionsGranted = await hasAllOptionalPermissions();
+            if (isPermissionsGranted) {
+                messenger.applyQwantSettings(protectionLevel);
             }
         })();
     }, [protectionLevel]);

@@ -19,14 +19,13 @@ export const BROWSERS = {
     FIREFOX_STANDALONE: 'firefox-standalone',
     // OPERA: 'opera',
     EDGE: 'edge',
-    // ADGUARD_API: 'adguard-api',
 };
 
 export const BROWSERS_CONF = {
     [BROWSERS.CHROME]: {
         browser: BROWSERS.CHROME,
         remoteScripts: true,
-        devtools: true,
+        devtools: false,
         buildDir: BROWSERS.CHROME,
     },
     [BROWSERS.FIREFOX_STANDALONE]: {
@@ -50,15 +49,9 @@ export const BROWSERS_CONF = {
     [BROWSERS.EDGE]: {
         browser: BROWSERS.EDGE,
         remoteScripts: true,
-        devtools: true,
+        devtools: false,
         buildDir: BROWSERS.EDGE,
     },
-    // [BROWSERS.ADGUARD_API]: {
-    //    browser: BROWSERS.ADGUARD_API,
-    //    remoteScripts: true,
-    //    devtools: false,
-    //    buildDir: BROWSERS.ADGUARD_API,
-    // },
 };
 
 export const FIREFOX_APP_IDS_MAP = {

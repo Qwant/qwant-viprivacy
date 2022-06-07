@@ -193,5 +193,8 @@
   },
   "uninstall_url": {
     "message": "https://fr.surveymonkey.com/r/RX2XFHC"
+  },
+  "error_label": {
+    "message": "Erreur:"
   }
 }

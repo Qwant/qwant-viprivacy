@@ -35,15 +35,15 @@ import { browserUtils } from './utils/browser-utils';
 import { log } from '../common/log';
 import { runtimeImpl } from '../common/common-script';
 import { MESSAGE_TYPES } from '../common/constants';
-import { translator } from '../common/translators/translator';
+// import { translator } from '../common/translators/translator';
 
 /**
  * UI service
  */
 export const uiService = (function () {
-    const alertStylesUrl = backgroundPage.getURL('/assets/css/alert-popup.css');
+    // const alertStylesUrl = backgroundPage.getURL('/assets/css/alert-popup.css');
 
-    const browserActionTitle = translator.getMessage('name');
+    // const browserActionTitle = translator.getMessage('name');
 
     // const contextMenuCallbackMappings = {
     //     'context_block_site_ads': function () {
@@ -119,6 +119,7 @@ export const uiService = (function () {
         let icon;
         let badge;
         let badgeColor = '#555';
+        const badgeTextColor = '#fff';
 
         if (tab.tabId === BACKGROUND_TAB_ID) {
             return;
@@ -167,7 +168,7 @@ export const uiService = (function () {
                     }
                 }
             }
-            await backgroundPage.browserAction.setBrowserAction(tab, icon, badge, badgeColor, browserActionTitle);
+            await backgroundPage.browserAction.setBrowserAction(tab, icon, badge, badgeColor, badgeTextColor);
         } catch (ex) {
             log.error('Error while updating icon for tab {0}: {1}', tab.tabId, new Error(ex));
         }
@@ -520,40 +521,40 @@ export const uiService = (function () {
     //     return true;
     // };
 
-    function getFiltersUpdateResultMessage(success, updatedFilters) {
-        let title = '';
-        let text = '';
-        if (success && updatedFilters) {
-            if (updatedFilters.length === 0) {
-                title = '';
-                text = translator.getMessage('options_popup_update_not_found');
-            } else {
-                title = '';
-                text = updatedFilters
-                    .sort((a, b) => {
-                        if (a.groupId === b.groupId) {
-                            return a.displayNumber - b.displayNumber;
-                        }
-                        return a.groupId === b.groupId;
-                    })
-                    .map(filter => `${filter.name}`)
-                    .join(', ');
-                if (updatedFilters.length > 1) {
-                    text += ` ${translator.getMessage('options_popup_update_filters')}`;
-                } else {
-                    text += ` ${translator.getMessage('options_popup_update_filter')}`;
-                }
-            }
-        } else {
-            title = translator.getMessage('options_popup_update_title_error');
-            text = translator.getMessage('options_popup_update_error');
-        }
+    // function getFiltersUpdateResultMessage(success, updatedFilters) {
+    //    let title = '';
+    //    let text = '';
+    //    if (success && updatedFilters) {
+    //        if (updatedFilters.length === 0) {
+    //            title = '';
+    //            text = translator.getMessage('options_popup_update_not_found');
+    //        } else {
+    //            title = '';
+    //            text = updatedFilters
+    //                .sort((a, b) => {
+    //                    if (a.groupId === b.groupId) {
+    //                        return a.displayNumber - b.displayNumber;
+    //                    }
+    //                    return a.groupId === b.groupId;
+    //                })
+    //                .map(filter => `${filter.name}`)
+    //                .join(', ');
+    //            if (updatedFilters.length > 1) {
+    //                text += ` ${translator.getMessage('options_popup_update_filters')}`;
+    //            } else {
+    //                text += ` ${translator.getMessage('options_popup_update_filter')}`;
+    //            }
+    //        }
+    //    } else {
+    //        title = translator.getMessage('options_popup_update_title_error');
+    //        text = translator.getMessage('options_popup_update_error');
+    //    }
 
-        return {
-            title,
-            text,
-        };
-    }
+    //    return {
+    //        title,
+    //        text,
+    //    };
+    // }
 
     // function getFiltersEnabledResultMessage(enabledFilters) {
     //     const title = translator.getMessage('alert_popup_filter_enabled_title');
@@ -979,8 +980,8 @@ export const uiService = (function () {
     };
 
     const init = async () => {
-        const response = await fetch(alertStylesUrl);
-        const alertStyles = await response.text();
+        // const response = await fetch(alertStylesUrl);
+        // const alertStyles = await response.text();
 
         // update icon on event received
         listeners.addListener((event, tab, reset) => {
@@ -1102,12 +1103,12 @@ export const uiService = (function () {
         });
 
         // on filters updated event
-        listeners.addListener((event, success, updatedFilters) => {
-            if (event === listeners.UPDATE_FILTERS_SHOW_POPUP) {
-                const result = getFiltersUpdateResultMessage(success, updatedFilters);
-                showAlertMessagePopup(result.title, result.text, alertStyles);
-            }
-        });
+        // listeners.addListener((event, success, updatedFilters) => {
+        //    if (event === listeners.UPDATE_FILTERS_SHOW_POPUP) {
+        //        const result = getFiltersUpdateResultMessage(success, updatedFilters);
+        //        showAlertMessagePopup(result.title, result.text, '');
+        //    }
+        // });
 
         // close all page on unload
         unload.when(closeAllPages);

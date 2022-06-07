@@ -615,7 +615,9 @@ const webrequestInit = function () {
                 }
                 handlerBehaviorTimeout = setTimeout(() => {
                     handlerBehaviorTimeout = null;
-                    backgroundPage?.webRequest?.handlerBehaviorChanged();
+                    if (typeof backgroundPage?.webRequest?.handlerBehaviorChanged === 'function') {
+                        backgroundPage.webRequest.handlerBehaviorChanged();
+                    }
                 }, 3000);
                 break;
             default:

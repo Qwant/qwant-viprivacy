@@ -1,1 +1,0 @@
-export { Allowlist } from './Allowlist';

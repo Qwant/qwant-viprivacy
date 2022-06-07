@@ -26,8 +26,6 @@ import { browserUtils } from '../utils/browser-utils';
 import { lazyGet } from '../utils/lazy';
 import {
     APPEARANCE_THEMES,
-    DEFAULT_FIRST_PARTY_COOKIES_SELF_DESTRUCT_MIN,
-    DEFAULT_THIRD_PARTY_COOKIES_SELF_DESTRUCT_MIN,
 } from '../../pages/constants';
 
 /**
@@ -107,10 +105,10 @@ export const settings = (() => {
                 defaults[settings.BLOCK_CHROME_CLIENT_DATA] = !!browserUtils.isChromeBrowser();
                 defaults[settings.BLOCK_WEBRTC] = false;
                 defaults[settings.SELF_DESTRUCT_THIRD_PARTY_COOKIES] = true;
-                defaults[settings.SELF_DESTRUCT_THIRD_PARTY_COOKIES_TIME] = DEFAULT_THIRD_PARTY_COOKIES_SELF_DESTRUCT_MIN;
+                defaults[settings.SELF_DESTRUCT_THIRD_PARTY_COOKIES_TIME] = 2880;
                 defaults[settings.SELF_DESTRUCT_FIRST_PARTY_COOKIES] = false;
-                defaults[settings.SELF_DESTRUCT_FIRST_PARTY_COOKIES_TIME] = DEFAULT_FIRST_PARTY_COOKIES_SELF_DESTRUCT_MIN;
-                defaults[settings.APPEARANCE_THEME] = APPEARANCE_THEMES.LIGHT; // SYSTEM
+                defaults[settings.SELF_DESTRUCT_FIRST_PARTY_COOKIES_TIME] = 4320;
+                defaults[settings.APPEARANCE_THEME] = APPEARANCE_THEMES.LIGHT;
                 defaults[settings.USER_FILTER_ENABLED] = true;
                 defaults[settings.HIDE_RATE_BLOCK] = false;
                 defaults[settings.USER_RULES_EDITOR_WRAP] = false;

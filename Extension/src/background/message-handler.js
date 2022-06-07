@@ -739,9 +739,6 @@ const createMessageHandler = () => {
             }
             case MESSAGE_TYPES.START_TRACKING_BLOCKER:
                 return startTrackingBlocker();
-            case MESSAGE_TYPES.QWANT_SETTINGS_APPLIED:
-                // Hacky approach for now, but you can ignore
-                break;
             default:
                 // Unhandled message
                 throw new Error(`There is no such message type ${message.type}`);
