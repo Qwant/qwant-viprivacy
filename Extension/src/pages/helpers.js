@@ -1,8 +1,6 @@
 /* eslint-disable max-len */
 import { translator } from '../common/translators/translator';
 
-export const isMacOs = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
-
 export const getFilenameExtension = (filename) => {
     if (!filename) {
         return undefined;
