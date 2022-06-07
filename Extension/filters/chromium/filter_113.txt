@@ -1,18 +1,18 @@
 [Adblock Plus 2.0]
-! Checksum: dFy0EyyAm209WEe8hEWpIw
-! Version: 202205200646
+! Checksum: 8gMPhXmFBKT2nen5DQloWA
+! Version: 202205311347
 ! Title: Liste FR
 ! Expires: 1 days
-! Description: Filtres publicitaires francophones complÃ©mentaires Ã  EasyList
+! Description: Filtres publicitaires francophones complémentaires à EasyList
 ! Homepage: https://forums.lanik.us/viewforum.php?f=91
 ! Repo Git: https://github.com/easylist/listefr
 ! Licence : https://creativecommons.org/licenses/by-nc-sa/3.0/
 !
-! Merci de signaler toute publicitÃ© non filtrÃ©e ou tout problÃ¨me
+! Merci de signaler toute publicité non filtrée ou tout problème
 ! dans le forum : https://forums.lanik.us/viewforum.php?f=91
 ! ou via e-mail : liste.fr.easylist $ gmail.com
 !
-!----------------------- Filtres gÃ©nÃ©riques ----------------------!
+!----------------------- Filtres génériques ----------------------!
 !
 %22display_ad_
 %2Fopenad.
@@ -3123,7 +3123,7 @@ _frontend_loader.$script
 ||xyz^*?pub=*&gateid=$script
 ||xyz^*?resource=*&widgets=*&isct=*&iscs=$third-party
 !
-!------------------------ GÃ©nÃ©riques popup -----------------------!
+!------------------------ Génériques popup -----------------------!
 !
 %26referrer%*%26cmp%$popup
 %3dadblock_pop%$popup
@@ -11529,7 +11529,7 @@ _zoneid=*/rel/index.cfm?$popup
 ! Filtres popup temporaire
 /safu/safu.php?*%$popup
 !
-!----------------------- PublicitÃ©s tierces ----------------------!
+!----------------------- Publicités tierces ----------------------!
 !
 $csp=worker-src 'none',domain=123moviesgo.nl|300mbfilms.co|akvideo.stream|alltube.pl|alltube.tv|annuaire-bleu.net|arnaques-internet.info|atk-exotics.com|atkebony.com|bamekoohrang.ir|bigspeeds.com|bmovies123.me|centrum-dramy.pl|chemikino.ru|clipwatching.com|coinfaucet.eu|cracklists.com|crictime.com|crictime.is|crimedocumentary.com|deltabit.co|descargas2020.com|domnuleprimar.ro|dragonballzpolo.blogspot.com|eduardolegatti.blogspot.com|extratorrent.si|fileone.tv|filmovix.com|filmovix.net|filmovix.org|firstone.tv|firstonetv.eu|firstonetv.live|flashx.net|flashx.pw|flashx.tv|fmoviesgo.me|full-mp3.com|funtik.tv|genashowalter.com|gomovie123.me|hdvid.fun|hdvid.tv|hospital.plus|ianimes.org|javbros.com|lewd.ninja|luckybitco.in|mobology.ir|movie4k.is|nahnoji.cz|neurozinzin.com|novator.az|ukpass.co|openload.cc|ovid.tv|ovid.xyz|pebx.pl|peliculas24.me|pelisplus.online|pezeshk.us|powvideo.net|protect-link.biz|salon.com|seriesenlinea.net|shush.se|sickrage.ca|skytorrents.me|sorteosrd.com|studio100.it|szukajka.tv|tapemovie.com|theappguruz.com|thepiratebay.vip|onion.pet|onion.ly|hdvid.online|thepiratebay.cr|thepiratebay.org|thepiratebay.se.net|thevideo.me|tomadivx.tv|torrentrapid.com|tubetitties.com|unblocked2.vip|unblocked.app|unblockit.dev|unblocked.gdn|unblocked.is|unblocked.lc|unblocked.vet|uptobox.com|uptostream.com|vidoza.co|vidoza.net|vidtod.com|vidtodo.com|vidop.icu|vidup.io|void.cat|wallpoper.com|wearesaudis.net|yazilir.com
 !
@@ -12808,7 +12808,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||zlpaste.net/banner/
 ||zone-hot.com/thumblink.php?
 ||zone.*.netdna-cdn.com^
-! edisound.com (podcast sponsorisÃ©)
+! edisound.com (podcast sponsorisé)
 ||platform.edisound.com^$domain=lejournaldelamaison.fr
 ||publishers.edisound.com^$domain=lejournaldelamaison.fr
 ! dailymotion.com
@@ -13289,7 +13289,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||dd851bjvaq21r.cloudfront.net/script/
 ||dd851bjvaq21r.cloudfront.net/script_v2/
 !
-!----------------------- PublicitÃ©s tierces popup ----------------!
+!----------------------- Publicités tierces popup ----------------!
 !
 ||1movietv.com/favis/$popup
 ||ad.adriver.ru^$popup
@@ -13445,7 +13445,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||youporn.com^*?utm_$popup
 ||youtube2mp3.cc/p.php$popup
 !
-!----------------------- Sites spÃ©cifiques -----------------------!
+!----------------------- Sites spécifiques -----------------------!
 !
 ||01net.com/front_office/static/telechargement/box/annonce.html
 ||01porno.com/include/
@@ -15688,14 +15688,14 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||porndoe.com^$csp=img-src 'none' http: https:
 ||porndoe.com^$csp=media-src 'none' http: https:
 ||streamingqc.com^$csp=script-src 'self' 'unsafe-inline' *.google.com *.gstatic.com *.wp.com
-! Filtres de rÃ©Ã©criture de ressources internes pour Adblock Plus
+! Filtres de réécriture de ressources internes pour Adblock Plus
 ||delivery.tf1.fr/pub$media,rewrite=abp-resource:blank-mp3,domain=tf1.fr
 ||dnl-adv-ssl.tf1.fr^$media,rewrite=abp-resource:blank-mp3,domain=tf1.fr
 ||loadshare.org/custom/$media,rewrite=abp-resource:blank-mp3,domain=01fmovies.com
 ||slpubmedias.tf1.fr^$media,rewrite=abp-resource:blank-mp3,domain=tf1.fr
 ||static.6cloud.fr^*.mp4$media,rewrite=abp-resource:blank-mp3,domain=6play.fr
 ||tf1.fr/assets/js/build/lib/ad$rewrite=abp-resource:blank-js,domain=tf1.fr
-!----------------------- Sites spÃ©cifiques popup -----------------!
+!----------------------- Sites spécifiques popup -----------------!
 !
 ||1divx.co/*-film-$popup,~third-party
 ||1movies.*/user/$popup
@@ -15770,7 +15770,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||watchfomny.tv/pop/$popup
 ||yts.*/assets/$popup
 !
-!------------------ Ã‰lÃ©ments gÃ©nÃ©riques -----------------!
+!------------------ Éléments génériques -----------------!
 !
 ###AD720x90
 ###ADS_1
@@ -19029,7 +19029,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ##.samBannerUnit .samItem
 ##div > [class][data-pos] > .SamLink
 !
-!----------------------- Ã‰lÃ©ments -----------------------!
+!----------------------- Éléments -----------------------!
 !
 echoroukonline.com###Advertisement
 bienpublic.com###AjaxCarreEditoIoomyz
@@ -20815,59 +20815,59 @@ yggtorrent.la,yggtorrent.li,yggtorrent.nz,yggtorrent.re,yggtorrent.se,yggtorrent
 1freebb.com,babaorum.info,bboard.it,bestforum4u.com,bestforumforyou.com,bestoof.com,bestthread.com,bigboardlive.com,bigforum4you.com,boardforyou.com,cforum.info,clicforum.com,clicforum.fr,coolforum.info,discuforum.info,discussionforyou.com,ebboard.com,fansforum.info,forum-box.com,forumdesfans.com,forumforever.com,forumserv.com,hereboard.com,hotforum4u.com,hotforumonline.com,leforum.cc,leforum.eu,leforum.tv,level52.com,lolforum.com,lolforum.info,majz.com,myforumlive.com,newforumlive.com,ogameteam.com,phpboard1.com,positiforum.info,quickforum.info,smileforum.info,soforums.com,theforumcity.com,topbboard.com,urtopic.com,vraiforum.com,webrpg.info,xoo.it,xooit.be,xooit.biz,xooit.cc,xooit.co.uk,xooit.com,xooit.eu,xooit.fr,xooit.info,xooit.org,xooit.org.uk,xooit.tv##body > div[id][style*="z-index: 99999999; height: 92px; width: 100%;"]
 ##iframe[style="border: 0; width: 728px; height: 110px;"]
 ##iframe[style="border: 0; width: 970px; height: 110px;"]
-! Filtres de propriÃ©tÃ© CSS pour Adblock Plus
-1fr1.net,3oloum.com,7olm.org,ahladalil.com,ahlamontada.com,alamontada.com,arabepro.com,banouta.net,easyforumpro.com,fcmulhousefans.com,forum-gratuit.net,forum2jeux.com,forumactif.com,forumactif.fr,forumactif.org,forumalgerie.net,forumpro.fr,forums-actifs.com,galoppourlavie.org,gid3an.com,jordanforum.net,lebonforum.com,manager-fifa.com,orizzontescuolaforum.net,own0.com,passionmilitaria.com,sorcieremonique.com,superforum.fr,syriaforums.net,walkingdead-rpg.com,yoo7.com,ze-43eme.com#?#.post:-abp-has(.postprofile:-abp-contains(Contenu sponsorisÃ©))
+! Filtres de propriété CSS pour Adblock Plus
+1fr1.net,3oloum.com,7olm.org,ahladalil.com,ahlamontada.com,alamontada.com,arabepro.com,banouta.net,easyforumpro.com,fcmulhousefans.com,forum-gratuit.net,forum2jeux.com,forumactif.com,forumactif.fr,forumactif.org,forumalgerie.net,forumpro.fr,forums-actifs.com,galoppourlavie.org,gid3an.com,jordanforum.net,lebonforum.com,manager-fifa.com,orizzontescuolaforum.net,own0.com,passionmilitaria.com,sorcieremonique.com,superforum.fr,syriaforums.net,walkingdead-rpg.com,yoo7.com,ze-43eme.com#?#.post:-abp-has(.postprofile:-abp-contains(Contenu sponsorisé))
 20min.ch#?#.clusterTop:-abp-has(.teaser:-abp-has(h3:-abp-contains(Paid Post)))
-algerie-eco.com#?#.td_block_wrap:-abp-has(.block-title:-abp-contains(sponsorisÃ©s))
-allocine.fr#?#.news-card:-abp-contains(SponsorisÃ©)
+algerie-eco.com#?#.td_block_wrap:-abp-has(.block-title:-abp-contains(sponsorisés))
+allocine.fr#?#.news-card:-abp-contains(Sponsorisé)
 allocine.fr#?#.video-card-trailer:-abp-has([class*="sponso"])
 allocine.fr#?#.video-card:-abp-has([class*="sponso"])
 android-mt.com#?#.boutonlink:-abp-has(a:-abp-contains(/VPN|rencontre/))
 annuaire-telechargement.net,extreme-down.blue,extreme-down.plus,extreme-down.site,extreme-down.tv,free-telecharger.net,free-telecharger.xyz,gktorrents.org,torrent9.gg,torrent9.nl,torrent9.si,torrent911.com,zt-za.com,zt-za.net#?#a:-abp-contains(/ANONYME|Anonyme|anonyme|PREMIUM|Premium|RAPIDE|Rapide|Usenet|VPN|Vpn/)
 betaseries.com#?#.blockSearch:-abp-has(.adsbygoogle)
-blogdumoderateur.com#?#.breve:-abp-has(.breve-info:-abp-contains(SponsorisÃ©))
+blogdumoderateur.com#?#.breve:-abp-has(.breve-info:-abp-contains(Sponsorisé))
 blogdumoderateur.com#?#.sticky:-abp-has(.sponsorise)
-businessinsider.fr#?#.post-nonfeatured:-abp-has(.title-studio:-abp-contains(Contenu SponsorisÃ©))
+businessinsider.fr#?#.post-nonfeatured:-abp-has(.title-studio:-abp-contains(Contenu Sponsorisé))
 ccm.net#?#.ccm_list_catch__item:-abp-contains(Sponsored)
 clubic.com#?#.HeroListingCard2 > .grid-x:-abp-has(.post-label--sponso)
 clubic.com#?#.posts:-abp-has(.post-label--sponso)
-cnetfrance.fr#?#.riverPost:-abp-has(.tag-desktop:-abp-contains(PublicitÃ©))
+cnetfrance.fr#?#.riverPost:-abp-has(.tag-desktop:-abp-contains(Publicité))
 commentcamarche.com,commentcamarche.net#?#.ccm_list_catch__item:-abp-contains(Annonces)
 discordbots.org,top.gg#?#.bot-card:-abp-has(.lib:-abp-contains(Promoted))
 discordbots.org,top.gg#?#.bot-card:-abp-has(.lib:-abp-has(img))
 dzgeek.com#?#li + .postbit:-abp-has(img[src$="/avatars/partenaire.png"])
 ebay.fr#?#.sresult:-abp-has(.promoted-lv)
-ebay.fr#?#[id^="nume_html_"]:-abp-has(.mfe-card-group:-abp-has(.mfe-card-group-title:-abp-contains(sponsorisÃ©es)))
-ebay.fr#?#[id^="nume_html_"]:-abp-has(.mfe-header:-abp-has(.mfe-pull-left:-abp-contains(sponsorisÃ©s)))
+ebay.fr#?#[id^="nume_html_"]:-abp-has(.mfe-card-group:-abp-has(.mfe-card-group-title:-abp-contains(sponsorisées)))
+ebay.fr#?#[id^="nume_html_"]:-abp-has(.mfe-header:-abp-has(.mfe-pull-left:-abp-contains(sponsorisés)))
 femmeactuelle.fr#?#.specialCard:-abp-has(a[href^="https://cosmoeus.fr/"])
 forumconstruire.com#?#.post_simple:-abp-has(.postsimple_pseudo:-abp-contains(/Auto-promo|Autopromo/))
 forumpiscine.com#?#.post_classic:-abp-has(.post_classic_pseudo:-abp-has(span:-abp-contains(/Auto-promo|Autopromo/)))
 frandroid.com#?#.container_native_home-list:-abp-has(.aligot-icon)
 frandroid.com#?#.home_bloc_zh:-abp-has(.aligot-icon)
-frandroid.com#?#.post-card:-abp-has(a:-abp-contains(SponsorisÃ©))
+frandroid.com#?#.post-card:-abp-has(a:-abp-contains(Sponsorisé))
 frandroid.com#?#.post-preview:-abp-has(.aligot-icon)
 frandroid.com#?#.post-preview:-abp-has(.aligot-icon-inline)
 frandroid.com#?#a:-abp-has(.aligot-icon-inline)
 frandroid.com#?#div[id^="i"][class^="i"]:-abp-has(.aligot-icon)
-futura-sciences.com#?#.postcontainer:-abp-has(.username:-abp-contains(PublicitÃ©))
+futura-sciences.com#?#.postcontainer:-abp-has(.username:-abp-contains(Publicité))
 gameblog.fr#?#.highlight-item:-abp-has(.word-wrapper:-abp-contains(sponso))
-gameblog.fr#?#.item.full.gameblog:-abp-has(.post-details:-abp-contains(sponsorisÃ©))
+gameblog.fr#?#.item.full.gameblog:-abp-has(.post-details:-abp-contains(sponsorisé))
 gktorrents.org,torrent9.gg,torrent9.nl,torrent9.si,torrent911.com#?#div[style]:-abp-contains(/ANONYME|Anonyme|anonyme|Usenet|VPN|Vpn/)
 gktorrents.org,torrent9.gg,torrent9.nl,torrent9.si,torrent911.com#?#table[style]:-abp-contains(/ANONYME|Anonyme|anonyme|Usenet|VPN|Vpn/)
-hitek.fr#?#.news-bloc:-abp-has(.article-type:-abp-contains(SponsorisÃ©))
+hitek.fr#?#.news-bloc:-abp-has(.article-type:-abp-contains(Sponsorisé))
 homify.fr#?#.photo__m:-abp-has(.top-label)
 homify.fr#?#.premium-card:-abp-has(.top-label)
-ici-londres.com#?#.articles_list_item:-abp-has(.category:-abp-contains(SponsorisÃ©))
-igen.fr,macg.co,watchgeneration.fr#?#article:-abp-has(.sidebar-artitle:-abp-contains(/ðŸ“£|ðŸ“Œ/))
-igen.fr,macg.co,watchgeneration.fr#?#article:-abp-has(h2:-abp-contains(/ðŸ“£|ðŸ“Œ/))
+ici-londres.com#?#.articles_list_item:-abp-has(.category:-abp-contains(Sponsorisé))
+igen.fr,macg.co,watchgeneration.fr#?#article:-abp-has(.sidebar-artitle:-abp-contains(/📣|📌/))
+igen.fr,macg.co,watchgeneration.fr#?#article:-abp-has(h2:-abp-contains(/📣|📌/))
 indeed.fr#?#.jobsearch-SerpJobCard:-abp-has(.sponsoredGray)
-jeuxvideo.com#?#.anchorMiddleOne:-abp-has(.badge:-abp-contains(SponsorisÃ©))
-jeuxvideo.com#?#.anchorWrapper:-abp-has(.cardHorizontalList__footer:-abp-contains(SponsorisÃ©))
-jeuxvideo.com#?#.card:-abp-has(.badge:-abp-contains(SponsorisÃ©))
+jeuxvideo.com#?#.anchorMiddleOne:-abp-has(.badge:-abp-contains(Sponsorisé))
+jeuxvideo.com#?#.anchorWrapper:-abp-has(.cardHorizontalList__footer:-abp-contains(Sponsorisé))
+jeuxvideo.com#?#.card:-abp-has(.badge:-abp-contains(Sponsorisé))
 jeuxvideo.com#?#.item-small-pres:-abp-has(a:-abp-has(.sponsored-prefix))
 jeuxvideo.com#?#li:-abp-has(a:-abp-has(.sponsored-prefix))
 journaldugeek.com#?#.entry__item:-abp-has(.entry__img-container--sponso)
-korben.info#?#.alderaan-sous-article:-abp-has(span:-abp-contains(publicitÃ©))
+korben.info#?#.alderaan-sous-article:-abp-has(span:-abp-contains(publicité))
 korben.info#?#[class*="sous-categories"]:-abp-contains(Lien partenaire)
 korben.info#?#blockquote:-abp-has(a[href*="http://bit.ly/"])
 korben.info#?#blockquote:-abp-has(a[href*="http://bitly.com/"])
@@ -20877,23 +20877,23 @@ korben.info#?#div[class*="sous-article"]:-abp-has(a[href^="http://amzn.to/"])
 latribune.fr#?#.article-wrapper:-abp-has(.subheading:-abp-contains(Partenaire))
 latribune.fr#?#.homepage-section.supplement-section:-abp-has(span:-abp-contains(Partenaires))
 lebigdata.fr#?#.elementor-widget-wrap:-abp-has(a[href^="http://clickmetertracking.com/"])
-leboncoin.fr#?#div[class^="styles_ad"]:-abp-has([color]:-abp-contains(SponsorisÃ©))
+leboncoin.fr#?#div[class^="styles_ad"]:-abp-has([color]:-abp-contains(Sponsorisé))
 lemonde.fr#?#.area--ops:-abp-has(p:-abp-contains(Contenus partenaires))
 lemonde.fr#?#.bd__bloc:-abp-has(.bd__header:-abp-contains(Barnebys.fr))
 leseclaireuses.com#?#.article.small:-abp-has(a[href*=".smartadserver.com"])
 leseclaireuses.com#?#.gslide:-abp-has(a[href^="https://bit.ly/"])
-linfoweb.com#?#.isnotmobi:-abp-has(a:-abp-contains(sponsorisÃ©))
-linfoweb.com#?#tbody:-abp-has(i:-abp-contains(sponsorisÃ©))
+linfoweb.com#?#.isnotmobi:-abp-has(a:-abp-contains(sponsorisé))
+linfoweb.com#?#tbody:-abp-has(i:-abp-contains(sponsorisé))
 macommune.info#?#.box_article:-abp-has(.is-text-publi-infos)
 macommune.info#?#.widget_article:-abp-has(.title_widget:-abp-contains(/PUBLI INFO|Publi-info/))
-maison-islam.com#?#aside:-abp-has(.widget-title:-abp-contains(PublicitÃ©))
-narcity.com#?#.article-thumbnail:-abp-has(a:-abp-contains(/Sponsored|sponsorisÃ©/))
+maison-islam.com#?#aside:-abp-has(.widget-title:-abp-contains(Publicité))
+narcity.com#?#.article-thumbnail:-abp-has(a:-abp-contains(/Sponsored|sponsorisé/))
 nextinpact.com#?#.us-bas-ctr:-abp-has(a[href^="https://www.cybertek.fr/"])
 nextinpact.com#?#app-home-item:-abp-has(.article:-abp-has(.sponsored))
 nextinpact.com#?#li[class="ng-star-inserted"]:-abp-has(.sponsored)
 numerama.com#?#.container_native_sidebar:-abp-has(.sponsoring-icon)
 numerama.com#?#.post-grid:-abp-has(.sponsoring-icon)
-ouedkniss.com#?#.container:-abp-has(.o-section-heading:-abp-contains(/Sponsored|SponsorisÃ©es|Stores Ã  la une/))
+ouedkniss.com#?#.container:-abp-has(.o-section-heading:-abp-contains(/Sponsored|Sponsorisées|Stores à la une/))
 ouedkniss.com#?#.ok-swiper:-abp-has(.swiper-slide[style^="width: 960px;"])
 ouedkniss.com#?#.v-dialog--fullscreen:-abp-has(.v-toolbar-promo)
 ouedkniss.com#?#a:-abp-has(div:-abp-has(.adsbygoogle))
@@ -20907,25 +20907,25 @@ sketchucation.com#?#.post:-abp-has(.postprofile:-abp-has(strong:-abp-contains(Ad
 sookbtp.com#?#.owl-item:-abp-has(figure:-abp-has(img[src^="publicites/"]))
 starbike.com#?#.post.has-profile:-abp-has(.postbody:-abp-has(.adsbygoogle))
 temp-mail.org#?#li:-abp-has(.inboxSenderEmail:-abp-contains(AD | Temp Number))
-thesiteoueb.net#?#.panel:-abp-has(.panel-heading:-abp-has(.panel-title:-abp-contains(PublicitÃ©)))
-tourmag.com#?#.wm-module:-abp-contains(Contenu sponsorisÃ©)
+thesiteoueb.net#?#.panel:-abp-has(.panel-heading:-abp-has(.panel-title:-abp-contains(Publicité)))
+tourmag.com#?#.wm-module:-abp-contains(Contenu sponsorisé)
 tourmag.com#?#.wm-module:-abp-has(a[href^="https://www.hoteletlodgepro.biz/"])
-tsa-algerie.com#?#.jwpv-desktop:-abp-contains(PublicitÃ©)
-twitter.com#?#[data-testid="tweet"]:-abp-contains(SponsorisÃ©)
+tsa-algerie.com#?#.jwpv-desktop:-abp-contains(Publicité)
+twitter.com#?#[data-testid="tweet"]:-abp-contains(Sponsorisé)
 voyageforum.com#?#div[id]:-abp-properties(height: 127*px;)
-voyageforum.com#?#div[style*="width: 300px"]:-abp-contains(/PublicitÃ©|PublicitÃ©s/)
+voyageforum.com#?#div[style*="width: 300px"]:-abp-contains(/Publicité|Publicités/)
 voyageforum.com#?#div[style*="width: 300px"]:-abp-has(.adsbygoogle)
 voyageforum.com#?#table[class="post"]:-abp-has(tbody:-abp-contains(/annonces|annonceurs/))
 voyageforum.com#?#table[style="width: 300px;"]:-abp-has(a)
-zataz.com#?#.custom-sidebar:-abp-has(h3:-abp-contains(/Partenaires|PublicitÃ©/))
+zataz.com#?#.custom-sidebar:-abp-has(h3:-abp-contains(/Partenaires|Publicité/))
 ! facebook.com
-facebook.com##a[aria-label="Lien de lâ€™annonceur"]
-facebook.com#?#.userContentWrapper:-abp-contains(SponsorisÃ©)
+facebook.com##a[aria-label="Lien de l’annonceur"]
+facebook.com#?#.userContentWrapper:-abp-contains(Sponsorisé)
 facebook.com#?#div[id^="hyperfeed_story_id_"]:-abp-has(a:-abp-contains(Nebulus))
-facebook.com#?#div[id^="hyperfeed_story_id_"]:-abp-has(a:-abp-contains(SponsorisÃ©))
-facebook.com#?#div[id^="hyperfeed_story_id_"]:-abp-has(a[href="#"]:-abp-contains(SponsorisÃ©))
-facebook.com#?#div[id^="hyperfeed_story_id_"]:-abp-has(a[href="#"]:-abp-properties(content: "SponsorisÃ©"))
-facebook.com#?#div[id^="hyperfeed_story_id_"]:-abp-has(span:-abp-contains(/Post suggÃ©rÃ©|VidÃ©o suggÃ©rÃ©/))
+facebook.com#?#div[id^="hyperfeed_story_id_"]:-abp-has(a:-abp-contains(Sponsorisé))
+facebook.com#?#div[id^="hyperfeed_story_id_"]:-abp-has(a[href="#"]:-abp-contains(Sponsorisé))
+facebook.com#?#div[id^="hyperfeed_story_id_"]:-abp-has(a[href="#"]:-abp-properties(content: "Sponsorisé"))
+facebook.com#?#div[id^="hyperfeed_story_id_"]:-abp-has(span:-abp-contains(/Post suggéré|Vidéo suggéré/))
 ||facebook.com/fr/u.php?
 ||facebook.com/tr?id=$image
 ||facebook.net^*/fbevents.js$third-party
@@ -20947,8 +20947,8 @@ heures.be,hours.be,openingstijdengids.nl,openingsurengids.be##a[class^="aff"]
 /^https?:\/\/([0-9a-z]+\.)?(animeland\.us|animenova\.org|animeplus\.tv|animewow\.org|gogoanime1\.com|gogoanime\.in|gogoanime\.to|gogoanime\.tv|gogoanimes\.co|goodanime\.co|igg-games\.com|kimcartoon\.to|kimcartoon\.tv|kiss-anime\.ws|mangareader\.net|readcomiconline\.to|thewatchcartoononline\.tv|toonget\.net|toonova\.net|watchcartoononline\.io)\/[a-z]+\/[0-9a-zA-Z\-\_]{15,50}$/$script
 !
 !----------------------- Exceptions -----------------------!
-! Note : le but des exceptions de la Liste FR n'est en aucun cas de laisser passer des publicitÃ©s,
-! mais d'empÃªcher les possibles dysfonctionnements liÃ©s aux filtres bloquants prÃ©sents ci-dessus.
+! Note : le but des exceptions de la Liste FR n'est en aucun cas de laisser passer des publicités,
+! mais d'empêcher les possibles dysfonctionnements liés aux filtres bloquants présents ci-dessus.
 !
 @@|blob:$popup,domain=caf.fr|cerise-prim.fr|particulier.edf.fr
 @@|http://ad4.fr^$~third-party
@@ -21142,7 +21142,7 @@ heures.be,hours.be,openingstijdengids.nl,openingsurengids.be##a[class^="aff"]
 @@||static.stormwall.pro/captcha.css$stylesheet
 @@||static.stormwall.pro/jsav1.3.js$script
 !
-!----------------------- Exceptions d'Ã©lÃ©ments -----------------------!
+!----------------------- Exceptions d'éléments -----------------------!
 !
 msf.fr#@##ad-7
 radio-canada.ca#@##ad-header
