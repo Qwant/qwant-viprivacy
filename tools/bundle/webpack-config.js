@@ -2,8 +2,6 @@ import { BROWSERS } from '../constants';
 import { genChromeConfig } from './chrome/webpack.chrome';
 import { genFirefoxConfig } from './firefox/webpack.firefox';
 import { genEdgeConfig } from './edge/webpack.edge';
-// import { genOperaConfig } from './opera/webpack.opera';
-// import { genSampleApiConfig } from './adguard-api/webpack.adguard-api.js';
 import { getBrowserConf } from '../helpers';
 
 export const getWebpackConfig = (browser) => {
