@@ -146,9 +146,11 @@ export const OnboardingPage = observer(() => {
     };
 
     const updateProtectionLevel = async (value) => {
-        setLoading(true);
-        await messenger.changeProtectionLevel(value);
-        setLoading(false);
+        if (value) {
+            setLoading(true);
+            await messenger.changeProtectionLevel(value);
+            setLoading(false);
+        }
     };
 
     const updateTelemetry = async (enabled) => {

@@ -306,6 +306,8 @@ const createMessageHandler = () => {
             case MESSAGE_TYPES.CHANGE_PROTECTION_LEVEL: {
                 const { protectionLevel } = data;
 
+                if (!protectionLevel) return;
+
                 log.info(`Protection level change: ${protectionLevel}`);
                 settings.setProperty('protection-level', protectionLevel);
 
