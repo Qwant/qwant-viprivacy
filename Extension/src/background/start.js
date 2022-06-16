@@ -18,6 +18,7 @@
 import { log } from '../common/log';
 import { browser } from './extension-api/browser';
 import { startup } from './startup';
+import { browserUtils } from './utils/browser-utils';
 import { hasAllOptionalPermissions } from './utils/optional-permissions';
 
 /**
@@ -39,10 +40,16 @@ export const start = async () => {
             // eslint-disable-next-line max-len
             log.info('Permissions were previously rejected. Option page wont open. permissions-rejected={0}, options-open={1}',
                 arePermissionsRejected, optionsPageOpened);
-        } else {
-            localStorage.setItem('options-page-opened', Date.now());
-            browser.runtime.openOptionsPage();
+            return false;
         }
+
+        if (!!browserUtils.isFirefoxBrowser() && browser.i18n.getUILanguage() !== 'fr') {
+            log.info('Firefox browser and language different than French: Option page wont open automatically.');
+            return false;
+        }
+
+        localStorage.setItem('options-page-opened', Date.now());
+        browser.runtime.openOptionsPage();
         return false;
     } catch (e) {
         log.error(e);

@@ -56,7 +56,7 @@ export const BROWSERS_CONF = {
 
 export const FIREFOX_APP_IDS_MAP = {
     [ENVS.DEV]: 'qwant-vip-dev@qwant.com',
-    [ENVS.BETA]: 'qwant-vip-beta@qwant.com',
+    [ENVS.BETA]: 'qwant-vip-beta-2@qwant.com',
     [ENVS.RELEASE]: 'qwantcomforfirefox@jetpack',
 };
 

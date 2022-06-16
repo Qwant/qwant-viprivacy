@@ -17,8 +17,6 @@ import './styles.css';
 import { Button } from '../../../../common/components/Button';
 import { ArrowImage } from './assets/Arrow';
 
-const ASSETS_BASE_URL = 'https://extension-assets-prod.cellar-c2.services.clever-cloud.com';
-
 export const Steps = ({
     isLoading, state, send, updateProtectionLevel,
     protectionLevel, disableCollectHit, updateTelemetry,
@@ -140,8 +138,7 @@ const RequestPermissions = () => {
     return (
         <div>
             <Image
-                src={`${ASSETS_BASE_URL}/permissions-request.png`}
-                srcFallback={PermissionsRequestImage}
+                src={PermissionsRequestImage}
                 className="content-image"
             />
         </div>
@@ -187,7 +184,7 @@ const ThankYou = ({ onForward }) => {
 
 const PinExtension = () => (
     <div>
-        <Image className="content-image" src={`${ASSETS_BASE_URL}/pin-extension.png`} srcFallback={PinExtensionImage} />
+        <Image className="content-image" src={PinExtensionImage} />
     </div>
 );
 
