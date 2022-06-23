@@ -173,7 +173,6 @@ export const OnboardingPage = observer(() => {
             setLoading(true);
             await messenger.applyQwantSettings(protectionLevel);
             browser.tabs.create({ active: true, url: 'https://qwant.com' });
-            browser.runtime.reload();
         } else if (state.value === States.PERMISSIONS_REJECTED) {
             const tab = await browser.tabs.getCurrent();
             if (tab.id) {
