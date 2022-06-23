@@ -1,8 +1,8 @@
-! Checksum: u49iTzPUFvLO3VLzDOMSVQ
+! Checksum: fbqIKLF0a9CLl1b7RL9SWQ
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.2.63
-! TimeUpdated: 2022-05-31T14:31:10+00:00
+! Version: 2.0.2.73
+! TimeUpdated: 2022-06-17T15:30:47+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -161,6 +161,24 @@ $removeparam=fbclid
 ! Good: ||example.org^$removeparam=cx
 !
 !
+! get-express-vpns.com
+||get-express-vpns.com^$removeparam=sxid
+||get-express-vpns.com^$removeparam=ttorigin
+! MacKeeper
+||mkaff.com/landings/$removeparam
+! lazada.vn
+||lazada.vn^$removeparam=mkttid
+||lazada.vn^$removeparam=laz_trackid
+! trib.al - redirecting service used by spiegel.de (when posting on facebook.com)
+||trib.al$removeparam=fbclid
+||trib.al$removeparam=h
+||trib.al$removeparam=__tn__
+||trib.al$removeparam=c[0]
+! Mail.Ru
+$removeparam=/utm_partner_id|frommail/,domain=mail.ru|sportmail.ru
+||pulse.mail.ru^$removeparam=/^(udid|DeviceID|ver|appbuild|vendor|model|device_name|device_type|instanceid|device_year|connection_class|appsflyerid)/
+! https://github.com/AdguardTeam/AdguardFilters/issues/120891
+||p.typekit.net^$stylesheet,removeparam
 ! https://github.com/AdguardTeam/AdguardFilters/issues/118376#issuecomment-1134132202
 ||open.spotify.com^$removeparam=_branch_referrer
 ||open.spotify.com^$removeparam=si
@@ -172,8 +190,9 @@ $removeparam=fbclid
 ||giphy.com^$removeparam=cid
 ||giphy.com^$removeparam=ct
 ||giphy.com^$removeparam=rid
+! https://github.com/AdguardTeam/AdguardFilters/issues/119833
 ! https://github.com/AdguardTeam/AdguardFilters/issues/120322
-||jin115.com^$removeparam=ref
+$removeparam=ref,domain=jin115.com|bipblog.com
 ! https://www.cinematoday.jp/site/tokyo-vice/?g_clk=topcover
 ||cinematoday.jp^$removeparam=g_clk
 ! https://xxvidsx.com/?vid=87&ad=0&site=
@@ -314,6 +333,7 @@ $domain=atlanticcouncil.org|digikey.com,removeparam=/^mkt_tok/
 ! Rakuten sites self-promo links
 $removeparam=l-id,domain=nikki.ne.jp|rakuten.co.jp|rebates.jp
 ||rakuten.co.jp^$removeparam=scid
+||rakuten.co.jp^$removeparam=sc2id
 ! https://github.com/AdguardTeam/AdguardFilters/issues/107266
 ||azby.fmworld.net/cgi-bin/common/rd.cgi?$removeparam=affitest
 ! https://github.com/AdguardTeam/AdguardFilters/issues/107199
@@ -684,7 +704,16 @@ $removeparam=/^curator_clanid/,domain=steampowered.com|steamcommunity.com
 ||cam4.com^$removeparam=suid
 ||cam4.com^$removeparam=showSignupPopup
 ! Tracks source site
-||bbc.com^$removeparam=ocid
+$removeparam=ocid,domain=bbc.com|bbc.co.uk
+$removeparam=ns_mchannel,domain=bbc.com|bbc.co.uk
+$removeparam=ns_source,domain=bbc.com|bbc.co.uk
+$removeparam=ns_campaign,domain=bbc.com|bbc.co.uk
+$removeparam=ns_linkname,domain=bbc.com|bbc.co.uk
+$removeparam=ns_fee,domain=bbc.com|bbc.co.uk
+$removeparam=at_campaign,domain=bbc.com|bbc.co.uk
+$removeparam=/^at_custom/,domain=bbc.com|bbc.co.uk
+$removeparam=at_medium,domain=bbc.com|bbc.co.uk
+! insider.office.com
 ||office.com^$removeparam=ocid
 ! Embedded tweets
 ||twitter.com^$removeparam=ref_src

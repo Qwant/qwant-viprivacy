@@ -318,8 +318,8 @@
       "groupId": 1,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_101.txt",
       "trustLevel": "low",
-      "version": "2.0.89.7",
-      "timeUpdated": "2022-05-31T13:00:45+0000",
+      "version": "2.0.90.19",
+      "timeUpdated": "2022-06-22T09:00:58+0000",
       "languages": [],
       "tags": [
         1
@@ -336,8 +336,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_102.txt",
       "trustLevel": "high",
-      "version": "2.0.5.7",
-      "timeUpdated": "2022-05-31T13:00:47+0000",
+      "version": "2.0.5.10",
+      "timeUpdated": "2022-06-21T01:00:23+0000",
       "languages": [],
       "tags": [
         1,
@@ -356,8 +356,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_103.txt",
       "trustLevel": "high",
-      "version": "2.0.0.32",
-      "timeUpdated": "2021-06-13T09:00:26+0000",
+      "version": "2.0.0.33",
+      "timeUpdated": "2022-06-13T09:00:34+0000",
       "languages": [
         "bg"
       ],
@@ -379,8 +379,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_104.txt",
       "trustLevel": "high",
-      "version": "2.1.8.63",
-      "timeUpdated": "2022-05-31T13:00:51+0000",
+      "version": "2.1.9.91",
+      "timeUpdated": "2022-06-22T09:01:05+0000",
       "languages": [],
       "tags": [
         1,
@@ -424,8 +424,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_106.txt",
       "trustLevel": "low",
-      "version": "2.1.8.60",
-      "timeUpdated": "2022-05-31T13:00:52+0000",
+      "version": "2.1.9.88",
+      "timeUpdated": "2022-06-22T09:01:06+0000",
       "languages": [],
       "tags": [
         1,
@@ -444,8 +444,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_107.txt",
       "trustLevel": "low",
-      "version": "2.0.8.19",
-      "timeUpdated": "2022-05-30T21:00:48+0000",
+      "version": "2.0.8.33",
+      "timeUpdated": "2022-06-17T17:00:31+0000",
       "languages": [],
       "tags": [
         1,
@@ -464,8 +464,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_108.txt",
       "trustLevel": "high",
-      "version": "2.0.3.86",
-      "timeUpdated": "2022-05-30T09:00:50+0000",
+      "version": "2.0.3.87",
+      "timeUpdated": "2022-06-07T01:00:30+0000",
       "languages": [
         "he"
       ],
@@ -487,8 +487,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_109.txt",
       "trustLevel": "high",
-      "version": "2.1.8.62",
-      "timeUpdated": "2022-05-31T13:00:55+0000",
+      "version": "2.1.9.90",
+      "timeUpdated": "2022-06-22T09:01:10+0000",
       "languages": [
         "it"
       ],
@@ -510,8 +510,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_110.txt",
       "trustLevel": "high",
-      "version": "2.0.2.18",
-      "timeUpdated": "2022-05-16T13:00:38+0000",
+      "version": "2.0.2.19",
+      "timeUpdated": "2022-06-05T17:00:32+0000",
       "languages": [
         "lt"
       ],
@@ -556,8 +556,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_112.txt",
       "trustLevel": "high",
-      "version": "2.1.8.61",
-      "timeUpdated": "2022-05-31T13:00:56+0000",
+      "version": "2.1.9.89",
+      "timeUpdated": "2022-06-22T09:01:12+0000",
       "languages": [
         "ar"
       ],
@@ -579,8 +579,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_113.txt",
       "trustLevel": "low",
-      "version": "2.1.8.60",
-      "timeUpdated": "2022-05-31T13:00:59+0000",
+      "version": "2.1.9.88",
+      "timeUpdated": "2022-06-22T09:01:14+0000",
       "languages": [],
       "tags": [
         1,
@@ -599,8 +599,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_114.txt",
       "trustLevel": "low",
-      "version": "2.0.0.95",
-      "timeUpdated": "2022-04-21T21:00:48+0000",
+      "version": "2.0.0.96",
+      "timeUpdated": "2022-06-13T17:00:40+0000",
       "languages": [],
       "tags": [
         1,
@@ -619,8 +619,8 @@
       "groupId": 2,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_118.txt",
       "trustLevel": "low",
-      "version": "2.0.91.62",
-      "timeUpdated": "2022-05-31T13:01:02+0000",
+      "version": "2.0.92.74",
+      "timeUpdated": "2022-06-22T09:01:17+0000",
       "languages": [],
       "tags": [
         2
@@ -657,8 +657,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_120.txt",
       "trustLevel": "high",
-      "version": "2.0.10.99",
-      "timeUpdated": "2022-05-30T21:00:59+0000",
+      "version": "2.0.11.21",
+      "timeUpdated": "2022-06-20T17:00:57+0000",
       "languages": [
         "id"
       ],
@@ -699,8 +699,8 @@
       "groupId": 4,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_122.txt",
       "trustLevel": "low",
-      "version": "2.0.88.96",
-      "timeUpdated": "2022-05-31T13:01:14+0000",
+      "version": "2.0.90.8",
+      "timeUpdated": "2022-06-22T09:01:29+0000",
       "languages": [],
       "tags": [
         5,
@@ -718,8 +718,8 @@
       "groupId": 3,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_123.txt",
       "trustLevel": "low",
-      "version": "2.0.88.98",
-      "timeUpdated": "2022-05-31T13:01:18+0000",
+      "version": "2.0.90.10",
+      "timeUpdated": "2022-06-22T09:01:33+0000",
       "languages": [],
       "tags": [
         3,
@@ -777,8 +777,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_203.txt",
       "trustLevel": "high",
-      "version": "2.0.1.75",
-      "timeUpdated": "2022-05-30T21:01:17+0000",
+      "version": "2.0.1.79",
+      "timeUpdated": "2022-06-13T21:01:17+0000",
       "languages": [
         "hu"
       ],
@@ -800,8 +800,8 @@
       "groupId": 2,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_204.txt",
       "trustLevel": "low",
-      "version": "2.0.9.82",
-      "timeUpdated": "2022-05-31T09:01:13+0000",
+      "version": "2.0.9.93",
+      "timeUpdated": "2022-06-17T13:01:21+0000",
       "languages": [],
       "tags": [
         2
@@ -818,8 +818,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_206.txt",
       "trustLevel": "low",
-      "version": "2.0.1.35",
-      "timeUpdated": "2022-05-31T01:00:58+0000",
+      "version": "2.0.1.36",
+      "timeUpdated": "2022-06-16T01:01:00+0000",
       "languages": [],
       "tags": [
         1,
@@ -837,8 +837,8 @@
       "groupId": 4,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_207.txt",
       "trustLevel": "low",
-      "version": "2.1.8.61",
-      "timeUpdated": "2022-05-31T13:01:26+0000",
+      "version": "2.1.9.89",
+      "timeUpdated": "2022-06-22T09:01:41+0000",
       "languages": [],
       "tags": [
         50
@@ -855,8 +855,8 @@
       "groupId": 5,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_208.txt",
       "trustLevel": "low",
-      "version": "2.0.84.21",
-      "timeUpdated": "2022-05-31T13:01:28+0000",
+      "version": "2.0.84.63",
+      "timeUpdated": "2022-06-22T01:00:59+0000",
       "languages": [],
       "tags": [
         4
@@ -873,8 +873,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_212.txt",
       "trustLevel": "low",
-      "version": "2.1.7.86",
-      "timeUpdated": "2022-05-31T13:01:28+0000",
+      "version": "2.1.9.14",
+      "timeUpdated": "2022-06-22T09:01:43+0000",
       "languages": [],
       "tags": [
         2,
@@ -892,8 +892,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_214.txt",
       "trustLevel": "high",
-      "version": "2.0.16.61",
-      "timeUpdated": "2022-05-31T09:01:18+0000",
+      "version": "2.0.17.1",
+      "timeUpdated": "2022-06-22T09:01:43+0000",
       "languages": [
         "vi"
       ],
@@ -914,8 +914,8 @@
       "groupId": 2,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_215.txt",
       "trustLevel": "low",
-      "version": "2.0.4.58",
-      "timeUpdated": "2022-05-07T09:01:07+0000",
+      "version": "2.0.4.61",
+      "timeUpdated": "2022-06-22T05:01:03+0000",
       "languages": [],
       "tags": [
         2
@@ -932,8 +932,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_216.txt",
       "trustLevel": "high",
-      "version": "2.0.14.45",
-      "timeUpdated": "2022-05-20T21:01:19+0000",
+      "version": "2.0.14.46",
+      "timeUpdated": "2022-06-06T13:01:15+0000",
       "languages": [
         "pl"
       ],
@@ -954,8 +954,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_217.txt",
       "trustLevel": "high",
-      "version": "2.0.4.79",
-      "timeUpdated": "2022-05-23T01:01:08+0000",
+      "version": "2.0.4.80",
+      "timeUpdated": "2022-06-10T13:01:08+0000",
       "languages": [],
       "tags": [
         6,
@@ -1012,8 +1012,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_220.txt",
       "trustLevel": "low",
-      "version": "2.0.4.76",
-      "timeUpdated": "2022-05-31T01:01:12+0000",
+      "version": "2.0.4.85",
+      "timeUpdated": "2022-06-22T09:01:54+0000",
       "languages": [],
       "tags": [
         5,
@@ -1031,8 +1031,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_221.txt",
       "trustLevel": "high",
-      "version": "2.0.4.52",
-      "timeUpdated": "2022-05-23T01:01:17+0000",
+      "version": "2.0.4.53",
+      "timeUpdated": "2022-06-10T13:02:35+0000",
       "languages": [],
       "tags": [
         3,
@@ -1059,25 +1059,6 @@
       ]
     },
     {
-      "filterId": 223,
-      "name": "Fanboy's Swedish",
-      "description": "Filter list for websites in Swedish.",
-      "timeAdded": "2014-06-30T07:56:55+0000",
-      "homepage": "https://www.fanboy.co.nz/",
-      "expires": 345600,
-      "displayNumber": 2,
-      "groupId": 7,
-      "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_223.txt",
-      "trustLevel": "low",
-      "version": "2.0.0.25",
-      "timeUpdated": "2020-10-13T12:45:24+0000",
-      "languages": [],
-      "tags": [
-        1,
-        55
-      ]
-    },
-    {
       "filterId": 225,
       "name": "Fanboy's Anti-Facebook List",
       "description": "Warning, it will break Facebook-based comments on some websites and may also break some Facebook apps or games.",
@@ -1097,25 +1078,6 @@
       ]
     },
     {
-      "filterId": 226,
-      "name": "Fanboy's Vietnamese",
-      "description": "Filter list for websites in Vietnamese.",
-      "timeAdded": "2014-06-30T07:56:55+0000",
-      "homepage": "https://www.fanboy.co.nz/",
-      "expires": 345600,
-      "displayNumber": 2,
-      "groupId": 7,
-      "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_226.txt",
-      "trustLevel": "low",
-      "version": "2.0.0.25",
-      "timeUpdated": "2020-04-03T01:01:55+0000",
-      "languages": [],
-      "tags": [
-        1,
-        52
-      ]
-    },
-    {
       "filterId": 227,
       "name": "List-KR",
       "description": "Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.",
@@ -1126,8 +1088,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_227.txt",
       "trustLevel": "high",
-      "version": "2.0.7.49",
-      "timeUpdated": "2022-05-31T13:01:47+0000",
+      "version": "2.0.8.3",
+      "timeUpdated": "2022-06-21T17:01:22+0000",
       "languages": [
         "ko"
       ],
@@ -1149,8 +1111,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_228.txt",
       "trustLevel": "high",
-      "version": "2.0.1.66",
-      "timeUpdated": "2022-05-27T09:01:39+0000",
+      "version": "2.0.1.68",
+      "timeUpdated": "2022-06-15T01:01:18+0000",
       "languages": [],
       "tags": [
         1,
@@ -1168,31 +1130,11 @@
       "groupId": 4,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_229.txt",
       "trustLevel": "low",
-      "version": "2.0.2.94",
-      "timeUpdated": "2022-05-30T09:01:45+0000",
+      "version": "2.0.3.5",
+      "timeUpdated": "2022-06-21T09:01:38+0000",
       "languages": [],
       "tags": [
         6
-      ]
-    },
-    {
-      "filterId": 230,
-      "name": "Fanboy's Spanish/Portuguese",
-      "description": "Filter list for websites in Spanish and Portuguese",
-      "timeAdded": "2014-06-30T07:56:55+0000",
-      "homepage": "https://www.fanboy.co.nz/",
-      "expires": 345600,
-      "displayNumber": 2,
-      "groupId": 7,
-      "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_230.txt",
-      "trustLevel": "low",
-      "version": "2.0.0.27",
-      "timeUpdated": "2020-10-13T12:45:38+0000",
-      "languages": [],
-      "tags": [
-        1,
-        17,
-        18
       ]
     },
     {
@@ -1206,8 +1148,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_231.txt",
       "trustLevel": "low",
-      "version": "2.1.8.62",
-      "timeUpdated": "2022-05-31T13:01:54+0000",
+      "version": "2.1.9.90",
+      "timeUpdated": "2022-06-22T09:02:06+0000",
       "languages": [],
       "tags": [
         1,
@@ -1226,8 +1168,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_232.txt",
       "trustLevel": "low",
-      "version": "2.0.28.41",
-      "timeUpdated": "2022-05-31T13:01:57+0000",
+      "version": "2.0.29.29",
+      "timeUpdated": "2022-06-22T09:02:10+0000",
       "languages": [],
       "tags": [
         4,
@@ -1245,8 +1187,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_233.txt",
       "trustLevel": "high",
-      "version": "2.0.7.83",
-      "timeUpdated": "2022-05-31T13:01:58+0000",
+      "version": "2.0.8.5",
+      "timeUpdated": "2022-06-22T01:02:23+0000",
       "languages": [
         "fi"
       ],
@@ -1267,8 +1209,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_234.txt",
       "trustLevel": "low",
-      "version": "2.0.0.62",
-      "timeUpdated": "2022-02-16T17:01:41+0000",
+      "version": "2.0.0.64",
+      "timeUpdated": "2022-06-14T05:01:31+0000",
       "languages": [],
       "tags": [
         45,
@@ -1288,8 +1230,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_235.txt",
       "trustLevel": "high",
-      "version": "2.0.1.12",
-      "timeUpdated": "2021-12-18T13:02:39+0000",
+      "version": "2.0.1.13",
+      "timeUpdated": "2022-06-07T17:01:30+0000",
       "languages": [],
       "tags": [
         1,
@@ -1307,8 +1249,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_236.txt",
       "trustLevel": "low",
-      "version": "2.0.1.22",
-      "timeUpdated": "2022-05-30T09:01:53+0000",
+      "version": "2.0.1.27",
+      "timeUpdated": "2022-06-22T09:02:13+0000",
       "languages": [],
       "tags": [
         1,
@@ -1326,8 +1268,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_237.txt",
       "trustLevel": "high",
-      "version": "1.0.23.65",
-      "timeUpdated": "2022-05-26T17:01:38+0000",
+      "version": "1.0.23.83",
+      "timeUpdated": "2022-06-21T21:01:49+0000",
       "languages": [],
       "tags": [
         41,
@@ -1386,8 +1328,8 @@
       "groupId": 4,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_241.txt",
       "trustLevel": "high",
-      "version": "2.0.93.91",
-      "timeUpdated": "2022-05-31T13:02:09+0000",
+      "version": "2.0.95.19",
+      "timeUpdated": "2022-06-22T09:02:23+0000",
       "languages": [],
       "tags": [
         6
@@ -1422,8 +1364,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_243.txt",
       "trustLevel": "high",
-      "version": "2.0.13.45",
-      "timeUpdated": "2022-05-31T13:02:11+0000",
+      "version": "2.0.13.58",
+      "timeUpdated": "2022-06-22T09:02:25+0000",
       "languages": [
         "sv"
       ],
@@ -1447,8 +1389,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_244.txt",
       "trustLevel": "high",
-      "version": "2.0.8.72",
-      "timeUpdated": "2022-05-30T13:01:47+0000",
+      "version": "2.0.8.76",
+      "timeUpdated": "2022-06-19T01:01:42+0000",
       "languages": [],
       "tags": [
         1,
@@ -1485,8 +1427,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_246.txt",
       "trustLevel": "low",
-      "version": "2.1.4.68",
-      "timeUpdated": "2022-05-31T13:02:14+0000",
+      "version": "2.1.5.96",
+      "timeUpdated": "2022-06-22T09:02:29+0000",
       "languages": [],
       "tags": [
         1,
@@ -1505,8 +1447,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_247.txt",
       "trustLevel": "high",
-      "version": "2.0.2.88",
-      "timeUpdated": "2022-05-30T09:02:08+0000",
+      "version": "2.0.2.89",
+      "timeUpdated": "2022-06-12T01:01:45+0000",
       "languages": [],
       "tags": [
         41,
@@ -1525,8 +1467,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_249.txt",
       "trustLevel": "high",
-      "version": "2.0.6.28",
-      "timeUpdated": "2022-05-31T05:01:45+0000",
+      "version": "2.0.6.33",
+      "timeUpdated": "2022-06-19T17:05:53+0000",
       "languages": [
         "no",
         "da",
@@ -1554,8 +1496,8 @@
       "groupId": 4,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_250.txt",
       "trustLevel": "high",
-      "version": "2.0.5.28",
-      "timeUpdated": "2022-05-31T05:01:49+0000",
+      "version": "2.0.5.48",
+      "timeUpdated": "2022-06-21T05:01:50+0000",
       "languages": [],
       "tags": [
         5,
@@ -1578,8 +1520,8 @@
         "ext_android_cb"
       ],
       "trustLevel": "low",
-      "version": "2.0.3.24",
-      "timeUpdated": "2022-05-30T09:02:12+0000",
+      "version": "2.0.3.31",
+      "timeUpdated": "2022-06-21T05:01:51+0000",
       "languages": [],
       "tags": [
         2
@@ -1616,8 +1558,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_253.txt",
       "trustLevel": "low",
-      "version": "2.0.1.93",
-      "timeUpdated": "2022-05-31T13:02:22+0000",
+      "version": "2.0.3.21",
+      "timeUpdated": "2022-06-22T09:02:37+0000",
       "languages": [],
       "tags": [
         1,
@@ -1651,8 +1593,8 @@
       "groupId": 1,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_11.txt",
       "trustLevel": "full",
-      "version": "2.0.30.8",
-      "timeUpdated": "2022-05-31T13:30:29+0000",
+      "version": "2.0.30.79",
+      "timeUpdated": "2022-06-21T14:30:23+0000",
       "languages": [],
       "tags": [
         1,
@@ -1673,8 +1615,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_13.txt",
       "trustLevel": "full",
-      "version": "2.0.34.82",
-      "timeUpdated": "2022-05-30T12:30:28+0000",
+      "version": "2.0.35.22",
+      "timeUpdated": "2022-06-22T11:30:45+0000",
       "languages": [
         "tr"
       ],
@@ -1696,8 +1638,8 @@
       "groupId": 4,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_14.txt",
       "trustLevel": "full",
-      "version": "2.1.21.33",
-      "timeUpdated": "2022-05-31T14:30:59+0000",
+      "version": "2.1.23.78",
+      "timeUpdated": "2022-06-22T11:30:55+0000",
       "languages": [],
       "tags": [
         5,
@@ -1716,8 +1658,8 @@
       "groupId": 6,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_15.txt",
       "trustLevel": "full",
-      "version": "2.0.34.73",
-      "timeUpdated": "2022-05-31T12:30:38+0000",
+      "version": "2.0.35.68",
+      "timeUpdated": "2022-06-22T06:30:39+0000",
       "languages": [],
       "tags": [
         45,
@@ -1745,8 +1687,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_16.txt",
       "trustLevel": "full",
-      "version": "2.0.33.35",
-      "timeUpdated": "2022-05-31T09:02:53+0000",
+      "version": "2.0.33.65",
+      "timeUpdated": "2022-06-22T06:30:44+0000",
       "languages": [
         "fr"
       ],
@@ -1774,8 +1716,8 @@
         "ext_android_cb"
       ],
       "trustLevel": "full",
-      "version": "2.0.2.63",
-      "timeUpdated": "2022-05-31T14:31:10+0000",
+      "version": "2.0.2.73",
+      "timeUpdated": "2022-06-17T15:30:47+0000",
       "languages": [],
       "tags": [
         2
@@ -1792,8 +1734,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_1.txt",
       "trustLevel": "full",
-      "version": "2.0.69.18",
-      "timeUpdated": "2022-05-31T06:30:49+0000",
+      "version": "2.0.69.99",
+      "timeUpdated": "2022-06-22T10:30:54+0000",
       "languages": [
         "ru"
       ],
@@ -1815,8 +1757,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_224.txt",
       "trustLevel": "full",
-      "version": "2.0.57.6",
-      "timeUpdated": "2022-05-31T14:31:28+0000",
+      "version": "2.0.59.12",
+      "timeUpdated": "2022-06-22T11:31:18+0000",
       "languages": [
         "zh"
       ],
@@ -1838,8 +1780,8 @@
       "groupId": 1,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_2.txt",
       "trustLevel": "full",
-      "version": "2.2.33.14",
-      "timeUpdated": "2022-05-31T14:31:50+0000",
+      "version": "2.2.36.57",
+      "timeUpdated": "2022-06-22T11:31:38+0000",
       "languages": [],
       "tags": [
         10,
@@ -1859,8 +1801,8 @@
       "groupId": 2,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_3.txt",
       "trustLevel": "full",
-      "version": "2.0.40.45",
-      "timeUpdated": "2022-05-31T14:31:56+0000",
+      "version": "2.0.41.50",
+      "timeUpdated": "2022-06-22T07:31:19+0000",
       "languages": [],
       "tags": [
         2,
@@ -1878,8 +1820,8 @@
       "groupId": 3,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_4.txt",
       "trustLevel": "full",
-      "version": "2.0.62.79",
-      "timeUpdated": "2022-05-31T12:31:28+0000",
+      "version": "2.0.64.39",
+      "timeUpdated": "2022-06-22T11:31:48+0000",
       "languages": [],
       "tags": [
         3,
@@ -1897,8 +1839,8 @@
       "groupId": 6,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_5.txt",
       "trustLevel": "full",
-      "version": "2.0.1.1",
-      "timeUpdated": "2022-05-23T11:31:36+0000",
+      "version": "2.0.1.2",
+      "timeUpdated": "2022-06-19T15:31:35+0000",
       "languages": [],
       "tags": [
         45
@@ -1915,8 +1857,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_6.txt",
       "trustLevel": "full",
-      "version": "2.0.27.35",
-      "timeUpdated": "2022-05-31T12:31:40+0000",
+      "version": "2.0.27.94",
+      "timeUpdated": "2022-06-21T20:31:37+0000",
       "languages": [
         "de"
       ],
@@ -1938,8 +1880,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_7.txt",
       "trustLevel": "full",
-      "version": "2.0.20.33",
-      "timeUpdated": "2022-05-31T13:03:56+0000",
+      "version": "2.0.21.31",
+      "timeUpdated": "2022-06-22T11:32:03+0000",
       "languages": [
         "ja"
       ],
@@ -1960,8 +1902,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_8.txt",
       "trustLevel": "full",
-      "version": "2.0.3.88",
-      "timeUpdated": "2022-05-31T10:31:46+0000",
+      "version": "2.0.4.1",
+      "timeUpdated": "2022-06-21T16:32:04+0000",
       "languages": [
         "nl"
       ],
@@ -1984,8 +1926,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/chromium_filter_9.txt",
       "trustLevel": "full",
-      "version": "2.0.14.0",
-      "timeUpdated": "2022-05-28T20:31:45+0000",
+      "version": "2.0.14.19",
+      "timeUpdated": "2022-06-22T10:31:53+0000",
       "languages": [
         "es",
         "pt"

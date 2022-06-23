@@ -102,8 +102,8 @@
             "script": "function setTimeout() {};"
         },
         {
-            "domains": "gala.fr,capital.fr",
-            "script": "AG_onLoad(function(){if(window.pmsCoreAds&&Array.isArray(pmsCoreAds)){var b=new MutationObserver(function(){var a=document.querySelector(\"div[data-ads-core] .dailymotion-player-wrapper\");if(a&&pmsCoreAds.length){b.disconnect();for(const a of pmsCoreAds)if(\"function\"==typeof a)try{a()}catch(a){console.error(a)}}});b.observe(document,{childList:!0,subtree:!0}),setTimeout(function(){b.disconnect()},2E4)}});"
+            "domains": "programme-tv.net,gala.fr,capital.fr",
+            "script": "AG_onLoad(function(){if(window.pmsCoreAds&&Array.isArray(pmsCoreAds)){window.pmsCoreAds=new Proxy(pmsCoreAds,{set:(a,b,c,d)=>{if(\"function\"==typeof c)try{let a=!1;const b=b=>{var c=document.querySelector(\".ads-core-video\");c&&a?clearInterval(d):(b(),a=!0)},d=setInterval(b,1e3,c)}catch(a){}return Reflect.set(a,b,c,d)}})}});"
         },
         {
             "domains": "purepeople.com",
@@ -256,10 +256,6 @@
         {
             "domains": "yasir252.com",
             "script": "AG_onLoad(function(){setTimeout(function(){var a=document.querySelector(\".onp-sl-content\");if(\"function\"===typeof jQuery&&\"object\"===typeof bizpanda.lockerOptions&&a)try{a=0;for(var c=Object.keys(bizpanda.lockerOptions);a<c.length;a++){var d=c[a];if(d.includes(\"onpLock\")){var b=bizpanda.lockerOptions[d];b&&jQuery.ajax({url:b.ajaxUrl,method:\"post\",data:{lockerId:b.lockerId,action:\"opanda_loader\",hash:b.contentHash},success:function(a){var b=jQuery(\".onp-sl-content\"),c=jQuery(\".onp-sl-social-locker\"); b.append(a);b.css(\"display\",\"block\");c.css(\"display\",\"none\")}})}}}catch(e){}},1E3)});"
-        },
-        {
-            "domains": "windowstechblog.nl",
-            "script": "AG_onLoad(function() { window.bizpanda = {}; });"
         },
         {
             "domains": "baliperek.com",
@@ -706,6 +702,14 @@
             "script": "AG_onLoad(function(){if(window.location.href.includes(\"consentUUID\")){var g=new MutationObserver(function(){var b=document.querySelector('button[title=\"I Accept\"]');b&&b.click();});g.observe(document,{childList:!0,subtree:!0});setTimeout(function(){g.disconnect()},1E4)}});"
         },
         {
+            "domains": "cmp-sp.wiwo.de",
+            "script": "AG_onLoad(function(){if(document.location.href.includes(\"requestUUID\")){var g=new MutationObserver(function(){setTimeout(function() {var b=document.querySelector('button[title=\"KONFIGURIEREN\"]');b&&b.click();}, 1000); setTimeout(function() {var c = document.querySelectorAll(\"button.checked > span\"); c[0]&&c[0].click(); var d = document.querySelector('button[title=\"AUSWAHL ZUSTIMMEN\"]'); d&&d.click(); },1000); });g.observe(document,{childList:!0,subtree:!0});setTimeout(function(){g.disconnect()},10E4)}});"
+        },
+        {
+            "domains": "app.salsify.com",
+            "script": "AG_onLoad(function() { setTimeout(function() { var el = document.querySelector('form > input[name=\"salsify_cookie_consent_value\"] + button[type=\"submit\"]'); if(el) el.click(); }, 300); });"
+        },
+        {
             "domains": "cmpv2.berliner-zeitung.de",
             "script": "AG_onLoad(function(){if(document.location.href.includes(\"requestUUID\")){var g=new MutationObserver(function(){setTimeout(function() {var b=document.querySelector('button[title=\"Einstellungen\"]');b&&b.click();}, 2000); setTimeout(function() {var c = document.querySelectorAll(\".reject-toggle\"); c[0]&&c[0].click(); var d = document.querySelector('button[title=\"Speichern & Schließen\"]'); d&&d.click(); },2000); });g.observe(document,{childList:!0,subtree:!0});setTimeout(function(){g.disconnect()},10E4)}});"
         },
@@ -742,7 +746,7 @@
             "script": "AG_onLoad(function(){if(!document.cookie.includes(\"eupubconsent-v2\")){var g=new MutationObserver(function(){var b=document.querySelectorAll('button.cookie-setting-link');b[0]&&b[0].click();setTimeout(function(){var c=document.querySelectorAll('input[aria-checked=\"true\"]');if(c[0]){c.forEach(function(c){c.click();});}},300);setTimeout(function(){var d = document.querySelectorAll(\".save-preference-btn-handler\");d[0]&&(g.disconnect(),d[0].click())},500);});g.observe(document,{childList:!0,subtree:!0});setTimeout(function(){g.disconnect()},1E4)}});"
         },
         {
-            "domains": "privacy.runnersworld.de,womenshealth.de,express.de",
+            "domains": "privacy.wunderweib.de,privacy.runnersworld.de,womenshealth.de,express.de",
             "script": "AG_onLoad(function(){if(window.location.href.includes(\"consent\")){var g=new MutationObserver(function(){var b=document.querySelector('button[title^=\"Accept and continue\"]');if(!b){var b=document.querySelector('button[title^=\"Akzeptieren und weiter\"]');};b&&(g.disconnect(),b.click())});g.observe(document,{childList:!0,subtree:!0});setTimeout(function(){g.disconnect()},1E4)}});"
         },
         {
@@ -764,6 +768,18 @@
         {
             "domains": "consent.ladbible.com,consent.gamingbible.co.uk,consent.unilad.co.uk",
             "script": "AG_onLoad(function(){if(window.location.href.includes(\"consentUUID\")){var g=new MutationObserver(function(){var b=document.querySelector('button[title*=\"Accept\" i]');b&&(g.disconnect(),b.click())});g.observe(document,{childList:!0,subtree:!0});setTimeout(function(){g.disconnect()},1E4)}});"
+        },
+        {
+            "domains": "flynorse.com",
+            "script": "document.cookie = \"N0_CONSENT=essential\";"
+        },
+        {
+            "domains": "e-ladestation.aldi-sued.de",
+            "script": "AG_onLoad(function() {var b=new MutationObserver(function() {var c=document.querySelector('button.ppms_cm_button_primary'); c&&(b.disconnect(),c.click()) });b.observe(document, {childList: !0,subtree: !0});setTimeout(function() {b.disconnect()}, 1E4)});"
+        },
+        {
+            "domains": "tweakers.net",
+            "script": "AG_onLoad(function(){var c=new MutationObserver(function(){var a=document.querySelector(\"button.ctaButton[data-action=\\\"acceptAll\\\"]\"),b=document.querySelector(\"#koekieBar\");a&&b&&getComputedStyle(b)&&getComputedStyle(b).display&&\"block\"===getComputedStyle(b).display&&(c.disconnect(),a.click())});c.observe(document,{childList:!0,subtree:!0}),setTimeout(function(){c.disconnect()},1E4)});"
         },
         {
             "domains": "thomann.de",
@@ -863,7 +879,7 @@
         },
         {
             "domains": "bike24.*",
-            "script": "(function(){document.cookie.includes(\"cookieConsent=\")||(document.cookie='cookieConsent={\"basket-store\":true,\"emarsys\":false,\"google-ga\":false,\"google-tm\":false,\"trbo\":false}; path=/;')})();"
+            "script": "(function(){document.cookie.includes(\"cookieConsent=\")||(document.cookie='cookieConsent={\"algolia\":false,\"basket-store\":true,\"emarsys\":false,\"google-ga\":false,\"google-tm\":false,\"trbo\":false,\"zenloop\":false}; path=/;')})();"
         },
         {
             "domains": "skousen.dk,skousen.no,whiteaway.com,whiteaway.no,whiteaway.se",
@@ -992,6 +1008,10 @@
         {
             "domains": "theartnewspaper.com",
             "script": "document.cookie = \"USE_COOKIE_CONSENT_STATE={%22session%22:false%2C%22persistent%22:false%2C%22necessary%22:true%2C%22preferences%22:false%2C%22statistics%22:false%2C%22marketing%22:false%2C%22firstParty%22:false%2C%22thirdParty%22:false}; path=/;\";"
+        },
+        {
+            "domains": "tomshw.it",
+            "script": "AG_onLoad(function(){if(-1==document.cookie.indexOf(\"euconsent-v2\")){var d=new MutationObserver(function(){var a=!1,e=document.querySelector(\"button.iubenda-cs-accept-btn\");e&&(e.click(),a=!0),null===document.querySelector(\"button.iubenda-cs-accept-btn\")&&a&&d.disconnect()});d.observe(document,{childList:!0,subtree:!0,attributes:!0}),setTimeout(function(){d.disconnect()},1E4)}});"
         },
         {
             "domains": "moto.it,automoto.it,atlantico.fr,movieplayer.it",
@@ -1299,7 +1319,7 @@
         },
         {
             "domains": "express.co.uk",
-            "script": "AG_onLoad(function(){var a=new MutationObserver(function(){var b=document.querySelector('button[aria-label=\"I accept\"]');b&&(a.disconnect(),b.click())});a.observe(document,{childList:!0,subtree:!0});setTimeout(function(){a.disconnect()},1E4)});"
+            "script": "AG_onLoad(function(){if(-1==document.cookie.indexOf(\"euconsent-v2\")){var a=new MutationObserver(function(){var b=document.querySelector('.qc-cmp2-container button + button[mode=\"secondary\"]');b&&(a.disconnect(),b.click())});a.observe(document,{childList:!0,subtree:!0});setTimeout(function(){a.disconnect()},1E4)}});"
         },
         {
             "domains": "sixt-neuwagen.de",
@@ -1594,7 +1614,7 @@
             "script": "AG_onLoad(function() {var b=new MutationObserver(function() {var c=document.querySelector('.cookie-consent-overlay__actions > a.btn--primary'); c&&(b.disconnect(),c.click()) });b.observe(document, {childList: !0,subtree: !0});setTimeout(function() {b.disconnect()}, 1E4)});"
         },
         {
-            "domains": "sourcepoint.tvnow.de,cmp2.freiepresse.de,cmp-sp.neuepresse.de,cdn.privacy-mgmt.com,cmp.techbook.de",
+            "domains": "cmp.wowtv.de,sourcepoint.tvnow.de,cmp2.freiepresse.de,cmp-sp.neuepresse.de,cdn.privacy-mgmt.com,cmp.techbook.de",
             "script": "AG_onLoad(function() {var b=new MutationObserver(function() {var c=document.querySelector('button[title=\"Alle akzeptieren\"]'); c&&(b.disconnect(),c.click()) });b.observe(document, {childList: !0,subtree: !0});setTimeout(function() {b.disconnect()}, 1E4)});"
         },
         {
@@ -1808,6 +1828,10 @@
         {
             "domains": "reuters.com",
             "script": "AG_onLoad(function() { var a=new MutationObserver(function() {var a=document.getElementById(\"_evidon-banner-acceptbutton\");if(a) {a.click();a.disconnect()}});a.observe(document,{childList:!0,subtree:!0});});"
+        },
+        {
+            "domains": "check24.de",
+            "script": "document.cookie=\"c24consent=f; path=/;\";"
         },
         {
             "domains": "metro.co.uk",
@@ -2563,7 +2587,7 @@
         },
         {
             "domains": "vpolshchi.pl",
-            "script": "AG_onLoad(function(){if(-1==document.cookie.indexOf(\"OAX\")){var a=new MutationObserver(function(){var b=document.evaluate(\"//button[contains(text(), 'PRZECHODZ')]\",document,null,XPathResult.ANY_TYPE,null).iterateNext();b&&(a.disconnect(),setTimeout(function(){b.click()},1E3))});a.observe(document,{childList:!0,subtree:!0});setTimeout(function(){a.disconnect()},1E4)}});"
+            "script": "AG_onLoad(function(){if(-1==document.cookie.indexOf(\"OAX\")){var a=new MutationObserver(function(){var b=document.evaluate(\"//button[contains(text(), 'ПОГОДЖУЮСЬ І ПЕРЕХОДЖУ ДО СЕРВІСУ')]\",document,null,XPathResult.ANY_TYPE,null).iterateNext();b&&(a.disconnect(),setTimeout(function(){b.click()},1E3))});a.observe(document,{childList:!0,subtree:!0});setTimeout(function(){a.disconnect()},1E4)}});"
         },
         {
             "domains": "videostar.pl,so-magazyn.pl,o2.pl,pudelek.pl,wp.pl",
@@ -3278,6 +3302,14 @@
             "script": "(function() { try { if (\"undefined\" != typeof localStorage) { localStorage.setItem(\"gendernlsubscription\", \"\") } } catch (ex) {} })();"
         },
         {
+            "domains": "ouo.io",
+            "script": "(()=>{if(location.href.includes(\"?s=http\")){const a=location.href.split(\"?s=\").slice(1);try{location.assign(a)}catch(a){}}})();"
+        },
+        {
+            "domains": "gamelopte.com",
+            "script": "AG_onLoad(function(){var a=document.querySelector(\"#yuidea-snp\");\"function\"===typeof yuidea&&yuidea.toString().includes(\"YuideaLink\")&&a&&yuidea()});"
+        },
+        {
             "domains": "tinyurl.is",
             "script": "AG_onLoad(function(){var a=document.querySelector(\"a[id^='newskip-'][href^='http']\");a&&a.click()});"
         },
@@ -3286,7 +3318,7 @@
             "script": "AG_onLoad(function(){var a=document.querySelector('.content > a[href^=\"http\"].download-link');a&&a.click()});"
         },
         {
-            "domains": "jaatmods.gamepure.in,mad.goiety.com,apkmaven.com,gaminplay.com,choiceappstore.xyz,educationat.xyz,pn.cgchotbox.com,worldappsstore.xyz,tudaydeals.com,toolss.net,7apple.net,gifans.com,iptvjournal.com,kienthucrangmieng.com,coin-free.com,moddingzone.in,insurance-space.xyz,games.blog-forall.com,techydino.net,rajsayt.xyz,jaunpurmusic.info,blognews.in,informaxonline.com,gaminplay.com,noithatmyphu.vn,dulichkhanhhoa.net,paidappstore.xyz,therootdroid.com",
+            "domains": "1apple.xyz,mcrypto.club,jaatmods.gamepure.in,mad.goiety.com,apkmaven.com,gaminplay.com,choiceappstore.xyz,educationat.xyz,pn.cgchotbox.com,worldappsstore.xyz,tudaydeals.com,toolss.net,7apple.net,gifans.com,iptvjournal.com,kienthucrangmieng.com,coin-free.com,moddingzone.in,insurance-space.xyz,games.blog-forall.com,techydino.net,rajsayt.xyz,jaunpurmusic.info,blognews.in,informaxonline.com,gaminplay.com,noithatmyphu.vn,dulichkhanhhoa.net,paidappstore.xyz,therootdroid.com",
             "script": "AG_onLoad(function(){try{var a=document.querySelector('form > input[name=\"newwpsafelink\"]');if(a){var b,c=null==(b=JSON.parse(atob(a.value)))?void 0:b.linkr;if(c){var d=JSON.parse(atob(c.split(\"?safelink_redirect=\")[1]));location.assign(decodeURIComponent(null==d?void 0:d.safelink))}}}catch(e){}});"
         },
         {
