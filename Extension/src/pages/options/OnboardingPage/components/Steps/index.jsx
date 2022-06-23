@@ -161,7 +161,7 @@ const PermissionsRejected = ({ send }) => {
 
 const ThankYou = ({ onForward }) => {
     return (
-        <div>
+        <div className="thank_you_wrapper">
             <div className="thank_you_arrow">
                 <ArrowImage />
             </div>

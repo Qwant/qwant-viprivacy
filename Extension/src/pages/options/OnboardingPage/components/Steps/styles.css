@@ -73,8 +73,22 @@
     letter-spacing: -0.4px;
 }
 
+.thank_you_wrapper {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
 .thank_you_arrow {
     position: absolute;
     right: 96px;
-    z-index: 2;
+
+    @media (max-width: 797px) {
+        display: none;
+    }
+}
+
+.thank_you_fwd_btn {
+    @media (max-width: 797px) {
+        width: 100%;
+    }
 }
