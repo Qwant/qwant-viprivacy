@@ -1,8 +1,8 @@
 [Adblock Plus 2.0]
-! Checksum: LgE+DcV86o0XA/jTvC4Rqw
-! Version: 202206221145
+! Checksum: zYWAI8b3Rh2Rc1FJsAK3vA
+! Version: 202206240744
 ! Title: Adblock Warning Removal List
-! Last modified: 22 Jun 2022 11:45 UTC
+! Last modified: 24 Jun 2022 07:44 UTC
 ! Expires: 1 days (update frequency)
 ! Homepage: https://easylist.to/
 ! Licence: https://easylist.to/pages/licence.html
@@ -363,6 +363,7 @@ debrideurstream.fr#@##pubdirecte
 ot-boutique.fr#@##publicite
 iwin.com#@##sponsorText
 fairytailmx.com#@##sponsored-ad
+hypebeast.com#@#.ad-blocked
 forum.virtualdjing.com#@#.adFrame
 gamaniak.com#@#.adsbygoogle
 dealerdunet.fr#@#.text_ads

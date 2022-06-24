@@ -1,8 +1,8 @@
-! Checksum: nzGadby76DAXZXaUrndp3Q
+! Checksum: SwbjL3y0p8kRYNNxEn/gIg
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups.
-! Version: 2.1.23.75
-! TimeUpdated: 2022-06-22T08:30:38+00:00
+! Version: 2.1.23.78
+! TimeUpdated: 2022-06-22T11:30:55+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -5537,7 +5537,8 @@ cc-fan.tv,cn-fan.tv,fox-fan.tv,nf-fan.tv#$#.pub_300x250.pub_300x250m.pub_728x90.
 !######### General element hiding rules ################
 !#######################################################
 !
-##footer-lgpd
+##.footer-lgpd
+###footer-lgpd
 ###cookie-bg
 ##.cookiealert.show
 ###cm-cookie-window
@@ -7550,6 +7551,8 @@ mein-schoener-garten.de#$?#.sp-message-open { overflow: auto !important; positio
 !
 !
 !
+yibian.hopto.org###we-use-cookie
+anwb.nl##.critical-dialog
 revolut.com##.cookie-consent-widget
 app.revolut.com#?##root > div[role="dialog"] > div[class*="styled__CookieConsentModalBase-"]:upward(1)
 home3.ee##div[class^="js-cookies-"]
@@ -11326,10 +11329,8 @@ krasnoeibeloe.ru#?##age_popup_container > div.popup_bottom_bl > div.popup_bottom
 cmoto.ru,stiltv.ru###oct-policy
 promobit.com.br##.pr-cookie
 alternative.me###footer > div[style^="position: fixed; bottom:"][style*="z-index:"]
-giromarilia.com.br##.footer-lgpd
 kalunga.com.br###divCookiePoliticaPrivacidade
 holodilnik.ru##.alert-compliance
-shoptime.com.br##.footer-lgpd-opened
 telecineplay.com.br##div[class^="StyledCookiebanner__"]
 flex-tools.com#$#.cookieBar { display: none !important; }
 flex-tools.com#$#body { overflow: auto !important; }
@@ -19679,6 +19680,7 @@ early-riser.com#?#div[class] ~ h1[style]:contains(Newsletter) + p + div[class]
 ##head[prefix~="medium-com:"] ~ body .js-openInAppButton
 ##head[prefix~="medium-com:"] ~ body .js-postActionsBarContent > .js-readNextInteractions
 !
+dtf.ru,vc.ru,tjournal.ru##.mobile-bar-container
 forums.oneplus.com##.app-recommand-layer
 oneplus.com##.side-download-dialog
 semana.com##.footer-store
@@ -27471,6 +27473,7 @@ abendzeitung-muenchen.de###webpush-app
 /firebase.js$domain=novayagazeta.ru|comments.ua|kinosimka.net|ilan365.net|cnbcindonesia.com|haberzamani.net|oxy.cloud|allbasketball.org|auslogics.com|kartalyuvasi.com.tr|cnnindonesia.com|fbc.ua|astv.ru|pln-pskov.ru|aylink.co
 /firebase-messaging.js$domain=s.akiba-souken.com|bfm.ru|theswagsports.com|focus.ua|ukranews.com|comments.ua|coub.com|porno90.me|cnnamador.com|giallozafferano.it|wcostream.com|fptplay.vn|jooble.org|mobile01.com|myinstants.com|pdalife.ru|rg.ru|m.iguides.ru|donanimhaber.com|profile.ru|womanhit.ru|news.noteru.com|narodna-pravda.ua|newstm.in|sabah.com.tr|dreamstime.com|popbee.com|avtovzglyad.ru|allbasketball.org|tw.news.yahoo.com|takvim.com.tr|jn.pt|ria.ru|pars.host|calculator-online.net|operanewsapp.com|ahaber.com.tr|tamindir.com|concursosnobrasil.com.br|kompas.com|news.ebc.net.tw|recyclingtoday.com|homedecoratione.com|khersondaily.com|mirtesen.ru|womanhit.ru|belsat.eu|gearbest.com|op.gg|novayagazeta.ru|pocket-lint.com|turunculevye.com|bloomberght.com|stardima.com|aksam.com.tr|portamur.ru|fishki.net|ranking.goo.ne.jp|ohmymag.com|mgronline.com|semnasem.org|bluradio.com|carwale.com|finanznachrichten.de|home.kingsoft.jp
 !
+einvestidor.estadao.com.br###push-notification-prompt-container
 girafa.com.br#%#//scriptlet('set-cookie', 'saiupagina', 'true')
 sloanreview.mit.edu##.news-signup
 manutd.com##div[data-impression^="Notification_Prompt"]
@@ -30295,6 +30298,7 @@ turkuazgazetesi.net,yenialanya.com,mansetaydin.com,seskocaeli.com,kocaelibarisga
 ##.widget_blog_subscription
 ~copays.org,~nothing.tech,~mega-debrid.eu,~curvegames.com,~news.un.org,~norwichzen.org.uk,~dereferer.me###mc_embed_signup
 !
+watchasian.ac###sidebar > div.fanpage
 gloss.ua#?#.article > p:has(> strong > a[href="https://t.me/glossua"])
 winfuture.de#?##rightWrap > div.rightBx:has(> div.rightBx_btm > a[href="/beispielnewsletter.html"])
 muscleandstrength.com##.footer-email-signup
@@ -36409,6 +36413,7 @@ pokemon-matome.net##div[class^="basehtml"]
 warotanikki.com##.code-block
 ||juicejiuce.up.seesaa.net^$subdocument,domain=helloprojects.seesaa.net
 helloprojects.seesaa.net###rss_01
+seiyufan.livedoor.biz#?#aside.section-box:has(> div.plugin-blogroll)
 helloprojects.seesaa.net##.pctop_rss
 helloprojects.seesaa.net##.rss_scroll
 nofootynolife.blog.fc2.com##.blogroll_content2

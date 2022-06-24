@@ -1,4 +1,4 @@
-! Checksum: Sn9DaBMg8gycSq2AstZzbQ
+! Checksum: Rmsv+t9kK17+PIJzYvanEg
 ! Title: Filter unblocking search ads and self-promotion
 ! Description: Filter that unblocks search (Duckduckgo, Google, Bing, Yahoo) and self-promo ads. Self-promotion definition: when an ad on a website is promoting this very website or other websites/social media/etc closely related to it, such ad is considered a self-promoting one.
 ! Version: 2.0.1.76
@@ -399,3 +399,5 @@ qwant.com#@#a[href^="https://www.bing.com/aclick?"]
 @@||qwant.com^$domain=about.qwant.com
 @@||qwant.ninja
 @@||qwant.plive
+@@||api.qwant.com/v2/api/
+@@||qwant.com/maps/
