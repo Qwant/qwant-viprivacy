@@ -741,6 +741,8 @@ const createMessageHandler = () => {
             }
             case MESSAGE_TYPES.START_TRACKING_BLOCKER:
                 return startTrackingBlocker();
+            case MESSAGE_TYPES.DELETE_BLOCKED_DOMAINS:
+                return pageStats.deleteBlockedDomains();
             default:
                 // Unhandled message
                 throw new Error(`There is no such message type ${message.type}`);

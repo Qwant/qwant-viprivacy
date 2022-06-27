@@ -81,6 +81,7 @@ const Main = observer(({ store, settingsStore }) => {
                             onClick={() => navigate('/settings')}
                         />
                         <GlobalStats
+                            showGlobalStats={store.showGlobalStats}
                             totalBlocked={store.totalBlocked}
                             onClick={() => navigate('/global-stats')}
                         />

@@ -19,6 +19,7 @@ const GlobalStatsView = observer(({ store }) => {
     const annoyanceTime = React.useMemo(() => formatAnnoyanceTime(store.totalBlocked),
         [store.totalBlocked]);
 
+    const { showGlobalStats } = store;
     const domains = store.blockedDomains?.total?.domains || [];
     const domainsStr = JSON.stringify(store.blockedDomains);
 
@@ -36,6 +37,17 @@ const GlobalStatsView = observer(({ store }) => {
     const list = Object.keys(domains).map((domain) => (
         { domain, count: domains[domain] }
     )).sort((a, b) => b.count - a.count).slice(0, 8);
+
+    const toggleGlobalStats = () => {
+        store.setShowGlobalStats(!showGlobalStats);
+        if (showGlobalStats) {
+            store.deleteBlockedDomains();
+        }
+    };
+
+    const onDelete = () => {
+        store.deleteBlockedDomains();
+    };
 
     const title = reactTranslator.getMessage('global_stats');
 
@@ -57,6 +69,22 @@ const GlobalStatsView = observer(({ store }) => {
                     />
                 </div>
                 <Table list={list} />
+
+                <div>
+                    Show Global stats:
+                    {showGlobalStats?.toString() || 'undefined'}
+                    <br />
+                    <button type="button" onClick={toggleGlobalStats}>
+                        {showGlobalStats ? 'Disable' : 'Enable'}
+                        {' '}
+                        global stats
+                    </button>
+                    <br />
+                    <button type="button" onClick={onDelete}>
+                        Delete
+                    </button>
+
+                </div>
             </div>
         </PopupView>
     );

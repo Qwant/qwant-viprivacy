@@ -100,10 +100,18 @@ export const ProtectionStatus = ({
                 background={backgroundColor}
             >
                 <div className="protection_status__bottom">
-                    <Check
-                        onChange={() => switcher.handler()}
-                        checked={switcher.mode === 'enabled' || protectionEnabledLocal}
-                    />
+                    {switcher.mode === 'disabled' ? (
+                        <>
+                            <button type="button" onClick={() => switcher.handler()}>Enable extension</button>
+                        </>
+                    ) : (
+                        <>
+                            <Check
+                                onChange={() => switcher.handler()}
+                                checked={switcher.mode === 'enabled' || protectionEnabledLocal}
+                            />
+                        </>
+                    )}
                     <div className="right-side">
                         <span className="total_blocked_count">
                             {totalBlockedTab}

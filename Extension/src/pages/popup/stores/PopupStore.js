@@ -371,6 +371,25 @@ class PopupStore {
         }
         return this.settings.values[this.settings.names.PROTECTION_LEVEL];
     }
+
+    @computed
+    get showGlobalStats() {
+        return this.settings.values[this.settings.names.SHOW_GLOBAL_STATS];
+    }
+
+    @action
+    async setShowGlobalStats(value) {
+        await messenger.changeUserSetting(this.settings.names.SHOW_GLOBAL_STATS, value);
+        this.onSettingUpdated(this.settings.names.SHOW_GLOBAL_STATS, value);
+    }
+
+    @action
+    async deleteBlockedDomains() {
+        this.totalBlocked = 0;
+        this.blockedDomains = [];
+        await messenger.sendMessage(MESSAGE_TYPES.DELETE_BLOCKED_DOMAINS);
+        return null;
+    }
 }
 
 export const popupStore = createContext(new PopupStore());

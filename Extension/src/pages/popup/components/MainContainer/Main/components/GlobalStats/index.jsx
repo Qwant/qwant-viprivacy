@@ -7,6 +7,7 @@ import { Section } from '../Section';
 import './styles.css';
 
 export const GlobalStats = ({
+    showGlobalStats,
     totalBlocked,
     onClick,
 }) => {
@@ -22,17 +23,28 @@ export const GlobalStats = ({
             >
                 <div className="global_stats__bottom">
                     <div className="global_stats__container">
-                        <div className="left">
-                            <div>{reactTranslator.getMessage('popup_stats_blocked_trackers')}</div>
-                            <div className="metric">{formatCounter(totalBlocked)}</div>
-                        </div>
+                        {showGlobalStats ? (
+                            <>
+                                <div className="left">
+                                    <div>{reactTranslator.getMessage('popup_stats_blocked_trackers')}</div>
+                                    <div className="metric">{formatCounter(totalBlocked)}</div>
+                                </div>
 
-                        <div className="right">
-                            <div>{reactTranslator.getMessage('popup_stats_time_saved')}</div>
-                            <div className="metric">
-                                {annoyanceTime}
-                            </div>
-                        </div>
+                                <div className="right">
+                                    <div>{reactTranslator.getMessage('popup_stats_time_saved')}</div>
+                                    <div className="metric">
+                                        {annoyanceTime}
+                                    </div>
+                                </div>
+                            </>
+                        ) : (
+                            <>
+                                <div>
+                                    {/* TODO */}
+                                    Global stats disabled
+                                </div>
+                            </>
+                        )}
                     </div>
                     <ArrowRight />
                 </div>
