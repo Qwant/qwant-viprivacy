@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "~pages": ["./Extension/src/pages"],
+      "~common": ["./Extension/src/common"]
+    }
+  }
+}

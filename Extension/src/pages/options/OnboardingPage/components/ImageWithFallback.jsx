@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-export const Image = ({
+export const ImageWithFallback = ({
     src, srcFallback, alt = '', ...props
 }) => {
-    const [source, setSource] = React.useState(src);
+    const [source, setSource] = useState(src);
 
     const onError = () => {
         setSource(srcFallback);
@@ -14,6 +14,7 @@ export const Image = ({
             transaction.result = 'failure';
             transaction.end();
         }
+        // eslint-disable-next-line no-console
         console.warn(`Error loading image src=${src}, fallback=${srcFallback}`);
     };
 

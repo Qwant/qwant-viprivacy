@@ -134,17 +134,35 @@
   "onboarding_stepper_next_step": {
     "message": "Étape suivante"
   },
+  "onboarding_step_mode_title": {
+    "message": "Choisissez votre préférence"
+  },
+  "onboarding_step_mode_description": {
+    "message": "Vous pourrez modifier votre choix à tout moment en cliquant sur l'icône \n<b>Qwant VIPrivacy</b>"
+  },
+  "onboarding_step_mode_search": {
+    "message": "Search"
+  },
+  "onboarding_step_mode_search_description": {
+    "message": "Moteur de recherche par défaut"
+  },
+  "onboarding_step_mode_search_protection": {
+    "message": "Search & Protection"
+  },
+  "onboarding_step_mode_search_protection_description": {
+    "message": "Moteur de recherche par défaut et protection contre les traqueurs et cookies"
+  },
   "onboarding_step_request_permissions_title": {
-    "message": "Naviguez protégé sur internet avec  Qwant VIPrivacy"
+    "message": "Autorisez Qwant VIPrivacy à vous protéger"
   },
   "onboarding_step_request_permissions_description": {
-    "message": "Qwant VIPrivacy c'est moins de cookies et les traqueurs bloqués lors de votre navigation. Vos données personnelles sont protégées sur tous les sites. Cliquez sur \"Demander l'autorisation\" pour ouvrir la fênetre dans le navigateur. Si vous ignorez cette étape, vous serez redirigé vers la page précédente et Qwant VIPrivacy ne sera pas installé."
+    "message": "<b>Qwant VIPrivacy</b> c'est moins de cookies et les traqueurs bloqués lors de votre navigation. Vos données personnelles seront protégées sur tous les sites lors de votre navigation."
   },
   "onboarding_step_protection_level_title": {
     "message": "Choisissez votre niveau de protection"
   },
   "onboarding_step_protection_level_description": {
-    "message": "Vous pourrez modifier votre choix à tout moment en cliquant sur l'icône Qwant VIPrivacy."
+    "message": "Vous pourrez modifier votre choix à tout moment en cliquant sur l'icône <b>Qwant VIP</b>rivacy."
   },
   "onboarding_step_pin_extension_title": {
     "message": "Épinglez Qwant VIPrivacy à %browser% et suivez vos statistiques en temps réel"
