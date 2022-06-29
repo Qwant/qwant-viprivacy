@@ -15,7 +15,11 @@
   background-color: var(--blue);
   border-bottom: 2px solid var(--grey-800);
 
-  img {
+  a {
+    display: block;
+  }
+
+  img, svg {
     display: block;
     width: 178px;
     height: 24px;
@@ -55,13 +59,11 @@
 }
 
 .StepWithImage {
-  min-height: 272px;
+  min-height: 224px;
   max-width: 312px;
 }
 
 .StepWithImage img {
-  width: 316px;
-  height: auto;
   position: absolute;
   right: 0;
   top: 50%;

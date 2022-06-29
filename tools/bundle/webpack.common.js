@@ -126,8 +126,7 @@ export const genCommonConfig = (browserConfig) => {
             extensions: ['*', '.js', '.jsx'],
             symlinks: false,
             alias: {
-                '~pages': path.resolve(fs.realpathSync(process.cwd()), 'Extension/src/pages'),
-                '~common': path.resolve(fs.realpathSync(process.cwd()), 'Extension/src/common'),
+                '~src': path.resolve(fs.realpathSync(process.cwd()), 'Extension/src'),
             },
             // Node modules polyfills
             fallback: {

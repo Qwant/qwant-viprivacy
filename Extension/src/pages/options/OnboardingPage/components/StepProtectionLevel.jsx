@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Stack, Text } from '@qwant/qwant-ponents';
-import { reactTranslator } from '~common/translators/reactTranslator';
-import { CheckboxCard } from '~pages/common/components/CheckboxCard/index.jsx';
+import { reactTranslator } from '~src/common/translators/reactTranslator';
+import { CheckboxCard } from '~src/pages/common/components/CheckboxCard/CheckboxCard';
 import Styles from './Steps.module.scss';
 
 export const StepProtectionLevel = ({ protectionLevel, updateProtectionLevel }) => {

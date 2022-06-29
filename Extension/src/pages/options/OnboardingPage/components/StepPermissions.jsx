@@ -1,8 +1,7 @@
 import React from 'react';
 import { Box, Text } from '@qwant/qwant-ponents';
-import { reactTranslator } from '~common/translators/reactTranslator';
-import { ImageWithFallback } from '~pages/options/OnboardingPage/components/ImageWithFallback.jsx';
-import PermissionsRequestImage from './assets/permission-request.png';
+import { reactTranslator } from '~src/common/translators/reactTranslator';
+import PermissionsRequestImage from './assets/permission-request.svg';
 import Styles from './Steps.module.scss';
 
 export const StepPermissions = () => {
@@ -16,7 +15,7 @@ export const StepPermissions = () => {
                     {reactTranslator.getMessage('onboarding_step_request_permissions_description')}
                 </Box>
             </Text>
-            <ImageWithFallback src={PermissionsRequestImage} alt="" />
+            <img src={PermissionsRequestImage} alt="" width="312" height="204" />
         </Box>
     );
 };

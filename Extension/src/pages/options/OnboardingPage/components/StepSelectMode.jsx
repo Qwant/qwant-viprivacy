@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Stack, Text } from '@qwant/qwant-ponents';
-import { reactTranslator } from '~common/translators/reactTranslator';
-import { CheckboxCard } from '~pages/common/components/CheckboxCard/index.jsx';
+import { reactTranslator } from '~src/common/translators/reactTranslator';
+import { CheckboxCard } from '~src/pages/common/components/CheckboxCard/CheckboxCard';
 import { ReactComponent as IconSearch } from './assets/icon-search.svg';
 import { ReactComponent as IconProtection } from './assets/icon-protection.svg';
 import Styles from './Steps.module.scss';
@@ -19,7 +19,7 @@ export const StepSelectMode = ({
             <Text as="p" typo="body-1" color="primary">
                 {reactTranslator.getMessage('onboarding_step_mode_description')}
             </Text>
-            <Box className={Styles.StepChoices}>
+            <Box className={Styles.StepChoices} mt="m">
                 <CheckboxCard
                     onClick={onDisable}
                     title={reactTranslator.getMessage('onboarding_step_mode_search')}

@@ -176,8 +176,8 @@
   "onboarding_step_telemetry_description": {
     "message": "Partagez votre retour d'expérience pour nous permettre d'améliorer la performance de nos fonctionnalités. C'est anonyme !"
   },
-  "onboarding_step_telemetry_section_title": {
-    "message": "Partagez vos statistiques d'utilisation et rapports d'erreurs"
+  "onboarding_step_telemetry_checkbox_label": {
+    "message": "Partagez anonymement vos statistiques d'utilisation et rapports d'erreurs"
   },
   "onboarding_step_permissions_rejected_title": {
     "message": "Merci, Qwant est votre moteur de recherche par défaut mais…"
@@ -189,10 +189,31 @@
     "message": " "
   },
   "onboarding_step_thank_you_title": {
-    "message": "Merci d'avoir installé Qwant VIPrivacy"
+    "message": "Félicitations !"
   },
   "onboarding_step_thank_you_description": {
-    "message": " "
+    "message": "Maintenant"
+  },
+  "onboarding_step_thank_you_1_title": {
+    "message": "Épinglez Qwant VIPrivacy"
+  },
+  "onboarding_step_thank_you_1_description": {
+    "message": "Dans la barre d’outils de Chrome."
+  },
+  "onboarding_step_thank_you_2_title": {
+    "message": "Assurez-vous de garder Qwant en moteur de recherche par défaut."
+  },
+  "onboarding_step_thank_you_2_description": {
+    "message": "Lors de votre 1ère recherche, sélectionner « Conserver » lorsque Chrome vous demandera."
+  },
+  "onboarding_step_thank_you_features": {
+    "message": "Zéro tracking de vos recherches; Zéro tracking publicitaire; Zéro vente de vos données personnelles"
+  },
+  "onboarding_step_alert_permission_title": {
+    "message": "Vous avez refusé les autorisation du navigateur."
+  },
+  "onboarding_step_alert_permission_description": {
+    "message": "Nous vous conseillons alors de choisir Qwant uniquement comme moteur de recherche par défaut."
   },
   "blocking_pages_page_title": {
     "message": "Accès refusé"
@@ -214,5 +235,14 @@
   },
   "error_label": {
     "message": "Erreur:"
+  },
+  "qwant_redirect": {
+    "message": "Aller sur Qwant.com"
+  },
+  "upsell_mobile_title": {
+    "message": "Adoptez Qwant VIPrivacy aussi sur mobile !"
+  },
+  "upsell_mobile_qrcode": {
+    "message": "Scannez ce QR code"
   }
 }
