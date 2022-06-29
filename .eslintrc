@@ -6,6 +6,16 @@
     },
     "extends": ["airbnb"],
     "parser": "@babel/eslint-parser",
+    "settings": {
+        "import/resolver": {
+            "alias": {
+                "map": [
+                    ["~src", "./Extension/src"]
+                ],
+                "extensions": [".js", ".jsx"]
+            }
+        }
+    },
     "globals": {
         "adguard": true,
         "chrome": true,

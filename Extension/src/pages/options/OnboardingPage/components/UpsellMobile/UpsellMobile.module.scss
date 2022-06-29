@@ -1,0 +1,18 @@
+.UpsellMobile {
+  display: grid;
+  gap: var(--spacing-xl);
+  align-items: center;
+  grid-template-columns: 196px 1fr 108px;
+  overflow: hidden;
+  border: 2px solid var(--grey-800);
+  border-radius: 8px;
+  background: var(--green-400);
+  min-height: 196px;
+}
+
+.UpsellMobileQRCode {
+  width: 108px;
+  border: 2px solid var(--grey-900);
+  border-radius: 8px;
+  background-color: var(--grey-000);
+}

@@ -1,0 +1,78 @@
+@import "@qwant/qwant-ponents/src/base.scss";
+
+.StepsWrapper {
+  margin-inline: auto;
+  max-width: 684px;
+}
+
+.Steps {
+  overflow: hidden;
+  border: 2px solid var(--grey-800);
+  border-radius: 8px;
+}
+
+.StepsHeader {
+  background-color: var(--blue);
+  border-bottom: 2px solid var(--grey-800);
+
+  a {
+    display: block;
+  }
+
+  img, svg {
+    display: block;
+    width: 178px;
+    height: 24px;
+  }
+}
+
+.StepsFooter {
+  display: grid;
+  grid-template-columns: 1fr 100px 1fr;
+  justify-content: center;
+  align-items: center;
+
+  & > *:first-child {
+    justify-self: flex-start;
+  }
+
+  & > *:last-child {
+    justify-self: flex-end;
+  }
+}
+
+.StepsIndicators {
+  gap: var(--spacing-xs);
+}
+
+.StepsIndicators > * {
+  transition: .3s;
+  border: 2px solid var(--grey-400);
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
+}
+
+.StepsIndicators > [aria-current] {
+  border-color: var(--grey-900);
+  background-color: var(--grey-900);
+}
+
+.StepWithImage {
+  min-height: 224px;
+  max-width: 312px;
+}
+
+.StepWithImage img {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.StepChoices {
+  gap: var(--spacing-s);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: flex-end;
+}

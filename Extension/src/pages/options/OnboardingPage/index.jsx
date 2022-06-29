@@ -2,8 +2,6 @@ import React from 'react';
 import { observer } from 'mobx-react';
 import { useMachine } from '@xstate/react';
 
-import { Header } from './components/Header';
-
 import { Steps } from './components/Steps';
 import { Events, stateMachine, States } from './stateMachine';
 
@@ -78,6 +76,7 @@ export const OnboardingPage = observer(() => {
                             break;
                         }
                         default: {
+                            // eslint-disable-next-line no-console
                             console.log('Undefined message type:', type);
                             break;
                         }
@@ -195,21 +194,16 @@ export const OnboardingPage = observer(() => {
     };
 
     return (
-        <div>
-            <Header />
-
-            <Steps
-                send={send}
-                state={state}
-                isLoading={isLoading}
-                protectionLevel={protectionLevel}
-                updateProtectionLevel={updateProtectionLevel}
-                disableCollectHit={disableCollectHit}
-                updateTelemetry={updateTelemetry}
-                onForward={onForward}
-                onBack={onBack}
-            />
-
-        </div>
+        <Steps
+            send={send}
+            state={state}
+            isLoading={isLoading}
+            protectionLevel={protectionLevel}
+            updateProtectionLevel={updateProtectionLevel}
+            disableCollectHit={disableCollectHit}
+            updateTelemetry={updateTelemetry}
+            onForward={onForward}
+            onBack={onBack}
+        />
     );
 });

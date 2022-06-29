@@ -4,6 +4,7 @@ import CopyWebpackPlugin from 'copy-webpack-plugin';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import path from 'path';
 
+import fs from 'fs';
 import { BUILD_PATH, ENVS } from '../constants';
 import { getEnvConf, updateLocalesMSGName } from '../helpers';
 import { getModuleReplacements } from './module-replacements';
@@ -124,6 +125,9 @@ export const genCommonConfig = (browserConfig) => {
         resolve: {
             extensions: ['*', '.js', '.jsx'],
             symlinks: false,
+            alias: {
+                '~src': path.resolve(fs.realpathSync(process.cwd()), 'Extension/src'),
+            },
             // Node modules polyfills
             fallback: {
                 url: require.resolve('url'),
@@ -133,6 +137,37 @@ export const genCommonConfig = (browserConfig) => {
         },
         module: {
             rules: [
+                {
+                    test: /\.svg$/,
+                    use: [
+                        {
+                            loader: '@svgr/webpack',
+                            options: {
+                                icon: false,
+                                expandProps: 'end',
+                            },
+                        },
+                        {
+                            loader: 'url-loader',
+                            options: {
+                                limit: 2000,
+                                name: '[name].[contenthash:8].[ext]',
+                                publicPath: '/',
+                            },
+                        },
+                    ],
+                },
+                // .mjs import is buggy : https://github.com/webpack/webpack/issues/11467#issuecomment-691873586
+                {
+                    test: /\.m?js/,
+                    type: 'javascript/auto',
+                },
+                {
+                    test: /\.m?js/,
+                    resolve: {
+                        fullySpecified: false,
+                    },
+                },
                 {
                     include: [
                         path.resolve(__dirname, '../../Extension/src/background/filter/request-filter.js'),
@@ -153,8 +188,11 @@ export const genCommonConfig = (browserConfig) => {
                  * by deleting source map url comments in production build
                  */
                 {
-                    test: /\.(js|jsx)$/,
+                    test: /\.(m?js|jsx)$/,
                     enforce: 'pre',
+                    resolve: {
+                        fullySpecified: false,
+                    },
                     use: [
                         {
                             loader: 'source-map-loader',
@@ -165,25 +203,32 @@ export const genCommonConfig = (browserConfig) => {
                     ],
                 },
                 {
-                    test: /\.(js|jsx)$/,
-                    exclude: /node_modules/,
+                    test: /\.(m?js|jsx)$/,
+                    exclude: /node_modules\/(?!@qwant)/,
                     use: [{
                         loader: 'babel-loader',
                         options: { babelrc: true },
                     }],
                 },
                 {
-                    test: /\.(css|pcss)$/,
+                    test: /\.(css|scss)$/,
                     use: [
                         'style-loader',
                         {
                             loader: 'css-loader',
                             options: {
+                                sourceMap: true,
                                 importLoaders: 1,
                                 url: false,
+                                modules: {
+                                    auto: true,
+                                    exportOnlyLocals: false,
+                                    localIdentName: '[name]__[local]___[hash:base64:5]',
+                                },
                             },
                         },
                         'postcss-loader',
+                        'sass-loader',
                     ],
                 },
                 {
