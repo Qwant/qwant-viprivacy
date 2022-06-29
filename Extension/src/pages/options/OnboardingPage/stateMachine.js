@@ -40,6 +40,7 @@ export const stateMachine = createMachine({
     states: {
         [States.SELECT_MODE]: {
             on: {
+                [Events.PERMISSIONS_ALREADY_GRANTED]: States.THANK_YOU,
                 [Events.ENABLE_PROTECTION]: {
                     actions: assign({ protectionEnabled: true }),
                     target: States.SELECT_MODE,
