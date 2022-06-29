@@ -7,7 +7,7 @@ import { browserUtils } from '~src/background/utils/browser-utils';
 import { CheckList } from '~src/pages/common/components/List/CheckList';
 import Styles from './Steps.module.scss';
 
-const showPinTutorial = browserUtils.isFirefoxBrowser();
+const showPinTutorial = !browserUtils.isFirefoxBrowser();
 
 export const StepThanks = () => {
     return (
