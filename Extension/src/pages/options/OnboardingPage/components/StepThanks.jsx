@@ -18,7 +18,7 @@ export const StepThanks = () => {
                 </Text>
                 {showPinTutorial ? <ExtensionPinTutorial /> : <ExtensionFeatures />}
             </Stack>
-            <img src={PermissionsRequestImage} alt="" />
+            <img src={PermissionsRequestImage} alt="" width="312" height="204" />
         </Box>
     );
 };
