@@ -161,8 +161,6 @@ const CurrentStep = ({
                     updateProtectionLevel={updateProtectionLevel}
                 />
             );
-        case States.PIN_EXTENSION:
-            return null;
         case States.TELEMETRY:
             return <StepTelemetry onChange={updateTelemetry} checked={!disableCollectHit} />;
         case States.THANK_YOU:

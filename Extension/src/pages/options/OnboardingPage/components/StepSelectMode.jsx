@@ -29,8 +29,8 @@ export const StepSelectMode = ({
                 />
                 <CheckboxCard
                     onClick={onEnable}
-                    title={reactTranslator.getMessage('onboarding_step_mode_search')}
-                    description={reactTranslator.getMessage('onboarding_step_mode_search_description')}
+                    title={reactTranslator.getMessage('onboarding_step_mode_search_protection')}
+                    description={reactTranslator.getMessage('onboarding_step_mode_search_protection_description')}
                     selected={protectionEnabled}
                     isNew
                     icon={(

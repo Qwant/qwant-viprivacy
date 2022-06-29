@@ -244,5 +244,8 @@
   },
   "upsell_mobile_qrcode": {
     "message": "Scannez ce QR code"
+  },
+  "new": {
+    "message": "Nouveau"
   }
 }
