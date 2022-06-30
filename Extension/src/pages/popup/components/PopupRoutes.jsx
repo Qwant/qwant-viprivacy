@@ -4,13 +4,13 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 
 import { useAsyncEffect } from '~src/pages/common/hooks/useAsyncEffect';
 import { useAsync } from 'react-use';
+import { hasAllOptionalPermissions } from '~src/background/utils/optional-permissions';
 import { popupStore } from '../stores/PopupStore';
 import { rootStore } from '../../options/stores/RootStore';
 import { messenger } from '../../services/messenger';
-import { hasAllOptionalPermissions } from '../../../background/utils/optional-permissions';
 
 import Main from './MainView';
-import SettingsView from './SettingsView';
+import SettingsView from './SettingsView/SettingsView';
 import TabStatsView from './TabStatsView';
 import GlobalStatsView from './GlobalStatsView';
 
