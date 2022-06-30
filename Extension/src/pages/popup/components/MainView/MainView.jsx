@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { MESSAGE_TYPES } from '~src/common/constants';
 import { browser } from '~src/background/extension-api/browser';
 import { hasAllOptionalPermissions } from '~src/background/utils/optional-permissions';
+import { Button } from '@qwant/qwant-ponents';
 import { LoadingView } from './LoadingView';
 import { GlobalStats } from './components/GlobalStats';
 import { PermissionsMissing } from './PermissionsMissing';
@@ -13,8 +14,6 @@ import { ProtectionLevel } from './components/ProtectionLevel';
 import { ProtectionStatus } from './components/ProtectionStatus';
 
 import { messenger } from '../../../services/messenger';
-
-import './styles.css';
 
 const Main = observer(({ store, settingsStore }) => {
     const navigate = useNavigate();
@@ -51,43 +50,40 @@ const Main = observer(({ store, settingsStore }) => {
 
     if (hasPermissions === false) {
         return (
-            <div className="main">
-                <div className="main__content">
-                    <PermissionsMissing onRequestPermissions={onRequestPermissions} />
-                </div>
-            </div>
+            <PermissionsMissing onRequestPermissions={onRequestPermissions} />
         );
     }
 
+    if (!isReady) {
+        return <LoadingView />;
+    }
+
     return (
-        <div className="main">
-            <div className="main__content">
-                {isReady ? (
-                    <>
-                        <ProtectionStatus
-                            totalBlockedTab={store.totalBlockedTab}
-                            currentSite={store.currentSite}
-                            toggleAllowlisted={store.toggleAllowlisted}
-                            changeApplicationFilteringDisabled={store.changeApplicationFilteringDisabled}
-                            popupState={store.popupState}
-                            onClick={() => navigate('/tab-stats')}
-                        />
-                        <ProtectionLevel
-                            protectionLevel={settingsStore.protectionLevel}
-                            applicationFilteringDisabled={store.applicationFilteringDisabled}
-                            onClick={() => navigate('/settings')}
-                        />
-                        <GlobalStats
-                            showGlobalStats={store.showGlobalStats}
-                            totalBlocked={store.totalBlocked}
-                            onClick={() => navigate('/global-stats')}
-                        />
-                    </>
-                ) : (
-                    <LoadingView />
-                )}
-            </div>
-        </div>
+        <>
+            <ProtectionStatus
+                totalBlockedTab={store.totalBlockedTab}
+                currentSite={store.currentSite}
+                toggleAllowlisted={store.toggleAllowlisted}
+                changeApplicationFilteringDisabled={store.changeApplicationFilteringDisabled}
+                popupState={store.popupState}
+                onClick={() => navigate('/tab-stats')}
+            />
+            <ProtectionLevel
+                protectionLevel={settingsStore.protectionLevel}
+                applicationFilteringDisabled={store.applicationFilteringDisabled}
+                onClick={() => navigate('/settings')}
+            />
+            <GlobalStats
+                showGlobalStats={store.showGlobalStats}
+                totalBlocked={store.totalBlocked}
+                onClick={() => navigate('/global-stats')}
+            />
+            <Button
+                onClick={() => navigate('/about')}
+            >
+                Bouton temporaire pour informations
+            </Button>
+        </>
     );
 });
 
