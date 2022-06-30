@@ -1,17 +1,17 @@
 import React from 'react';
 import { observer } from 'mobx-react';
 
+import { Stack, Text } from '@qwant/qwant-ponents';
+import { RiDeleteBinLine as IconTrash, RiLineChartLine as IconChart } from 'react-icons/ri';
 import { Table } from '../shared/Table/Table';
 import { Tile } from '../shared/Tile/Tile';
 
 import { reactTranslator } from '../../../../common/translators/reactTranslator';
 
 import { formatAnnoyanceTime, formatCounter } from '../../helpers';
-
-import './styles.css';
-import { PopupView } from '../shared/PopupView/PopupView';
 import { IconShield, IconTime } from '../shared/Icons';
 import { useKonamiCode } from './useKonami';
+import { ActionButton } from './ActionButton/ActionButton';
 
 const GlobalStatsView = observer(({ store }) => {
     const [isKonami] = useKonamiCode();
@@ -49,44 +49,38 @@ const GlobalStatsView = observer(({ store }) => {
         store.deleteBlockedDomains();
     };
 
-    const title = reactTranslator.getMessage('global_stats');
-
     return (
-        <PopupView title={title}>
-            <div className="global_stats_container">
-                <div className="tiles">
-                    <Tile
-                        icon={IconShield}
-                        label={reactTranslator.getMessage('popup_stats_trackers')}
-                        value={formatCounter(store.totalBlocked)}
-                        color="purple"
-                    />
-                    <Tile
-                        icon={IconTime}
-                        label={reactTranslator.getMessage('popup_stats_time_saved')}
-                        value={annoyanceTime}
-                        color="purple"
-                    />
-                </div>
-                <Table list={list} />
+        <Stack gap="s">
+            <Text typo="heading-5" bold color="primary" as="h1">
+                {reactTranslator.getMessage('global_stats')}
+            </Text>
 
-                <div>
-                    Show Global stats:
-                    {showGlobalStats?.toString() || 'undefined'}
-                    <br />
-                    <button type="button" onClick={toggleGlobalStats}>
-                        {showGlobalStats ? 'Disable' : 'Enable'}
-                        {' '}
-                        global stats
-                    </button>
-                    <br />
-                    <button type="button" onClick={onDelete}>
-                        Delete
-                    </button>
-
-                </div>
-            </div>
-        </PopupView>
+            <Stack gap="s" horizontal nowrap>
+                <Tile
+                    icon={IconShield}
+                    label={reactTranslator.getMessage('popup_stats_trackers')}
+                    value={formatCounter(store.totalBlocked)}
+                    color="purple"
+                />
+                <Tile
+                    icon={IconTime}
+                    label={reactTranslator.getMessage('popup_stats_time_saved')}
+                    value={annoyanceTime}
+                    color="purple"
+                />
+            </Stack>
+            <Table list={list} />
+            <Stack gap="xs">
+                <ActionButton type="danger" onClick={toggleGlobalStats}>
+                    <IconChart />
+                    <span>Désactiver les statistiques</span>
+                </ActionButton>
+                <ActionButton onClick={onDelete}>
+                    <IconTrash />
+                    <span>Effacer</span>
+                </ActionButton>
+            </Stack>
+        </Stack>
     );
 });
 

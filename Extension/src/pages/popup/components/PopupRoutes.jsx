@@ -12,7 +12,7 @@ import { messenger } from '../../services/messenger';
 import Main from './MainView';
 import SettingsView from './SettingsView/SettingsView';
 import TabStatsView from './TabStatsView/TabStatsView';
-import GlobalStatsView from './GlobalStatsView';
+import GlobalStatsView from './GlobalStatsView/GlobalStatsView';
 
 export const PopupRoutes = observer(() => {
     const location = useLocation();

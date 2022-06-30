@@ -8,9 +8,10 @@ export const Tile = ({
     value,
     label,
 }) => {
+    const colorVariation = color === 'purple' ? '200' : '300';
     return (
         <Box style={{ background: `var(--${color}-100)` }} p="s" className={Styles.Tile}>
-            <div style={{ color: `var(--${color}-300)` }}><IconComponent /></div>
+            <div style={{ color: `var(--${color}-${colorVariation})` }}><IconComponent /></div>
             <div>
                 <Text typo="caption-1">{label}</Text>
                 <Text typo="body-1" bold>{value}</Text>
