@@ -10,7 +10,7 @@ export const popupPage = {
 
         ReactDOM.render(
             <React.StrictMode>
-                <MemoryRouter initialEntries={['/about']}>
+                <MemoryRouter initialEntries={['/main']}>
                     <Popup />
                 </MemoryRouter>
             </React.StrictMode>,

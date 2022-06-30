@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 import { MESSAGE_TYPES } from '~src/common/constants';
 import { browser } from '~src/background/extension-api/browser';
 import { hasAllOptionalPermissions } from '~src/background/utils/optional-permissions';
-import { Button } from '@qwant/qwant-ponents';
 import { LoadingView } from './LoadingView';
 import { GlobalStats } from './components/GlobalStats';
 import { PermissionsMissing } from './PermissionsMissing';
@@ -78,11 +77,6 @@ const Main = observer(({ store, settingsStore }) => {
                 totalBlocked={store.totalBlocked}
                 onClick={() => navigate('/global-stats')}
             />
-            <Button
-                onClick={() => navigate('/about')}
-            >
-                Bouton temporaire pour informations
-            </Button>
         </>
     );
 });
