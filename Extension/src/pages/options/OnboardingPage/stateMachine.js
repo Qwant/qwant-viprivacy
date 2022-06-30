@@ -84,7 +84,6 @@ export const stateMachine = createMachine({
         [States.PROTECTION_LEVEL]: {
             on: {
                 [Events.NEXT]: States.TELEMETRY,
-                [Events.PREVIOUS]: States.REQUEST_PERMISSIONS,
             },
             meta: {
             },
