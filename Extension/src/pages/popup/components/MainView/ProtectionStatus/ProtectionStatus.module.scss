@@ -1,0 +1,56 @@
+.ProtectionStatus {
+  padding-top: 32px;
+  --color: var(--green-500);
+  border-color: var(--color)!important;
+  background-color: var(--green-100)!important;
+}
+
+.ProtectionStatus button {
+  width: 100%;
+  cursor: pointer;
+}
+
+.ProtectionStatusFooter {
+  background-color: #fff;
+  color: var(--color);
+  border-top: 1px solid var(--color);
+  overflow: hidden;
+  border-radius: 0 0 8px 8px;
+}
+
+.ProtectionStatus .ProtectionStatusSwitch,
+.ProtectionStatus .ProtectionStatusSwitch span
+{
+  width: 48px;
+  height: 28px;
+}
+
+.ProtectionStatus .ProtectionStatusSwitch span {
+  border-radius: 48px;
+  width: 48px;
+  height: 28px;
+  background-color: var(--color);
+  border: none;
+}
+
+.ProtectionStatus .ProtectionStatusSwitch span::before {
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  left: var(--spacing-xxs);
+  top: var(--spacing-xxs);
+}
+
+// Disabled
+// =============
+.ProtectionStatusDisabled {
+  --color: var(--grey-500);
+  background-color: var(--grey-100)!important;
+}
+
+// Unavailable
+// =============
+.ProtectionStatusUnavailable {
+  --color: var(--red-500);
+  background-color: var(--red-100)!important;
+}

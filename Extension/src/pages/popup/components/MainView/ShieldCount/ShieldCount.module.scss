@@ -1,0 +1,19 @@
+.IconShield {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate3d(-50%, -50%, 0);
+  width: 60px;
+  height: 68px;
+}
+
+.IconShieldCount,
+.IconShield svg {
+  position: absolute;
+  inset: 0;
+}
+
+.IconShieldCount {
+  display: grid;
+  place-items: center;
+}

@@ -4,7 +4,7 @@ import { observer } from 'mobx-react';
 
 import './styles.css';
 import { browser } from '~src/background/extension-api/browser';
-import { reactTranslator } from '~src/common/translators/reactTranslator';
+import { t } from '~src/common/translators/reactTranslator';
 import { Button } from '../../../common/components/Button';
 
 const ErrorView = observer(({ error }) => {
@@ -18,7 +18,7 @@ const ErrorView = observer(({ error }) => {
         <div className="main">
             <div className="error__content">
                 <div className="error__message">
-                    <b>{reactTranslator.getMessage('error_label')}</b>
+                    <b>{t('error_label')}</b>
                     {` ${message}`}
                 </div>
 
@@ -27,7 +27,7 @@ const ErrorView = observer(({ error }) => {
                     onClick={onReload}
                     className="section-loading_button"
                 >
-                    {reactTranslator.getMessage('loading_reload_cta')}
+                    {t('loading_reload_cta')}
                 </Button>
             </div>
         </div>

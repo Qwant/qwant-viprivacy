@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable jsx-a11y/anchor-has-content */
 import React, { useCallback, useState } from 'react';
-import { reactTranslator } from '../../../../common/translators/reactTranslator';
+import { t } from '../../../../common/translators/reactTranslator';
 
 import { MESSAGE_TYPES } from '../../../../common/constants';
 import { getParams } from '../../getParams';
@@ -34,7 +34,7 @@ export const SafeBrowsing = () => {
             <div className="alert__in">
                 <div className="alert__header alert__header--red">
                     <div className="alert__header-title">
-                        {reactTranslator.getMessage('blocking_pages_safe_header_title')}
+                        {t('blocking_pages_safe_header_title')}
                     </div>
                 </div>
                 <div className="alert__body">
@@ -43,13 +43,13 @@ export const SafeBrowsing = () => {
                     <div className="alert__body-title">
                         {malware === 'true' ? ( // query param is string
                             <p className="malware">
-                                {reactTranslator.getMessage('blocking_pages_malware', {
+                                {t('blocking_pages_malware', {
                                     host,
                                 })}
                             </p>
                         ) : (
                             <p className="phishing">
-                                {reactTranslator.getMessage('blocking_pages_phishing', {
+                                {t('blocking_pages_phishing', {
                                     host,
                                 })}
                             </p>
@@ -62,7 +62,7 @@ export const SafeBrowsing = () => {
                             onClick={handleGoBack}
                             className="button button--green alert__btn"
                         >
-                            {reactTranslator.getMessage('blocking_pages_btn_go_back')}
+                            {t('blocking_pages_btn_go_back')}
                         </button>
                         {advanced ? (
                             <>
@@ -70,14 +70,14 @@ export const SafeBrowsing = () => {
                                     href={`https://reports.adguard.com/${host}/report.html`}
                                     className="button button--white alert__btn"
                                 >
-                                    {reactTranslator.getMessage('blocking_pages_more_info_button')}
+                                    {t('blocking_pages_more_info_button')}
                                 </a>
                                 <button
                                     type="button"
                                     onClick={handleProceed}
                                     className="button button--white alert__btn"
                                 >
-                                    {reactTranslator.getMessage('blocking_pages_btn_proceed')}
+                                    {t('blocking_pages_btn_proceed')}
                                 </button>
                             </>
                         ) : (
@@ -87,7 +87,7 @@ export const SafeBrowsing = () => {
                                     onClick={handleEnableAdvanced}
                                     className="button button--white alert__btn"
                                 >
-                                    {reactTranslator.getMessage('blocking_pages_advanced_button')}
+                                    {t('blocking_pages_advanced_button')}
                                 </button>
                             </>
                         )}

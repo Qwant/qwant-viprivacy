@@ -1,5 +1,5 @@
 import React from 'react';
-import { reactTranslator } from '~src/common/translators/reactTranslator';
+import { t } from '~src/common/translators/reactTranslator';
 import { Card, Text } from '@qwant/qwant-ponents';
 import Styles from './Table.module.scss';
 
@@ -12,8 +12,8 @@ export const Table = ({ list }) => {
         <Card as="table" className={Styles.Table}>
             <thead>
                 <tr>
-                    <Text typo="body-2" as="th" bold>{reactTranslator.getMessage('popup_stats_table_domains_label')}</Text>
-                    <Text center typo="body-2" as="th" bold>{reactTranslator.getMessage('popup_stats_table_trackers_label')}</Text>
+                    <Text typo="body-2" as="th" bold>{t('popup_stats_table_domains_label')}</Text>
+                    <Text center typo="body-2" as="th" bold>{t('popup_stats_table_trackers_label')}</Text>
                 </tr>
             </thead>
             <tbody>

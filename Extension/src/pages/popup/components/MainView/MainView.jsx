@@ -6,11 +6,12 @@ import { useNavigate } from 'react-router-dom';
 import { MESSAGE_TYPES } from '~src/common/constants';
 import { browser } from '~src/background/extension-api/browser';
 import { hasAllOptionalPermissions } from '~src/background/utils/optional-permissions';
+import { Stack } from '@qwant/qwant-ponents';
 import { LoadingView } from './LoadingView';
-import { GlobalStats } from './components/GlobalStats';
+import { GlobalStats } from './GlobalStats';
 import { PermissionsMissing } from './PermissionsMissing';
-import { ProtectionLevel } from './components/ProtectionLevel';
-import { ProtectionStatus } from './components/ProtectionStatus';
+import { ProtectionLevel } from './ProtectionLevel';
+import { ProtectionStatus } from './ProtectionStatus/ProtectionStatus';
 
 import { messenger } from '../../../services/messenger';
 
@@ -58,7 +59,7 @@ const Main = observer(({ store, settingsStore }) => {
     }
 
     return (
-        <>
+        <Stack gap="s">
             <ProtectionStatus
                 totalBlockedTab={store.totalBlockedTab}
                 currentSite={store.currentSite}
@@ -77,7 +78,7 @@ const Main = observer(({ store, settingsStore }) => {
                 totalBlocked={store.totalBlocked}
                 onClick={() => navigate('/global-stats')}
             />
-        </>
+        </Stack>
     );
 });
 

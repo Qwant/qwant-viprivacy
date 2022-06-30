@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Stack, Text } from '@qwant/qwant-ponents';
-import { reactTranslator } from '~src/common/translators/reactTranslator';
+import { t } from '~src/common/translators/reactTranslator';
 import Styles from './UpsellMobile.module.scss';
 import ButtonAndroid from '../assets/buttons-apps-google-negative.svg';
 import ButtonIOS from '../assets/buttons-apps-apple-negative.svg';
@@ -12,7 +12,7 @@ export function UpsellMobile() {
             <div />
             <Stack gap="m">
                 <Text typo="heading-5" color="primary" bold>
-                    {reactTranslator.getMessage('upsell_mobile_title')}
+                    {t('upsell_mobile_title')}
                 </Text>
                 <Stack horizontal gap="xs">
                     <a target="_blank" rel="noreferrer" href="https://play.google.com/store/apps/details?id=com.qwant.liberty">
@@ -26,7 +26,7 @@ export function UpsellMobile() {
             <Stack p="xs" gap="xs" className={Styles.UpsellMobileQRCode}>
                 <img src={QRCode} alt="" />
                 <Text center typo="body-2" color="primary" bold>
-                    {reactTranslator.getMessage('upsell_mobile_qrcode')}
+                    {t('upsell_mobile_qrcode')}
                 </Text>
             </Stack>
         </Card>
