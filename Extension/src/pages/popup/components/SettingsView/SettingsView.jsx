@@ -4,9 +4,8 @@ import { observer } from 'mobx-react';
 import { messenger } from '~src/pages/services/messenger';
 import { reactTranslator } from '~src/common/translators/reactTranslator';
 
-import { Stack } from '@qwant/qwant-ponents';
+import { Stack, Text } from '@qwant/qwant-ponents';
 import { CheckboxCard } from '~src/pages/common/components/CheckboxCard/CheckboxCard';
-import { PopupView } from '../components/PopupView';
 
 const SettingsView = observer(({ store, settingsStore }) => {
     const { applicationFilteringDisabled } = store;
@@ -47,11 +46,13 @@ const SettingsView = observer(({ store, settingsStore }) => {
         }
     };
 
-    const title = reactTranslator.getMessage('protection_level');
     const levels = ['standard', 'strict', 'disabled'];
 
     return (
-        <PopupView title={title}>
+        <Stack gap="s">
+            <Text typo="heading-5" bold color="primary" as="h1">
+                {reactTranslator.getMessage('protection_level')}
+            </Text>
             <Stack gap="xs">
                 {levels.map((level) => (
                     <CheckboxCard
@@ -64,7 +65,7 @@ const SettingsView = observer(({ store, settingsStore }) => {
                     />
                 ))}
             </Stack>
-        </PopupView>
+        </Stack>
     );
 });
 
