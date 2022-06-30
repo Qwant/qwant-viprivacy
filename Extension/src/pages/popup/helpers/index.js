@@ -1,3 +1,5 @@
+import { browser } from '~src/background/extension-api/browser';
+
 export const isWebURL = (url) => {
     if (!url) return false;
     const regex = new RegExp(/^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([-.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/);
@@ -37,4 +39,9 @@ export const formatCounter = (number = 0) => {
         notation: 'compact',
         compactDisplay: 'short',
     }).format(number);
+};
+
+export const openTabHandler = (url) => (e) => {
+    e.preventDefault();
+    browser.tabs.create({ url, active: true });
 };

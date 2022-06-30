@@ -50,6 +50,9 @@
   "popup_main_problem_disable_protection": {
     "message": "Un problème sur ce site? Essayez de désactiver."
   },
+  "popup_about_title": {
+    "message": "Informations"
+  },
   "global_stats": {
     "message": "Vos statistiques cumulées"
   },

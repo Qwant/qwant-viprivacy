@@ -14,8 +14,6 @@ import { ProtectionStatus } from './components/ProtectionStatus';
 
 import { messenger } from '../../../services/messenger';
 
-import './styles.css';
-
 const Main = observer(({ store, settingsStore }) => {
     const navigate = useNavigate();
     const [isLoading, setLoading] = React.useState(false);
@@ -51,43 +49,35 @@ const Main = observer(({ store, settingsStore }) => {
 
     if (hasPermissions === false) {
         return (
-            <div className="main">
-                <div className="main__content">
-                    <PermissionsMissing onRequestPermissions={onRequestPermissions} />
-                </div>
-            </div>
+            <PermissionsMissing onRequestPermissions={onRequestPermissions} />
         );
     }
 
+    if (!isReady) {
+        return <LoadingView />;
+    }
+
     return (
-        <div className="main">
-            <div className="main__content">
-                {isReady ? (
-                    <>
-                        <ProtectionStatus
-                            totalBlockedTab={store.totalBlockedTab}
-                            currentSite={store.currentSite}
-                            toggleAllowlisted={store.toggleAllowlisted}
-                            changeApplicationFilteringDisabled={store.changeApplicationFilteringDisabled}
-                            popupState={store.popupState}
-                            onClick={() => navigate('/tab-stats')}
-                        />
-                        <ProtectionLevel
-                            protectionLevel={settingsStore.protectionLevel}
-                            applicationFilteringDisabled={store.applicationFilteringDisabled}
-                            onClick={() => navigate('/settings')}
-                        />
-                        <GlobalStats
-                            showGlobalStats={store.showGlobalStats}
-                            totalBlocked={store.totalBlocked}
-                            onClick={() => navigate('/global-stats')}
-                        />
-                    </>
-                ) : (
-                    <LoadingView />
-                )}
-            </div>
-        </div>
+        <>
+            <ProtectionStatus
+                totalBlockedTab={store.totalBlockedTab}
+                currentSite={store.currentSite}
+                toggleAllowlisted={store.toggleAllowlisted}
+                changeApplicationFilteringDisabled={store.changeApplicationFilteringDisabled}
+                popupState={store.popupState}
+                onClick={() => navigate('/tab-stats')}
+            />
+            <ProtectionLevel
+                protectionLevel={settingsStore.protectionLevel}
+                applicationFilteringDisabled={store.applicationFilteringDisabled}
+                onClick={() => navigate('/settings')}
+            />
+            <GlobalStats
+                showGlobalStats={store.showGlobalStats}
+                totalBlocked={store.totalBlocked}
+                onClick={() => navigate('/global-stats')}
+            />
+        </>
     );
 });
 
