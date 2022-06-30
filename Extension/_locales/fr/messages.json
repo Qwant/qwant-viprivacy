@@ -53,6 +53,24 @@
   "global_stats": {
     "message": "Vos statistiques cumulées"
   },
+  "global_stats_empty": {
+    "message": "Rien pour le moment"
+  },
+  "global_stats_disabled": {
+    "message": "Désactivées pour le moment"
+  },
+  "global_stats_enable": {
+    "message": "Activer les statistiques"
+  },
+  "global_stats_disable_title": {
+    "message": "Désactiver les statistiques de l’extension"
+  },
+  "global_stats_disable_description": {
+    "message": "Avec cette action, toutes les statistiques cumulées jusqu’ici seront perdues."
+  },
+  "global_stats_disable_action": {
+    "message": "Désactiver les statistiques"
+  },
   "popup_stats_blocked_trackers": {
     "message": "Traqueurs bloqués"
   },
