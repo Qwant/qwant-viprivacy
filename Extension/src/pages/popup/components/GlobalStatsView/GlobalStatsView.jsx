@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { observer } from 'mobx-react';
 
 import {
@@ -20,6 +20,7 @@ import { ActionButton } from './ActionButton/ActionButton';
 const GlobalStatsView = observer(({ store }) => {
     const [isKonami] = useKonamiCode();
     const [showDisableConfirm, toggleShowDisableConfirm] = useToggle(false);
+    const [showStatsEnabledSuccess, setStatsEnabledSuccess] = useState(false);
 
     const annoyanceTime = React.useMemo(() => formatAnnoyanceTime(store.totalBlocked),
         [store.totalBlocked]);
@@ -46,6 +47,8 @@ const GlobalStatsView = observer(({ store }) => {
     const toggleGlobalStats = () => {
         if (showDisableConfirm) {
             toggleShowDisableConfirm();
+        } else {
+            setStatsEnabledSuccess(true);
         }
         store.setShowGlobalStats(!showGlobalStats);
         if (showGlobalStats) {
@@ -66,7 +69,7 @@ const GlobalStatsView = observer(({ store }) => {
     }
 
     if (list.length === 0) {
-        return <EmptyView />;
+        return <EmptyView showStatsEnabledSuccess={showStatsEnabledSuccess} />;
     }
 
     return (
@@ -104,7 +107,7 @@ const GlobalStatsView = observer(({ store }) => {
     );
 });
 
-function EmptyView() {
+function EmptyView({ showStatsEnabledSuccess }) {
     return (
         <>
             <Stack gap="xxs" mb="xxl4">
@@ -112,7 +115,9 @@ function EmptyView() {
                     {reactTranslator.getMessage('global_stats')}
                 </Text>
                 <Text typo="body-2" color="primary">
-                    {reactTranslator.getMessage('global_stats_empty')}
+                    {showStatsEnabledSuccess
+                        ? reactTranslator.getMessage('global_stats_enabled_success')
+                        : reactTranslator.getMessage('global_stats_empty')}
                 </Text>
             </Stack>
             <img src={emptyStatsImage} alt="" />

@@ -53,6 +53,9 @@
   "global_stats": {
     "message": "Vos statistiques cumulées"
   },
+  "global_stats_enabled_success": {
+    "message": "Statistiques bien activées ! Commencez à naviguer sur le web pour avoir des chiffres ici."
+  },
   "global_stats_empty": {
     "message": "Rien pour le moment"
   },
