@@ -59,13 +59,13 @@ const GlobalStatsView = observer(({ store }) => {
                         icon={<Shield />}
                         label={reactTranslator.getMessage('popup_stats_trackers')}
                         value={formatCounter(store.totalBlocked)}
-                        background="~src/pages/popup/components/GlobalStatsView/index#ded6ff"
+                        background="#ded6ff"
                     />
                     <Tile
                         icon={<Clock />}
                         label={reactTranslator.getMessage('popup_stats_time_saved')}
                         value={annoyanceTime}
-                        background="~src/pages/popup/components/GlobalStatsView/index#ded6ff"
+                        background="#ded6ff"
                     />
                 </div>
                 <Table list={list} />
