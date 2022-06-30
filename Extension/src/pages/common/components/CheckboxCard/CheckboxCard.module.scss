@@ -9,8 +9,10 @@
 
 .CheckboxCardActiveIcon {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: var(--spacing-m);
+  right: var(--spacing-m);
+  width: 32px;
+  height: 32px;
 }
 
 .CheckboxCardActive {
@@ -29,4 +31,20 @@
 .CheckboxCardIcon {
   min-height: 32px;
   color: var(--grey-200);
+}
+
+// Compact mode
+// =============
+.CheckboxCardCompact {
+  border-width: 1px!important;
+}
+.CheckboxCardCompact .CheckboxCardBody{
+  padding-right: 44px;
+}
+
+.CheckboxCardCompact .CheckboxCardActiveIcon {
+  width: 20px;
+  height: 20px;
+  top: var(--spacing-s);
+  right: var(--spacing-s);
 }

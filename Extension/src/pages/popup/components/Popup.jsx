@@ -11,6 +11,7 @@ import { rootStore } from '../../options/stores/RootStore';
 import { messenger } from '../../services/messenger';
 import ErrorView from './ErrorView';
 import { PopupRoutes } from './PopupRoutes';
+import Styles from './Popup.module.scss';
 
 export const Popup = observer(() => {
     const { pathname } = useLocation();
@@ -69,7 +70,7 @@ export const Popup = observer(() => {
 
     return (
         <ErrorBoundary>
-            <Box p="s">
+            <Box p="s" className={Styles.Popup}>
                 <PopupHeader />
                 <PopupRoutes />
             </Box>

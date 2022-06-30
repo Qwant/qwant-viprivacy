@@ -14,22 +14,25 @@ import { ReactComponent as IconCheck } from './icon-check.svg';
  * @param {() => void} onClick
  * @param {?boolean} selected
  * @param {?boolean} isNew
+ * @param {?boolean} compact
  */
 export function CheckboxCard({
-    title, description, selected, icon, isNew, onClick,
+    title, description, selected, icon, isNew, onClick, compact,
 }) {
     return (
-        <Card hoverableGrey as="button" className={cx(Styles.CheckboxCard, selected && Styles.CheckboxCardActive)} onClick={onClick}>
+        <Card hoverableGrey as="button" className={cx(Styles.CheckboxCard, compact && Styles.CheckboxCardCompact, selected && Styles.CheckboxCardActive)} onClick={onClick}>
             {isNew && (
                 <Text raw typo="body-2" color="primary" bold>
                     <Box className={Styles.CheckboxCardHeader} px="m" py="xs">{reactTranslator.getMessage('new')}</Box>
                 </Text>
             )}
-            <Stack gap="xs" m="m" relative>
-                <Stack horizontal gap="xxs" center pb="xs" className={Styles.CheckboxCardIcon}>
-                    {icon}
-                </Stack>
-                <Text typo="heading-5" as="h2" bold>{title}</Text>
+            <Stack className={Styles.CheckboxCardBody} gap={compact ? 'xxs' : 'xs'} p={compact ? 's' : 'm'} relative>
+                {!compact && (
+                    <Stack horizontal gap="xxs" center pb="xs" className={Styles.CheckboxCardIcon}>
+                        {icon}
+                    </Stack>
+                )}
+                <Text typo={compact ? 'body-1' : 'heading-5'} as="h2" bold>{title}</Text>
                 <Text typo="body-2" as="p" color="secondary">{description}</Text>
                 {selected && <IconCheck className={Styles.CheckboxCardActiveIcon} />}
             </Stack>
