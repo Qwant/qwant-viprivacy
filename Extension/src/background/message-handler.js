@@ -258,7 +258,7 @@ const createMessageHandler = () => {
     };
 
     /**
-     * Main function for processing messages from content-scripts
+     * MainView function for processing messages from content-scripts
      *
      * @param message
      * @param sender

@@ -1,7 +1,7 @@
 import React from 'react';
-import { QwantLogo } from '../../../../popup/components/MainContainer/components/QwantLogo';
 
 import './styles.css';
+import { QwantLogo } from '~src/pages/common/components/QwantLogo/QwantLogo';
 
 export const Header = () => {
     return (

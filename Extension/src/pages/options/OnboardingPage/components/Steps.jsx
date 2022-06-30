@@ -5,7 +5,7 @@ import { Events, States } from '~src/pages/options/OnboardingPage/stateMachine';
 import { reactTranslator } from '~src/common/translators/reactTranslator';
 
 import { Box, Button, Flex } from '@qwant/qwant-ponents';
-import { QwantLogo } from '~src/pages/popup/components/MainContainer/components/QwantLogo';
+import { QwantLogo } from '~src/pages/common/components/QwantLogo/QwantLogo';
 import { UpsellMobile } from '~src/pages/options/OnboardingPage/components/UpsellMobile/UpsellMobile';
 import Styles from './Steps.module.scss';
 import { ButtonForwardText } from './ButtonForwardText';
