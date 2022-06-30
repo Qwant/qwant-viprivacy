@@ -19,7 +19,7 @@ export const ProtectionLevel = ({ protectionLevel, applicationFilteringDisabled,
         <div className="protection_level__section">
             <Section
                 onClick={onClick}
-                background="~src/pages/popup/components/Main/components/ProtectionLevel/index#ded6ff"
+                background="#ded6ff"
                 title={level ? reactTranslator.getMessage(`protection_level_${level}`) : ''}
                 text={level ? reactTranslator.getMessage(`protection_level_${level}_description`) : ''}
             >

@@ -17,7 +17,7 @@ export const GlobalStats = ({
         <div className="global_stats__section">
             <Section
                 onClick={onClick}
-                background="~src/pages/popup/components/Main/components/GlobalStats/index#fff"
+                background="#fff"
                 size="small"
                 title={reactTranslator.getMessage('global_stats')}
             >
