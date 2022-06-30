@@ -2,9 +2,10 @@ import React from 'react';
 import { observer } from 'mobx-react';
 
 import { reactTranslator } from '~src/common/translators/reactTranslator';
-import { Stack, Text } from '@qwant/qwant-ponents';
+import { Box, Stack, Text } from '@qwant/qwant-ponents';
 import { Table } from '../shared/Table/Table';
 import { Tile } from '../shared/Tile/Tile';
+import emptyStatsImage from './empty-stats.svg';
 
 import { formatCounter, isWebURL } from '../../helpers';
 
@@ -49,7 +50,14 @@ const TabStatsView = observer(({ store }) => {
                 />
             </Stack>
 
-            <Table list={list} />
+            {list.length > 0
+                ? <Table list={list} />
+                : (
+                    <Box mt="s">
+                        <img src={emptyStatsImage} alt="" />
+                    </Box>
+                )}
+
         </Stack>
     );
 });
