@@ -1,6 +1,5 @@
 import React from 'react';
 import { reactTranslator } from '../../../../../../common/translators/reactTranslator';
-import { ArrowRight } from '../../../shared/Icons';
 import { formatAnnoyanceTime, formatCounter } from '../../../../helpers';
 import { Section } from '../Section';
 
@@ -46,7 +45,6 @@ export const GlobalStats = ({
                             </>
                         )}
                     </div>
-                    <ArrowRight />
                 </div>
             </Section>
         </div>

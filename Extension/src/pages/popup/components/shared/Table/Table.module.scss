@@ -1,0 +1,22 @@
+.Table {
+    border-spacing: 0;
+    // Card overrides
+    border-width: 1px!important;
+    border-color: var(--grey-200) !important;
+}
+.Table th {
+    border-bottom: solid 1px var(--grey-200);
+}
+
+.Table th:first-child {
+    text-align: left;
+}
+
+.Table th,
+.Table td {
+    padding: var(--spacing-xs) var(--spacing-s);
+}
+
+.Table tr:nth-child(2n + 1) td {
+    background-color: var(--grey-100);
+}

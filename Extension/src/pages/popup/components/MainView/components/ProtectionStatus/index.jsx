@@ -2,7 +2,6 @@ import React from 'react';
 import { reactTranslator } from '../../../../../../common/translators/reactTranslator';
 import { POPUP_STATES } from '../../../../constants';
 import { Check } from './Check';
-import { ArrowRight } from '../../../shared/Icons';
 import { Section } from '../Section';
 
 import './styles.css';
@@ -116,7 +115,6 @@ export const ProtectionStatus = ({
                         <span className="total_blocked_count">
                             {totalBlockedTab}
                         </span>
-                        <ArrowRight />
                     </div>
                 </div>
             </Section>

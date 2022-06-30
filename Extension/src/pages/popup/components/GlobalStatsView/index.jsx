@@ -1,8 +1,8 @@
 import React from 'react';
 import { observer } from 'mobx-react';
 
-import { Table } from '../shared/Table';
-import { Tile } from '../shared/Tile';
+import { Table } from '../shared/Table/Table';
+import { Tile } from '../shared/Tile/Tile';
 
 import { reactTranslator } from '../../../../common/translators/reactTranslator';
 
@@ -10,7 +10,7 @@ import { formatAnnoyanceTime, formatCounter } from '../../helpers';
 
 import './styles.css';
 import { PopupView } from '../shared/PopupView/PopupView';
-import { Clock, Shield } from '../shared/Icons';
+import { IconShield, IconTime } from '../shared/Icons';
 import { useKonamiCode } from './useKonami';
 
 const GlobalStatsView = observer(({ store }) => {
@@ -56,16 +56,16 @@ const GlobalStatsView = observer(({ store }) => {
             <div className="global_stats_container">
                 <div className="tiles">
                     <Tile
-                        icon={<Shield />}
+                        icon={IconShield}
                         label={reactTranslator.getMessage('popup_stats_trackers')}
                         value={formatCounter(store.totalBlocked)}
-                        background="#ded6ff"
+                        color="purple"
                     />
                     <Tile
-                        icon={<Clock />}
+                        icon={IconTime}
                         label={reactTranslator.getMessage('popup_stats_time_saved')}
                         value={annoyanceTime}
-                        background="#ded6ff"
+                        color="purple"
                     />
                 </div>
                 <Table list={list} />

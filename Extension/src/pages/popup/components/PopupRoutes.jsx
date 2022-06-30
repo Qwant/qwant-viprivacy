@@ -11,7 +11,7 @@ import { messenger } from '../../services/messenger';
 
 import Main from './MainView';
 import SettingsView from './SettingsView/SettingsView';
-import TabStatsView from './TabStatsView';
+import TabStatsView from './TabStatsView/TabStatsView';
 import GlobalStatsView from './GlobalStatsView';
 
 export const PopupRoutes = observer(() => {
