@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { reactTranslator } from '../../common/translators/reactTranslator';
 
 import { AdBlocked } from './components/AdBlocked';
-// import { SafeBrowsing } from './components/SafeBrowsing';
+// import { SafeBrowsing } from './shared/SafeBrowsing';
 
 export const adBlocked = {
     init: () => {

@@ -22,7 +22,7 @@ const CONTENT_SCRIPT_START_PATH = path.resolve(__dirname, '../../Extension/pages
 // const FULLSCREEN_USER_RULES_PATH = path.resolve(__dirname, '../../Extension/pages/fullscreen-user-rules');
 // const SAFEBROWSING_PATH = path.resolve(__dirname, '../../Extension/pages/safebrowsing');
 const AD_BLOCKED_PATH = path.resolve(__dirname, '../../Extension/pages/ad-blocked');
-// const EDITOR_PATH = path.resolve(__dirname, '../../Extension/src/pages/common/components/Editor');
+// const EDITOR_PATH = path.resolve(__dirname, '../../Extension/src/pages/common/shared/Editor');
 
 const OUTPUT_PATH = config.outputPath;
 

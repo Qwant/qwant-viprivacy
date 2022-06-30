@@ -32,7 +32,7 @@ import { url } from './url';
 export const BACKGROUND_TAB_ID = -1;
 
 /**
- * Main frame id is equal to 0
+ * MainView frame id is equal to 0
  */
 export const MAIN_FRAME_ID = 0;
 

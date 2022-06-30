@@ -2,18 +2,16 @@ import React from 'react';
 import { observer } from 'mobx-react';
 import { useMachine } from '@xstate/react';
 
+import { apm } from '~src/background/apm';
+import { browser } from '~src/background/extension-api/browser';
+import { MESSAGE_TYPES, NOTIFIER_TYPES } from '~src/common/constants';
+import { hasAllOptionalPermissions, requestOptionalPermissions } from '~src/background/utils/optional-permissions';
 import { Steps } from './components/Steps';
 import { Events, stateMachine, States } from './stateMachine';
 
-import { apm } from '../../../background/apm';
 import { rootStore } from '../stores/RootStore';
 import { messenger } from '../../services/messenger';
 
-import { browser } from '../../../background/extension-api/browser';
-import { MESSAGE_TYPES, NOTIFIER_TYPES } from '../../../common/constants';
-import { hasAllOptionalPermissions, requestOptionalPermissions } from '../../../background/utils/optional-permissions';
-
-import '../../popup/components/Popup/main.css';
 import './styles.css';
 
 export const OnboardingPage = observer(() => {

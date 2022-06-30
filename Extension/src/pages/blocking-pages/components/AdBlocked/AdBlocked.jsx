@@ -1,16 +1,15 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable jsx-a11y/anchor-has-content */
 import React, { useCallback } from 'react';
-import { reactTranslator } from '../../../../common/translators/reactTranslator';
+import { reactTranslator } from '~src/common/translators/reactTranslator';
 
-import { MESSAGE_TYPES } from '../../../../common/constants';
+import { MESSAGE_TYPES } from '~src/common/constants';
 import { getParams } from '../../getParams';
 import { messenger } from '../../../services/messenger';
 import { Button } from '../../../common/components/Button';
 import { Header } from '../../../options/OnboardingPage/components/Header';
 import QwantLogoSquare from './assets/qwant_logo_square.png';
 
-import '../../../popup/components/Popup/main.css';
 import './style.css';
 
 export const AdBlocked = () => {
