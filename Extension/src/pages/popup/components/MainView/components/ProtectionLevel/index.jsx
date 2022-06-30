@@ -1,6 +1,5 @@
 import React from 'react';
 import { reactTranslator } from '../../../../../../common/translators/reactTranslator';
-import { ArrowRight } from '../../../shared/Icons';
 import { Section } from '../Section';
 
 import './styles.css';
@@ -28,7 +27,6 @@ export const ProtectionLevel = ({ protectionLevel, applicationFilteringDisabled,
                         <ShieldIcon />
                         {reactTranslator.getMessage('protection_level')}
                     </div>
-                    <ArrowRight />
                 </div>
             </Section>
         </div>

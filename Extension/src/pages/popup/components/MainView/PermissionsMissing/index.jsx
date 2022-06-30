@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Button } from '../../../../common/components/Button';
-import { Check } from '../../shared/Icons';
 import { reactTranslator } from '../../../../../common/translators/reactTranslator';
 
 import './styles.css';
@@ -17,9 +16,6 @@ export const PermissionsMissing = ({ inlineCTA, onRequestPermissions }) => {
                     <div>
                         {reactTranslator.getMessage('missing_permissions_default_search_engine_description')}
                     </div>
-                </div>
-                <div>
-                    <Check />
                 </div>
             </div>
 
