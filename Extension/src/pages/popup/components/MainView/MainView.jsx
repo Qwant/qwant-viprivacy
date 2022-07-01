@@ -10,7 +10,7 @@ import { Stack } from '@qwant/qwant-ponents';
 import { LoadingView } from './LoadingView';
 import { GlobalStats } from './GlobalStats';
 import { PermissionsMissing } from './PermissionsMissing';
-import { ProtectionLevel } from './ProtectionLevel';
+import { ProtectionLevel } from './ProtectionLevel/ProtectionLevel';
 import { ProtectionStatus } from './ProtectionStatus/ProtectionStatus';
 
 import { messenger } from '../../../services/messenger';

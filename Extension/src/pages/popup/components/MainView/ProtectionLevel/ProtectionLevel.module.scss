@@ -1,0 +1,7 @@
+.ProtectionLevel svg {
+  transition: transform .3s;
+}
+
+.ProtectionLevel:hover svg {
+  transform: translateX(var(--spacing-xxs));
+}
