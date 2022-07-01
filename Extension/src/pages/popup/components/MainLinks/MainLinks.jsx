@@ -18,7 +18,7 @@ export function MainLinks() {
         icon: IconMessage,
     }, {
         label: t('infos'),
-        to: () => navigate('/global-stats'),
+        to: () => navigate('/about'),
         icon: IconInfoCircle,
     }], [navigate]);
 
