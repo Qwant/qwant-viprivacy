@@ -1,11 +1,12 @@
 import {
-    Flex, IconArrowLeftLine, IconSearch, Text,
+    Flex, IconArrowLeftLine, Text,
 } from '@qwant/qwant-ponents';
 import { t } from '~src/common/translators/reactTranslator';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { QwantLogo } from '~src/pages/common/components/QwantLogo/QwantLogo';
 import React from 'react';
 import Styles from './Popup.module.scss';
+import { IconSearch } from './shared/Icons';
 
 export function PopupHeader() {
     const navigate = useNavigate();
@@ -22,6 +23,7 @@ export function PopupHeader() {
                     href="https://qwant.com"
                     target="_blank"
                     rel="noreferrer"
+                    className={Styles.PopupSearch}
                 >
                     <IconSearch />
                 </Text>
