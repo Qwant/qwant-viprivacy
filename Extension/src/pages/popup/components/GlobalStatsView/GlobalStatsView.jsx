@@ -20,7 +20,7 @@ import { ActionButton } from './ActionButton/ActionButton';
 const GlobalStatsView = observer(({ store }) => {
     const [isKonami] = useKonamiCode();
     const [showDisableConfirm, toggleShowDisableConfirm] = useToggle(false);
-    const [showStatsEnabledSuccess, setStatsEnabledSuccess] = useState(false);
+    const [justEnabled, setJustEnabled] = useState(false);
 
     const annoyanceTime = React.useMemo(() => formatAnnoyanceTime(store.totalBlocked),
         [store.totalBlocked]);
@@ -48,7 +48,7 @@ const GlobalStatsView = observer(({ store }) => {
         if (showDisableConfirm) {
             toggleShowDisableConfirm();
         } else {
-            setStatsEnabledSuccess(true);
+            setJustEnabled(true);
         }
         store.setShowGlobalStats(!showGlobalStats);
         if (showGlobalStats) {
@@ -69,7 +69,7 @@ const GlobalStatsView = observer(({ store }) => {
     }
 
     if (list.length === 0) {
-        return <EmptyView showStatsEnabledSuccess={showStatsEnabledSuccess} />;
+        return <EmptyView justEnabled={justEnabled} />;
     }
 
     return (
@@ -107,7 +107,7 @@ const GlobalStatsView = observer(({ store }) => {
     );
 });
 
-function EmptyView({ showStatsEnabledSuccess }) {
+function EmptyView({ justEnabled }) {
     return (
         <>
             <Stack gap="xxs" mb="xxl4">
@@ -115,9 +115,7 @@ function EmptyView({ showStatsEnabledSuccess }) {
                     {reactTranslator.getMessage('global_stats')}
                 </Text>
                 <Text typo="body-2" color="primary">
-                    {showStatsEnabledSuccess
-                        ? reactTranslator.getMessage('global_stats_enabled_success')
-                        : reactTranslator.getMessage('global_stats_empty')}
+                    {reactTranslator.getMessage(justEnabled ? 'global_stats_empty' : 'global_stats_enabled_success')}
                 </Text>
             </Stack>
             <img src={emptyStatsImage} alt="" />
