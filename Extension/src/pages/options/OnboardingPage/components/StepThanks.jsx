@@ -2,12 +2,12 @@ import React, { useMemo } from 'react';
 import { Box, Stack, Text } from '@qwant/qwant-ponents';
 import { t } from '~src/common/translators/reactTranslator';
 import { OrderedList } from '~src/pages/common/components/List/OrderedList';
-import PermissionsRequestImage from '~src/pages/options/OnboardingPage/components/assets/permission-request.svg';
 import { browserUtils } from '~src/background/utils/browser-utils';
 import { CheckList } from '~src/pages/common/components/List/CheckList';
+import imageUrl from './assets/illustration-telemetry.png';
 import Styles from './Steps.module.scss';
 
-const showPinTutorial = !browserUtils.isFirefoxBrowser();
+const showTutorial = !browserUtils.isFirefoxBrowser();
 
 export const StepThanks = () => {
     return (
@@ -16,14 +16,15 @@ export const StepThanks = () => {
                 <Text bold typo="heading-3" color="primary" as="h1">
                     {t('onboarding_step_thank_you_title')}
                 </Text>
-                {showPinTutorial ? <ExtensionPinTutorial /> : <ExtensionFeatures />}
+                {showTutorial ? <ExtensionPinTutorial /> : <ExtensionFeatures />}
             </Stack>
-            <img src={PermissionsRequestImage} alt="" width="312" height="204" />
+            <img src={imageUrl} alt="" width="336" height="354" />
         </Box>
     );
 };
 
 function ExtensionPinTutorial() {
+    const browser = browserUtils.isEdgeBrowser() ? 'edge' : 'chrome';
     return (
         <>
             <Text as="p" typo="body-1" color="primary">
@@ -33,10 +34,10 @@ function ExtensionPinTutorial() {
                 {[1, 2].map((i) => (
                     <Stack key={i} gap="xxs" as="li">
                         <Text as="h2" typo="body-1" bold color="primary">
-                            {t(`onboarding_step_thank_you_${i}_title`)}
+                            {t(`onboarding_step_thank_you_${browser}_${i}_title`)}
                         </Text>
                         <Text as="p" typo="body-2" color="primary">
-                            {t(`onboarding_step_thank_you_${i}_description`)}
+                            {t(`onboarding_step_thank_you_${browser}_${i}_description`)}
                         </Text>
                     </Stack>
                 ))}

@@ -12,8 +12,6 @@ import { Events, stateMachine, States } from './stateMachine';
 import { rootStore } from '../stores/RootStore';
 import { messenger } from '../../services/messenger';
 
-import './styles.css';
-
 export const OnboardingPage = observer(() => {
     const [state, send] = useMachine(stateMachine);
     const timerRef = React.useRef(null);
