@@ -10,7 +10,8 @@ export const Tile = ({
     value,
     label,
 }) => {
-    const colorVariation = color === 'purple' ? '200' : '300';
+    const purpleColor = asCard ? '100' : '200';
+    const colorVariation = color === 'purple' ? purpleColor : '300';
     const Wrapper = asCard ? ThinCard : Box;
     const style = { color: `var(--${color}-${colorVariation})` };
     if (!asCard) {

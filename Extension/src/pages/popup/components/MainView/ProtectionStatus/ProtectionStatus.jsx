@@ -152,7 +152,7 @@ export const ProtectionStatus = ({
                         <ReactSwitch
                             checked={isEnabled}
                             onChange={handleChange}
-                            offColor="#e00004"
+                            offColor="#ff5c5f"
                             onColor="#38a870"
                             handleDiameter={20}
                             width={48}
