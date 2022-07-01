@@ -23,6 +23,8 @@ const Main = observer(({ store, settingsStore }) => {
     const isReady = !isLoading && store.isInitialDataReceived;
 
     React.useEffect(() => {
+        let timer;
+
         const checkRequestFilterReady = async () => {
             setLoading(true);
             const response = await messenger.sendMessage(MESSAGE_TYPES.CHECK_REQUEST_FILTER_READY);
@@ -34,11 +36,13 @@ const Main = observer(({ store, settingsStore }) => {
             }
         };
 
-        let timer;
         checkRequestFilterReady();
-        if (timer) {
-            clearTimeout(timer);
-        }
+
+        return () => {
+            if (timer) {
+                clearTimeout(timer);
+            }
+        };
     }, []);
 
     React.useEffect(() => {
