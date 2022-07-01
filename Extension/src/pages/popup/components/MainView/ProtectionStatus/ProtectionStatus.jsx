@@ -109,12 +109,14 @@ export const ProtectionStatus = ({
                 color={colors[state]}
             />
 
-            <Text typo="heading-5" color="primary" raw>
-                <Flex alignCenter className={Styles.ProtectionStatusDetail}>
-                    <Text typo="body-2" color="primary">{t('popup_main_protection_detail')}</Text>
-                    <IconArrowRightSLine />
-                </Flex>
-            </Text>
+            {isEnabled && (
+                <Text typo="heading-5" color="primary" raw>
+                    <Flex alignCenter className={Styles.ProtectionStatusDetail}>
+                        <Text typo="body-2" color="primary">{t('popup_main_protection_detail')}</Text>
+                        <IconArrowRightSLine />
+                    </Flex>
+                </Text>
+            )}
 
             <Stack gap="s" p="s" as={isEnabled ? 'button' : 'a'}>
                 <Stack gap="xxs">
