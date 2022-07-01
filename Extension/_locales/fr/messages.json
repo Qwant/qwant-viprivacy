@@ -290,6 +290,9 @@
   "survey_url": {
     "message": "https://fr.surveymonkey.com/r/XPK9KHJ"
   },
+  "opinion": {
+    "message": "Avis"
+  },
   "infos": {
     "message": "Infos"
   }
