@@ -52,7 +52,7 @@ export const AboutView = observer(({ settingsStore }) => {
 
             <ThinCard className={Styles.AboutViewLinks}>
                 {links.map((link) => (
-                    <Text typo="body-2" color="primary" raw>
+                    <Text key={link.url} typo="body-2" color="primary" raw>
                         <Flex
                             px="s"
                             py="xs"
