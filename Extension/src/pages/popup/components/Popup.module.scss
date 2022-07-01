@@ -15,3 +15,12 @@
     transform: translateX(calc(var(--spacing-xxs) * -1px));
   }
 }
+
+.PopupSearch {
+  color: var(--grey-000);
+  transition: color .3s;
+
+  &:hover {
+    color: var(--action-blue-300)
+  }
+}
