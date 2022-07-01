@@ -100,7 +100,7 @@ function StepsNavigation({
                     <Button
                         variant="secondary-black"
                         onClick={onBack}
-                        loading={isLoading}
+                        disabled={isLoading}
                         size="large"
                         name={`btn-back_${state.value}`}
                     >
