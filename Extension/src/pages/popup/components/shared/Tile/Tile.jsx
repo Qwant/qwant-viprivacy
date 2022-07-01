@@ -1,21 +1,28 @@
 import React from 'react';
 import { Box, Text } from '@qwant/qwant-ponents';
+import { ThinCard } from '~src/pages/common/components/ThinCard/ThinCard';
 import Styles from './Tile.module.scss';
 
 export const Tile = ({
+    asCard = false,
     color = 'green',
     icon: IconComponent,
     value,
     label,
 }) => {
     const colorVariation = color === 'purple' ? '200' : '300';
+    const Wrapper = asCard ? ThinCard : Box;
+    const style = { color: `var(--${color}-${colorVariation})` };
+    if (!asCard) {
+        style.background = `var(--${color}-100)`;
+    }
     return (
-        <Box style={{ background: `var(--${color}-100)` }} p="s" className={Styles.Tile}>
-            <div style={{ color: `var(--${color}-${colorVariation})` }}><IconComponent /></div>
+        <Wrapper style={style} p="s" className={Styles.Tile}>
+            <IconComponent />
             <div>
-                <Text typo="caption-1">{label}</Text>
-                <Text typo="body-1" bold>{value}</Text>
+                <Text typo="caption-1" color="primary">{label}</Text>
+                <Text typo="body-1" color="primary" bold>{value}</Text>
             </div>
-        </Box>
+        </Wrapper>
     );
 };

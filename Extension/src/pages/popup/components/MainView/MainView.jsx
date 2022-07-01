@@ -8,7 +8,7 @@ import { browser } from '~src/background/extension-api/browser';
 import { hasAllOptionalPermissions } from '~src/background/utils/optional-permissions';
 import { Stack } from '@qwant/qwant-ponents';
 import { LoadingView } from './LoadingView';
-import { GlobalStats } from './GlobalStats';
+import { GlobalStats } from './GlobalStats/GlobalStats';
 import { PermissionsMissing } from './PermissionsMissing';
 import { ProtectionLevel } from './ProtectionLevel/ProtectionLevel';
 import { ProtectionStatus } from './ProtectionStatus/ProtectionStatus';
@@ -76,7 +76,6 @@ const Main = observer(({ store, settingsStore }) => {
             <GlobalStats
                 showGlobalStats={store.showGlobalStats}
                 totalBlocked={store.totalBlocked}
-                onClick={() => navigate('/global-stats')}
             />
         </Stack>
     );
