@@ -1,9 +1,6 @@
 import React from 'react';
 import { t } from '~src/common/translators/reactTranslator';
-
-import { ThinCard } from '~src/pages/common/components/ThinCard/ThinCard';
-import { Flex, IconArrowRightSLine, Text } from '@qwant/qwant-ponents';
-import Styles from './ProtectionLevel.module.scss';
+import { ThinCardLink } from '~src/pages/popup/components/shared/ThinCardLink/ThinCardLink';
 
 const getProtectionLevel = ({
     protectionLevel,
@@ -23,21 +20,5 @@ export const ProtectionLevel = ({
         applicationFilteringDisabled,
     });
 
-    return (
-        <ThinCard p="s" onClick={onClick} as="button" className={Styles.ProtectionLevel}>
-            <Flex between alignCenter>
-                <Text bold typo="body-2" color="primary">
-                    {t('protection_level')}
-                </Text>
-                <Text typo="heading-5" color="primary">
-                    <Flex alignCenter>
-                        <Text typo="body-2" color="primary">
-                            {level ? t(`protection_level_${level}`) : ''}
-                        </Text>
-                        <IconArrowRightSLine />
-                    </Flex>
-                </Text>
-            </Flex>
-        </ThinCard>
-    );
+    return <ThinCardLink title={t('protection_level')} label={level ? t(`protection_level_${level}`) : ''} onClick={onClick} />;
 };

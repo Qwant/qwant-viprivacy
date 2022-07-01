@@ -1,7 +1,7 @@
-.ProtectionLevel svg {
+.ThinCardLink svg {
   transition: transform .3s;
 }
 
-.ProtectionLevel:hover svg {
+.ThinCardLink:hover svg {
   transform: translateX(var(--spacing-xxs));
 }

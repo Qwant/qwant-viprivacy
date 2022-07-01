@@ -74,6 +74,9 @@
   "global_stats_disabled": {
     "message": "Désactivées pour le moment"
   },
+  "global_stats_disabled_short": {
+    "message": "Désactivées"
+  },
   "global_stats_enable": {
     "message": "Activer les statistiques"
   },
