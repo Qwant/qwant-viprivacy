@@ -1,6 +1,7 @@
 import React from 'react';
 import { t } from '~src/common/translators/reactTranslator';
-import { Card, Text } from '@qwant/qwant-ponents';
+import { Text } from '@qwant/qwant-ponents';
+import { ThinCard } from '~src/pages/common/components/ThinCard/ThinCard';
 import Styles from './Table.module.scss';
 
 export const Table = ({ list }) => {
@@ -9,7 +10,7 @@ export const Table = ({ list }) => {
     }
 
     return (
-        <Card as="table" className={Styles.Table}>
+        <ThinCard as="table" className={Styles.Table}>
             <thead>
                 <tr>
                     <Text typo="body-2" as="th" bold>{t('popup_stats_table_domains_label')}</Text>
@@ -24,6 +25,6 @@ export const Table = ({ list }) => {
                     </tr>
                 ))}
             </tbody>
-        </Card>
+        </ThinCard>
     );
 };

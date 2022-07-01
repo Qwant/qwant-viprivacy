@@ -1,11 +1,12 @@
 import React from 'react';
 import {
-    Box, Card, Checkbox, Flex, IconExternalLink, Stack, Text,
+    Box, Checkbox, Flex, IconExternalLink, Stack, Text,
 } from '@qwant/qwant-ponents';
 import { t } from '~src/common/translators/reactTranslator';
 import { openTabHandler } from '~src/pages/popup/helpers';
 import { observer } from 'mobx-react';
 import { messenger } from '~src/pages/services/messenger';
+import { ThinCard } from '~src/pages/common/components/ThinCard/ThinCard';
 import imageIllustration from './illustration-info.svg';
 import Styles from './AboutView.module.scss';
 
@@ -49,7 +50,7 @@ export const AboutView = observer(({ settingsStore }) => {
                 </Text>
             </Stack>
 
-            <Card className={Styles.AboutViewLinks}>
+            <ThinCard className={Styles.AboutViewLinks}>
                 {links.map((link) => (
                     <Text typo="body-2" color="primary" raw>
                         <Flex
@@ -65,7 +66,7 @@ export const AboutView = observer(({ settingsStore }) => {
                         </Flex>
                     </Text>
                 ))}
-            </Card>
+            </ThinCard>
 
             <Checkbox
                 id="privacy-toggle"
