@@ -6,13 +6,13 @@ import { RiLineChartLine as IconChart, RiMessage2Line as IconMessage } from 'rea
 import { Flex, IconInfoCircle, Text } from '@qwant/qwant-ponents';
 import Styles from './MainLinks.module.scss';
 
-export function MainLinks() {
+export function MainLinks({ withStats }) {
     const navigate = useNavigate();
-    const links = useMemo(() => [{
+    const links = useMemo(() => [...(withStats ? [{
         label: t('stats'),
         to: () => navigate('/global-stats'),
         icon: IconChart,
-    }, {
+    }] : []), {
         label: t('opinion'),
         to: t('survey_url'),
         icon: IconMessage,
