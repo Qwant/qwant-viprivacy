@@ -7,6 +7,7 @@ import { MESSAGE_TYPES } from '~src/common/constants';
 import { browser } from '~src/background/extension-api/browser';
 import { hasAllOptionalPermissions } from '~src/background/utils/optional-permissions';
 import { Stack } from '@qwant/qwant-ponents';
+import { MainLinks } from '~src/pages/popup/components/MainLinks/MainLinks';
 import { LoadingView } from './LoadingView';
 import { GlobalStats } from './GlobalStats';
 import { PermissionsMissing } from './PermissionsMissing';
@@ -78,6 +79,7 @@ const Main = observer(({ store, settingsStore }) => {
                 totalBlocked={store.totalBlocked}
                 onClick={() => navigate('/global-stats')}
             />
+            <MainLinks />
         </Stack>
     );
 });
