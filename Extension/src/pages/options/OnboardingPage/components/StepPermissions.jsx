@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Text } from '@qwant/qwant-ponents';
 import { t } from '~src/common/translators/reactTranslator';
-import PermissionsRequestImage from './assets/permission-request.svg';
+import PermissionsRequestImage from './assets/permission-request.png';
 import Styles from './Steps.module.scss';
 
 export const StepPermissions = () => {
@@ -15,7 +15,7 @@ export const StepPermissions = () => {
                     {t('onboarding_step_request_permissions_description')}
                 </Box>
             </Text>
-            <img src={PermissionsRequestImage} alt="" width="312" height="204" />
+            <img src={PermissionsRequestImage} alt="" width="336" height="354" />
         </Box>
     );
 };

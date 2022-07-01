@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { Button } from '../../../../common/components/Button';
-import { t } from '../../../../../common/translators/reactTranslator';
+import { t } from '~src/common/translators/reactTranslator';
 
 import './styles.css';
+import { Button } from '@qwant/qwant-ponents';
 
 export const PermissionsMissing = ({ inlineCTA, onRequestPermissions }) => {
     return (
@@ -37,7 +37,7 @@ export const PermissionsMissing = ({ inlineCTA, onRequestPermissions }) => {
                 </div>
                 <div>
                     {inlineCTA && (
-                        <Button className="cta-inline" name="enable-protection" size="small" color="secondary" onClick={onRequestPermissions}>
+                        <Button className="cta-inline" name="enable-protection" size="small" variant="secondary-black" onClick={onRequestPermissions}>
                             {t('missing_permissions_cta_button_popup')}
                         </Button>
                     )}

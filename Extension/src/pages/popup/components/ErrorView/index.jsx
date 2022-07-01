@@ -5,7 +5,7 @@ import { observer } from 'mobx-react';
 import './styles.css';
 import { browser } from '~src/background/extension-api/browser';
 import { t } from '~src/common/translators/reactTranslator';
-import { Button } from '../../../common/components/Button';
+import { Button } from '@qwant/qwant-ponents';
 
 const ErrorView = observer(({ error }) => {
     const onReload = () => {
@@ -23,7 +23,7 @@ const ErrorView = observer(({ error }) => {
                 </div>
 
                 <Button
-                    color="secondary"
+                    variant="secondary-black"
                     onClick={onReload}
                     className="section-loading_button"
                 >
