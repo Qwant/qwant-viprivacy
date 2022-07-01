@@ -63,11 +63,10 @@
 }
 
 .ProtectionStatusShield {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  transform: translate3d(-50%, -50%, 0);
-  cursor: pointer;
+  position: absolute!important;
+  left: calc(50% - 30px);
+  top: -30px;
+  cursor: pointer!important;
 }
 
 // Disabled
