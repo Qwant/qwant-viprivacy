@@ -115,7 +115,8 @@ function EmptyView({ justEnabled }) {
                     {t('global_stats')}
                 </Text>
                 <Text typo="body-2" color="primary">
-                    {t(justEnabled ? 'global_stats_empty' : 'global_stats_enabled_success')}
+                    {t(justEnabled
+                        ? 'global_stats_enabled_success' : 'global_stats_empty')}
                 </Text>
             </Stack>
             <img src={emptyStatsImage} alt="" />
