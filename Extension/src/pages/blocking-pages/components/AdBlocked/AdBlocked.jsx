@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable jsx-a11y/anchor-has-content */
 import React, { useCallback } from 'react';
-import { reactTranslator } from '~src/common/translators/reactTranslator';
+import { t } from '~src/common/translators/reactTranslator';
 
 import { MESSAGE_TYPES } from '~src/common/constants';
 import { getParams } from '../../getParams';
@@ -34,8 +34,8 @@ export const AdBlocked = () => {
 
                     <div className="content_text">
                         <div className="content_text_title">
-                            {reactTranslator.getMessage('blocking_pages_rule_content_title', {
-                                name: reactTranslator.getMessage('short_name'),
+                            {t('blocking_pages_rule_content_title', {
+                                name: t('short_name'),
                             })}
                         </div>
                         <div className="content_text_url">
@@ -44,8 +44,8 @@ export const AdBlocked = () => {
                             </code>
                         </div>
                         <div className="content_text_description">
-                            {reactTranslator.getMessage('blocking_pages_rule_content_description', {
-                                name: reactTranslator.getMessage('short_name'),
+                            {t('blocking_pages_rule_content_description', {
+                                name: t('short_name'),
                             })}
                         </div>
 
@@ -53,11 +53,11 @@ export const AdBlocked = () => {
 
                     <div className="alert__buttons">
                         <Button color="secondary" onClick={handleGoBack}>
-                            {reactTranslator.getMessage('back')}
+                            {t('back')}
                         </Button>
 
                         <Button color="primary" onClick={handleProceed}>
-                            {reactTranslator.getMessage('blocking_pages_btn_proceed')}
+                            {t('blocking_pages_btn_proceed')}
                         </Button>
                     </div>
 

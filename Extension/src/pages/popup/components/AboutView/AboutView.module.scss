@@ -1,0 +1,20 @@
+.AboutViewLinks {
+  border: solid 1px var(--grey-200) !important;
+}
+
+.AboutViewLinks button {
+  width: 100%;
+}
+
+.AboutViewLinks button + button {
+  border-top: 1px solid var(--grey-100);
+}
+
+.AboutViewCheckbox {
+  align-items: flex-start;
+}
+
+.AboutViewCheckbox a{
+  color: var(--primary);
+  text-decoration: underline;
+}

@@ -1,10 +1,11 @@
 import React from 'react';
 import { observer } from 'mobx-react';
 
-import { reactTranslator } from '~src/common/translators/reactTranslator';
-import { Stack, Text } from '@qwant/qwant-ponents';
+import { t } from '~src/common/translators/reactTranslator';
+import { Box, Stack, Text } from '@qwant/qwant-ponents';
 import { Table } from '../shared/Table/Table';
 import { Tile } from '../shared/Tile/Tile';
+import emptyStatsImage from './empty-stats.svg';
 
 import { formatCounter, isWebURL } from '../../helpers';
 
@@ -29,10 +30,10 @@ const TabStatsView = observer(({ store }) => {
         <Stack gap="s">
             <Stack gap="xxs">
                 <Text typo="heading-5" bold color="primary" as="h1">
-                    {reactTranslator.getMessage('popup_stats_blocked_elements')}
+                    {t('popup_stats_blocked_elements')}
                 </Text>
                 <Text typo="body-2" color="primary">
-                    {websiteUrl && reactTranslator.getMessage('popup_main_nbr_blocked_elements_domain', { domain: websiteUrl })}
+                    {websiteUrl && t('popup_main_nbr_blocked_elements_domain', { domain: websiteUrl })}
                 </Text>
             </Stack>
 
@@ -40,16 +41,23 @@ const TabStatsView = observer(({ store }) => {
                 <Tile
                     icon={IconGlobe}
                     value={formatCounter(totalBlockedDomains)}
-                    label={reactTranslator.getMessage('popup_stats_table_domains_label')}
+                    label={t('popup_stats_table_domains_label')}
                 />
                 <Tile
                     icon={IconShield}
                     value={formatCounter(count)}
-                    label={reactTranslator.getMessage('popup_stats_trackers')}
+                    label={t('popup_stats_trackers')}
                 />
             </Stack>
 
-            <Table list={list} />
+            {list.length > 0
+                ? <Table list={list} />
+                : (
+                    <Box mt="s">
+                        <img src={emptyStatsImage} alt="" />
+                    </Box>
+                )}
+
         </Stack>
     );
 });

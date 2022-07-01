@@ -38,8 +38,17 @@
   "popup_main_protection_enabled": {
     "message": "Protection activée"
   },
+  "popup_main_protection_unavailable": {
+    "message": "Inactif"
+  },
+  "popup_main_protection_detail": {
+    "message": "Détails"
+  },
   "popup_main_protection_disabled": {
-    "message": "Protection desactivée"
+    "message": "Protection désactivée"
+  },
+  "popup_main_protection_enable": {
+    "message": "Réactiver la protection"
   },
   "popup_main_nbr_blocked_elements": {
     "message": "%count% élément bloqué"
@@ -50,8 +59,32 @@
   "popup_main_problem_disable_protection": {
     "message": "Un problème sur ce site? Essayez de désactiver."
   },
+  "popup_about_title": {
+    "message": "Informations"
+  },
   "global_stats": {
     "message": "Vos statistiques cumulées"
+  },
+  "global_stats_enabled_success": {
+    "message": "Statistiques bien activées ! Commencez à naviguer sur le web pour avoir des chiffres ici."
+  },
+  "global_stats_empty": {
+    "message": "Rien pour le moment"
+  },
+  "global_stats_disabled": {
+    "message": "Désactivées pour le moment"
+  },
+  "global_stats_enable": {
+    "message": "Activer les statistiques"
+  },
+  "global_stats_disable_title": {
+    "message": "Désactiver les statistiques de l’extension"
+  },
+  "global_stats_disable_description": {
+    "message": "Avec cette action, toutes les statistiques cumulées jusqu’ici seront perdues."
+  },
+  "global_stats_disable_action": {
+    "message": "Désactiver les statistiques"
   },
   "popup_stats_blocked_trackers": {
     "message": "Traqueurs bloqués"

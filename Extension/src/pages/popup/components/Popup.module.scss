@@ -6,7 +6,12 @@
   gap: var(--spacing-xs);
 
   svg {
+    transition: transform .3s;
     width: 24px;
     height: 24px;
+  }
+
+  &:hover svg {
+    transform: translateX(calc(var(--spacing-xxs) * -1px));
   }
 }

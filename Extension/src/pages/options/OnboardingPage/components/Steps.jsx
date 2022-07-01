@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 
 import { Events, States } from '~src/pages/options/OnboardingPage/stateMachine';
 
-import { reactTranslator } from '~src/common/translators/reactTranslator';
+import { t } from '~src/common/translators/reactTranslator';
 
 import { Box, Button, Flex } from '@qwant/qwant-ponents';
 import { QwantLogo } from '~src/pages/common/components/QwantLogo/QwantLogo';
@@ -48,7 +48,7 @@ export const Steps = ({
                             target="_blank"
                             rel="noreferrer"
                         >
-                            {reactTranslator.getMessage('qwant_redirect')}
+                            {t('qwant_redirect')}
                         </Button>
                     )}
                 </Flex>
@@ -104,7 +104,7 @@ function StepsNavigation({
                         size="large"
                         name={`btn-back_${state.value}`}
                     >
-                        {reactTranslator.getMessage('onboarding_stepper_back')}
+                        {t('onboarding_stepper_back')}
                     </Button>
                 )}
             </div>

@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { observer } from 'mobx-react';
 
-import { Stack, Text } from '@qwant/qwant-ponents';
+import {
+    Box, Button, Stack, Text,
+} from '@qwant/qwant-ponents';
 import { RiDeleteBinLine as IconTrash, RiLineChartLine as IconChart } from 'react-icons/ri';
+import { t } from '~src/common/translators/reactTranslator';
+import { useToggle } from 'react-use';
 import { Table } from '../shared/Table/Table';
 import { Tile } from '../shared/Tile/Tile';
-
-import { reactTranslator } from '../../../../common/translators/reactTranslator';
+import emptyStatsImage from './empty-stats.svg';
+import disabledStatsImage from './disabled-stats.svg';
 
 import { formatAnnoyanceTime, formatCounter } from '../../helpers';
 import { IconShield, IconTime } from '../shared/Icons';
@@ -15,6 +19,8 @@ import { ActionButton } from './ActionButton/ActionButton';
 
 const GlobalStatsView = observer(({ store }) => {
     const [isKonami] = useKonamiCode();
+    const [showDisableConfirm, toggleShowDisableConfirm] = useToggle(false);
+    const [justEnabled, setJustEnabled] = useState(false);
 
     const annoyanceTime = React.useMemo(() => formatAnnoyanceTime(store.totalBlocked),
         [store.totalBlocked]);
@@ -23,7 +29,7 @@ const GlobalStatsView = observer(({ store }) => {
     const domains = store.blockedDomains?.total?.domains || [];
     const domainsStr = JSON.stringify(store.blockedDomains);
 
-    React.useEffect(() => {
+    useEffect(() => {
         try {
             if (isKonami && navigator && navigator.clipboard) {
                 navigator.clipboard.writeText(domainsStr);
@@ -39,6 +45,11 @@ const GlobalStatsView = observer(({ store }) => {
     )).sort((a, b) => b.count - a.count).slice(0, 8);
 
     const toggleGlobalStats = () => {
+        if (showDisableConfirm) {
+            toggleShowDisableConfirm();
+        } else {
+            setJustEnabled(true);
+        }
         store.setShowGlobalStats(!showGlobalStats);
         if (showGlobalStats) {
             store.deleteBlockedDomains();
@@ -49,29 +60,41 @@ const GlobalStatsView = observer(({ store }) => {
         store.deleteBlockedDomains();
     };
 
+    if (showDisableConfirm) {
+        return <DisableConfirmView onConfirm={toggleGlobalStats} />;
+    }
+
+    if (!showGlobalStats) {
+        return <DisabledView onEnable={toggleGlobalStats} />;
+    }
+
+    if (list.length === 0) {
+        return <EmptyView justEnabled={justEnabled} />;
+    }
+
     return (
         <Stack gap="s">
             <Text typo="heading-5" bold color="primary" as="h1">
-                {reactTranslator.getMessage('global_stats')}
+                {t('global_stats')}
             </Text>
 
             <Stack gap="s" horizontal nowrap>
                 <Tile
                     icon={IconShield}
-                    label={reactTranslator.getMessage('popup_stats_trackers')}
+                    label={t('popup_stats_trackers')}
                     value={formatCounter(store.totalBlocked)}
                     color="purple"
                 />
                 <Tile
                     icon={IconTime}
-                    label={reactTranslator.getMessage('popup_stats_time_saved')}
+                    label={t('popup_stats_time_saved')}
                     value={annoyanceTime}
                     color="purple"
                 />
             </Stack>
             <Table list={list} />
             <Stack gap="xs">
-                <ActionButton type="danger" onClick={toggleGlobalStats}>
+                <ActionButton type="danger" onClick={toggleShowDisableConfirm}>
                     <IconChart />
                     <span>Désactiver les statistiques</span>
                 </ActionButton>
@@ -83,5 +106,62 @@ const GlobalStatsView = observer(({ store }) => {
         </Stack>
     );
 });
+
+function EmptyView({ justEnabled }) {
+    return (
+        <>
+            <Stack gap="xxs" mb="xxl4">
+                <Text typo="heading-5" bold color="primary" as="h1">
+                    {t('global_stats')}
+                </Text>
+                <Text typo="body-2" color="primary">
+                    {t(justEnabled ? 'global_stats_empty' : 'global_stats_enabled_success')}
+                </Text>
+            </Stack>
+            <img src={emptyStatsImage} alt="" />
+        </>
+    );
+}
+
+function DisabledView({ onEnable }) {
+    return (
+        <>
+            <Stack gap="xxs" mb="xxl4">
+                <Text typo="heading-5" bold color="primary" as="h1">
+                    {t('global_stats')}
+                </Text>
+                <Text typo="body-2" color="primary">
+                    {t('global_stats_disabled')}
+                </Text>
+            </Stack>
+            <Box mb="xl">
+                <img src={disabledStatsImage} alt="" />
+            </Box>
+            <Button variant="primary-black" full onClick={onEnable}>
+                <IconChart />
+                {t('global_stats_enable')}
+            </Button>
+        </>
+    );
+}
+
+function DisableConfirmView({ onConfirm }) {
+    return (
+        <>
+            <Stack gap="xxs" mb="xl">
+                <Text typo="heading-5" bold color="primary" as="h1">
+                    {t('global_stats_disable_title')}
+                </Text>
+                <Text typo="body-2" color="primary">
+                    {t('global_stats_disable_description')}
+                </Text>
+            </Stack>
+            <Button variant="secondary-black" full onClick={onConfirm}>
+                <IconChart />
+                {t('global_stats_disable_action')}
+            </Button>
+        </>
+    );
+}
 
 export default GlobalStatsView;

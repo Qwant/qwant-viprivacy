@@ -3,7 +3,7 @@ import {
     Box, Card, Stack, Text,
 } from '@qwant/qwant-ponents';
 import cx from 'classnames';
-import { reactTranslator } from '~src/common/translators/reactTranslator';
+import { t } from '~src/common/translators/reactTranslator';
 import Styles from './CheckboxCard.module.scss';
 import { ReactComponent as IconCheck } from './icon-check.svg';
 
@@ -23,7 +23,7 @@ export function CheckboxCard({
         <Card hoverableGrey as="button" className={cx(Styles.CheckboxCard, compact && Styles.CheckboxCardCompact, selected && Styles.CheckboxCardActive)} onClick={onClick}>
             {isNew && (
                 <Text raw typo="body-2" color="primary" bold>
-                    <Box className={Styles.CheckboxCardHeader} px="m" py="xs">{reactTranslator.getMessage('new')}</Box>
+                    <Box className={Styles.CheckboxCardHeader} px="m" py="xs">{t('new')}</Box>
                 </Text>
             )}
             <Stack className={Styles.CheckboxCardBody} gap={compact ? 'xxs' : 'xs'} p={compact ? 's' : 'm'} relative>
