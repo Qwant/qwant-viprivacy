@@ -1,8 +1,29 @@
 .ProtectionStatus {
+  cursor: pointer;
   padding-top: 32px;
   --color: var(--green-500);
   border-color: var(--color)!important;
   background-color: var(--green-100)!important;
+}
+
+.ProtectionStatusDetail {
+  position: absolute;
+  top: var(--spacing-s);
+  right: var(--spacing-s);
+  gap: var(--spacing-xxs);
+  line-height: 1;
+
+  * {
+    line-height: 1;
+  }
+
+  svg{
+    transition: transform .3s;
+  }
+
+  &:hover svg{
+    transform: translateX(var(--spacing-xxs));
+  }
 }
 
 .ProtectionStatus button {

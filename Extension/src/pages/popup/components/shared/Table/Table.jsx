@@ -19,8 +19,8 @@ export const Table = ({ list }) => {
             <tbody>
                 {list.map((element) => (
                     <tr key={element.domain}>
-                        <Text typo="body-2" as="td">{element.domain}</Text>
-                        <Text typo="body-2" as="td" center>{element.count}</Text>
+                        <Text typo="body-2" raw><td>{element.domain}</td></Text>
+                        <Text typo="body-2" center raw><td>{element.count}</td></Text>
                     </tr>
                 ))}
             </tbody>

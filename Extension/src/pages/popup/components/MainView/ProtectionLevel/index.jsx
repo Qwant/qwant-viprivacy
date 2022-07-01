@@ -18,7 +18,7 @@ export const ProtectionLevel = ({ protectionLevel, applicationFilteringDisabled,
         <div className="protection_level__section">
             <Section
                 onClick={onClick}
-                background="~src/pages/popup/components/MainView/ProtectionLevel/index#ded6ff"
+                background="#ded6ff"
                 title={level ? t(`protection_level_${level}`) : ''}
                 text={level ? t(`protection_level_${level}_description`) : ''}
             >

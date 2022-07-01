@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { t } from '~src/common/translators/reactTranslator';
 
 import {
-    Button, Card, Flex, Stack, Text,
+    Button, Card, Flex, IconArrowRightSLine, Stack, Text,
 } from '@qwant/qwant-ponents';
 import cx from 'classnames';
 import { ShieldCount } from '~src/pages/popup/components/MainView/ShieldCount/ShieldCount';
@@ -15,20 +15,22 @@ import { POPUP_STATES } from '../../../constants';
 const States = {
     DISABLED: 'disabled',
     ENABLED: 'enabled',
-    EXCLUDED: 'unavailable',
+    ALLOWLISTED: 'unavailable',
 };
 
 const titles = {
     [States.DISABLED]: 'popup_main_protection_disabled',
-    [States.EXCLUDED]: 'popup_main_protection_unavailable',
+    [States.ALLOWLISTED]: 'popup_main_protection_unavailable',
     [States.ENABLED]: 'popup_stats_blocked_elements',
 };
 
 const colors = {
     [States.DISABLED]: 'grey',
-    [States.EXCLUDED]: 'red',
+    [States.ALLOWLISTED]: 'red',
     [States.ENABLED]: 'green',
 };
+
+const stopPropagation = (e) => e.stopPropagation();
 
 export const ProtectionStatus = ({
     totalBlockedTab,
@@ -66,7 +68,7 @@ export const ProtectionStatus = ({
                     setFakeEnable((v) => !v);
                 }
             },
-            state: fakeEnable ? States.ENABLED : States.EXCLUDED,
+            state: fakeEnable ? States.ENABLED : States.ALLOWLISTED,
         },
         [POPUP_STATES.SITE_IN_EXCEPTION]: {
             handler: () => {
@@ -78,7 +80,7 @@ export const ProtectionStatus = ({
         },
         [POPUP_STATES.SITE_ALLOWLISTED]: {
             handler: () => toggleAllowlisted(),
-            state: States.EXCLUDED,
+            state: States.ALLOWLISTED,
         },
     };
 
@@ -91,7 +93,7 @@ export const ProtectionStatus = ({
     const className = cx(
         Styles.ProtectionStatus,
         isDisabled && Styles.ProtectionStatusDisabled,
-        state === States.EXCLUDED && Styles.ProtectionStatusUnavailable,
+        state === States.ALLOWLISTED && Styles.ProtectionStatusUnavailable,
     );
     const handleClick = isEnabled ? onClick : null;
 
@@ -100,14 +102,21 @@ export const ProtectionStatus = ({
             relative
             mt="xl2"
             className={className}
+            onClick={handleClick}
         >
             <ShieldCount
-                count={isEnabled ? totalBlockedTab : false}
+                count={isEnabled ? totalBlockedTab : undefined}
                 color={colors[state]}
-                onClick={handleClick}
             />
 
-            <Stack gap="s" p="s" as={isEnabled ? 'button' : 'a'} onClick={handleClick}>
+            <Text typo="heading-5" color="primary" raw>
+                <Flex alignCenter className={Styles.ProtectionStatusDetail}>
+                    <Text typo="body-2" color="primary">{t('popup_main_protection_detail')}</Text>
+                    <IconArrowRightSLine />
+                </Flex>
+            </Text>
+
+            <Stack gap="s" p="s" as={isEnabled ? 'button' : 'a'}>
                 <Stack gap="xxs">
                     <Text typo="heading-5" bold color="primary" center as="h1">
                         {t(titles[state])}
@@ -135,7 +144,7 @@ export const ProtectionStatus = ({
 
             {showToggle && (
                 <Text typo="body-2" bold raw>
-                    <Flex as="label" htmlFor="switchProtection" between alignCenter className={Styles.ProtectionStatusFooter} gap="s" py="xs" px="s">
+                    <Flex onClick={stopPropagation} as="label" htmlFor="switchProtection" between alignCenter className={Styles.ProtectionStatusFooter} gap="s" py="xs" px="s">
                         {t(isEnabled ? 'popup_main_protection_enabled' : 'popup_main_protection_disabled')}
                         <ReactSwitch
                             checked={isEnabled}

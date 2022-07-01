@@ -16,7 +16,7 @@ export const GlobalStats = ({
         <div className="global_stats__section">
             <Section
                 onClick={onClick}
-                background="~src/pages/popup/components/MainView/GlobalStats/index#fff"
+                background="#fff"
                 size="small"
                 title={t('global_stats')}
             >

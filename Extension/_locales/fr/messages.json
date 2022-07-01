@@ -41,6 +41,9 @@
   "popup_main_protection_unavailable": {
     "message": "Inactif"
   },
+  "popup_main_protection_detail": {
+    "message": "Détails"
+  },
   "popup_main_protection_disabled": {
     "message": "Protection désactivée"
   },
