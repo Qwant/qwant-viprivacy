@@ -30,10 +30,15 @@ const Main = observer(({ store, settingsStore }) => {
             if (response?.ready) {
                 setLoading(false);
             } else {
-                setTimeout(checkRequestFilterReady, 500);
+                timer = setTimeout(checkRequestFilterReady, 500);
             }
         };
+
+        let timer;
         checkRequestFilterReady();
+        if (timer) {
+            clearTimeout(timer);
+        }
     }, []);
 
     React.useEffect(() => {
