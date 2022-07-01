@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { observer } from 'mobx-react';
 
 import {
@@ -20,6 +20,7 @@ import { ActionButton } from './ActionButton/ActionButton';
 const GlobalStatsView = observer(({ store }) => {
     const [isKonami] = useKonamiCode();
     const [showDisableConfirm, toggleShowDisableConfirm] = useToggle(false);
+    const [justEnabled, setJustEnabled] = useState(false);
 
     const annoyanceTime = React.useMemo(() => formatAnnoyanceTime(store.totalBlocked),
         [store.totalBlocked]);
@@ -46,6 +47,8 @@ const GlobalStatsView = observer(({ store }) => {
     const toggleGlobalStats = () => {
         if (showDisableConfirm) {
             toggleShowDisableConfirm();
+        } else {
+            setJustEnabled(true);
         }
         store.setShowGlobalStats(!showGlobalStats);
         if (showGlobalStats) {
@@ -66,7 +69,7 @@ const GlobalStatsView = observer(({ store }) => {
     }
 
     if (list.length === 0) {
-        return <EmptyView />;
+        return <EmptyView justEnabled={justEnabled} />;
     }
 
     return (
@@ -104,7 +107,7 @@ const GlobalStatsView = observer(({ store }) => {
     );
 });
 
-function EmptyView() {
+function EmptyView({ justEnabled }) {
     return (
         <>
             <Stack gap="xxs" mb="xxl4">
@@ -112,7 +115,7 @@ function EmptyView() {
                     {t('global_stats')}
                 </Text>
                 <Text typo="body-2" color="primary">
-                    {t('global_stats_empty')}
+                    {t(justEnabled ? 'global_stats_empty' : 'global_stats_enabled_success')}
                 </Text>
             </Stack>
             <img src={emptyStatsImage} alt="" />
