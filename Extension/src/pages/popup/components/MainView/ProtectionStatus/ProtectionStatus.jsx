@@ -7,7 +7,7 @@ import {
 import cx from 'classnames';
 import { ShieldCount } from '~src/pages/popup/components/MainView/ShieldCount/ShieldCount';
 import ReactSwitch from 'react-switch';
-import { RiShieldCheckLine } from 'react-icons/all';
+import { RiShieldCheckLine } from 'react-icons/ri';
 import Styles from './ProtectionStatus.module.scss';
 import { isWebURL } from '../../../helpers';
 import { POPUP_STATES } from '../../../constants';
