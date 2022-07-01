@@ -1,10 +1,10 @@
 .MainLinks {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
 }
 
 .MainLinks a,
 .MainLinks button {
+  width: 100%;
   color: var(--secondary);
   height: 36px;
   border-right: 1px solid var(--grey-100);
