@@ -5,7 +5,7 @@ import {
     Box, Button, Stack, Text,
 } from '@qwant/qwant-ponents';
 import { RiDeleteBinLine as IconTrash, RiLineChartLine as IconChart } from 'react-icons/ri';
-import { reactTranslator } from '~src/common/translators/reactTranslator';
+import { t } from '~src/common/translators/reactTranslator';
 import { useToggle } from 'react-use';
 import { Table } from '../shared/Table/Table';
 import { Tile } from '../shared/Tile/Tile';
@@ -75,19 +75,19 @@ const GlobalStatsView = observer(({ store }) => {
     return (
         <Stack gap="s">
             <Text typo="heading-5" bold color="primary" as="h1">
-                {reactTranslator.getMessage('global_stats')}
+                {t('global_stats')}
             </Text>
 
             <Stack gap="s" horizontal nowrap>
                 <Tile
                     icon={IconShield}
-                    label={reactTranslator.getMessage('popup_stats_trackers')}
+                    label={t('popup_stats_trackers')}
                     value={formatCounter(store.totalBlocked)}
                     color="purple"
                 />
                 <Tile
                     icon={IconTime}
-                    label={reactTranslator.getMessage('popup_stats_time_saved')}
+                    label={t('popup_stats_time_saved')}
                     value={annoyanceTime}
                     color="purple"
                 />
@@ -112,10 +112,10 @@ function EmptyView({ justEnabled }) {
         <>
             <Stack gap="xxs" mb="xxl4">
                 <Text typo="heading-5" bold color="primary" as="h1">
-                    {reactTranslator.getMessage('global_stats')}
+                    {t('global_stats')}
                 </Text>
                 <Text typo="body-2" color="primary">
-                    {reactTranslator.getMessage(justEnabled ? 'global_stats_empty' : 'global_stats_enabled_success')}
+                    {t(justEnabled ? 'global_stats_empty' : 'global_stats_enabled_success')}
                 </Text>
             </Stack>
             <img src={emptyStatsImage} alt="" />
@@ -128,10 +128,10 @@ function DisabledView({ onEnable }) {
         <>
             <Stack gap="xxs" mb="xxl4">
                 <Text typo="heading-5" bold color="primary" as="h1">
-                    {reactTranslator.getMessage('global_stats')}
+                    {t('global_stats')}
                 </Text>
                 <Text typo="body-2" color="primary">
-                    {reactTranslator.getMessage('global_stats_disabled')}
+                    {t('global_stats_disabled')}
                 </Text>
             </Stack>
             <Box mb="xl">
@@ -139,7 +139,7 @@ function DisabledView({ onEnable }) {
             </Box>
             <Button variant="primary-black" full onClick={onEnable}>
                 <IconChart />
-                {reactTranslator.getMessage('global_stats_enable')}
+                {t('global_stats_enable')}
             </Button>
         </>
     );
@@ -150,15 +150,15 @@ function DisableConfirmView({ onConfirm }) {
         <>
             <Stack gap="xxs" mb="xl">
                 <Text typo="heading-5" bold color="primary" as="h1">
-                    {reactTranslator.getMessage('global_stats_disable_title')}
+                    {t('global_stats_disable_title')}
                 </Text>
                 <Text typo="body-2" color="primary">
-                    {reactTranslator.getMessage('global_stats_disable_description')}
+                    {t('global_stats_disable_description')}
                 </Text>
             </Stack>
             <Button variant="secondary-black" full onClick={onConfirm}>
                 <IconChart />
-                {reactTranslator.getMessage('global_stats_disable_action')}
+                {t('global_stats_disable_action')}
             </Button>
         </>
     );

@@ -1,5 +1,5 @@
 import React from 'react';
-import { reactTranslator } from '../../../../../../common/translators/reactTranslator';
+import { t } from '../../../../../common/translators/reactTranslator';
 import { Section } from '../Section';
 
 import './styles.css';
@@ -19,13 +19,13 @@ export const ProtectionLevel = ({ protectionLevel, applicationFilteringDisabled,
             <Section
                 onClick={onClick}
                 background="#ded6ff"
-                title={level ? reactTranslator.getMessage(`protection_level_${level}`) : ''}
-                text={level ? reactTranslator.getMessage(`protection_level_${level}_description`) : ''}
+                title={level ? t(`protection_level_${level}`) : ''}
+                text={level ? t(`protection_level_${level}_description`) : ''}
             >
                 <div className="protection_level__bottom">
                     <div>
                         <ShieldIcon />
-                        {reactTranslator.getMessage('protection_level')}
+                        {t('protection_level')}
                     </div>
                 </div>
             </Section>

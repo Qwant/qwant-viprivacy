@@ -9,10 +9,11 @@ import { popupStore } from '../stores/PopupStore';
 import { rootStore } from '../../options/stores/RootStore';
 import { messenger } from '../../services/messenger';
 
-import Main from './MainView';
+import Main from './MainView/MainView';
 import SettingsView from './SettingsView/SettingsView';
 import TabStatsView from './TabStatsView/TabStatsView';
 import GlobalStatsView from './GlobalStatsView/GlobalStatsView';
+import { AboutView } from './AboutView/AboutView';
 
 export const PopupRoutes = observer(() => {
     const location = useLocation();
@@ -40,6 +41,7 @@ export const PopupRoutes = observer(() => {
             <Route path="settings" element={<SettingsView store={store} settingsStore={settingsStore} />} />
             <Route path="tab-stats" element={<TabStatsView store={store} settingsStore={settingsStore} />} />
             <Route path="global-stats" element={<GlobalStatsView store={store} settingsStore={settingsStore} />} />
+            <Route path="about" element={<AboutView settingsStore={settingsStore} />} />
         </Routes>
     );
 });

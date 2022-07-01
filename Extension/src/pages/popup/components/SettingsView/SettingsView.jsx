@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { observer } from 'mobx-react';
 
 import { messenger } from '~src/pages/services/messenger';
-import { reactTranslator } from '~src/common/translators/reactTranslator';
+import { t } from '~src/common/translators/reactTranslator';
 
 import { Stack, Text } from '@qwant/qwant-ponents';
 import { CheckboxCard } from '~src/pages/common/components/CheckboxCard/CheckboxCard';
@@ -51,15 +51,15 @@ const SettingsView = observer(({ store, settingsStore }) => {
     return (
         <Stack gap="s">
             <Text typo="heading-5" bold color="primary" as="h1">
-                {reactTranslator.getMessage('protection_level')}
+                {t('protection_level')}
             </Text>
             <Stack gap="xs">
                 {levels.map((level) => (
                     <CheckboxCard
                         compact
                         key={level}
-                        title={reactTranslator.getMessage(`protection_level_${level}`)}
-                        description={reactTranslator.getMessage(`protection_level_${level}_description`)}
+                        title={t(`protection_level_${level}`)}
+                        description={t(`protection_level_${level}_description`)}
                         onClick={levelChangeHandler(level)}
                         selected={activeLevel === level}
                     />

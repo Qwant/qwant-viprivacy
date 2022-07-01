@@ -38,8 +38,17 @@
   "popup_main_protection_enabled": {
     "message": "Protection activée"
   },
+  "popup_main_protection_unavailable": {
+    "message": "Inactif"
+  },
+  "popup_main_protection_detail": {
+    "message": "Détails"
+  },
   "popup_main_protection_disabled": {
-    "message": "Protection desactivée"
+    "message": "Protection désactivée"
+  },
+  "popup_main_protection_enable": {
+    "message": "Réactiver la protection"
   },
   "popup_main_nbr_blocked_elements": {
     "message": "%count% élément bloqué"
@@ -49,6 +58,9 @@
   },
   "popup_main_problem_disable_protection": {
     "message": "Un problème sur ce site? Essayez de désactiver."
+  },
+  "popup_about_title": {
+    "message": "Informations"
   },
   "global_stats": {
     "message": "Vos statistiques cumulées"
