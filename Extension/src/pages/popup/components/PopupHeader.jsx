@@ -15,7 +15,7 @@ export function PopupHeader() {
     if (location.pathname === '/main') {
         return (
             <Flex between alignCenter mb="s">
-                <QwantLogo withSquare height={44} width={196} />
+                <QwantLogo withSquare height={44} width={224} />
                 <Text
                     typo="heading-3"
                     as="a"
