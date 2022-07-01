@@ -105,6 +105,7 @@ export const ProtectionStatus = ({
             onClick={handleClick}
         >
             <ShieldCount
+                className={Styles.ProtectionStatusShield}
                 count={isEnabled ? totalBlockedTab : undefined}
                 color={colors[state]}
             />

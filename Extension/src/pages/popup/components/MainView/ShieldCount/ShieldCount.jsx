@@ -1,10 +1,13 @@
 import React from 'react';
 import { Box, Text } from '@qwant/qwant-ponents';
+import cx from 'classnames';
 import Styles from './ShieldCount.module.scss';
 
-export function ShieldCount({ color = 'green', count, ...props }) {
+export function ShieldCount({
+    color = 'green', count, className, ...props
+}) {
     return (
-        <Box className={Styles.IconShield} {...props}>
+        <Box className={cx(Styles.IconShield, className)} {...props}>
             <svg width="60" height="68" viewBox="0 0 60 68" xmlns="http://www.w3.org/2000/svg">
                 <path d="M26.733 1.53a10.349 10.349 0 0 1 6.534 0L51.934 7.74A10.319 10.319 0 0 1 59 17.529v16.578c0 6.942-2.742 12.82-6.556 17.625-5.812 7.322-14.117 12.124-18.703 14.39a8.4 8.4 0 0 1-7.482 0c-4.586-2.266-12.891-7.068-18.703-14.39C3.742 46.927 1 41.049 1 34.107V17.53a10.319 10.319 0 0 1 7.066-9.788z" stroke={`var(--${color}-500)`} strokeWidth="2" fill="#FFF" />
                 <path d="M30 2c.997 0 1.994.16 2.952.478L51.618 8.69A9.319 9.319 0 0 1 58 17.53v16.577c0 17.088-17.298 27.46-24.702 31.118a7.438 7.438 0 0 1-3.297.775z" fill={`var(--${color}-300)`} />
