@@ -24,7 +24,7 @@ export const StepProtectionLevel = ({ protectionLevel, updateProtectionLevel }) 
             <Text as="p" typo="body-1" color="primary">
                 {t('onboarding_step_protection_level_description')}
             </Text>
-            <Box className={Styles.StepChoices}>
+            <Box className={Styles.StepChoices} mt="m">
                 <CheckboxCard
                     onClick={onClickHandler('standard')}
                     title={t('protection_level_standard')}

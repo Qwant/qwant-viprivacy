@@ -1,5 +1,3 @@
-@import "@qwant/qwant-ponents/src/base.scss";
-
 .StepsWrapper {
   margin-inline: auto;
   max-width: 684px;
@@ -12,7 +10,7 @@
 }
 
 .StepsHeader {
-  background-color: var(--blue);
+  background-color: var(--action-blue-300);
   border-bottom: 2px solid var(--grey-800);
 
   a {
@@ -24,6 +22,10 @@
     width: 178px;
     height: 24px;
   }
+}
+
+.StepsBody {
+  min-height: 350px;
 }
 
 .StepsFooter {

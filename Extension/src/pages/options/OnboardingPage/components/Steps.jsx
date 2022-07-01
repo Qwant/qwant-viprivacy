@@ -52,7 +52,7 @@ export const Steps = ({
                         </Button>
                     )}
                 </Flex>
-                <Box p="xl" relative>
+                <Box p="xl" relative className={Styles.StepsBody}>
                     <CurrentStep
                         send={send}
                         state={state}
