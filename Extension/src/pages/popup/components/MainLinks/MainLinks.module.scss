@@ -1,0 +1,21 @@
+.MainLinks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.MainLinks a,
+.MainLinks button {
+  color: var(--secondary);
+  height: 36px;
+  border-right: 1px solid var(--grey-100);
+  line-height: 1;
+  gap: var(--spacing-xxs);
+
+  &:hover {
+    color: var(--primary);
+  }
+}
+
+.MainLinks > *:last-child {
+  border-right: none;
+}

@@ -280,5 +280,17 @@
   },
   "new": {
     "message": "Nouveau"
+  },
+  "stats": {
+    "message": "Stats"
+  },
+  "survey": {
+    "message": "Avis"
+  },
+  "survey_url": {
+    "message": "https://fr.surveymonkey.com/r/XPK9KHJ"
+  },
+  "infos": {
+    "message": "Infos"
   }
 }
