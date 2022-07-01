@@ -2,7 +2,7 @@ import React from 'react';
 import {
     Box, Card, Checkbox, Flex, IconExternalLink, Stack, Text,
 } from '@qwant/qwant-ponents';
-import { reactTranslator } from '~src/common/translators/reactTranslator';
+import { t } from '~src/common/translators/reactTranslator';
 import { openTabHandler } from '~src/pages/popup/helpers';
 import { observer } from 'mobx-react';
 import { messenger } from '~src/pages/services/messenger';
@@ -20,7 +20,7 @@ const links = [
     },
 ];
 
-const telemetryUrl = reactTranslator.getMessage('popup_settings_telemetry_learn_more_link');
+const telemetryUrl = t('popup_settings_telemetry_learn_more_link');
 const telemetryRedirect = openTabHandler(telemetryUrl);
 
 export const AboutView = observer(({ settingsStore }) => {
@@ -45,7 +45,7 @@ export const AboutView = observer(({ settingsStore }) => {
         <Stack gap="s">
             <Stack gap="xxs">
                 <Text typo="heading-5" bold color="primary" as="h1">
-                    {reactTranslator.getMessage('popup_about_title')}
+                    {t('popup_about_title')}
                 </Text>
             </Stack>
 
@@ -58,9 +58,9 @@ export const AboutView = observer(({ settingsStore }) => {
                             alignCenter
                             between
                             as="button"
-                            onClick={openTabHandler(reactTranslator.getMessage(link.url))}
+                            onClick={openTabHandler(t(link.url))}
                         >
-                            {reactTranslator.getMessage(link.text)}
+                            {t(link.text)}
                             <IconExternalLink />
                         </Flex>
                     </Text>
@@ -74,10 +74,10 @@ export const AboutView = observer(({ settingsStore }) => {
                 className={Styles.AboutViewCheckbox}
                 label={(
                     <Text typo="caption-1" color="secondary">
-                        {reactTranslator.getMessage('popup_settings_telemetry_label')}
+                        {t('popup_settings_telemetry_label')}
                         {' '}
                         <a href={telemetryUrl} onClick={telemetryRedirect}>
-                            {reactTranslator.getMessage('popup_settings_telemetry_learn_more')}
+                            {t('popup_settings_telemetry_learn_more')}
                         </a>
                     </Text>
                 )}

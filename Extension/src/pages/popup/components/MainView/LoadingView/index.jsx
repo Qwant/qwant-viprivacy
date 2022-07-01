@@ -2,7 +2,7 @@ import React from 'react';
 import BarLoader from 'react-spinners/BarLoader';
 
 import { browser } from '../../../../../background/extension-api/browser';
-import { reactTranslator } from '../../../../../common/translators/reactTranslator';
+import { t } from '../../../../../common/translators/reactTranslator';
 import { Button } from '../../../../common/components/Button';
 
 import './styles.css';
@@ -33,7 +33,7 @@ export const LoadingView = () => {
                 hidden={!showButton}
                 className="section-loading_button"
             >
-                {reactTranslator.getMessage('loading_reload_cta')}
+                {t('loading_reload_cta')}
             </Button>
         </div>
     );

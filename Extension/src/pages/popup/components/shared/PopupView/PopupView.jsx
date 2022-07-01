@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { reactTranslator } from '~src/common/translators/reactTranslator';
+import { t } from '~src/common/translators/reactTranslator';
 import {
     Box, Flex, IconArrowLeftLine, Text,
 } from '@qwant/qwant-ponents';
@@ -22,7 +22,7 @@ export const PopupView = ({
             <Text typo="body-2" color="primary" raw>
                 <Flex alignCenter mb="s" as="button" onClick={goBack} className={Styles.PopupViewBack}>
                     <IconArrowLeftLine width={24} height={24} />
-                    {reactTranslator.getMessage('back')}
+                    {t('back')}
                 </Flex>
             </Text>
             <Text bold typo="heading-5" as="h1">
