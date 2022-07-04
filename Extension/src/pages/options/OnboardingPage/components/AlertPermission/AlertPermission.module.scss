@@ -4,3 +4,9 @@
   border-width: 2px!important;
   background-color: var(--grey-000)!important;
 }
+
+.RequestPermissionsLink{
+    display: inline;
+    text-decoration: underline;
+    cursor: pointer;
+}

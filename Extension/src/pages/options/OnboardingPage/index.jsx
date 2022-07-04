@@ -189,6 +189,20 @@ export const OnboardingPage = observer(() => {
         send(Events.PREVIOUS);
     };
 
+    const onAlertRequestPermissions = async () => {
+        const transaction = window?.apm?.startTransaction('options-button-forward-alert-permission');
+        send(Events.DISMISS_ALERT);
+        send(Events.ENABLE_PROTECTION);
+        const nextState = send(Events.NEXT);
+        if (nextState.value === States.REQUEST_PERMISSIONS) {
+            await onRequestPermissions();
+        }
+        if (transaction) {
+            transaction.result = 'success';
+            transaction.end();
+        }
+    };
+
     return (
         <Steps
             send={send}
@@ -200,6 +214,7 @@ export const OnboardingPage = observer(() => {
             updateTelemetry={updateTelemetry}
             onForward={onForward}
             onBack={onBack}
+            onAlertRequestPermissions={onAlertRequestPermissions}
         />
     );
 });

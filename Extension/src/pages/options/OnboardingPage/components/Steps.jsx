@@ -26,6 +26,7 @@ export const Steps = ({
     updateTelemetry,
     onForward,
     onBack,
+    onAlertRequestPermissions,
 }) => {
     const showBackButton = !!state.machine.states?.[state.value]?.config?.on?.PREVIOUS;
     const showForwardButton = !!state.machine.states?.[state.value]?.config?.on?.NEXT;
@@ -34,7 +35,12 @@ export const Steps = ({
 
     return (
         <div className={Styles.StepsWrapper}>
-            {showPermissionAlert && <AlertPermission onClose={() => send(Events.DISMISS_ALERT)} />}
+            {showPermissionAlert && (
+                <AlertPermission
+                    onClose={() => send(Events.DISMISS_ALERT)}
+                    onRequestPermissions={onAlertRequestPermissions}
+                />
+            )}
             <Box mt="xl" mb={isFinal ? 's' : 'xl'} className={Styles.Steps}>
                 <Flex alignCenter between className={Styles.StepsHeader} px="xl" py="l">
                     <a name="qwant-logo-link" href="https://qwant.com" target="_blank" rel="noreferrer">
