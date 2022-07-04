@@ -87,7 +87,7 @@ const Main = observer(({ store, settingsStore }) => {
                 showGlobalStats={store.showGlobalStats}
                 totalBlocked={store.totalBlocked}
             />
-            <MainLinks withStats={store.showGlobalStats} />
+            <MainLinks />
         </Stack>
     );
 });

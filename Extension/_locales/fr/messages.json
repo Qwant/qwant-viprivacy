@@ -89,6 +89,9 @@
   "global_stats_disable_action": {
     "message": "Désactiver les statistiques"
   },
+  "global_stats_disable_action_confirm": {
+    "message": "Confirmer la désactivation"
+  },
   "popup_stats_blocked_trackers": {
     "message": "Traqueurs bloqués"
   },

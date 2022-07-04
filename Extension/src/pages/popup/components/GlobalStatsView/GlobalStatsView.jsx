@@ -16,6 +16,7 @@ import { formatAnnoyanceTime, formatCounter } from '../../helpers';
 import { IconShield, IconTime } from '../shared/Icons';
 import { useKonamiCode } from './useKonami';
 import { ActionButton } from './ActionButton/ActionButton';
+import Styles from './GlobalStatsView.module.scss';
 
 const GlobalStatsView = observer(({ store }) => {
     const [isKonami] = useKonamiCode();
@@ -93,7 +94,8 @@ const GlobalStatsView = observer(({ store }) => {
                 />
             </Stack>
             <Table list={list} />
-            <Stack gap="xs">
+
+            <Stack gap="xs" className={Styles.ButtonsWrapper}>
                 <ActionButton type="danger" onClick={toggleShowDisableConfirm}>
                     <IconChart />
                     <span>Désactiver les statistiques</span>
@@ -157,10 +159,10 @@ function DisableConfirmView({ onConfirm }) {
                     {t('global_stats_disable_description')}
                 </Text>
             </Stack>
-            <Button variant="secondary-black" full onClick={onConfirm}>
+            <ActionButton type="danger" full onClick={onConfirm}>
                 <IconChart />
-                {t('global_stats_disable_action')}
-            </Button>
+                {t('global_stats_disable_action_confirm')}
+            </ActionButton>
         </>
     );
 }

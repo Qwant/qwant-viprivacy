@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { ThinCard } from '~src/pages/common/components/ThinCard/ThinCard';
 import { t } from '~src/common/translators/reactTranslator';
 import { useNavigate } from 'react-router-dom';
@@ -6,13 +6,13 @@ import { RiLineChartLine as IconChart, RiMessage2Line as IconMessage } from 'rea
 import { Flex, IconInfoCircle, Text } from '@qwant/qwant-ponents';
 import Styles from './MainLinks.module.scss';
 
-export function MainLinks({ withStats }) {
+export function MainLinks() {
     const navigate = useNavigate();
-    const links = useMemo(() => [...(withStats ? [{
+    const links = [{
         label: t('stats'),
         to: () => navigate('/global-stats'),
         icon: IconChart,
-    }] : []), {
+    }, {
         label: t('opinion'),
         to: t('survey_url'),
         icon: IconMessage,
@@ -20,7 +20,7 @@ export function MainLinks({ withStats }) {
         label: t('infos'),
         to: () => navigate('/about'),
         icon: IconInfoCircle,
-    }], [navigate]);
+    }];
 
     return (
         <ThinCard className={Styles.MainLinks}>
