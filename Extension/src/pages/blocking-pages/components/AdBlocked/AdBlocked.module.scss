@@ -1,3 +1,7 @@
+body {
+    min-height: unset !important;
+}
+
 .AdBlockedHeader {
   background-color: var(--action-blue-300);
   border-bottom: 2px solid var(--grey-900);

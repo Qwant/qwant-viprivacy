@@ -14,3 +14,9 @@
 .PermissionMissingAction {
   grid-column: 1 / -1;
 }
+
+.MainLinks{
+  position: absolute;
+  width: calc(100% - 24px);
+  bottom: 12px;
+}

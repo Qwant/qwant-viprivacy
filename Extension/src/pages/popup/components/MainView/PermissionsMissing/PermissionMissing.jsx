@@ -11,35 +11,36 @@ import { RiShieldCheckLine } from 'react-icons/ri';
 import Styles from './PermissionMissing.module.scss';
 
 export const PermissionsMissing = ({
-    inlineCTA,
     onRequestPermissions,
 }) => {
     return (
-        <Stack gap="s">
-            <ThinCard className={Styles.PermissionMissing} p="s">
-                <ShieldCount color="grey" className={Styles.PermissionMissingShield} />
-                <Stack gap="xxs">
-                    <Text typo="body-1" color="primary" bold as="h2">
-                        {t('missing_permissions_disabled_title')}
-                    </Text>
-                    <Text typo="body-2" color="primary" as="p">
-                        {t('missing_permissions_disabled_description')}
-                    </Text>
-                </Stack>
-                {!inlineCTA && (
+        <div>
+            <Stack gap="s">
+                <ThinCard className={Styles.PermissionMissing} p="s">
+                    <ShieldCount color="grey" className={Styles.PermissionMissingShield} />
+                    <Stack gap="xxs">
+                        <Text typo="body-1" color="primary" bold as="h2">
+                            {t('missing_permissions_disabled_title')}
+                        </Text>
+                        <Text typo="body-2" color="primary" as="p">
+                            {t('missing_permissions_disabled_description')}
+                        </Text>
+                    </Stack>
                     <Button className={Styles.PermissionMissingAction} onClick={onRequestPermissions} variant="primary-black" full>
                         <RiShieldCheckLine />
                         {t('missing_permissions_cta_button_popup')}
                     </Button>
-                )}
-            </ThinCard>
-            <CheckboxCard
-                selected
-                compact
-                title={t('missing_permissions_default_search_engine_title')}
-                description={t('missing_permissions_default_search_engine_description')}
-            />
-            <MainLinks />
-        </Stack>
+                </ThinCard>
+                <CheckboxCard
+                    selected
+                    compact
+                    title={t('missing_permissions_default_search_engine_title')}
+                    description={t('missing_permissions_default_search_engine_description')}
+                />
+            </Stack>
+            <div className={Styles.MainLinks}>
+                <MainLinks />
+            </div>
+        </div>
     );
 };

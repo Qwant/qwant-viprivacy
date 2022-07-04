@@ -18,6 +18,8 @@ import { useKonamiCode } from './useKonami';
 import { ActionButton } from './ActionButton/ActionButton';
 import Styles from './GlobalStatsView.module.scss';
 
+const LIST_SIZE = 5;
+
 const GlobalStatsView = observer(({ store }) => {
     const [isKonami] = useKonamiCode();
     const [showDisableConfirm, toggleShowDisableConfirm] = useToggle(false);
@@ -43,7 +45,7 @@ const GlobalStatsView = observer(({ store }) => {
 
     const list = Object.keys(domains).map((domain) => (
         { domain, count: domains[domain] }
-    )).sort((a, b) => b.count - a.count).slice(0, 8);
+    )).sort((a, b) => b.count - a.count).slice(0, LIST_SIZE);
 
     const toggleGlobalStats = () => {
         if (showDisableConfirm) {
@@ -93,9 +95,11 @@ const GlobalStatsView = observer(({ store }) => {
                     color="purple"
                 />
             </Stack>
-            <Table list={list} />
+            <div style={{ minHeight: 212 }}>
+                <Table list={list} />
+            </div>
 
-            <Stack gap="xs" className={Styles.ButtonsWrapper}>
+            <Stack gap="xs">
                 <ActionButton type="danger" onClick={toggleShowDisableConfirm}>
                     <IconChart />
                     <span>Désactiver les statistiques</span>
@@ -121,7 +125,9 @@ function EmptyView({ justEnabled }) {
                         ? 'global_stats_enabled_success' : 'global_stats_empty')}
                 </Text>
             </Stack>
-            <img src={emptyStatsImage} alt="" />
+            <div className={Styles.EmptyStatsImage}>
+                <img src={emptyStatsImage} alt="" />
+            </div>
         </>
     );
 }

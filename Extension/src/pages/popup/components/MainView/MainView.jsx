@@ -15,6 +15,7 @@ import { ProtectionLevel } from './ProtectionLevel/ProtectionLevel';
 import { ProtectionStatus } from './ProtectionStatus/ProtectionStatus';
 
 import { messenger } from '../../../services/messenger';
+import Styles from './MainView.module.scss';
 
 const Main = observer(({ store, settingsStore }) => {
     const navigate = useNavigate();
@@ -87,7 +88,9 @@ const Main = observer(({ store, settingsStore }) => {
                 showGlobalStats={store.showGlobalStats}
                 totalBlocked={store.totalBlocked}
             />
-            <MainLinks />
+            <div className={Styles.MainLinks}>
+                <MainLinks withStats />
+            </div>
         </Stack>
     );
 });

@@ -1,6 +1,6 @@
-.ButtonsWrapper {
-  position: fixed;
-  bottom: var(--spacing-s);
-  width: calc(100% - var(--spacing-xl));
+.EmptyStatsImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 200px);
 }
-

@@ -11,7 +11,7 @@ import { formatCounter, isWebURL } from '../../helpers';
 
 import { IconGlobe, IconShield } from '../shared/Icons';
 
-const LIST_SIZE = 8;
+const LIST_SIZE = 7;
 
 const TabStatsView = observer(({ store }) => {
     const totalBlockedDomains = Object.keys(store.blockedDomainsTab).length;
