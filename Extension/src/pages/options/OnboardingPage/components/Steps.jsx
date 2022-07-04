@@ -46,17 +46,18 @@ export const Steps = ({
                     <a name="qwant-logo-link" href="https://qwant.com" target="_blank" rel="noreferrer">
                         <QwantLogo />
                     </a>
-                    {isFinal && (
-                        <Button
-                            variant="primary-black"
-                            as="a"
-                            href="https://qwant.com"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            {t('qwant_redirect')}
-                        </Button>
-                    )}
+                    <Button
+                        variant="primary-black"
+                        as="a"
+                        href="https://qwant.com"
+                        target="_blank"
+                        rel="noreferrer"
+                        style={{
+                            visibility: isFinal ? 'visible' : 'hidden',
+                        }}
+                    >
+                        {t('qwant_redirect')}
+                    </Button>
                 </Flex>
                 <Box p="xl" relative className={Styles.StepsBody}>
                     <CurrentStep

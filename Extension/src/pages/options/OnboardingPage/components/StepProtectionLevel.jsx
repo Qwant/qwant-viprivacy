@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Stack, Text } from '@qwant/qwant-ponents';
 import { t } from '~src/common/translators/reactTranslator';
 import { CheckboxCard } from '~src/pages/common/components/CheckboxCard/CheckboxCard';
+import { QwantVIPrivacy } from './QwantVIPrivacy';
 import Styles from './Steps.module.scss';
 
 export const StepProtectionLevel = ({ protectionLevel, updateProtectionLevel }) => {
@@ -23,6 +24,8 @@ export const StepProtectionLevel = ({ protectionLevel, updateProtectionLevel }) 
             </Text>
             <Text as="p" typo="body-1" color="primary">
                 {t('onboarding_step_protection_level_description')}
+                <br />
+                <QwantVIPrivacy />
             </Text>
             <Box className={Styles.StepChoices} mt="m">
                 <CheckboxCard

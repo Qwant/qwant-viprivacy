@@ -177,7 +177,7 @@
     "message": "Choisissez votre préférence"
   },
   "onboarding_step_mode_description": {
-    "message": "Vous pourrez modifier votre choix à tout moment en cliquant sur l'icône \n<b>Qwant VIPrivacy</b>"
+    "message": "Vous pourrez modifier votre choix à tout moment en cliquant sur l'icône"
   },
   "onboarding_step_mode_search": {
     "message": "Search"
@@ -195,13 +195,13 @@
     "message": "Autorisez Qwant VIPrivacy à vous protéger"
   },
   "onboarding_step_request_permissions_description": {
-    "message": "<b>Qwant VIPrivacy</b> c'est moins de cookies et les traqueurs bloqués lors de votre navigation. Vos données personnelles seront protégées sur tous les sites lors de votre navigation."
+    "message": "<b>Qwant VIP</b>rivacy c'est moins de cookies et les traqueurs bloqués lors de votre navigation. Vos données personnelles seront protégées sur tous les sites lors de votre navigation."
   },
   "onboarding_step_protection_level_title": {
     "message": "Choisissez votre niveau de protection"
   },
   "onboarding_step_protection_level_description": {
-    "message": "Vous pourrez modifier votre choix à tout moment en cliquant sur l'icône <b>Qwant VIP</b>rivacy."
+    "message": "Vous pourrez modifier votre choix à tout moment en cliquant sur l'icône"
   },
   "onboarding_step_pin_extension_title": {
     "message": "Épinglez Qwant VIPrivacy à %browser% et suivez vos statistiques en temps réel"
@@ -231,7 +231,7 @@
     "message": "Félicitations !"
   },
   "onboarding_step_thank_you_description": {
-    "message": "Maintenant"
+    "message": "Maintenant,"
   },
   "onboarding_step_thank_you_chrome_1_title": {
     "message": "Épinglez Qwant VIPrivacy"
@@ -243,7 +243,7 @@
     "message": "Assurez-vous de garder Qwant en moteur de recherche par défaut."
   },
   "onboarding_step_thank_you_chrome_2_description": {
-    "message": "Lors de votre 1ère recherche, sélectionner « Conserver » lorsque Chrome vous demandera."
+    "message": "Lors de votre 1ère recherche, sélectionner « Conserver » lorsque Chrome vous demandera."
   },
   "onboarding_step_thank_you_edge_1_title": {
     "message": "Activez Qwant VIPrivacy"

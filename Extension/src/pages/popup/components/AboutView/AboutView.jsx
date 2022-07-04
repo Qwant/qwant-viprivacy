@@ -84,7 +84,7 @@ export const AboutView = observer(({ settingsStore }) => {
                 )}
             />
 
-            <Box mt="s">
+            <Box mt="xl2">
                 <img src={imageIllustration} alt="" />
             </Box>
 

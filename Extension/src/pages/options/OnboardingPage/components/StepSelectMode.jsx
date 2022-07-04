@@ -4,6 +4,7 @@ import { t } from '~src/common/translators/reactTranslator';
 import { CheckboxCard } from '~src/pages/common/components/CheckboxCard/CheckboxCard';
 import { ReactComponent as IconSearch } from './assets/icon-search.svg';
 import { ReactComponent as IconProtection } from './assets/icon-protection.svg';
+import { QwantVIPrivacy } from './QwantVIPrivacy';
 import Styles from './Steps.module.scss';
 
 export const StepSelectMode = ({
@@ -18,6 +19,8 @@ export const StepSelectMode = ({
             </Text>
             <Text as="p" typo="body-1" color="primary">
                 {t('onboarding_step_mode_description')}
+                <br />
+                <QwantVIPrivacy />
             </Text>
             <Box className={Styles.StepChoices} mt="m">
                 <CheckboxCard

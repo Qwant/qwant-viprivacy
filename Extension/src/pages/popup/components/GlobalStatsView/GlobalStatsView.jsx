@@ -16,7 +16,6 @@ import { formatAnnoyanceTime, formatCounter } from '../../helpers';
 import { IconShield, IconTime } from '../shared/Icons';
 import { useKonamiCode } from './useKonami';
 import { ActionButton } from './ActionButton/ActionButton';
-import Styles from './GlobalStatsView.module.scss';
 
 const LIST_SIZE = 5;
 
@@ -125,9 +124,9 @@ function EmptyView({ justEnabled }) {
                         ? 'global_stats_enabled_success' : 'global_stats_empty')}
                 </Text>
             </Stack>
-            <div className={Styles.EmptyStatsImage}>
+            <Box mt="xxl7">
                 <img src={emptyStatsImage} alt="" />
-            </div>
+            </Box>
         </>
     );
 }

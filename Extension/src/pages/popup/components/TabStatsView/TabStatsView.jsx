@@ -53,7 +53,7 @@ const TabStatsView = observer(({ store }) => {
             {list.length > 0
                 ? <Table list={list} />
                 : (
-                    <Box mt="s">
+                    <Box mt="xxl4">
                         <img src={emptyStatsImage} alt="" />
                     </Box>
                 )}

@@ -1,11 +1,11 @@
 .CheckboxCard {
   text-align: left;
-  border-color: var(--grey-200);
+  border-color: var(--grey-100);
   overflow: hidden!important;
 }
 
 .CheckboxCardHeader {
-  background-color: var(--grey-200);
+  background-color: var(--grey-100);
 }
 
 .CheckboxCardActiveIcon {
@@ -31,7 +31,7 @@
 
 .CheckboxCardIcon {
   min-height: 32px;
-  color: var(--grey-200);
+  color: var(--grey-100);
 }
 
 // Compact mode
