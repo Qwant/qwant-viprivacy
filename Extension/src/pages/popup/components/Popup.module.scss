@@ -12,7 +12,7 @@
   }
 
   &:hover svg {
-    transform: translateX(calc(var(--spacing-xxs) * -1px));
+    transform: translateX(calc(var(--spacing-xxs) * -1));
   }
 }
 

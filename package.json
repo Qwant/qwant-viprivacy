@@ -99,6 +99,7 @@
     "@adguard/tsurlfilter": "^0.7.74",
     "@babel/runtime": "^7.18.6",
     "@elastic/apm-rum": "^5.10.2",
+    "@formkit/auto-animate": "^1.0.0-beta.1",
     "@popperjs/core": "^2.11.5",
     "@qwant/qwant-ponents": "^0.2.1",
     "@xstate/react": "^1.5.1",

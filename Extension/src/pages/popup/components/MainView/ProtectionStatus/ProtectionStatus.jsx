@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { t } from '~src/common/translators/reactTranslator';
-
 import {
     Button, Card, Flex, IconArrowRightSLine, Stack, Text,
 } from '@qwant/qwant-ponents';
@@ -8,6 +7,7 @@ import cx from 'classnames';
 import { ShieldCount } from '~src/pages/popup/components/MainView/ShieldCount/ShieldCount';
 import ReactSwitch from 'react-switch';
 import { RiShieldCheckLine } from 'react-icons/ri';
+import { useAutoAnimate } from '~src/pages/common/hooks/useAutoanimate';
 import Styles from './ProtectionStatus.module.scss';
 import { isWebURL } from '../../../helpers';
 import { POPUP_STATES } from '../../../constants';
@@ -96,9 +96,11 @@ export const ProtectionStatus = ({
         state === States.ALLOWLISTED && Styles.ProtectionStatusUnavailable,
     );
     const handleClick = isEnabled ? onClick : null;
+    const [animationParent] = useAutoAnimate();
 
     return (
         <Card
+            ref={animationParent}
             relative
             mt="xl2"
             className={className}
@@ -152,7 +154,7 @@ export const ProtectionStatus = ({
                         <ReactSwitch
                             checked={isEnabled}
                             onChange={handleChange}
-                            offColor="#e00004"
+                            offColor="#ff5c5f"
                             onColor="#38a870"
                             handleDiameter={20}
                             width={48}
