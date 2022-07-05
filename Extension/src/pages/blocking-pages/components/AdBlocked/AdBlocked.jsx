@@ -4,7 +4,6 @@ import React, { useCallback } from 'react';
 import { t } from '~src/common/translators/reactTranslator';
 
 import { MESSAGE_TYPES } from '~src/common/constants';
-import { QwantLogo } from '~src/pages/common/components/QwantLogo/QwantLogo';
 import {
     Button, Flex, QwantSquaredLogo, Stack, Text,
 } from '@qwant/qwant-ponents';
@@ -28,26 +27,23 @@ export const AdBlocked = () => {
     }, [url]);
 
     return (
-        <div>
-            <Flex alignCenter center className={Styles.AdBlockedHeader} py="l">
-                <QwantLogo width="267" height="36" />
-            </Flex>
-            <Stack gap="l" p="xl" className={Styles.AdBlockedBody}>
+        <div className={Styles.Wrapper}>
+            <Stack gap="l" p="xl" pt="xxxs" className={Styles.AdBlockedBody}>
                 <QwantSquaredLogo width="128" height="128" />
                 <Text typo="heading-1" bold color="primary" as="h1">
                     {t('blocking_pages_rule_content_title', {
-                        name: t('short_name'),
+                        name: t('name'),
                     })}
                 </Text>
                 <Stack gap="xs">
                     <ThinCard p="xs">
-                        <Text typo="body-1" as="code">
+                        <Text typo="body-1" color="primary" as="code">
                             {url}
                         </Text>
                     </ThinCard>
-                    <Text typo="body-1">
+                    <Text typo="body-1" color="primary">
                         {t('blocking_pages_rule_content_description', {
-                            name: t('short_name'),
+                            name: t('name'),
                         })}
                     </Text>
                 </Stack>

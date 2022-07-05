@@ -1,14 +1,9 @@
-body {
-    min-height: unset !important;
-}
 
-.AdBlockedHeader {
-  background-color: var(--action-blue-300);
-  border-bottom: 2px solid var(--grey-900);
-}
-
-.AdBlockedHeader svg {
-  display: block;
+.Wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .AdBlockedBody {
