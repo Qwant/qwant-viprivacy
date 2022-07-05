@@ -1,4 +1,5 @@
 /* eslint-disable max-len */
+import { browserUtils } from '../background/utils/browser-utils';
 import { translator } from '../common/translators/translator';
 
 export const getFilenameExtension = (filename) => {
@@ -162,3 +163,10 @@ export const isVerticalScroll = (() => {
             || (angle > deg240ToRad && angle < deg300ToRad);
     };
 })();
+
+export const urls = {
+    qwant: () => {
+        const browser = browserUtils.getBrowser() || 'unknown';
+        return `https://qwant.com/?client=ext-${browser.toLowerCase()}-sb`;
+    },
+};

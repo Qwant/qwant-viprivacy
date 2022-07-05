@@ -7,6 +7,7 @@ import { QwantLogo } from '~src/pages/common/components/QwantLogo/QwantLogo';
 import React from 'react';
 import Styles from './Popup.module.scss';
 import { IconSearch } from './shared/Icons';
+import { urls } from '../../helpers';
 
 export function PopupHeader() {
     const navigate = useNavigate();
@@ -20,7 +21,7 @@ export function PopupHeader() {
                     typo="heading-3"
                     as="a"
                     color="primary"
-                    href="https://qwant.com"
+                    href={urls.qwant()}
                     target="_blank"
                     rel="noreferrer"
                     className={Styles.PopupSearch}

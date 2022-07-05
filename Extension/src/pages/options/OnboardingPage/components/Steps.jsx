@@ -15,6 +15,7 @@ import { StepProtectionLevel } from './StepProtectionLevel';
 import { StepTelemetry } from './StepTelemetry';
 import { StepThanks } from './StepThanks';
 import { AlertPermission } from './AlertPermission/AlertPermission';
+import { urls } from '../../../helpers';
 
 export const Steps = ({
     isLoading,
@@ -43,15 +44,13 @@ export const Steps = ({
             )}
             <Box mt="xl" mb={isFinal ? 's' : 'xl'} className={Styles.Steps}>
                 <Flex alignCenter between className={Styles.StepsHeader} px="xl" py="l">
-                    <a name="qwant-logo-link" href="https://qwant.com" target="_blank" rel="noreferrer">
+                    <a name="qwant-logo-link" href={urls.qwant()} target="_blank" rel="noreferrer">
                         <QwantLogo />
                     </a>
                     <Button
                         variant="primary-black"
                         as="a"
-                        href="https://qwant.com"
-                        target="_blank"
-                        rel="noreferrer"
+                        href={urls.qwant()}
                         style={{
                             visibility: isFinal ? 'visible' : 'hidden',
                         }}

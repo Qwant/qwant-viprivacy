@@ -11,6 +11,7 @@ import { Events, stateMachine, States } from './stateMachine';
 
 import { rootStore } from '../stores/RootStore';
 import { messenger } from '../../services/messenger';
+import { urls } from '../../helpers';
 
 export const OnboardingPage = observer(() => {
     const [state, send] = useMachine(stateMachine);
@@ -167,13 +168,13 @@ export const OnboardingPage = observer(() => {
         } else if (state.value === States.THANK_YOU) {
             setLoading(true);
             await messenger.applyQwantSettings(protectionLevel);
-            browser.tabs.create({ active: true, url: 'https://qwant.com' });
+            browser.tabs.create({ active: true, url: urls.qwant() });
         } else if (state.value === States.PERMISSIONS_REJECTED) {
             const tab = await browser.tabs.getCurrent();
             if (tab.id) {
                 browser.tabs.update(tab.id, {
                     active: true,
-                    url: 'https://qwant.com',
+                    url: urls.qwant(),
                 });
             }
         } else {

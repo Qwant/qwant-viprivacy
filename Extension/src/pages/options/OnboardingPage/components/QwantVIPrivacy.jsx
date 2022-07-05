@@ -5,8 +5,8 @@ import {
 import { ReactComponent as IconQwantFavicon } from './assets/qwant-favicon.svg';
 
 export const QwantVIPrivacy = () => (
-    <Flex alignCenter>
-        <Box mr="xxs">
+    <Flex as="span" alignCenter>
+        <Box as="span" mr="xxs">
             <b>Qwant VIP</b>
             {'rivacy '}
         </Box>
