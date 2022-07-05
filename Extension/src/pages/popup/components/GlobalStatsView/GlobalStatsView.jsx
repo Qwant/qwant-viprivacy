@@ -101,11 +101,11 @@ const GlobalStatsView = observer(({ store }) => {
             <Stack gap="xs">
                 <ActionButton type="danger" onClick={toggleShowDisableConfirm}>
                     <IconChart />
-                    <span>Désactiver les statistiques</span>
+                    <span>{t('global_stats_disable_action')}</span>
                 </ActionButton>
                 <ActionButton onClick={onDelete}>
                     <IconTrash />
-                    <span>Effacer</span>
+                    <span>{t('delete')}</span>
                 </ActionButton>
             </Stack>
         </Stack>

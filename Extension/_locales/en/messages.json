@@ -8,9 +8,6 @@
   "description": {
     "message": "Qwant VIPrivacy sets qwant.com as your default search engine, blocks trackers for you to protect your personal data while you browse"
   },
-  "your_browser": {
-    "message": "your browser"
-  },
   "back": {
     "message": "Back"
   },
@@ -59,9 +56,6 @@
   "popup_stats_time_saved": {
     "message": "Time saved"
   },
-  "popup_settings_help_label": {
-    "message": "Help"
-  },
   "popup_settings_help_know_more_label": {
     "message": "Learn about Qwant VIPrivacy"
   },
@@ -73,12 +67,6 @@
   },
   "popup_settings_help_new_link": {
     "message": "https://github.com/Qwant/qwant-viprivacy#readme"
-  },
-  "popup_settings_help_feedback_label": {
-    "message": "Share your experience"
-  },
-  "popup_settings_help_feedback_link": {
-    "message": "https://fr.surveymonkey.com/r/X6C38SF"
   },
   "popup_settings_telemetry_label": {
     "message": "Help Qwant improve the extension by sending anonymous error reports and usage statistics."

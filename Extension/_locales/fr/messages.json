@@ -8,9 +8,6 @@
   "description": {
     "message": "Qwant VIPrivacy définit qwant.com comme moteur de recherche par défaut, bloque les traqueurs et protège vos données personnelles."
   },
-  "your_browser": {
-    "message": "votre navigateur"
-  },
   "back": {
     "message": "Retour"
   },
@@ -98,9 +95,6 @@
   "popup_stats_time_saved": {
     "message": "Temps économisé"
   },
-  "popup_settings_help_label": {
-    "message": "Aide"
-  },
   "popup_settings_help_know_more_label": {
     "message": "Tout savoir sur Qwant VIPrivacy"
   },
@@ -112,12 +106,6 @@
   },
   "popup_settings_help_new_link": {
     "message": "https://github.com/Qwant/qwant-viprivacy#readme"
-  },
-  "popup_settings_help_feedback_label": {
-    "message": "Partagez votre expérience"
-  },
-  "popup_settings_help_feedback_link": {
-    "message": "https://fr.surveymonkey.com/r/XPK9KHJ"
   },
   "popup_settings_telemetry_label": {
     "message": "Aidez Qwant à améliorer l'extension en envoyant anonymement des rapports d'erreur et des statistiques d'usage."
@@ -311,10 +299,10 @@
   "survey_url": {
     "message": "https://fr.surveymonkey.com/r/XPK9KHJ"
   },
-  "opinion": {
-    "message": "Avis"
-  },
   "infos": {
     "message": "Infos"
+  },
+  "delete": {
+    "message": "Effacer"
   }
 }

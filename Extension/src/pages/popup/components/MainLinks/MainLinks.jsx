@@ -13,7 +13,7 @@ export function MainLinks({ withStats }) {
         to: () => navigate('/global-stats'),
         icon: IconChart,
     }] : []), {
-        label: t('opinion'),
+        label: t('survey'),
         to: t('survey_url'),
         icon: IconMessage,
     }, {
