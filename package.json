@@ -114,7 +114,7 @@
     "react-resize-detector": "^6.7.5",
     "react-router-dom": "^6.3.0",
     "react-spinners": "^0.11.0",
-    "react-switch": "^6.0.0",
+    "react-switch": "^7.0.0",
     "react-use": "^17.3.2",
     "react-virtualized-auto-sizer": "^1.0.5",
     "react-window": "^1.8.6",
