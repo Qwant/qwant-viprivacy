@@ -4,7 +4,7 @@ import { t } from '~src/common/translators/reactTranslator';
 import Styles from './UpsellMobile.module.scss';
 import ButtonAndroid from '../assets/buttons-apps-google-negative.svg';
 import ButtonIOS from '../assets/buttons-apps-apple-negative.svg';
-import QRCode from '../assets/qr-code.svg';
+import QRCode from '../assets/qr-code.png';
 
 export function UpsellMobile() {
     return (
@@ -26,7 +26,8 @@ export function UpsellMobile() {
                 </Stack>
             </Stack>
             <Stack p="xs" gap="xs" className={Styles.UpsellMobileQRCode}>
-                <img src={QRCode} alt="" />
+                {/* TODO replace with qwant-ponents QR code */}
+                <img src={QRCode} alt="" width="88" height="88" />
                 <Text center typo="body-2" color="primary" bold>
                     {t('upsell_mobile_qrcode')}
                 </Text>
