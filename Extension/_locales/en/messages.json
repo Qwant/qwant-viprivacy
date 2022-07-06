@@ -38,9 +38,6 @@
   "popup_main_protection_disabled": {
     "message": "Protection disabled"
   },
-  "popup_main_nbr_blocked_elements": {
-    "message": "%count% items blocked"
-  },
   "popup_main_nbr_blocked_elements_domain": {
     "message": "on <b>%domain%</b>."
   },
@@ -134,29 +131,11 @@
   "onboarding_step_protection_level_description": {
     "message": "You can change your choice at any time by clicking on the Qwant VIPrivacy icon."
   },
-  "onboarding_step_pin_extension_title": {
-    "message": "Pin Qwant VIPrivacy on %browser% and follow your statistics in real time"
-  },
-  "onboarding_step_pin_extension_description": {
-    "message": " "
-  },
   "onboarding_step_telemetry_title": {
     "message": "Help us improve Qwant VIPrivacy"
   },
   "onboarding_step_telemetry_description": {
     "message": "Share your feedback anonymously to help us improve your protection."
-  },
-  "onboarding_step_telemetry_section_title": {
-    "message": "Send anonymized usage statistics and error reports"
-  },
-  "onboarding_step_permissions_rejected_title": {
-    "message": "Thank you, Qwant is your default search engine but…"
-  },
-  "onboarding_step_permissions_rejected_subtitle": {
-    "message": "Cookie and tracker blocker feature is not active."
-  },
-  "onboarding_step_permissions_rejected_description": {
-    "message": " "
   },
   "onboarding_step_thank_you_title": {
     "message": "Thank you for installing Qwant VIPrivacy"

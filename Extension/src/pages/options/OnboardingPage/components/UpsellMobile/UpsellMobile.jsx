@@ -9,7 +9,9 @@ import QRCode from '../assets/qr-code.svg';
 export function UpsellMobile() {
     return (
         <Card className={Styles.UpsellMobile} p="xl">
-            <div />
+            <div className={Styles.LeftImage}>
+                <img src="https://place-hold.it/220x220" alt="" />
+            </div>
             <Stack gap="m">
                 <Text typo="heading-5" color="primary" bold>
                     {t('upsell_mobile_title')}

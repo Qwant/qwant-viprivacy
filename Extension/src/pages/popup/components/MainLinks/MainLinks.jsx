@@ -2,8 +2,10 @@ import React, { useMemo } from 'react';
 import { ThinCard } from '~src/pages/common/components/ThinCard/ThinCard';
 import { t } from '~src/common/translators/reactTranslator';
 import { useNavigate } from 'react-router-dom';
-import { RiLineChartLine as IconChart, RiMessage2Line as IconMessage } from 'react-icons/ri';
-import { Flex, IconInfoCircle, Text } from '@qwant/qwant-ponents';
+import { RiLineChartLine as IconChart } from 'react-icons/ri';
+import {
+    Flex, IconInfoCircle, IconExternalLink, Text,
+} from '@qwant/qwant-ponents';
 import Styles from './MainLinks.module.scss';
 
 export function MainLinks({ withStats }) {
@@ -13,13 +15,13 @@ export function MainLinks({ withStats }) {
         to: () => navigate('/global-stats'),
         icon: IconChart,
     }] : []), {
-        label: t('survey'),
-        to: t('survey_url'),
-        icon: IconMessage,
-    }, {
         label: t('infos'),
         to: () => navigate('/about'),
         icon: IconInfoCircle,
+    }, {
+        label: t('survey'),
+        to: t('survey_url'),
+        icon: IconExternalLink,
     }], [navigate, withStats]);
 
     return (

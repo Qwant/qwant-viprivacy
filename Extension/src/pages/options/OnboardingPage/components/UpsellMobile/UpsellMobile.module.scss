@@ -1,3 +1,10 @@
+.LeftImage{
+  margin-left: -24px;
+  margin-top: -24px;
+  margin-bottom: -24px;
+  overflow: hidden;
+}
+
 .UpsellMobile {
   display: grid;
   gap: var(--spacing-xl);

@@ -47,9 +47,6 @@
   "popup_main_protection_enable": {
     "message": "Réactiver la protection"
   },
-  "popup_main_nbr_blocked_elements": {
-    "message": "%count% élément bloqué"
-  },
   "popup_main_nbr_blocked_elements_domain": {
     "message": "sur <b>%domain%</b>"
   },
@@ -191,12 +188,6 @@
   "onboarding_step_protection_level_description": {
     "message": "Vous pourrez modifier votre choix à tout moment en cliquant sur l'icône"
   },
-  "onboarding_step_pin_extension_title": {
-    "message": "Épinglez Qwant VIPrivacy à %browser% et suivez vos statistiques en temps réel"
-  },
-  "onboarding_step_pin_extension_description": {
-    "message": " "
-  },
   "onboarding_step_telemetry_title": {
     "message": "Aidez-nous à améliorer Qwant VIPrivacy"
   },
@@ -205,15 +196,6 @@
   },
   "onboarding_step_telemetry_checkbox_label": {
     "message": "Partagez anonymement vos statistiques d'utilisation et rapports d'erreurs"
-  },
-  "onboarding_step_permissions_rejected_title": {
-    "message": "Merci, Qwant est votre moteur de recherche par défaut mais…"
-  },
-  "onboarding_step_permissions_rejected_subtitle": {
-    "message": "Vous n'avez pas activé la fonctionalité bloqueur de traqueurs & cookies."
-  },
-  "onboarding_step_permissions_rejected_description": {
-    "message": " "
   },
   "onboarding_step_thank_you_title": {
     "message": "Félicitations !"

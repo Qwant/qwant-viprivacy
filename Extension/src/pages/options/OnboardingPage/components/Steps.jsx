@@ -43,7 +43,7 @@ export const Steps = ({
                 />
             )}
             <Box mt="xl" mb={isFinal ? 's' : 'xl'} className={Styles.Steps}>
-                <Flex alignCenter between className={Styles.StepsHeader} px="xl" py="l">
+                <Flex alignCenter between className={Styles.StepsHeader} px="xl" py="s">
                     <a name="qwant-logo-link" href={urls.qwant()} target="_blank" rel="noreferrer">
                         <QwantLogo />
                     </a>
