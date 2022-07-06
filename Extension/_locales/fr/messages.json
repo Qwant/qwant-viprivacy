@@ -1,42 +1,189 @@
 {
-  "name": {
-    "message": "Qwant VIPrivacy"
+  "back": {
+    "message": "Retour"
   },
-  "short_name": {
-    "message": "Qwant VIP"
+  "blocking_pages_btn_proceed": {
+    "message": "Procéder malgré tout"
+  },
+  "blocking_pages_page_title": {
+    "message": "Accès refusé"
+  },
+  "blocking_pages_rule_content_description": {
+    "message": "%name% n'a pas autorisé le chargement de cette page en raison des régles de filtrage."
+  },
+  "blocking_pages_rule_content_title": {
+    "message": "Bloqué par %name%"
+  },
+  "delete": {
+    "message": "Effacer"
   },
   "description": {
     "message": "Qwant VIPrivacy définit qwant.com comme moteur de recherche par défaut, bloque les traqueurs et protège vos données personnelles."
   },
-  "back": {
-    "message": "Retour"
+  "error_label": {
+    "message": "Erreur:"
   },
-  "protection_level": {
-    "message": "Niveau de protection"
+  "global_stats": {
+    "message": "Vos statistiques cumulées"
   },
-  "protection_level_standard": {
-    "message": "Standard"
+  "global_stats_disable_action": {
+    "message": "Désactiver les statistiques"
   },
-  "protection_level_strict": {
-    "message": "Strict"
+  "global_stats_disable_action_confirm": {
+    "message": "Confirmer la désactivation"
   },
-  "protection_level_disabled": {
-    "message": "Désactivé"
+  "global_stats_disable_description": {
+    "message": "Avec cette action, toutes les statistiques cumulées jusqu’ici seront perdues."
   },
-  "protection_level_standard_description": {
-    "message": "Bloque la plupart des traqueurs et cookies efficacement."
+  "global_stats_disable_title": {
+    "message": "Désactiver les statistiques de l’extension"
   },
-  "protection_level_strict_description": {
-    "message": "Bloque tous les traqueurs et cookies, peut modifier les fonctionnalités de certains sites."
+  "global_stats_disabled": {
+    "message": "Désactivées pour le moment"
   },
-  "protection_level_disabled_description": {
-    "message": "La navigation protégée est désactivée, votre moteur de recherche par défaut reste Qwant."
+  "global_stats_disabled_short": {
+    "message": "Désactivées"
   },
-  "popup_main_protection_enabled": {
-    "message": "Protection activée"
+  "global_stats_empty": {
+    "message": "Rien pour le moment"
   },
-  "popup_main_protection_unavailable": {
-    "message": "Inactif"
+  "global_stats_enable": {
+    "message": "Activer les statistiques"
+  },
+  "global_stats_enabled_success": {
+    "message": "Statistiques bien activées ! Commencez à naviguer sur le web pour avoir des chiffres ici."
+  },
+  "infos": {
+    "message": "Infos"
+  },
+  "loading_reload_cta": {
+    "message": "Recharger"
+  },
+  "missing_permissions_cta_button_popup": {
+    "message": "Activer la protection"
+  },
+  "missing_permissions_default_search_engine_description": {
+    "message": "Lorsque vous lancez une recherche depuis la barre d'adresse de votre navigateur."
+  },
+  "missing_permissions_default_search_engine_title": {
+    "message": "Qwant est votre moteur de recherche par défaut"
+  },
+  "missing_permissions_disabled_description": {
+    "message": "Vos données restent confidentielles lorsque vous cherchez sur Qwant, mais le blocage des traqueurs et cookies n'est pas activé."
+  },
+  "missing_permissions_disabled_title": {
+    "message": "La protection est désactivée"
+  },
+  "name": {
+    "message": "Qwant VIPrivacy"
+  },
+  "new": {
+    "message": "Nouveau"
+  },
+  "onboarding_step_alert_permission_description": {
+    "message": "Nous vous conseillons alors de choisir Qwant uniquement comme moteur de recherche par défaut. Si vous avez changé d'avis"
+  },
+  "onboarding_step_alert_permission_description_cta": {
+    "message": "modifier les autorisations."
+  },
+  "onboarding_step_alert_permission_title": {
+    "message": "Vous avez refusé les autorisation du navigateur."
+  },
+  "onboarding_step_mode_description": {
+    "message": "Vous pourrez modifier votre choix à tout moment en cliquant sur l'icône"
+  },
+  "onboarding_step_mode_search": {
+    "message": "Search"
+  },
+  "onboarding_step_mode_search_description": {
+    "message": "Moteur de recherche par défaut"
+  },
+  "onboarding_step_mode_search_protection": {
+    "message": "Search & Protection"
+  },
+  "onboarding_step_mode_search_protection_description": {
+    "message": "Moteur de recherche par défaut et protection contre les traqueurs et cookies"
+  },
+  "onboarding_step_mode_title": {
+    "message": "Choisissez votre préférence"
+  },
+  "onboarding_step_protection_level_description": {
+    "message": "Vous pourrez modifier votre choix à tout moment en cliquant sur l'icône"
+  },
+  "onboarding_step_protection_level_title": {
+    "message": "Choisissez votre niveau de protection"
+  },
+  "onboarding_step_request_permissions_description": {
+    "message": "<b>Qwant VIP</b>rivacy c'est moins de cookies et les traqueurs bloqués lors de votre navigation. Vos données personnelles seront protégées sur tous les sites lors de votre navigation."
+  },
+  "onboarding_step_request_permissions_title": {
+    "message": "Autorisez Qwant VIPrivacy à vous protéger"
+  },
+  "onboarding_step_telemetry_checkbox_label": {
+    "message": "Partagez anonymement vos statistiques d'utilisation et rapports d'erreurs"
+  },
+  "onboarding_step_telemetry_description": {
+    "message": "Partagez votre retour d'expérience pour nous permettre d'améliorer la performance de nos fonctionnalités. C'est anonyme !"
+  },
+  "onboarding_step_telemetry_title": {
+    "message": "Aidez-nous à améliorer Qwant VIPrivacy"
+  },
+  "onboarding_step_thank_you_chrome_1_description": {
+    "message": "Dans la barre d’outils de Chrome."
+  },
+  "onboarding_step_thank_you_chrome_1_title": {
+    "message": "Épinglez Qwant VIPrivacy"
+  },
+  "onboarding_step_thank_you_chrome_2_description": {
+    "message": "Lors de votre 1ère recherche, sélectionner « Conserver » lorsque Chrome vous demandera."
+  },
+  "onboarding_step_thank_you_chrome_2_title": {
+    "message": "Assurez-vous de garder Qwant en moteur de recherche par défaut."
+  },
+  "onboarding_step_thank_you_description": {
+    "message": "Maintenant,"
+  },
+  "onboarding_step_thank_you_edge_1_description": {
+    "message": "Dans le menu « Extension », puis « Gérer les extensions »"
+  },
+  "onboarding_step_thank_you_edge_1_title": {
+    "message": "Activez Qwant VIPrivacy"
+  },
+  "onboarding_step_thank_you_edge_2_description": {
+    "message": "Et suivez vos statistiques en temps réel"
+  },
+  "onboarding_step_thank_you_edge_2_title": {
+    "message": "Épinglez Qwant VIPrivacy"
+  },
+  "onboarding_step_thank_you_features": {
+    "message": "Zéro tracking de vos recherches; Zéro tracking publicitaire; Zéro vente de vos données personnelles"
+  },
+  "onboarding_step_thank_you_title": {
+    "message": "Félicitations !"
+  },
+  "onboarding_stepper_authorize": {
+    "message": "Demander l'autorisation"
+  },
+  "onboarding_stepper_finish": {
+    "message": "Terminer"
+  },
+  "onboarding_stepper_i_understand": {
+    "message": "J'ai compris"
+  },
+  "onboarding_stepper_lets_go": {
+    "message": "C'est parti !"
+  },
+  "onboarding_stepper_next_step": {
+    "message": "Étape suivante"
+  },
+  "popup_about_title": {
+    "message": "Informations"
+  },
+  "popup_main_nbr_blocked_elements_domain": {
+    "message": "sur <b>%domain%</b>"
+  },
+  "popup_main_problem_disable_protection": {
+    "message": "Un problème sur ce site ? Essayez de désactiver."
   },
   "popup_main_protection_detail": {
     "message": "Détails"
@@ -47,50 +194,11 @@
   "popup_main_protection_enable": {
     "message": "Réactiver la protection"
   },
-  "popup_main_nbr_blocked_elements_domain": {
-    "message": "sur <b>%domain%</b>"
+  "popup_main_protection_enabled": {
+    "message": "Protection activée"
   },
-  "popup_main_problem_disable_protection": {
-    "message": "Un problème sur ce site ? Essayez de désactiver."
-  },
-  "popup_about_title": {
-    "message": "Informations"
-  },
-  "global_stats": {
-    "message": "Vos statistiques cumulées"
-  },
-  "global_stats_enabled_success": {
-    "message": "Statistiques bien activées ! Commencez à naviguer sur le web pour avoir des chiffres ici."
-  },
-  "global_stats_empty": {
-    "message": "Rien pour le moment"
-  },
-  "global_stats_disabled": {
-    "message": "Désactivées pour le moment"
-  },
-  "global_stats_disabled_short": {
-    "message": "Désactivées"
-  },
-  "global_stats_enable": {
-    "message": "Activer les statistiques"
-  },
-  "global_stats_disable_title": {
-    "message": "Désactiver les statistiques de l’extension"
-  },
-  "global_stats_disable_description": {
-    "message": "Avec cette action, toutes les statistiques cumulées jusqu’ici seront perdues."
-  },
-  "global_stats_disable_action": {
-    "message": "Désactiver les statistiques"
-  },
-  "global_stats_disable_action_confirm": {
-    "message": "Confirmer la désactivation"
-  },
-  "popup_stats_blocked_trackers": {
-    "message": "Traqueurs bloqués"
-  },
-  "popup_stats_time_saved": {
-    "message": "Temps économisé"
+  "popup_main_protection_unavailable": {
+    "message": "Inactif"
   },
   "popup_settings_help_know_more_label": {
     "message": "Tout savoir sur Qwant VIPrivacy"
@@ -113,164 +221,50 @@
   "popup_settings_telemetry_learn_more_link": {
     "message": "https://github.com/Qwant/qwant-viprivacy#privacy"
   },
+  "popup_stats_blocked_elements": {
+    "message": "Éléments bloqués"
+  },
+  "popup_stats_blocked_trackers": {
+    "message": "Traqueurs bloqués"
+  },
   "popup_stats_table_domains_label": {
     "message": "Domaines"
   },
   "popup_stats_table_trackers_label": {
     "message": "Traqueurs/Cookies"
   },
+  "popup_stats_time_saved": {
+    "message": "Temps économisé"
+  },
   "popup_stats_trackers": {
     "message": "Traqueurs"
   },
-  "popup_stats_blocked_elements": {
-    "message": "Éléments bloqués"
+  "protection_level": {
+    "message": "Niveau de protection"
   },
-  "missing_permissions_default_search_engine_title": {
-    "message": "Qwant est votre moteur de recherche par défaut"
+  "protection_level_disabled": {
+    "message": "Désactivé"
   },
-  "missing_permissions_default_search_engine_description": {
-    "message": "Lorsque vous lancez une recherche depuis la barre d'adresse de votre navigateur."
+  "protection_level_disabled_description": {
+    "message": "La navigation protégée est désactivée, votre moteur de recherche par défaut reste Qwant."
   },
-  "missing_permissions_disabled_title": {
-    "message": "La protection est désactivée"
+  "protection_level_standard": {
+    "message": "Standard"
   },
-  "missing_permissions_disabled_description": {
-    "message": "Vos données restent confidentielles lorsque vous cherchez sur Qwant, mais le blocage des traqueurs et cookies n'est pas activé."
+  "protection_level_standard_description": {
+    "message": "Bloque la plupart des traqueurs et cookies efficacement."
   },
-  "missing_permissions_cta_button_popup": {
-    "message": "Activer la protection"
+  "protection_level_strict": {
+    "message": "Strict"
   },
-  "onboarding_stepper_back": {
-    "message": "Retour"
-  },
-  "onboarding_stepper_authorize": {
-    "message": "Demander l'autorisation"
-  },
-  "onboarding_stepper_finish": {
-    "message": "Terminer"
-  },
-  "onboarding_stepper_i_understand": {
-    "message": "J'ai compris"
-  },
-  "onboarding_stepper_lets_go": {
-    "message": "C'est parti !"
-  },
-  "onboarding_stepper_next_step": {
-    "message": "Étape suivante"
-  },
-  "onboarding_step_mode_title": {
-    "message": "Choisissez votre préférence"
-  },
-  "onboarding_step_mode_description": {
-    "message": "Vous pourrez modifier votre choix à tout moment en cliquant sur l'icône"
-  },
-  "onboarding_step_mode_search": {
-    "message": "Search"
-  },
-  "onboarding_step_mode_search_description": {
-    "message": "Moteur de recherche par défaut"
-  },
-  "onboarding_step_mode_search_protection": {
-    "message": "Search & Protection"
-  },
-  "onboarding_step_mode_search_protection_description": {
-    "message": "Moteur de recherche par défaut et protection contre les traqueurs et cookies"
-  },
-  "onboarding_step_request_permissions_title": {
-    "message": "Autorisez Qwant VIPrivacy à vous protéger"
-  },
-  "onboarding_step_request_permissions_description": {
-    "message": "<b>Qwant VIP</b>rivacy c'est moins de cookies et les traqueurs bloqués lors de votre navigation. Vos données personnelles seront protégées sur tous les sites lors de votre navigation."
-  },
-  "onboarding_step_protection_level_title": {
-    "message": "Choisissez votre niveau de protection"
-  },
-  "onboarding_step_protection_level_description": {
-    "message": "Vous pourrez modifier votre choix à tout moment en cliquant sur l'icône"
-  },
-  "onboarding_step_telemetry_title": {
-    "message": "Aidez-nous à améliorer Qwant VIPrivacy"
-  },
-  "onboarding_step_telemetry_description": {
-    "message": "Partagez votre retour d'expérience pour nous permettre d'améliorer la performance de nos fonctionnalités. C'est anonyme !"
-  },
-  "onboarding_step_telemetry_checkbox_label": {
-    "message": "Partagez anonymement vos statistiques d'utilisation et rapports d'erreurs"
-  },
-  "onboarding_step_thank_you_title": {
-    "message": "Félicitations !"
-  },
-  "onboarding_step_thank_you_description": {
-    "message": "Maintenant,"
-  },
-  "onboarding_step_thank_you_chrome_1_title": {
-    "message": "Épinglez Qwant VIPrivacy"
-  },
-  "onboarding_step_thank_you_chrome_1_description": {
-    "message": "Dans la barre d’outils de Chrome."
-  },
-  "onboarding_step_thank_you_chrome_2_title": {
-    "message": "Assurez-vous de garder Qwant en moteur de recherche par défaut."
-  },
-  "onboarding_step_thank_you_chrome_2_description": {
-    "message": "Lors de votre 1ère recherche, sélectionner « Conserver » lorsque Chrome vous demandera."
-  },
-  "onboarding_step_thank_you_edge_1_title": {
-    "message": "Activez Qwant VIPrivacy"
-  },
-  "onboarding_step_thank_you_edge_1_description": {
-    "message": "Dans le menu « Extension », puis « Gérer les extensions »"
-  },
-  "onboarding_step_thank_you_edge_2_title": {
-    "message": "Épinglez Qwant VIPrivacy"
-  },
-  "onboarding_step_thank_you_edge_2_description": {
-    "message": "Et suivez vos statistiques en temps réel"
-  },
-  "onboarding_step_thank_you_features": {
-    "message": "Zéro tracking de vos recherches; Zéro tracking publicitaire; Zéro vente de vos données personnelles"
-  },
-  "onboarding_step_alert_permission_title": {
-    "message": "Vous avez refusé les autorisation du navigateur."
-  },
-  "onboarding_step_alert_permission_description": {
-    "message": "Nous vous conseillons alors de choisir Qwant uniquement comme moteur de recherche par défaut. Si vous avez changé d'avis"
-  },
-  "onboarding_step_alert_permission_description_cta": {
-    "message": "modifier les autorisations"
-  },
-  "blocking_pages_page_title": {
-    "message": "Accès refusé"
-  },
-  "blocking_pages_rule_content_title": {
-    "message": "Bloqué par %name%"
-  },
-  "blocking_pages_rule_content_description": {
-    "message": "%name% n'a pas autorisé le chargement de cette page en raison des régles de filtrage."
-  },
-  "blocking_pages_btn_proceed": {
-    "message": "Procéder malgré tout"
-  },
-  "loading_reload_cta": {
-    "message": "Recharger"
-  },
-  "uninstall_url": {
-    "message": "https://fr.surveymonkey.com/r/RX2XFHC"
-  },
-  "error_label": {
-    "message": "Erreur:"
+  "protection_level_strict_description": {
+    "message": "Bloque tous les traqueurs et cookies, peut modifier les fonctionnalités de certains sites."
   },
   "qwant_redirect": {
     "message": "Aller sur Qwant.com"
   },
-  "upsell_mobile_title": {
-    "message": "Adoptez Qwant VIPrivacy aussi sur mobile !"
-  },
-  "upsell_mobile_qrcode": {
-    "message": "Scannez ce QR code"
-  },
-  "new": {
-    "message": "Nouveau"
+  "short_name": {
+    "message": "Qwant VIP"
   },
   "stats": {
     "message": "Stats"
@@ -281,10 +275,13 @@
   "survey_url": {
     "message": "https://fr.surveymonkey.com/r/XPK9KHJ"
   },
-  "infos": {
-    "message": "Infos"
+  "uninstall_url": {
+    "message": "https://fr.surveymonkey.com/r/RX2XFHC"
   },
-  "delete": {
-    "message": "Effacer"
+  "upsell_mobile_qrcode": {
+    "message": "Scannez ce QR code"
+  },
+  "upsell_mobile_title": {
+    "message": "Adoptez Qwant VIPrivacy aussi sur mobile !"
   }
 }

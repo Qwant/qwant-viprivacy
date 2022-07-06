@@ -110,7 +110,7 @@ function StepsNavigation({
                         size="large"
                         name={`btn-back_${state.value}`}
                     >
-                        {t('onboarding_stepper_back')}
+                        {t('back')}
                     </Button>
                 )}
             </div>
