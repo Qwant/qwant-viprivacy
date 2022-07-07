@@ -81,10 +81,13 @@ const validateChecksum = (url, body) => {
     const bodyChecksum = crypto.createHash('md5').update(normalizeResponse(body)).digest('base64').replace(/=/g, '');
 
     if (checksumMatch?.[1] && bodyChecksum !== checksumMatch[1]) {
-        cliLog.error(`Wrong checksum: found ${bodyChecksum}, expected ${checksumMatch[1]}`);
+        cliLog.warningRed(`Wrong checksum: url=${url.url}`);
+        cliLog.warningRed(`Found ${bodyChecksum} - Expected ${checksumMatch[1]}`);
+        return false;
     }
 
     cliLog.info('Checksum is valid');
+    return true;
 };
 
 const downloadFilter = async (url, browser) => {
@@ -97,7 +100,10 @@ const downloadFilter = async (url, browser) => {
     const response = await axios.get(url.url, { responseType: 'arraybuffer' });
 
     if (url.validate) {
-        validateChecksum(url, response.data.toString());
+        if (!validateChecksum(url, response.data.toString())) {
+            cliLog.warning(`Skipped: Checksum not valid for url=${url.url}`);
+            return;
+        }
     }
 
     let body = response.data.toString();

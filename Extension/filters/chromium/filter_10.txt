@@ -1,8 +1,8 @@
-! Checksum: AD8RtajIKBnbX8hAuXwv6w
+! Checksum: 5vJ9D4amqPR8W8FlvZnYpQ
 ! Title: Filter unblocking search ads and self-promotion
 ! Description: Filter that unblocks search (Duckduckgo, Google, Bing, Yahoo) and self-promo ads. Self-promotion definition: when an ad on a website is promoting this very website or other websites/social media/etc closely related to it, such ad is considered a self-promoting one.
-! Version: 2.0.1.76
-! TimeUpdated: 2022-05-31T12:30:16+00:00
+! Version: 2.0.1.77
+! TimeUpdated: 2022-06-30T12:30:16+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
