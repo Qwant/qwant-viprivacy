@@ -1,8 +1,8 @@
-! Checksum: doz1qWlkkxV+qP775yrGEA
+! Checksum: N8ExzTZ7IzxTSAreBvhdEg
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.2.75
-! TimeUpdated: 2022-06-22T15:30:50+00:00
+! Version: 2.0.2.83
+! TimeUpdated: 2022-07-05T10:30:48+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -38,6 +38,21 @@ $removeparam=fb_comment_id
 $removeparam=fb_ref
 $removeparam=fb_source
 $removeparam=fbclid
+! awin.com
+$removeparam=awc
+! Hubspot tracking https://knowledge.hubspot.com/ads/ad-tracking-in-hubspot
+$removeparam=hsa_acc
+$removeparam=hsa_ad
+$removeparam=hsa_cam
+$removeparam=hsa_grp
+$removeparam=hsa_kw
+$removeparam=hsa_la
+$removeparam=hsa_mt
+$removeparam=hsa_net
+$removeparam=hsa_ol
+$removeparam=hsa_src
+$removeparam=hsa_tgt
+$removeparam=hsa_ver
 ! Yandex Metrika
 $removeparam=ysclid
 $removeparam=yclid
@@ -65,6 +80,7 @@ $removeparam=xtor
 ! https://help.ads.microsoft.com/apex/index/3/en/60000
 $removeparam=msclkid
 ! UTM
+$removeparam=utm_affiliate
 $removeparam=utm_campaign
 $removeparam=utm_channel
 $removeparam=utm_cid
@@ -162,6 +178,13 @@ $removeparam=fbclid
 ! Bad: ||example.org^$xmlhttprequest,redirect=noopvast-3.0 (for instance, should be in specific.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/123160
+||whistleout.com.au^$cookie=ARRAffinity
+||whistleout.com.au^$cookie=ARRAffinitySameSite
+! https://github.com/AdguardTeam/AdguardFilters/issues/123340
+||rac.co.uk^$removeparam=cid
+! https://github.com/AdguardTeam/AdguardFilters/pull/122979
+||heraldcorp.com/view.php$removeparam=pos
 ! toomics.com
 ||toomics.com^$removeparam=pid
 ||toomics.com^$removeparam=subpid
@@ -170,6 +193,9 @@ $removeparam=fbclid
 ! get-express-vpns.com
 ||get-express-vpns.com^$removeparam=sxid
 ||get-express-vpns.com^$removeparam=ttorigin
+! https://github.com/AdguardTeam/AdguardFilters/issues/123349
+||zavvi.com^$removeparam=affil
+||zavvi.com^$removeparam=sv_campaign_id
 ! MacKeeper
 ||mkaff.com/landings/$removeparam
 ! lazada.vn
@@ -196,9 +222,10 @@ $removeparam=/utm_partner_id|frommail/,domain=mail.ru|sportmail.ru
 ||giphy.com^$removeparam=cid
 ||giphy.com^$removeparam=ct
 ||giphy.com^$removeparam=rid
+! https://github.com/AdguardTeam/AdguardFilters/issues/123265
 ! https://github.com/AdguardTeam/AdguardFilters/issues/119833
 ! https://github.com/AdguardTeam/AdguardFilters/issues/120322
-$removeparam=ref,domain=jin115.com|bipblog.com
+$removeparam=ref,domain=jin115.com|bipblog.com|animember.net
 ! https://www.cinematoday.jp/site/tokyo-vice/?g_clk=topcover
 ||cinematoday.jp^$removeparam=g_clk
 ! https://xxvidsx.com/?vid=87&ad=0&site=
@@ -936,8 +963,6 @@ $removeparam=dclid
 @@||insurancexblog.blogspot.com/?utm_source=$removeparam=utm_source
 ! https://github.com/AdguardTeam/AdguardFilters/issues/85160
 @@||gizmodo.com/embed/comments/$removeparam
-! fix redirect: http://turkdebrid.site/api1/?page=create&ads=zshort.io
-@@||toptechtalk.xyz/?utm_source=$removeparam=utm_source
 ! kotaku.com - "See all replies" button broken
 @@||kotaku.com/embed/comments$removeparam
 ! https://github.com/AdguardTeam/AdguardFilters/issues/78392
