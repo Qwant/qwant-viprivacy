@@ -84,7 +84,7 @@
     "message": "We recommend that you choose Qwant as your default search engine. If you have change your mind"
   },
   "onboarding_step_alert_permission_description_cta": {
-    "message": "request the permissions."
+    "message": "request the permissions"
   },
   "onboarding_step_alert_permission_title": {
     "message": "You have refused the required browser permissions."

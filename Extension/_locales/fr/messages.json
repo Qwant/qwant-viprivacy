@@ -84,7 +84,7 @@
     "message": "Nous vous conseillons alors de choisir Qwant uniquement comme moteur de recherche par défaut. Si vous avez changé d'avis"
   },
   "onboarding_step_alert_permission_description_cta": {
-    "message": "modifier les autorisations."
+    "message": "modifier les autorisations"
   },
   "onboarding_step_alert_permission_title": {
     "message": "Vous avez refusé les autorisation du navigateur."

@@ -5,13 +5,18 @@ import Styles from './AlertPermission.module.scss';
 
 export function AlertPermission({ onClose, onRequestPermissions }) {
     return (
-        <Alert type="error" fixed className={Styles.AlertPermission} onClose={onClose}>
+        <Alert
+            type="error"
+            fixed
+            className={Styles.AlertPermission}
+            onClose={onClose}
+        >
             <Text typo="body-2" bold>
                 {t('onboarding_step_alert_permission_title')}
             </Text>
             <Text typo="body-2">
                 {t('onboarding_step_alert_permission_description')}
-                {' '}
+                {', '}
                 <div
                     role="button"
                     tabIndex={0}
@@ -21,6 +26,7 @@ export function AlertPermission({ onClose, onRequestPermissions }) {
                 >
                     {t('onboarding_step_alert_permission_description_cta')}
                 </div>
+                .
             </Text>
         </Alert>
     );
