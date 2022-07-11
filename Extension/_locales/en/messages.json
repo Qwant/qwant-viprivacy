@@ -246,7 +246,7 @@
     "message": "Disabled"
   },
   "protection_level_disabled_description": {
-    "message": "The browsing protection is disabled, Qwant remains your default search engine."
+    "message": "The browsing protection is disabled."
   },
   "protection_level_standard": {
     "message": "Standard"

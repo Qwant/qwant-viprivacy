@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { observer } from 'mobx-react';
 
 import {
-    Box, Button, Stack, Text,
+    Box, Button, Stack, Text, Flex,
 } from '@qwant/qwant-ponents';
 import { RiDeleteBinLine as IconTrash, RiLineChartLine as IconChart } from 'react-icons/ri';
 import { t } from '~src/common/translators/reactTranslator';
@@ -75,28 +75,31 @@ const GlobalStatsView = observer(({ store }) => {
     }
 
     return (
-        <Stack gap="s">
-            <Text typo="heading-5" bold color="primary" as="h1">
-                {t('global_stats')}
-            </Text>
+        <Flex column between takeAvailableSpace style={{ height: 'calc(100vh - 72px)' }}>
 
-            <Stack gap="s" horizontal nowrap>
-                <Tile
-                    icon={IconShield}
-                    label={t('popup_stats_trackers')}
-                    value={formatCounter(store.totalBlocked)}
-                    color="purple"
-                />
-                <Tile
-                    icon={IconTime}
-                    label={t('popup_stats_time_saved')}
-                    value={annoyanceTime}
-                    color="purple"
-                />
+            <Stack gap="s">
+                <Text typo="heading-5" bold color="primary" as="h1">
+                    {t('global_stats')}
+                </Text>
+
+                <Stack gap="s" horizontal nowrap>
+                    <Tile
+                        icon={IconShield}
+                        label={t('popup_stats_trackers')}
+                        value={formatCounter(store.totalBlocked)}
+                        color="purple"
+                    />
+                    <Tile
+                        icon={IconTime}
+                        label={t('popup_stats_time_saved')}
+                        value={annoyanceTime}
+                        color="purple"
+                    />
+                </Stack>
+                <div style={{ minHeight: 212 }}>
+                    <Table list={list} />
+                </div>
             </Stack>
-            <div style={{ minHeight: 212 }}>
-                <Table list={list} />
-            </div>
 
             <Stack gap="xs">
                 <ActionButton type="danger" onClick={toggleShowDisableConfirm}>
@@ -108,7 +111,7 @@ const GlobalStatsView = observer(({ store }) => {
                     <span>{t('delete')}</span>
                 </ActionButton>
             </Stack>
-        </Stack>
+        </Flex>
     );
 });
 

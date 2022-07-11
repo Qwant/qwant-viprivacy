@@ -12,7 +12,7 @@ import { getModuleReplacements } from './module-replacements';
 const config = getEnvConf(process.env.BUILD_ENV);
 
 const BACKGROUND_PATH = path.resolve(__dirname, '../../Extension/pages/background');
-const OPTIONS_PATH = path.resolve(__dirname, '../../Extension/pages/options');
+// const OPTIONS_PATH = path.resolve(__dirname, '../../Extension/pages/options');
 const POPUP_PATH = path.resolve(__dirname, '../../Extension/pages/popup');
 // const FILTERING_LOG_PATH = path.resolve(__dirname, '../../Extension/pages/filtering-log');
 // const FILTER_DOWNLOAD_PATH = path.resolve(__dirname, '../../Extension/pages/filter-download');
@@ -46,15 +46,15 @@ export const genCommonConfig = (browserConfig) => {
                 import: BACKGROUND_PATH,
                 runtime: false,
             },
-            'pages/options': {
-                import: OPTIONS_PATH,
-                dependOn: [
-                    'vendors/react',
-                    'vendors/mobx',
-                    'vendors/xstate',
-                    // 'shared/editor',
-                ],
-            },
+            // 'pages/options': {
+            //     import: OPTIONS_PATH,
+            //     dependOn: [
+            //         'vendors/react',
+            //         'vendors/mobx',
+            //         'vendors/xstate',
+            //         // 'shared/editor',
+            //     ],
+            // },
             'pages/popup': {
                 import: POPUP_PATH,
                 dependOn: [
@@ -257,12 +257,12 @@ export const genCommonConfig = (browserConfig) => {
                 filename: 'pages/background.html',
                 chunks: ['pages/background'],
             }),
-            new HtmlWebpackPlugin({
-                ...htmlTemplatePluginCommonOptions,
-                template: path.join(OPTIONS_PATH, 'index.html'),
-                filename: 'pages/options.html',
-                chunks: ['vendors/react', 'vendors/mobx', 'vendors/xstate', 'shared/editor', 'pages/options'],
-            }),
+            // new HtmlWebpackPlugin({
+            //     ...htmlTemplatePluginCommonOptions,
+            //     template: path.join(OPTIONS_PATH, 'index.html'),
+            //     filename: 'pages/options.html',
+            //     chunks: ['vendors/react', 'vendors/mobx', 'vendors/xstate', 'shared/editor', 'pages/options'],
+            // }),
             new HtmlWebpackPlugin({
                 ...htmlTemplatePluginCommonOptions,
                 template: path.join(POPUP_PATH, 'index.html'),

@@ -70,8 +70,8 @@ export const Popup = observer(() => {
 
     return (
         <ErrorBoundary>
+            <PopupHeader />
             <Box p="s" className={Styles.Popup}>
-                <PopupHeader />
                 <PopupRoutes />
             </Box>
         </ErrorBoundary>

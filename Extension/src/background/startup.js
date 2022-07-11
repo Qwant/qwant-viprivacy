@@ -23,7 +23,6 @@ import { filteringLog } from './filter/filtering-log';
 import { uiService } from './ui-service';
 import { application } from './application';
 import { getQwantSettings } from '../common/qwant-settings';
-import { browser } from './extension-api/browser';
 import { settingsProvider } from './settings/settings-provider';
 import { settings } from './settings/user-settings';
 import { apm } from './apm';
@@ -64,12 +63,6 @@ export const startup = async function () {
         });
 
         // Set uninstall page url
-        try {
-            const uninstallUrl = backgroundPage.i18n.getMessage('uninstall_url');
-            await browser.runtime.setUninstallURL(uninstallUrl);
-        } catch (e) {
-            log.error(e);
-        }
 
         allowlist.init();
         filteringLog.init();

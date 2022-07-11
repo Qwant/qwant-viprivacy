@@ -246,7 +246,7 @@
     "message": "Désactivé"
   },
   "protection_level_disabled_description": {
-    "message": "La navigation protégée est désactivée, votre moteur de recherche par défaut reste Qwant."
+    "message": "La navigation protégée est désactivée."
   },
   "protection_level_standard": {
     "message": "Standard"

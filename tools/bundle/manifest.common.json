@@ -9,9 +9,7 @@
     "16": "assets/icons/green-16.png",
     "128": "assets/icons/green-128.png"
   },
-  "omnibox": {
-    "keyword": "q"
-  },
+
   "browser_action": {
     "default_icon": {
       "19": "assets/icons/green-19.png",
@@ -26,7 +24,6 @@
   },
   "content_scripts": [
     {
-      "run_at": "document_start",
       "matches": [
         "https://*.qwant.com/*"
       ],
@@ -35,7 +32,6 @@
       ]
     }
   ],
-  "minimum_chrome_version": "79.0",
   "web_accessible_resources": [
     "/web-accessible-resources/*"
   ]

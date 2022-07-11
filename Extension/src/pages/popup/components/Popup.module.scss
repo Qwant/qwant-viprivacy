@@ -1,5 +1,5 @@
 body {
-    min-height: unset !important;
+  min-height: unset !important;
 }
 
 .Popup {
@@ -26,6 +26,19 @@ body {
   transition: color .3s;
 
   &:hover {
-    color: var(--action-blue-300)
+    color: var(--action-blue-300);
+  }
+}
+
+
+.MainHeaderMobile {
+  background-color: var(--action-blue-300);
+}
+
+.BackButtonMobile {
+  cursor: pointer;
+
+  &:hover {
+    color: var(--grey-000);
   }
 }
