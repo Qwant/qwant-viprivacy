@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { observer } from 'mobx-react';
 
 import {
-    Box, Button, Stack, Text,
+    Flex, Box, Button, Stack, Text,
 } from '@qwant/qwant-ponents';
 import { RiDeleteBinLine as IconTrash, RiLineChartLine as IconChart } from 'react-icons/ri';
 import { t } from '~src/common/translators/reactTranslator';
@@ -16,6 +16,7 @@ import { formatAnnoyanceTime, formatCounter } from '../../helpers';
 import { IconShield, IconTime } from '../shared/Icons';
 import { useKonamiCode } from './useKonami';
 import { ActionButton } from './ActionButton/ActionButton';
+import Styles from './GlobalStatsView.module.scss';
 
 const LIST_SIZE = 5;
 
@@ -115,7 +116,7 @@ const GlobalStatsView = observer(({ store }) => {
 function EmptyView({ justEnabled }) {
     return (
         <>
-            <Stack gap="xxs" mb="xxl4">
+            <Stack gap="xxs">
                 <Text typo="heading-5" bold color="primary" as="h1">
                     {t('global_stats')}
                 </Text>
@@ -124,9 +125,9 @@ function EmptyView({ justEnabled }) {
                         ? 'global_stats_enabled_success' : 'global_stats_empty')}
                 </Text>
             </Stack>
-            <Box mt="xxl7">
+            <Flex p="s" column alignCenter center className={Styles.EmptyState}>
                 <img src={emptyStatsImage} alt="" />
-            </Box>
+            </Flex>
         </>
     );
 }
@@ -134,7 +135,7 @@ function EmptyView({ justEnabled }) {
 function DisabledView({ onEnable }) {
     return (
         <>
-            <Stack gap="xxs" mb="xxl4">
+            <Stack gap="xxs">
                 <Text typo="heading-5" bold color="primary" as="h1">
                     {t('global_stats')}
                 </Text>
@@ -142,13 +143,15 @@ function DisabledView({ onEnable }) {
                     {t('global_stats_disabled')}
                 </Text>
             </Stack>
-            <Box mb="xl">
-                <img src={disabledStatsImage} alt="" />
-            </Box>
-            <Button variant="primary-black" full onClick={onEnable}>
-                <IconChart />
-                {t('global_stats_enable')}
-            </Button>
+            <Flex p="s" column alignCenter center className={Styles.EmptyState}>
+                <Box mb="xl">
+                    <img src={disabledStatsImage} alt="" />
+                </Box>
+                <Button variant="primary-black" full onClick={onEnable}>
+                    <IconChart />
+                    {t('global_stats_enable')}
+                </Button>
+            </Flex>
         </>
     );
 }

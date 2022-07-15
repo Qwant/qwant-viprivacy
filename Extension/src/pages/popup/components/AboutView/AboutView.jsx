@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-    Box, Checkbox, Flex, IconExternalLink, Stack, Text,
+    Checkbox, Flex, IconExternalLink, Stack, Text,
 } from '@qwant/qwant-ponents';
 import { t } from '~src/common/translators/reactTranslator';
 import { openTabHandler } from '~src/pages/popup/helpers';
@@ -43,51 +43,52 @@ export const AboutView = observer(({ settingsStore }) => {
     };
 
     return (
-        <Stack gap="s">
-            <Stack gap="xxs">
-                <Text typo="heading-5" bold color="primary" as="h1">
-                    {t('popup_about_title')}
-                </Text>
+        <>
+            <Stack gap="s">
+                <Stack gap="xxs">
+                    <Text typo="heading-5" bold color="primary" as="h1">
+                        {t('popup_about_title')}
+                    </Text>
+                </Stack>
+
+                <ThinCard className={Styles.AboutViewLinks}>
+                    {links.map((link) => (
+                        <Text key={link.url} typo="body-2" color="primary" raw>
+                            <Flex
+                                px="s"
+                                py="xs"
+                                alignCenter
+                                between
+                                as="button"
+                                onClick={openTabHandler(t(link.url))}
+                            >
+                                {t(link.text)}
+                                <IconExternalLink />
+                            </Flex>
+                        </Text>
+                    ))}
+                </ThinCard>
+
+                <Checkbox
+                    id="privacy-toggle"
+                    onChange={toggleTelemetry}
+                    checked={!disableCollectHit}
+                    className={Styles.AboutViewCheckbox}
+                    label={(
+                        <Text typo="caption-1" color="secondary">
+                            {t('popup_settings_telemetry_label')}
+                            {' '}
+                            <a href={telemetryUrl} onClick={telemetryRedirect}>
+                                {t('popup_settings_telemetry_learn_more')}
+                            </a>
+                        </Text>
+                    )}
+                />
+
             </Stack>
-
-            <ThinCard className={Styles.AboutViewLinks}>
-                {links.map((link) => (
-                    <Text key={link.url} typo="body-2" color="primary" raw>
-                        <Flex
-                            px="s"
-                            py="xs"
-                            alignCenter
-                            between
-                            as="button"
-                            onClick={openTabHandler(t(link.url))}
-                        >
-                            {t(link.text)}
-                            <IconExternalLink />
-                        </Flex>
-                    </Text>
-                ))}
-            </ThinCard>
-
-            <Checkbox
-                id="privacy-toggle"
-                onChange={toggleTelemetry}
-                checked={!disableCollectHit}
-                className={Styles.AboutViewCheckbox}
-                label={(
-                    <Text typo="caption-1" color="secondary">
-                        {t('popup_settings_telemetry_label')}
-                        {' '}
-                        <a href={telemetryUrl} onClick={telemetryRedirect}>
-                            {t('popup_settings_telemetry_learn_more')}
-                        </a>
-                    </Text>
-                )}
-            />
-
-            <Box mt="xl2">
+            <Flex p="s" column alignCenter center className={Styles.Image}>
                 <img src={imageIllustration} alt="" />
-            </Box>
-
-        </Stack>
+            </Flex>
+        </>
     );
 });

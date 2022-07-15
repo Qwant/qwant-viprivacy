@@ -2,7 +2,7 @@
   width: 100%;
 }
 
-.AboutViewLinks button + button {
+.AboutViewLinks button+button {
   border-top: 1px solid var(--grey-100);
 }
 
@@ -10,7 +10,11 @@
   align-items: flex-start;
 }
 
-.AboutViewCheckbox a{
+.AboutViewCheckbox a {
   color: var(--primary);
   text-decoration: underline;
+}
+
+.Image {
+  min-height: calc(100% - 190px);
 }
