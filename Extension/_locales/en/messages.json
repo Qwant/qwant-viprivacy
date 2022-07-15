@@ -180,7 +180,7 @@
     "message": "Information"
   },
   "popup_main_nbr_blocked_elements_domain": {
-    "message": "on <b>%domain%</b>."
+    "message": "on <b>%domain%</b>"
   },
   "popup_main_problem_disable_protection": {
     "message": "A problem on this site ? Try to deactivate."
