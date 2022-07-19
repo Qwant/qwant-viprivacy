@@ -3,14 +3,15 @@ import { Card, Stack, Text } from '@qwant/qwant-ponents';
 import { t } from '~src/common/translators/reactTranslator';
 import Styles from './UpsellMobile.module.scss';
 import QRCode from '../assets/qr-code.png';
+import UpsellMobileIllustration from '../assets/upsell-mobile.png';
 
 import { ButtonDlApp } from './ButtonDlApp';
 
 export function UpsellMobile() {
     return (
-        <Card className={Styles.UpsellMobile} p="xl">
+        <Card className={Styles.UpsellMobile} pr="xl">
             <div className={Styles.LeftImage}>
-                <img src="https://place-hold.it/196x196" alt="" />
+                <img src={UpsellMobileIllustration} width="196" height="196" alt="" />
             </div>
             <Stack gap="m">
                 <Text typo="heading-5" color="primary" bold>
