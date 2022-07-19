@@ -1,0 +1,31 @@
+body {
+    min-height: unset !important;
+}
+
+.Popup {
+  width: 360px;
+  height: 472px;
+}
+
+.PopupBack {
+  gap: var(--spacing-xs);
+
+  svg {
+    transition: transform .3s;
+    width: 24px;
+    height: 24px;
+  }
+
+  &:hover svg {
+    transform: translateX(calc(var(--spacing-xxs) * -1));
+  }
+}
+
+.PopupSearch {
+  color: var(--grey-000);
+  transition: color .3s;
+
+  &:hover {
+    color: var(--action-blue-300)
+  }
+}

@@ -9,6 +9,7 @@ export const defaultSettings = {
     'general-settings': {
         'allow-acceptable-ads': true,
         'show-blocked-ads-count': !settings.defaultProperties[settings.DISABLE_SHOW_PAGE_STATS],
+        'show-global-stats': settings.defaultProperties[settings.SHOW_GLOBAL_STATS],
         'autodetect-filters': !settings.defaultProperties[settings.DISABLE_DETECT_FILTERS],
         'safebrowsing-enabled': !settings.defaultProperties[settings.DISABLE_SAFEBROWSING],
         'filters-update-period': settings.DEFAULT_FILTERS_UPDATE_PERIOD,

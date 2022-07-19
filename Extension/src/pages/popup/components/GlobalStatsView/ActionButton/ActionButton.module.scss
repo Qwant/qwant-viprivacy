@@ -1,0 +1,18 @@
+.ActionButton {
+  border-radius: 8px;
+  border: 1px solid var(--grey-200);
+  text-align: center;
+  min-height: 36px;
+  width: 100%;
+}
+
+.ActionButton svg,
+.ActionButton img {
+  width: 16px;
+  height: 16px;
+  margin-right: var(--spacing-xxs);
+}
+
+.ActionButtonDanger {
+  color: var(--red-500) !important;
+}

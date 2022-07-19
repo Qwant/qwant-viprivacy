@@ -12,7 +12,7 @@ import punycode from 'punycode/';
 
 import { messenger } from '../../services/messenger';
 import { POPUP_STATES, TIME_RANGES } from '../constants';
-import { reactTranslator } from '../../../common/translators/reactTranslator';
+import { t } from '../../../common/translators/reactTranslator';
 import { MESSAGE_TYPES } from '../../../common/constants';
 
 // Do not allow property change outside of store actions
@@ -189,7 +189,7 @@ class PopupStore {
         }
 
         if (messageKey) {
-            return reactTranslator.getMessage(messageKey);
+            return t(messageKey);
         }
 
         return null;
@@ -370,6 +370,25 @@ class PopupStore {
             return null;
         }
         return this.settings.values[this.settings.names.PROTECTION_LEVEL];
+    }
+
+    @computed
+    get showGlobalStats() {
+        return this.settings.values[this.settings.names.SHOW_GLOBAL_STATS];
+    }
+
+    @action
+    async setShowGlobalStats(value) {
+        await messenger.changeUserSetting(this.settings.names.SHOW_GLOBAL_STATS, value);
+        this.onSettingUpdated(this.settings.names.SHOW_GLOBAL_STATS, value);
+    }
+
+    @action
+    async deleteBlockedDomains() {
+        this.totalBlocked = 0;
+        this.blockedDomains = [];
+        await messenger.sendMessage(MESSAGE_TYPES.DELETE_BLOCKED_DOMAINS);
+        return null;
     }
 }
 

@@ -1,0 +1,25 @@
+.LeftImage {
+  margin-left: -24px;
+  margin-top: -24px;
+  margin-bottom: -24px;
+  overflow: hidden;
+}
+
+.UpsellMobile {
+  display: grid;
+  gap: var(--spacing-xl);
+  align-items: center;
+  grid-template-columns: 196px 1fr 108px;
+  overflow: hidden;
+  border: 2px solid var(--grey-800);
+  border-radius: 8px;
+  background: var(--action-blue-300);
+  min-height: 196px;
+}
+
+.UpsellMobileQRCode {
+  width: 108px;
+  border: 2px solid var(--grey-900);
+  border-radius: 8px;
+  background-color: var(--grey-000);
+}

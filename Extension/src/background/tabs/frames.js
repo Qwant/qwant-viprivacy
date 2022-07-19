@@ -302,6 +302,9 @@ export const frames = (function () {
      * @returns  updated count of blocked requests
      */
     const updateBlockedAdsCount = function (tab, blocked) {
+        if (!settings.showGlobalStats()) {
+            return 0;
+        }
         pageStats.updateTotalBlocked(blocked);
 
         blocked = (tabsApi.getTabMetadata(tab.tabId, 'blocked') || 0) + blocked;
@@ -311,10 +314,18 @@ export const frames = (function () {
     };
 
     const updateTotalRequestCount = () => {
-        pageStats.updateTotalRequests(1);
+        if (!settings.showGlobalStats()) {
+            pageStats.updateTotalRequests(0);
+        } else {
+            pageStats.updateTotalRequests(1);
+        }
     };
 
     const updateBlockedDomains = ({ tab, details }) => {
+        if (!settings.showGlobalStats()) {
+            return {};
+        }
+
         const domains = tabsApi.getTabMetadata(tab.tabId, 'blocked-domains-tab') || {};
 
         // is group Annoyances or tag purpose:annoyances or tag purpose:cookies

@@ -144,6 +144,18 @@ export const pageStats = (function () {
         pageStatsHolder.save();
     };
 
+    const deleteBlockedDomains = () => {
+        // Is this bit necessary or can we just call resetStats ?
+        pageStatsHolder.stats.totalBlocked = 0;
+        pageStatsHolder.stats.blockedDomains = {
+            total: {
+                domains: {},
+            },
+        };
+        pageStatsHolder.save();
+        resetStats();
+    };
+
     /**
    * Resets tab stats
    */
@@ -188,15 +200,6 @@ export const pageStats = (function () {
 
         return blockedGroup;
     };
-
-    // const createStatsDataItem = function (type, blocked) {
-    //    const result = {};
-    //    if (type) {
-    //        result[type] = blocked;
-    //    }
-    //    result[TOTAL_GROUP.groupId] = blocked;
-    //    return result;
-    // };
 
     const pruneBlockedDomainsStats = (stats) => {
         const MAX_DOMAINS_COUNT = 30;
@@ -452,5 +455,6 @@ export const pageStats = (function () {
         getAnnoyanceCountTotal,
         getTotalRequests,
         updateTotalRequests,
+        deleteBlockedDomains,
     };
 })();

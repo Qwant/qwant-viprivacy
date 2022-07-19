@@ -2,21 +2,16 @@ import React from 'react';
 import { observer } from 'mobx-react';
 import { useMachine } from '@xstate/react';
 
-import { Header } from './components/Header';
-
+import { apm } from '~src/background/apm';
+import { browser } from '~src/background/extension-api/browser';
+import { MESSAGE_TYPES, NOTIFIER_TYPES } from '~src/common/constants';
+import { hasAllOptionalPermissions, requestOptionalPermissions } from '~src/background/utils/optional-permissions';
 import { Steps } from './components/Steps';
 import { Events, stateMachine, States } from './stateMachine';
 
-import { apm } from '../../../background/apm';
 import { rootStore } from '../stores/RootStore';
 import { messenger } from '../../services/messenger';
-
-import { browser } from '../../../background/extension-api/browser';
-import { MESSAGE_TYPES, NOTIFIER_TYPES } from '../../../common/constants';
-import { hasAllOptionalPermissions, requestOptionalPermissions } from '../../../background/utils/optional-permissions';
-
-import '../../popup/components/Popup/main.css';
-import './styles.css';
+import { urls } from '../../helpers';
 
 export const OnboardingPage = observer(() => {
     const [state, send] = useMachine(stateMachine);
@@ -78,6 +73,7 @@ export const OnboardingPage = observer(() => {
                             break;
                         }
                         default: {
+                            // eslint-disable-next-line no-console
                             console.log('Undefined message type:', type);
                             break;
                         }
@@ -172,13 +168,13 @@ export const OnboardingPage = observer(() => {
         } else if (state.value === States.THANK_YOU) {
             setLoading(true);
             await messenger.applyQwantSettings(protectionLevel);
-            browser.tabs.create({ active: true, url: 'https://qwant.com' });
+            browser.tabs.create({ active: true, url: urls.qwant() });
         } else if (state.value === States.PERMISSIONS_REJECTED) {
             const tab = await browser.tabs.getCurrent();
             if (tab.id) {
                 browser.tabs.update(tab.id, {
                     active: true,
-                    url: 'https://qwant.com',
+                    url: urls.qwant(),
                 });
             }
         } else {
@@ -194,22 +190,32 @@ export const OnboardingPage = observer(() => {
         send(Events.PREVIOUS);
     };
 
+    const onAlertRequestPermissions = async () => {
+        const transaction = window?.apm?.startTransaction('options-button-forward-alert-permission');
+        send(Events.DISMISS_ALERT);
+        send(Events.ENABLE_PROTECTION);
+        const nextState = send(Events.NEXT);
+        if (nextState.value === States.REQUEST_PERMISSIONS) {
+            await onRequestPermissions();
+        }
+        if (transaction) {
+            transaction.result = 'success';
+            transaction.end();
+        }
+    };
+
     return (
-        <div>
-            <Header />
-
-            <Steps
-                send={send}
-                state={state}
-                isLoading={isLoading}
-                protectionLevel={protectionLevel}
-                updateProtectionLevel={updateProtectionLevel}
-                disableCollectHit={disableCollectHit}
-                updateTelemetry={updateTelemetry}
-                onForward={onForward}
-                onBack={onBack}
-            />
-
-        </div>
+        <Steps
+            send={send}
+            state={state}
+            isLoading={isLoading}
+            protectionLevel={protectionLevel}
+            updateProtectionLevel={updateProtectionLevel}
+            disableCollectHit={disableCollectHit}
+            updateTelemetry={updateTelemetry}
+            onForward={onForward}
+            onBack={onBack}
+            onAlertRequestPermissions={onAlertRequestPermissions}
+        />
     );
 });

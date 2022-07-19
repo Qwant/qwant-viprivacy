@@ -1,6 +1,6 @@
 import { interpret, Machine } from 'xstate';
 
-import { log } from '../../../../common/log';
+import { log } from '~src/common/log';
 
 export const STATES = {
     IDLE: 'idle',
