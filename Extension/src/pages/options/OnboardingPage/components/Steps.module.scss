@@ -1,4 +1,4 @@
-body{
+body {
   min-height: unset !important;
 }
 
@@ -21,7 +21,8 @@ body{
     display: block;
   }
 
-  img, svg {
+  img,
+  svg {
     display: block;
     width: 186px;
     height: 24px;
@@ -38,11 +39,11 @@ body{
   justify-content: center;
   align-items: center;
 
-  & > *:first-child {
+  &>*:first-child {
     justify-self: flex-start;
   }
 
-  & > *:last-child {
+  &>*:last-child {
     justify-self: flex-end;
   }
 }
@@ -51,7 +52,7 @@ body{
   gap: var(--spacing-xs);
 }
 
-.StepsIndicators > * {
+.StepsIndicators>* {
   transition: .3s;
   border: 2px solid var(--grey-400);
   width: 8px;
@@ -59,13 +60,13 @@ body{
   border-radius: 8px;
 }
 
-.StepsIndicators > [aria-current] {
+.StepsIndicators>[aria-current] {
   border-color: var(--grey-900);
   background-color: var(--grey-900);
 }
 
 .StepTelemetryCard {
-  border-color: var(--grey-400)!important;
+  border-color: var(--grey-400) !important;
 }
 
 .StepWithImage {
@@ -77,6 +78,14 @@ body{
   position: absolute;
   right: 0;
   top: 50%;
+  transform: translateY(-50%);
+}
+
+.StepWithImage video {
+  top: 50%;
+  width: 300px;
+  position: absolute;
+  right: var(--spacing-xl);
   transform: translateY(-50%);
 }
 

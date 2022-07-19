@@ -1,13 +1,18 @@
+/* eslint-disable jsx-a11y/media-has-caption */
 import React, { useMemo } from 'react';
 import { Box, Stack, Text } from '@qwant/qwant-ponents';
 import { t } from '~src/common/translators/reactTranslator';
 import { OrderedList } from '~src/pages/common/components/List/OrderedList';
 import { browserUtils } from '~src/background/utils/browser-utils';
+import { backgroundPage } from '~src/background/extension-api/background-page';
 import { CheckList } from '~src/pages/common/components/List/CheckList';
 import imageUrl from './assets/illustration-telemetry.png';
+import videoUrlFR from './assets/pin_extension_fr.webm';
+import videoUrlEN from './assets/pin_extension_en.webm';
 import Styles from './Steps.module.scss';
 
 const showTutorial = !browserUtils.isFirefoxBrowser();
+const videoUrl = backgroundPage.app.getLocale() === 'fr' ? videoUrlFR : videoUrlEN;
 
 export const StepThanks = () => {
     return (
@@ -18,7 +23,16 @@ export const StepThanks = () => {
                 </Text>
                 {showTutorial ? <ExtensionPinTutorial /> : <ExtensionFeatures />}
             </Stack>
-            <img src={imageUrl} alt="" width="336" height="354" />
+            {showTutorial && (
+                <video autoPlay muted loop>
+                    <source
+                        src={videoUrl}
+                        type="video/webm"
+                    />
+                </video>
+            )}
+            {!showTutorial && <img src={imageUrl} alt="" width="336" height="354" />}
+
         </Box>
     );
 };

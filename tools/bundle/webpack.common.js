@@ -235,7 +235,7 @@ export const genCommonConfig = (browserConfig) => {
                     test: /\.(woff|woff2|eot|ttf|otf)$/,
                     type: 'asset/resource',
                 }, {
-                    test: /\.(png|jpe?g|gif)$/i,
+                    test: /\.(png|jpe?g|gif|webm)$/i,
                     use: [
                         {
                             loader: 'file-loader',
