@@ -7,12 +7,25 @@ import { browserUtils } from '~src/background/utils/browser-utils';
 import { backgroundPage } from '~src/background/extension-api/background-page';
 import { CheckList } from '~src/pages/common/components/List/CheckList';
 import imageUrl from './assets/illustration-telemetry.png';
-import videoUrlFR from './assets/pin_extension_fr.webm';
-import videoUrlEN from './assets/pin_extension_en.webm';
+
+import videoUrlChromeFR from './assets/pin_extension_chrome_fr.webm';
+import videoUrlChromeEN from './assets/pin_extension_chrome_en.webm';
+
+import videoUrlEdgeFR from './assets/pin_extension_edge_fr.webm';
+import videoUrlEdgeEN from './assets/pin_extension_edge_en.webm';
+
 import Styles from './Steps.module.scss';
 
 const showTutorial = !browserUtils.isFirefoxBrowser();
-const videoUrl = backgroundPage.app.getLocale() === 'fr' ? videoUrlFR : videoUrlEN;
+
+const videoUrl = (() => {
+    const locale = backgroundPage.app.getLocale();
+    const isEdge = browserUtils.isEdgeBrowser() || browserUtils.isEdgeChromiumBrowser();
+    if (isEdge) {
+        return locale === 'fr' ? videoUrlEdgeFR : videoUrlEdgeEN;
+    }
+    return locale === 'fr' ? videoUrlChromeFR : videoUrlChromeEN;
+})();
 
 export const StepThanks = () => {
     return (

@@ -9,6 +9,8 @@ import { BUILD_PATH, ENVS } from '../constants';
 import { getEnvConf, updateLocalesMSGName } from '../helpers';
 import { getModuleReplacements } from './module-replacements';
 
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+
 const config = getEnvConf(process.env.BUILD_ENV);
 
 const BACKGROUND_PATH = path.resolve(__dirname, '../../Extension/pages/background');
@@ -246,6 +248,7 @@ export const genCommonConfig = (browserConfig) => {
         },
 
         plugins: [
+            new BundleAnalyzerPlugin(),
             new CleanWebpackPlugin(),
             ...getModuleReplacements(browserConfig),
             new HtmlWebpackPlugin({
