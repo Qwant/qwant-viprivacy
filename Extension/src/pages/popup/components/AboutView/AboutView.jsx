@@ -24,7 +24,7 @@ const links = [
 const telemetryUrl = t('popup_settings_telemetry_learn_more_link');
 const telemetryRedirect = openTabHandler(telemetryUrl);
 
-export const AboutView = observer(({ settingsStore }) => {
+const AboutView = observer(({ settingsStore }) => {
     const { settings } = settingsStore;
     const key = settings?.names?.DISABLE_COLLECT_HITS;
     const disableCollectHit = key ? settings?.values[key] || false : false;
@@ -92,3 +92,5 @@ export const AboutView = observer(({ settingsStore }) => {
         </>
     );
 });
+
+export default AboutView;

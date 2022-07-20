@@ -54,6 +54,7 @@ export const genCommonConfig = (browserConfig) => {
                     'vendors/react',
                     'vendors/mobx',
                     'vendors/xstate',
+                    'vendors/react-icons',
                     // 'shared/editor',
                 ],
             },
@@ -62,6 +63,7 @@ export const genCommonConfig = (browserConfig) => {
                 dependOn: [
                     'vendors/react',
                     'vendors/mobx',
+                    'vendors/react-icons',
                 ],
             },
             // 'pages/filtering-log': {
@@ -117,6 +119,7 @@ export const genCommonConfig = (browserConfig) => {
             //    ],
             // },
             'vendors/react': ['react', 'react-dom'],
+            'vendors/react-icons': ['react-icons', 'react-icons/ri'],
             'vendors/mobx': ['mobx'],
             'vendors/xstate': ['xstate'],
         },
@@ -248,7 +251,7 @@ export const genCommonConfig = (browserConfig) => {
         },
 
         plugins: [
-            new BundleAnalyzerPlugin(),
+            new BundleAnalyzerPlugin({ analyzerMode: 'disabled', reportFilename: `../report-${browserConfig.browser}.html` }),
             new CleanWebpackPlugin(),
             ...getModuleReplacements(browserConfig),
             new HtmlWebpackPlugin({
@@ -264,13 +267,13 @@ export const genCommonConfig = (browserConfig) => {
                 ...htmlTemplatePluginCommonOptions,
                 template: path.join(OPTIONS_PATH, 'index.html'),
                 filename: 'pages/options.html',
-                chunks: ['vendors/react', 'vendors/mobx', 'vendors/xstate', 'shared/editor', 'pages/options'],
+                chunks: ['vendors/react', 'vendors/react-icons', 'vendors/mobx', 'vendors/xstate', 'pages/options'],
             }),
             new HtmlWebpackPlugin({
                 ...htmlTemplatePluginCommonOptions,
                 template: path.join(POPUP_PATH, 'index.html'),
                 filename: 'pages/popup.html',
-                chunks: ['vendors/react', 'vendors/mobx', 'pages/popup'],
+                chunks: ['vendors/react', 'vendors/react-icons', 'vendors/mobx', 'pages/popup'],
             }),
             // new HtmlWebpackPlugin({
             //     ...htmlTemplatePluginCommonOptions,

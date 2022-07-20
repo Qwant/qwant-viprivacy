@@ -8,7 +8,7 @@ import { browser } from '~src/background/extension-api/browser';
 import { hasAllOptionalPermissions } from '~src/background/utils/optional-permissions';
 import { Stack } from '@qwant/qwant-ponents';
 import { MainLinks } from '~src/pages/popup/components/MainLinks/MainLinks';
-import { LoadingView } from './LoadingView/LoadingView';
+import { LoadingView } from '../LoadingView/LoadingView';
 import { GlobalStats } from './GlobalStats/GlobalStats';
 import { PermissionsMissing } from './PermissionsMissing/PermissionMissing';
 import { ProtectionLevel } from './ProtectionLevel/ProtectionLevel';
