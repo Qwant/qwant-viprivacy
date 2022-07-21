@@ -38,14 +38,10 @@ export const StepThanks = () => {
             </Stack>
             {showTutorial && (
                 <video autoPlay muted loop>
-                    <source
-                        src={videoUrl}
-                        type="video/webm"
-                    />
+                    <source src={videoUrl} type="video/webm" />
                 </video>
             )}
             {!showTutorial && <img src={imageUrl} alt="" width="336" height="354" />}
-
         </Box>
     );
 };
@@ -74,7 +70,12 @@ function ExtensionPinTutorial() {
 }
 
 function ExtensionFeatures() {
-    const features = useMemo(() => t('onboarding_step_thank_you_features').split(';').map((v) => v.trim()), []);
+    const features = useMemo(
+        () => t('onboarding_step_thank_you_features')
+            .split(';')
+            .map((v) => v.trim()),
+        [],
+    );
     return (
         <CheckList>
             {features.map((feature) => (
