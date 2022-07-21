@@ -108,7 +108,7 @@ function StepsNavigation({
                         onClick={onBack}
                         disabled={isLoading}
                         size="large"
-                        name={`btn-back_${state.value}`}
+                        name={`btn-back_${state}`}
                     >
                         {t('back')}
                     </Button>
@@ -131,9 +131,9 @@ function StepsNavigation({
                         onClick={onForward}
                         loading={isLoading}
                         size="large"
-                        name={`btn-forward_${state.value}`}
+                        name={`btn-forward_${state}`}
                     >
-                        <ButtonForwardText step={state.value} />
+                        <ButtonForwardText step={state} />
                     </Button>
                 )}
             </div>

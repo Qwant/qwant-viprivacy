@@ -47,7 +47,7 @@ export const StepThanks = () => {
 };
 
 function ExtensionPinTutorial() {
-    const browser = browserUtils.isEdgeBrowser() ? 'edge' : 'chrome';
+    const browser = browserUtils.isEdgeBrowser() || browserUtils.isEdgeChromiumBrowser() ? 'edge' : 'chrome';
     return (
         <>
             <Text as="p" typo="body-1" color="primary">

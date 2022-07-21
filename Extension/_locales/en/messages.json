@@ -84,7 +84,7 @@
     "message": "We recommend that you choose Qwant as your default search engine. If you have change your mind"
   },
   "onboarding_step_alert_permission_description_cta": {
-    "message": "request the permissions."
+    "message": "request the permissions"
   },
   "onboarding_step_alert_permission_title": {
     "message": "You have refused the required browser permissions."
@@ -174,7 +174,7 @@
     "message": "Let's go!"
   },
   "onboarding_stepper_next_step": {
-    "message": "Next step"
+    "message": "Continue"
   },
   "popup_about_title": {
     "message": "Information"
@@ -225,7 +225,7 @@
     "message": "Blocked trackers"
   },
   "popup_stats_blocked_trackers": {
-    "message": "Blocked Trackers "
+    "message": "Blocked trackers "
   },
   "popup_stats_table_domains_label": {
     "message": "Domains"
