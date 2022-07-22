@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { observer } from 'mobx-react';
 
 import {
-    Flex, Box, Button, Stack, Text,
+    Box, Flex, Button, Stack, Text,
 } from '@qwant/qwant-ponents';
 import { RiDeleteBinLine as IconTrash, RiLineChartLine as IconChart } from 'react-icons/ri';
 import { t } from '~src/common/translators/reactTranslator';
@@ -79,9 +79,11 @@ const GlobalStatsView = observer(({ store }) => {
         <Flex column between takeAvailableSpace style={{ height: 'calc(100vh - 72px)' }}>
 
             <Stack gap="s">
-                <Text typo="heading-5" bold color="primary" as="h1">
-                    {t('global_stats')}
-                </Text>
+                <Box mb="l">
+                    <Text typo="heading-5" bold color="primary" as="h1">
+                        {t('global_stats')}
+                    </Text>
+                </Box>
 
                 <Stack gap="s" horizontal nowrap>
                     <Tile
@@ -146,15 +148,13 @@ function DisabledView({ onEnable }) {
                     {t('global_stats_disabled')}
                 </Text>
             </Stack>
-            <Flex p="s" column alignCenter center className={Styles.EmptyState}>
-                <Box mb="xl">
-                    <img src={disabledStatsImage} alt="" />
-                </Box>
-                <Button variant="primary-black" full onClick={onEnable}>
-                    <IconChart />
-                    {t('global_stats_enable')}
-                </Button>
+            <Flex p="s" column alignCenter center takeAvailableSpace className={Styles.EmptyState}>
+                <img src={disabledStatsImage} alt="" />
             </Flex>
+            <Button variant="primary-black" full onClick={onEnable}>
+                <IconChart />
+                {t('global_stats_enable')}
+            </Button>
         </>
     );
 }

@@ -4,7 +4,7 @@ import { observer } from 'mobx-react';
 import { messenger } from '~src/pages/services/messenger';
 import { t } from '~src/common/translators/reactTranslator';
 
-import { Stack, Text } from '@qwant/qwant-ponents';
+import { Box, Stack, Text } from '@qwant/qwant-ponents';
 import { CheckboxCard } from '~src/pages/common/components/CheckboxCard/CheckboxCard';
 
 const SettingsView = observer(({ store, settingsStore }) => {
@@ -50,9 +50,11 @@ const SettingsView = observer(({ store, settingsStore }) => {
 
     return (
         <Stack gap="s">
-            <Text typo="heading-5" bold color="primary" as="h1">
-                {t('protection_level')}
-            </Text>
+            <Box mb="l">
+                <Text typo="heading-4" bold color="primary" as="h1">
+                    {t('protection_level')}
+                </Text>
+            </Box>
             <Stack gap="xs">
                 {levels.map((level) => (
                     <CheckboxCard

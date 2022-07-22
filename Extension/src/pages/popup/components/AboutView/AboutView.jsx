@@ -45,8 +45,8 @@ const AboutView = observer(({ settingsStore }) => {
     return (
         <>
             <Stack gap="s">
-                <Stack gap="xxs">
-                    <Text typo="heading-5" bold color="primary" as="h1">
+                <Stack gap="xxs" mb="l">
+                    <Text typo="heading-4" bold color="primary" as="h1">
                         {t('popup_about_title')}
                     </Text>
                 </Stack>

@@ -1,18 +1,14 @@
 import {
     Flex, IconArrowLeftLine, Text, Box,
 } from '@qwant/qwant-ponents';
-import { RiArrowLeftSLine as IconArrowLeft } from 'react-icons/ri';
 import { t } from '~src/common/translators/reactTranslator';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { QwantLogo } from '~src/pages/common/components/QwantLogo/QwantLogo';
 import React from 'react';
-import browser from 'webextension-polyfill';
+import { browserUtils } from '~src/background/utils/browser-utils';
 import Styles from './Popup.module.scss';
 import { IconSearch } from './shared/Icons';
 import { urls } from '../../helpers';
-
-const { optional_permissions: optionalPermissions } = browser.runtime.getManifest();
-const isMobile = optionalPermissions == null || optionalPermissions?.length === 0;
 
 const MainHeaderMobile = () => {
     const onClose = () => {
@@ -20,12 +16,12 @@ const MainHeaderMobile = () => {
     };
 
     return (
-        <Box px="s" pt="xs" className={Styles.MainHeaderMobile}>
-            <Flex between alignCenter takeAvailableSpace>
-                <Text typo="heading-1" color="primary" onClick={onClose} className={Styles.BackButtonMobile}>
-                    <IconArrowLeft />
-                </Text>
-                <QwantLogo height={24} width={185} />
+        <Box px="s" py="xs">
+            <Flex alignCenter className={Styles.BackButtonMobile}>
+                <Box as="button" onClick={onClose}>
+                    <IconArrowLeftLine width={24} height={24} />
+                </Box>
+                <QwantLogo withSquare height={40} />
             </Flex>
         </Box>
     );
@@ -36,7 +32,7 @@ export function PopupHeader() {
     const location = useLocation();
 
     if (location.pathname === '/main') {
-        if (isMobile) {
+        if (browserUtils.isMobileQwant()) {
             return <MainHeaderMobile />;
         }
 

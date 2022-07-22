@@ -30,15 +30,12 @@ body {
   }
 }
 
-
-.MainHeaderMobile {
-  background-color: var(--action-blue-300);
-}
-
 .BackButtonMobile {
-  cursor: pointer;
+  gap: var(--spacing-s);
 
-  &:hover {
-    color: var(--grey-000);
+  svg:first-child {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
   }
 }
