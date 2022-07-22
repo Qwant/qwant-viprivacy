@@ -87,7 +87,7 @@
     "message": "modifier les autorisations"
   },
   "onboarding_step_alert_permission_title": {
-    "message": "Vous avez refusé les autorisation du navigateur."
+    "message": "Vous avez refusé les autorisations du navigateur."
   },
   "onboarding_step_mode_description": {
     "message": "Vous pourrez modifier votre choix à tout moment en cliquant sur l'icône"
@@ -174,7 +174,7 @@
     "message": "C'est parti !"
   },
   "onboarding_stepper_next_step": {
-    "message": "Étape suivante"
+    "message": "Continuer"
   },
   "popup_about_title": {
     "message": "Informations"

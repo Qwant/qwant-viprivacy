@@ -9,11 +9,13 @@ import { popupStore } from '../stores/PopupStore';
 import { rootStore } from '../../options/stores/RootStore';
 import { messenger } from '../../services/messenger';
 
-import Main from './MainView/MainView';
-import SettingsView from './SettingsView/SettingsView';
-import TabStatsView from './TabStatsView/TabStatsView';
-import GlobalStatsView from './GlobalStatsView/GlobalStatsView';
-import { AboutView } from './AboutView/AboutView';
+import { LoadingView } from './LoadingView/LoadingView';
+
+const Main = React.lazy(() => import('./MainView/MainView'));
+const SettingsView = React.lazy(() => import('./SettingsView/SettingsView'));
+const TabStatsView = React.lazy(() => import('./TabStatsView/TabStatsView'));
+const GlobalStatsView = React.lazy(() => import('./GlobalStatsView/GlobalStatsView'));
+const AboutView = React.lazy(() => import('./AboutView/AboutView'));
 
 export const PopupRoutes = observer(() => {
     const location = useLocation();
@@ -37,11 +39,46 @@ export const PopupRoutes = observer(() => {
 
     return (
         <Routes location={location}>
-            <Route path="main" element={<Main store={store} settingsStore={settingsStore} />} />
-            <Route path="settings" element={<SettingsView store={store} settingsStore={settingsStore} />} />
-            <Route path="tab-stats" element={<TabStatsView store={store} settingsStore={settingsStore} />} />
-            <Route path="global-stats" element={<GlobalStatsView store={store} settingsStore={settingsStore} />} />
-            <Route path="about" element={<AboutView settingsStore={settingsStore} />} />
+            <Route
+                path="main"
+                element={(
+                    <React.Suspense fallback={<LoadingView />}>
+                        <Main store={store} settingsStore={settingsStore} />
+                    </React.Suspense>
+                )}
+            />
+            <Route
+                path="settings"
+                element={(
+                    <React.Suspense fallback={<LoadingView />}>
+                        <SettingsView store={store} settingsStore={settingsStore} />
+                    </React.Suspense>
+                )}
+            />
+            <Route
+                path="tab-stats"
+                element={(
+                    <React.Suspense fallback={<LoadingView />}>
+                        <TabStatsView store={store} settingsStore={settingsStore} />
+                    </React.Suspense>
+                )}
+            />
+            <Route
+                path="global-stats"
+                element={(
+                    <React.Suspense fallback={<LoadingView />}>
+                        <GlobalStatsView store={store} settingsStore={settingsStore} />
+                    </React.Suspense>
+                )}
+            />
+            <Route
+                path="about"
+                element={(
+                    <React.Suspense fallback={<LoadingView />}>
+                        <AboutView store={store} settingsStore={settingsStore} />
+                    </React.Suspense>
+                )}
+            />
         </Routes>
     );
 });

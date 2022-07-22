@@ -1,5 +1,4 @@
-.LeftImage{
-  margin-left: -24px;
+.LeftImage {
   margin-top: -24px;
   margin-bottom: -24px;
   overflow: hidden;
@@ -13,13 +12,12 @@
   overflow: hidden;
   border: 2px solid var(--grey-800);
   border-radius: 8px;
-  background: var(--green-400);
+  background: var(--action-blue-300);
   min-height: 196px;
 }
 
 .UpsellMobileQRCode {
-  width: 108px;
-  border: 2px solid var(--grey-900);
+  width: 104px;
   border-radius: 8px;
   background-color: var(--grey-000);
 }

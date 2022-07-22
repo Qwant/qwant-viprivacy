@@ -33,7 +33,7 @@ export function CheckboxCard({
                     </Stack>
                 )}
                 <Text typo={compact ? 'body-1' : 'heading-5'} as="h2" bold>{title}</Text>
-                <Text typo="body-2" as="p" color="secondary">{description}</Text>
+                <Text typo="body-2" as="p" color="secondary" className={Styles.Description}>{description}</Text>
                 {selected && <IconCheck className={Styles.CheckboxCardActiveIcon} />}
             </Stack>
         </Card>

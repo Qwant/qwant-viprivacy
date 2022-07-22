@@ -1,13 +1,31 @@
+/* eslint-disable jsx-a11y/media-has-caption */
 import React, { useMemo } from 'react';
 import { Box, Stack, Text } from '@qwant/qwant-ponents';
 import { t } from '~src/common/translators/reactTranslator';
 import { OrderedList } from '~src/pages/common/components/List/OrderedList';
 import { browserUtils } from '~src/background/utils/browser-utils';
+import { backgroundPage } from '~src/background/extension-api/background-page';
 import { CheckList } from '~src/pages/common/components/List/CheckList';
 import imageUrl from './assets/illustration-telemetry.png';
+
+import videoUrlChromeFR from './assets/pin_extension_chrome_fr.webm';
+import videoUrlChromeEN from './assets/pin_extension_chrome_en.webm';
+
+import videoUrlEdgeFR from './assets/pin_extension_edge_fr.webm';
+import videoUrlEdgeEN from './assets/pin_extension_edge_en.webm';
+
 import Styles from './Steps.module.scss';
 
 const showTutorial = !browserUtils.isFirefoxBrowser();
+
+const videoUrl = (() => {
+    const locale = backgroundPage.app.getLocale();
+    const isEdge = browserUtils.isEdgeBrowser() || browserUtils.isEdgeChromiumBrowser();
+    if (isEdge) {
+        return locale === 'fr' ? videoUrlEdgeFR : videoUrlEdgeEN;
+    }
+    return locale === 'fr' ? videoUrlChromeFR : videoUrlChromeEN;
+})();
 
 export const StepThanks = () => {
     return (
@@ -18,13 +36,18 @@ export const StepThanks = () => {
                 </Text>
                 {showTutorial ? <ExtensionPinTutorial /> : <ExtensionFeatures />}
             </Stack>
-            <img src={imageUrl} alt="" width="336" height="354" />
+            {showTutorial && (
+                <video autoPlay muted loop>
+                    <source src={videoUrl} type="video/webm" />
+                </video>
+            )}
+            {!showTutorial && <img src={imageUrl} alt="" width="336" height="354" />}
         </Box>
     );
 };
 
 function ExtensionPinTutorial() {
-    const browser = browserUtils.isEdgeBrowser() ? 'edge' : 'chrome';
+    const browser = browserUtils.isEdgeBrowser() || browserUtils.isEdgeChromiumBrowser() ? 'edge' : 'chrome';
     return (
         <>
             <Text as="p" typo="body-1" color="primary">
@@ -47,7 +70,12 @@ function ExtensionPinTutorial() {
 }
 
 function ExtensionFeatures() {
-    const features = useMemo(() => t('onboarding_step_thank_you_features').split(';').map((v) => v.trim()), []);
+    const features = useMemo(
+        () => t('onboarding_step_thank_you_features')
+            .split(';')
+            .map((v) => v.trim()),
+        [],
+    );
     return (
         <CheckList>
             {features.map((feature) => (

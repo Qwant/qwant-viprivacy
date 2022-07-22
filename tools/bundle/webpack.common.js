@@ -9,6 +9,8 @@ import { BUILD_PATH, ENVS } from '../constants';
 import { getEnvConf, updateLocalesMSGName } from '../helpers';
 import { getModuleReplacements } from './module-replacements';
 
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+
 const config = getEnvConf(process.env.BUILD_ENV);
 
 const BACKGROUND_PATH = path.resolve(__dirname, '../../Extension/pages/background');
@@ -60,6 +62,7 @@ export const genCommonConfig = (browserConfig) => {
                 dependOn: [
                     'vendors/react',
                     'vendors/mobx',
+                    'vendors/react-icons',
                 ],
             },
             // 'pages/filtering-log': {
@@ -115,6 +118,7 @@ export const genCommonConfig = (browserConfig) => {
             //    ],
             // },
             'vendors/react': ['react', 'react-dom'],
+            'vendors/react-icons': ['react-icons', 'react-icons/ri'],
             'vendors/mobx': ['mobx'],
             'vendors/xstate': ['xstate'],
         },
@@ -235,7 +239,7 @@ export const genCommonConfig = (browserConfig) => {
                     test: /\.(woff|woff2|eot|ttf|otf)$/,
                     type: 'asset/resource',
                 }, {
-                    test: /\.(png|jpe?g|gif)$/i,
+                    test: /\.(png|jpe?g|gif|webm)$/i,
                     use: [
                         {
                             loader: 'file-loader',
@@ -246,6 +250,7 @@ export const genCommonConfig = (browserConfig) => {
         },
 
         plugins: [
+            new BundleAnalyzerPlugin({ analyzerMode: 'disabled', reportFilename: `../report-${browserConfig.browser}.html` }),
             new CleanWebpackPlugin(),
             ...getModuleReplacements(browserConfig),
             new HtmlWebpackPlugin({
@@ -267,7 +272,7 @@ export const genCommonConfig = (browserConfig) => {
                 ...htmlTemplatePluginCommonOptions,
                 template: path.join(POPUP_PATH, 'index.html'),
                 filename: 'pages/popup.html',
-                chunks: ['vendors/react', 'vendors/mobx', 'pages/popup'],
+                chunks: ['vendors/react', 'vendors/react-icons', 'vendors/mobx', 'pages/popup'],
             }),
             // new HtmlWebpackPlugin({
             //     ...htmlTemplatePluginCommonOptions,

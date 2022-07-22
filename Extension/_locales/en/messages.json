@@ -120,7 +120,7 @@
     "message": "Browse safely with Qwant VIPrivacy"
   },
   "onboarding_step_telemetry_checkbox_label": {
-    "message": "Anonymously share usage statistics and error reports"
+    "message": "Send anonymous usage statistics and error reports"
   },
   "onboarding_step_telemetry_description": {
     "message": "Share your feedback anonymously to help us improve your protection."
@@ -135,7 +135,7 @@
     "message": "Pin Qwant VIPrivacy"
   },
   "onboarding_step_thank_you_chrome_2_description": {
-    "message": "On your first search, select « Keep » when Chrome prompts you."
+    "message": "On your first search, select « Keep it » when Chrome prompts you."
   },
   "onboarding_step_thank_you_chrome_2_title": {
     "message": "Make sure you keep Qwant as your default search engine."
@@ -144,7 +144,7 @@
     "message": "Now, "
   },
   "onboarding_step_thank_you_edge_1_description": {
-    "message": "In the « Extension »  menu, then « Manage extensions »"
+    "message": "In the « Extension »  menu, then « Manage Extensions »"
   },
   "onboarding_step_thank_you_edge_1_title": {
     "message": "Enable Qwant VIPrivacy"
@@ -174,13 +174,13 @@
     "message": "Let's go!"
   },
   "onboarding_stepper_next_step": {
-    "message": "Next step"
+    "message": "Continue"
   },
   "popup_about_title": {
     "message": "Information"
   },
   "popup_main_nbr_blocked_elements_domain": {
-    "message": "on <b>%domain%</b>."
+    "message": "on <b>%domain%</b>"
   },
   "popup_main_problem_disable_protection": {
     "message": "A problem on this site ? Try to deactivate."
@@ -225,7 +225,7 @@
     "message": "Blocked trackers"
   },
   "popup_stats_blocked_trackers": {
-    "message": "Blocked Trackers "
+    "message": "Blocked trackers "
   },
   "popup_stats_table_domains_label": {
     "message": "Domains"

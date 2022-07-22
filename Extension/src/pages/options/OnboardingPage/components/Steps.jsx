@@ -43,9 +43,9 @@ export const Steps = ({
                 />
             )}
             <Box mt="xl" mb={isFinal ? 's' : 'xl'} className={Styles.Steps}>
-                <Flex alignCenter between className={Styles.StepsHeader} px="xl" py="s">
+                <Flex alignCenter between className={Styles.StepsHeader} pt="s" pb="xl">
                     <a name="qwant-logo-link" href={urls.qwant()} target="_blank" rel="noreferrer">
-                        <QwantLogo />
+                        <QwantLogo withSquare />
                     </a>
                     <Button
                         variant="primary-black"
@@ -108,7 +108,7 @@ function StepsNavigation({
                         onClick={onBack}
                         disabled={isLoading}
                         size="large"
-                        name={`btn-back_${state.value}`}
+                        name={`btn-back_${state}`}
                     >
                         {t('back')}
                     </Button>
@@ -131,9 +131,9 @@ function StepsNavigation({
                         onClick={onForward}
                         loading={isLoading}
                         size="large"
-                        name={`btn-forward_${state.value}`}
+                        name={`btn-forward_${state}`}
                     >
-                        <ButtonForwardText step={state.value} />
+                        <ButtonForwardText step={state} />
                     </Button>
                 )}
             </div>
