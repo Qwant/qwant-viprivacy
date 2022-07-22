@@ -1,7 +1,7 @@
 .CheckboxCard {
   text-align: left;
   border-color: var(--grey-200);
-  overflow: hidden!important;
+  overflow: hidden !important;
 }
 
 .CheckboxCardHeader {
@@ -18,7 +18,7 @@
 
 .CheckboxCardActive {
   background-color: var(--green-100) !important;
-  border-color: var(--grey-900)!important;
+  border-color: var(--grey-900) !important;
 }
 
 .CheckboxCardActive .CheckboxCardHeader {
@@ -37,9 +37,10 @@
 // Compact mode
 // =============
 .CheckboxCardCompact {
-  border-width: 1px!important;
+  border-width: 1px !important;
 }
-.CheckboxCardCompact .CheckboxCardBody{
+
+.CheckboxCardCompact .CheckboxCardBody {
   padding-right: 44px;
 }
 
@@ -48,4 +49,9 @@
   height: 20px;
   top: var(--spacing-s);
   right: var(--spacing-s);
+}
+
+
+.Description {
+  min-height: 36px;
 }

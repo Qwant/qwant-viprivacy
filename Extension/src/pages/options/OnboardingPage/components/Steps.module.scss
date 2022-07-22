@@ -9,14 +9,9 @@ body {
 
 .Steps {
   overflow: hidden;
-  border: 2px solid var(--grey-800);
-  border-radius: 8px;
 }
 
 .StepsHeader {
-  background-color: var(--action-blue-300);
-  border-bottom: 2px solid var(--grey-800);
-
   a {
     display: block;
   }
@@ -24,13 +19,14 @@ body {
   img,
   svg {
     display: block;
-    width: 186px;
-    height: 24px;
+    height: 40px;
   }
 }
 
 .StepsBody {
   min-height: 354px;
+  border: 2px solid var(--grey-800);
+  border-radius: 8px;
 }
 
 .StepsFooter {
