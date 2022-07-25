@@ -2,10 +2,12 @@ import React from 'react';
 import { observer } from 'mobx-react';
 
 import { t } from '~src/common/translators/reactTranslator';
+import { browserUtils } from '~src/background/utils/browser-utils';
 import { Flex, Stack, Text } from '@qwant/qwant-ponents';
 import { Table } from '../shared/Table/Table';
 import { Tile } from '../shared/Tile/Tile';
 import emptyStatsImage from './empty-stats.svg';
+import emptyStatsMobileImage from './empty-stats-mobile.svg';
 
 import { formatCounter, isWebURL } from '../../helpers';
 
@@ -31,13 +33,13 @@ const TabStatsView = observer(({ store }) => {
     return (
         <>
             <Stack gap="s">
-                <Stack gap="xxs">
-                    <Text typo="heading-5" bold color="primary" as="h1">
+                <Stack gap="xxs" mb="l">
+                    <Text typo="heading-4" bold color="primary" as="h1">
                         {t('popup_stats_blocked_elements')}
                     </Text>
                     <Text typo="body-2" color="primary">
                         {websiteUrl
-            && t('popup_main_nbr_blocked_elements_domain', { domain: websiteUrl })}
+                            && t('popup_main_nbr_blocked_elements_domain', { domain: websiteUrl })}
                     </Text>
                 </Stack>
 
@@ -58,7 +60,7 @@ const TabStatsView = observer(({ store }) => {
             </Stack>
             {list.length === 0 && (
                 <Flex p="s" column alignCenter center className={Styles.EmptyState}>
-                    <img src={emptyStatsImage} alt="" />
+                    <img src={browserUtils.isMobileQwant() ? emptyStatsMobileImage : emptyStatsImage} alt="" />
                 </Flex>
             )}
         </>

@@ -16,9 +16,9 @@ import { version } from '../../package.json';
 // We sign only beta build, because we do not publish it the AMO store
 export const xpi = async (browser) => {
     const buildEnv = process.env.BUILD_ENV;
-    if (buildEnv !== ENVS.BETA) {
-        throw new Error('Xpi is build only for beta');
-    }
+    // if (buildEnv !== ENVS.BETA) {
+    //     throw new Error('Xpi is build only for beta');
+    // }
 
     const envConf = getEnvConf(buildEnv);
     const browserConf = getBrowserConf(browser);
@@ -52,7 +52,7 @@ export const xpi = async (browser) => {
     const [downloadedXpi] = downloadedFiles;
     // Rename
     const basePath = path.dirname(downloadedXpi);
-    const xpiPath = path.join(basePath, 'firefox.xpi');
+    const xpiPath = path.join(basePath, 'firefox-android.xpi');
     await fs.rename(downloadedXpi, xpiPath);
 
     // Revert manifest to prev state
@@ -61,5 +61,5 @@ export const xpi = async (browser) => {
     // create update.json
     let updateJsonTemplate = (await fs.readFile(FIREFOX_UPDATE_TEMPLATE)).toString();
     updateJsonTemplate = updateJsonTemplate.replace(/\%VERSION\%/g, version);
-    await fs.writeFile(path.join(buildDir, 'update.json'), updateJsonTemplate);
+    await fs.writeFile(path.join(buildDir, 'update-android.json'), updateJsonTemplate);
 };

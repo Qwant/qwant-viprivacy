@@ -23,7 +23,6 @@ import { runtimeImpl } from '../../common/common-script';
 import { browser } from './browser';
 import { prefs } from '../prefs';
 import { log } from '../../common/log';
-import { getIconImageData } from './iconsCache';
 import { browserUtils } from '../utils/browser-utils';
 
 export const backgroundPage = (() => {
@@ -637,7 +636,7 @@ export const backgroundPage = (() => {
             }
 
             try {
-                await browser.browserAction.setIcon({ tabId, imageData: await getIconImageData(icon) });
+                await browser.browserAction.setIcon({ tabId, path: icon });
             } catch (e) {
                 log.debug(new Error(e.message));
                 return;

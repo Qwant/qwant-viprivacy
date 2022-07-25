@@ -6,7 +6,7 @@ import { copyExternals } from './bundle/copy-external';
 import { BROWSERS, ENVS } from './constants';
 import { getWebpackConfig } from './bundle/webpack-config';
 // import { crx } from './bundle/crx';
-import { xpi } from './bundle/xpi';
+// import { xpi } from './bundle/xpi';
 import { buildInfo } from './bundle/build-info';
 import { genValidators } from './genValidators';
 
@@ -39,9 +39,9 @@ const bundleEdge = () => {
 //    await crx(BROWSERS.CHROME);
 // };
 
-const bundleFirefoxXpi = async () => {
-    await xpi(BROWSERS.FIREFOX_STANDALONE);
-};
+// const bundleFirefoxXpi = async () => {
+//     await xpi(BROWSERS.FIREFOX_STANDALONE);
+// };
 
 const devPlan = [
     genValidators,
@@ -60,7 +60,7 @@ const betaPlan = [
     bundleChrome,
     // bundleChromeCrx,
     bundleFirefoxStandalone,
-    bundleFirefoxXpi,
+    // bundleFirefoxXpi,
     bundleEdge,
     // buildInfo,
 ];

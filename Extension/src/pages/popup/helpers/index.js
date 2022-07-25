@@ -44,4 +44,5 @@ export const formatCounter = (number = 0) => {
 export const openTabHandler = (url) => (e) => {
     e.preventDefault();
     browser.tabs.create({ url, active: true });
+    setTimeout(() => { window.close(); }, 1);
 };

@@ -1,5 +1,5 @@
 body {
-    min-height: unset !important;
+  min-height: unset !important;
 }
 
 .Popup {
@@ -26,6 +26,17 @@ body {
   transition: color .3s;
 
   &:hover {
-    color: var(--action-blue-300)
+    color: var(--action-blue-300);
+  }
+}
+
+.BackButtonMobile {
+  gap: var(--spacing-s);
+
+  svg:first-child {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    margin-top: var(--spacing-xs);
   }
 }

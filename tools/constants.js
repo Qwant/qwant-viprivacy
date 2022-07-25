@@ -8,9 +8,9 @@ export const ENVS = {
 };
 
 export const ENV_CONF = {
-    [ENVS.DEV]: { outputPath: 'dev', mode: 'development' },
-    [ENVS.BETA]: { outputPath: 'beta', mode: 'production' },
-    [ENVS.RELEASE]: { outputPath: 'release', mode: 'production' },
+    [ENVS.DEV]: { outputPath: 'dev-android', mode: 'development' },
+    [ENVS.BETA]: { outputPath: 'beta-android', mode: 'production' },
+    [ENVS.RELEASE]: { outputPath: 'release-android', mode: 'production' },
 };
 
 export const BROWSERS = {
@@ -55,9 +55,9 @@ export const BROWSERS_CONF = {
 };
 
 export const FIREFOX_APP_IDS_MAP = {
-    [ENVS.DEV]: 'qwant-vip-dev@qwant.com',
-    [ENVS.BETA]: 'qwant-vip-beta-2@qwant.com',
-    [ENVS.RELEASE]: 'qwantcomforfirefox@jetpack',
+    [ENVS.DEV]: 'qwant-vip-android-dev@qwant.com',
+    [ENVS.BETA]: 'qwant-vip-android-beta@qwant.com',
+    [ENVS.RELEASE]: 'qwant-vip-android@qwant.com',
 };
 
 export const BUILD_PATH = path.resolve(__dirname, '../build');

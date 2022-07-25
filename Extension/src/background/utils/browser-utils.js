@@ -164,6 +164,14 @@ export const browserUtils = (function () {
             return prefs.platform;
         },
 
+        isMobileQwant() {
+            const { optional_permissions: optionalPermissions } = browser.runtime.getManifest();
+            const noOptionalPermissions = optionalPermissions == null || optionalPermissions?.length === 0;
+
+            // TODO Add checks for mobile firefox
+            return noOptionalPermissions;
+        },
+
         /**
          * Finds header object by header name (case insensitive)
          * @param headers Headers collection

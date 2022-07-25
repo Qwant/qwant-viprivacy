@@ -92,7 +92,7 @@ export const settings = (() => {
 
                 defaults[settings.DISABLE_SHOW_ADGUARD_PROMO_INFO] = true;
                 defaults[settings.DISABLE_SAFEBROWSING] = true;
-                defaults[settings.DISABLE_COLLECT_HITS] = false;
+                defaults[settings.DISABLE_COLLECT_HITS] = true;
                 defaults[settings.SHOW_GLOBAL_STATS] = true;
                 defaults[settings.DEFAULT_ALLOWLIST_MODE] = true;
                 defaults[settings.ALLOWLIST_ENABLED] = true;
