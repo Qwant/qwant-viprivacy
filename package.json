@@ -25,9 +25,7 @@
     "increment": "yarn version --patch --no-git-tag-version",
     "prepare": "husky install",
     "lint-staged": "lint-staged",
-    "beta:ff:upload": "yarn beta:ff:upload:update && yarn beta:ff:upload:xpi",
-    "beta:ff:upload:update": "s3cmd put --acl-public ./build/beta/update.json s3://firefox-beta",
-    "beta:ff:upload:xpi": "s3cmd put --acl-public ./build/beta/firefox.xpi s3://firefox-beta --content-type application/x-xpinstall -m application/x-xpinstall"
+    "android:dev": "web-ext run -t firefox-android --source-dir=./build/dev-android/firefox-amo --firefox-apk=org.mozilla.firefox"
   },
   "lint-staged": {
     "*.{js,jsx}": [
