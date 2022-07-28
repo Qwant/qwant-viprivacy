@@ -10,9 +10,11 @@ import { cliLog } from '../cli-log';
 import {
     METADATA_DOWNLOAD_URL_FORMAT,
     FILTERS_DEST,
+    ADGUARD_FILTERS_IDS,
+    FILTER_DOWNLOAD_URL_FORMAT,
 } from '../constants';
 
-const CHECKSUM_PATTERN = /^\s*!\s*checksum[\s-:]+([\w\+/=]+).*[\r\n]+/i;
+const CHECKSUM_PATTERN = /^\s*!\s*checksum[\s-:]+([\w\+/=]+).*[\r\n]+/im;
 
 /**
  * Getting filters array
@@ -30,6 +32,15 @@ const getUrlsOfFiltersResources = (browser) => {
         file: 'filters.json',
     });
 
+    // eslint-disable-next-line no-restricted-syntax
+    for (const filterId of ADGUARD_FILTERS_IDS) {
+        filters.push({
+            url: FILTER_DOWNLOAD_URL_FORMAT.replace('%browser', browser).replace('%filter', filterId),
+            file: `filter_${filterId}.txt`,
+            validate: true,
+        });
+    }
+
     return [
         ...meta,
         ...filters,
@@ -45,7 +56,7 @@ const getUrlsOfFiltersResources = (browser) => {
  */
 const normalizeResponse = (response) => {
     const partOfResponse = response.substring(0, 200);
-    response = response.replace(partOfResponse.match(CHECKSUM_PATTERN)[0], '');
+    response = response.replace(partOfResponse.match(CHECKSUM_PATTERN)?.[0], '');
     response = response.replace(/\r/g, '');
     response = response.replace(/\n+/g, '\n');
     return response;
@@ -63,17 +74,20 @@ const validateChecksum = (url, body) => {
     const partOfResponse = body.substring(0, 200);
     const checksumMatch = partOfResponse.match(CHECKSUM_PATTERN);
 
-    if (!checksumMatch[1]) {
-        cliLog.error(`Filter rules from ${url.url} doesn't contain a checksum ${partOfResponse}`);
+    if (!checksumMatch?.[1]) {
+        cliLog.warningRed(`Filter rules from ${url.url} doesn't contain a checksum ${partOfResponse}`);
     }
 
     const bodyChecksum = crypto.createHash('md5').update(normalizeResponse(body)).digest('base64').replace(/=/g, '');
 
-    if (bodyChecksum !== checksumMatch[1]) {
-        cliLog.error(`Wrong checksum: found ${bodyChecksum}, expected ${checksumMatch[1]}`);
+    if (checksumMatch?.[1] && bodyChecksum !== checksumMatch[1]) {
+        cliLog.warningRed(`Wrong checksum: url=${url.url}`);
+        cliLog.warningRed(`Found ${bodyChecksum} - Expected ${checksumMatch[1]}`);
+        return false;
     }
 
     cliLog.info('Checksum is valid');
+    return true;
 };
 
 const downloadFilter = async (url, browser) => {
@@ -86,10 +100,18 @@ const downloadFilter = async (url, browser) => {
     const response = await axios.get(url.url, { responseType: 'arraybuffer' });
 
     if (url.validate) {
-        validateChecksum(url, response.data.toString());
+        if (!validateChecksum(url, response.data.toString())) {
+            cliLog.warning(`Skipped: Checksum not valid for url=${url.url}`);
+            return;
+        }
     }
 
-    await fs.promises.writeFile(path.join(filtersDir, url.file), response.data);
+    let body = response.data.toString();
+    if (url?.file?.endsWith('.json')) {
+        body = JSON.stringify(JSON.parse(body), null, 2);
+    }
+
+    await fs.promises.writeFile(path.join(filtersDir, url.file), body, { encoding: 'utf-8' });
 
     cliLog.info('Done');
 };
@@ -108,7 +130,7 @@ const startDownload = async (browser) => {
 };
 
 export const downloadFilters = async () => {
-    await startDownload('chromium');
-    await startDownload('edge');
+    // await startDownload('chromium');
+    // await startDownload('edge');
     await startDownload('firefox');
 };

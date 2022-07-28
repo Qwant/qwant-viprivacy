@@ -66,7 +66,7 @@ const betaPlan = [
     // bundleChrome,
     // bundleChromeCrx,
     bundleFirefoxStandalone,
-    bundleFirefoxXpi,
+    // bundleFirefoxXpi,
     // bundleEdge,
     // bundleAdguardApi,
     // buildInfo,
