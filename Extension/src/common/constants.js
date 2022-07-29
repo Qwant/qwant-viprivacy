@@ -171,11 +171,6 @@ export const NAVIGATION_TAGS = {
 };
 
 /**
- * Trusted tag for custom filters
- */
-export const TRUSTED_TAG = 'trusted';
-
-/**
  * Custom filters group display number
  *
  * @type {number}
@@ -188,9 +183,6 @@ export const CUSTOM_FILTERS_GROUP_DISPLAY_NUMBER = 99;
  * @type {number}
  */
 export const CUSTOM_FILTERS_START_ID = 1000;
-
-// Unnecessary characters that will be replaced
-export const WASTE_CHARACTERS = /[.*+?^${}()|[\]\\]/g;
 
 // Custom scrollbar width
 export const SCROLLBAR_WIDTH = 12;

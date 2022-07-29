@@ -12,7 +12,6 @@ import punycode from 'punycode/';
 
 import { messenger } from '../../services/messenger';
 import { POPUP_STATES, TIME_RANGES } from '../constants';
-import { t } from '../../../common/translators/reactTranslator';
 import { MESSAGE_TYPES } from '../../../common/constants';
 
 // Do not allow property change outside of store actions
@@ -77,12 +76,6 @@ class PopupStore {
     selectedTimeRange = TIME_RANGES.WEEK;
 
     @observable
-    selectedBlockedType = this.TOTAL_BLOCKED_GROUP_ID;
-
-    @observable
-    promoNotification = null;
-
-    @observable
     hasCustomRulesToReset = false;
 
     @observable
@@ -141,7 +134,7 @@ class PopupStore {
             // options
             this.showInfoAboutFullVersion = options.showInfoAboutFullVersion;
             this.isEdgeBrowser = options.isEdgeBrowser;
-            this.promoNotification = options.notification;
+            // this.promoNotification = options.notification;
             this.hasCustomRulesToReset = options.hasCustomRulesToReset;
 
             // stats
@@ -170,29 +163,6 @@ class PopupStore {
             return this.domainName ? punycode.toUnicode(this.domainName) : this.url;
         }
         return this.url;
-    }
-
-    @computed
-    get currentStatusMessage() {
-        let messageKey = '';
-
-        if (!this.applicationAvailable) {
-            messageKey = 'popup_site_filtering_state_secure_page';
-        } else if (!this.canAddRemoveRule) {
-            messageKey = 'popup_site_exception_information';
-        } else if (this.applicationFilteringDisabled) {
-            messageKey = 'popup_site_filtering_state_paused';
-        } else if (this.documentAllowlisted) {
-            messageKey = 'popup_site_filtering_state_disabled';
-        } else {
-            messageKey = 'popup_site_filtering_state_enabled';
-        }
-
-        if (messageKey) {
-            return t(messageKey);
-        }
-
-        return null;
     }
 
     @action
@@ -284,58 +254,9 @@ class PopupStore {
         }
     };
 
-    @computed
-    get statsDataByType() {
-        const { stats } = this;
-
-        if (!stats) {
-            return null;
-        }
-
-        const statsDataForCurrentRange = this.getDataByRange(stats, this.selectedTimeRange);
-
-        const { blockedGroups } = stats;
-
-        return blockedGroups
-            .slice()
-            .sort((groupA, groupB) => groupA.displayNumber - groupB.displayNumber)
-            .map((group) => {
-                const { groupId, groupName } = group;
-                const blocked = statsDataForCurrentRange[group.groupId];
-                return {
-                    groupId,
-                    blocked,
-                    groupName,
-                };
-            })
-            .filter((group) => group.blocked > 0 || group.groupId === this.TOTAL_BLOCKED_GROUP_ID);
-    }
-
-    @action
-    setSelectedBlockedType = (value) => {
-        this.selectedBlockedType = value;
-    };
-
     @action
     setSelectedTimeRange = (value) => {
         this.selectedTimeRange = value;
-    };
-
-    @action
-    closePromoNotification = async () => {
-        this.promoNotification = null;
-        await messenger.sendMessage(MESSAGE_TYPES.SET_NOTIFICATION_VIEWED, { withDelay: false });
-    };
-
-    @action
-    openPromoNotificationUrl = async () => {
-        let { url } = this.promoNotification;
-        url = `${url}&from=popup`;
-        runInAction(() => {
-            this.promoNotification = null;
-        });
-        await messenger.sendMessage(MESSAGE_TYPES.SET_NOTIFICATION_VIEWED, { withDelay: false });
-        await messenger.sendMessage('openTab', { url });
     };
 
     @action

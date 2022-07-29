@@ -22,7 +22,9 @@ export const PopupRoutes = observer(() => {
 
     const store = useContext(popupStore);
     const { settingsStore } = React.useContext(rootStore);
-    const { protectionLevel } = settingsStore;
+
+    const { getPopupData } = store;
+    const { protectionLevel, requestOptionsData } = settingsStore;
 
     useAsync(async () => {
         if (!protectionLevel) return;
@@ -33,9 +35,9 @@ export const PopupRoutes = observer(() => {
     }, [protectionLevel]);
 
     useAsyncEffect(async () => {
-        await store.getPopupData();
-        await settingsStore.requestOptionsData(true);
-    }, [settingsStore, store]);
+        await getPopupData();
+        await requestOptionsData(true);
+    }, [requestOptionsData, getPopupData]);
 
     return (
         <Routes location={location}>

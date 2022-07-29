@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/control-has-associated-label */
-/* eslint-disable jsx-a11y/anchor-has-content */
 import React, { useCallback } from 'react';
 import { t } from '~src/common/translators/reactTranslator';
 
@@ -8,24 +6,11 @@ import {
     Button, Flex, QwantSquaredLogo, Stack, Text,
 } from '@qwant/qwant-ponents';
 import { ThinCard } from '~src/pages/common/components/ThinCard/ThinCard';
-import { getParams } from '../../getParams';
 import { messenger } from '../../../services/messenger';
 
 import Styles from './AdBlocked.module.scss';
 
-export const AdBlocked = () => {
-    const { url } = getParams();
-
-    const handleGoBack = useCallback((e) => {
-        e.preventDefault();
-        window.history.back();
-    }, []);
-
-    const handleProceed = useCallback((e) => {
-        e.preventDefault();
-        messenger.sendMessage(MESSAGE_TYPES.ADD_URL_TO_TRUSTED, { url });
-    }, [url]);
-
+const AdBlocked = ({ url, onGoBack, onAddUrlToTrusted }) => {
     return (
         <div className={Styles.Wrapper}>
             <Stack gap="l" p="xl" pt="xxxs" className={Styles.AdBlockedBody}>
@@ -48,11 +33,11 @@ export const AdBlocked = () => {
                     </Text>
                 </Stack>
                 <Flex alignCenter between mt="xxl5">
-                    <Button variant="secondary-black" onClick={handleGoBack} size="large">
+                    <Button variant="secondary-black" onClick={onGoBack} size="large">
                         {t('back')}
                     </Button>
 
-                    <Button variant="primary-black" onClick={handleProceed} size="large">
+                    <Button variant="primary-black" onClick={onAddUrlToTrusted} size="large">
                         {t('blocking_pages_btn_proceed')}
                     </Button>
                 </Flex>
@@ -60,3 +45,32 @@ export const AdBlocked = () => {
         </div>
     );
 };
+
+const getParams = () => {
+    const urlSearchParams = new URLSearchParams(window.location.search);
+    return Object.fromEntries(urlSearchParams.entries());
+};
+
+const AdBlockedWrapper = () => {
+    const { url } = getParams();
+
+    const onGoBack = useCallback((e) => {
+        e.preventDefault();
+        window.history.back();
+    }, []);
+
+    const onAddUrlToTrusted = useCallback((e) => {
+        e.preventDefault();
+        messenger.sendMessage(MESSAGE_TYPES.ADD_URL_TO_TRUSTED, { url });
+    }, [url]);
+
+    return (
+        <AdBlocked
+            url={url}
+            onAddUrlToTrusted={onAddUrlToTrusted}
+            onGoBack={onGoBack}
+        />
+    );
+};
+
+export default AdBlockedWrapper;

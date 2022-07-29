@@ -12,22 +12,22 @@ import Styles from './ProtectionStatus.module.scss';
 import { isWebURL } from '../../../helpers';
 import { POPUP_STATES } from '../../../constants';
 
-const States = {
+const STATES = {
     DISABLED: 'disabled',
     ENABLED: 'enabled',
     ALLOWLISTED: 'unavailable',
 };
 
-const titles = {
-    [States.DISABLED]: 'popup_main_protection_disabled',
-    [States.ALLOWLISTED]: 'popup_main_protection_unavailable',
-    [States.ENABLED]: 'popup_stats_blocked_elements',
+const TITLES = {
+    [STATES.DISABLED]: 'popup_main_protection_disabled',
+    [STATES.ALLOWLISTED]: 'popup_main_protection_unavailable',
+    [STATES.ENABLED]: 'popup_stats_blocked_elements',
 };
 
-const colors = {
-    [States.DISABLED]: 'grey',
-    [States.ALLOWLISTED]: 'red',
-    [States.ENABLED]: 'green',
+const COLORS = {
+    [STATES.DISABLED]: 'grey',
+    [STATES.ALLOWLISTED]: 'red',
+    [STATES.ENABLED]: 'green',
 };
 
 const stopPropagation = (e) => e.stopPropagation();
@@ -41,7 +41,7 @@ export const ProtectionStatus = ({
     onClick,
 }) => {
     const isValidURL = isWebURL(currentSite);
-    // For unreachable site (chrome://), fake the state of the protection to prevent confusion for the user
+    // For unreachable URLs (example chrome://), fake the state of protection to avoid confusing users
     const [fakeEnable, setFakeEnable] = React.useState(() => {
         if (isValidURL) return popupState === POPUP_STATES.APPLICATION_ENABLED;
         return true;
@@ -56,11 +56,11 @@ export const ProtectionStatus = ({
     const switchersMap = {
         [POPUP_STATES.APPLICATION_ENABLED]: {
             handler: () => toggleAllowlisted(),
-            state: States.ENABLED,
+            state: STATES.ENABLED,
         },
         [POPUP_STATES.APPLICATION_FILTERING_DISABLED]: {
             handler: () => changeApplicationFilteringDisabled(false),
-            state: States.DISABLED,
+            state: STATES.DISABLED,
         },
         [POPUP_STATES.APPLICATION_UNAVAILABLE]: {
             handler: () => {
@@ -68,7 +68,7 @@ export const ProtectionStatus = ({
                     setFakeEnable((v) => !v);
                 }
             },
-            state: fakeEnable ? States.ENABLED : States.ALLOWLISTED,
+            state: fakeEnable ? STATES.ENABLED : STATES.ALLOWLISTED,
         },
         [POPUP_STATES.SITE_IN_EXCEPTION]: {
             handler: () => {
@@ -76,24 +76,24 @@ export const ProtectionStatus = ({
                     setFakeEnable((v) => !v);
                 }
             },
-            state: States.ENABLED,
+            state: STATES.ENABLED,
         },
         [POPUP_STATES.SITE_ALLOWLISTED]: {
             handler: () => toggleAllowlisted(),
-            state: States.ALLOWLISTED,
+            state: STATES.ALLOWLISTED,
         },
     };
 
     const { state } = switchersMap[popupState];
     const handleChange = switchersMap[popupState].handler;
-    const isDisabled = state === States.DISABLED;
-    const isEnabled = state === States.ENABLED || fakeEnable;
-    const showDomain = state !== States.DISABLED && isValidURL;
+    const isDisabled = state === STATES.DISABLED;
+    const isEnabled = state === STATES.ENABLED || fakeEnable;
+    const showDomain = state !== STATES.DISABLED && isValidURL;
     const showToggle = !isDisabled;
     const className = cx(
         Styles.ProtectionStatus,
         isDisabled && Styles.ProtectionStatusDisabled,
-        state === States.ALLOWLISTED && Styles.ProtectionStatusUnavailable,
+        state === STATES.ALLOWLISTED && Styles.ProtectionStatusUnavailable,
     );
     const handleClick = isEnabled ? onClick : null;
     const [animationParent] = useAutoAnimate();
@@ -109,7 +109,7 @@ export const ProtectionStatus = ({
             <ShieldCount
                 className={Styles.ProtectionStatusShield}
                 count={isEnabled ? totalBlockedTab : undefined}
-                color={colors[state]}
+                color={COLORS[state]}
             />
 
             {isEnabled && (
@@ -124,7 +124,7 @@ export const ProtectionStatus = ({
             <Stack gap="s" p="s" as={isEnabled ? 'button' : 'a'}>
                 <Stack gap="xxs">
                     <Text typo="heading-5" bold color="primary" center as="h1">
-                        {t(titles[state])}
+                        {t(TITLES[state])}
                     </Text>
                     {showDomain && (
                         <Text typo="body-2" color="primary" center as="h2">
@@ -144,7 +144,7 @@ export const ProtectionStatus = ({
                         <RiShieldCheckLine />
                         {t('popup_main_protection_enable')}
                     </Button>
-                ) }
+                )}
             </Stack>
 
             {showToggle && (
