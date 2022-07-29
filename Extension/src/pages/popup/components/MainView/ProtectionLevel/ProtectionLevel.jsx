@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { t } from '~src/common/translators/reactTranslator';
 import { ThinCardLink } from '~src/pages/popup/components/shared/ThinCardLink/ThinCardLink';
 

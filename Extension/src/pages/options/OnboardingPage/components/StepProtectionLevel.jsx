@@ -1,7 +1,9 @@
-import React from 'react';
 import { Box, Stack, Text } from '@qwant/qwant-ponents';
+import React from 'react';
+
 import { t } from '~src/common/translators/reactTranslator';
 import { CheckboxCard } from '~src/pages/common/components/CheckboxCard/CheckboxCard';
+
 import { QwantVIPrivacy } from './QwantVIPrivacy';
 import Styles from './Steps.module.scss';
 

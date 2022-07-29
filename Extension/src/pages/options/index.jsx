@@ -1,10 +1,11 @@
+import '@qwant/qwant-ponents/src/base.scss';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { OnboardingPage } from './OnboardingPage';
 
 import { i18n } from '../../common/translators/i18n';
 import { t } from '../../common/translators/reactTranslator';
-import '@qwant/qwant-ponents/src/base.scss';
+import { OnboardingPage } from './OnboardingPage';
 
 export const optionsPage = {
     init: () => {

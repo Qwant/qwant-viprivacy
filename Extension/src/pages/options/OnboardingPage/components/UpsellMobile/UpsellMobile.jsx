@@ -1,11 +1,12 @@
-import React from 'react';
 import { Card, Stack, Text } from '@qwant/qwant-ponents';
+import React from 'react';
+
 import { t } from '~src/common/translators/reactTranslator';
-import Styles from './UpsellMobile.module.scss';
+
 import QRCode from '../assets/qr-code.png';
 import UpsellMobileIllustration from '../assets/upsell-mobile.png';
-
 import { ButtonDlApp } from './ButtonDlApp';
+import Styles from './UpsellMobile.module.scss';
 
 export function UpsellMobile() {
     return (

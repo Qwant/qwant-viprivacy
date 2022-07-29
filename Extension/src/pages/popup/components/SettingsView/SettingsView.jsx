@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import { observer } from 'mobx-react';
-
-import { messenger } from '~src/pages/services/messenger';
-import { t } from '~src/common/translators/reactTranslator';
-
 import { Stack, Text } from '@qwant/qwant-ponents';
+import { observer } from 'mobx-react';
+import React, { useEffect, useState } from 'react';
+
+import { t } from '~src/common/translators/reactTranslator';
 import { CheckboxCard } from '~src/pages/common/components/CheckboxCard/CheckboxCard';
+import { messenger } from '~src/pages/services/messenger';
 
 const SettingsView = observer(({ store, settingsStore }) => {
     const { applicationFilteringDisabled } = store;

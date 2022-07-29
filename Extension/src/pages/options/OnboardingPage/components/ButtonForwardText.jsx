@@ -1,5 +1,5 @@
-import { States } from '~src/pages/options/OnboardingPage/stateMachine';
 import { t } from '~src/common/translators/reactTranslator';
+import { States } from '~src/pages/options/OnboardingPage/stateMachine';
 
 export const ButtonForwardText = ({ step }) => {
     switch (step) {

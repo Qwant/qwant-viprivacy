@@ -1,5 +1,5 @@
-import { useEffect, useRef } from 'react';
 import autoAnimate from '@formkit/auto-animate';
+import { useEffect, useRef } from 'react';
 /**
  * AutoAnimate hook for adding dead-simple transitions and animations to react.
  * @param options - Auto animate options or a plugin

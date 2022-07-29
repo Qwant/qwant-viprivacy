@@ -1,19 +1,18 @@
 /* eslint-disable jsx-a11y/media-has-caption */
-import React, { useMemo } from 'react';
 import { Box, Stack, Text } from '@qwant/qwant-ponents';
-import { t } from '~src/common/translators/reactTranslator';
-import { OrderedList } from '~src/pages/common/components/List/OrderedList';
-import { browserUtils } from '~src/background/utils/browser-utils';
+import React, { useMemo } from 'react';
+
 import { backgroundPage } from '~src/background/extension-api/background-page';
+import { browserUtils } from '~src/background/utils/browser-utils';
+import { t } from '~src/common/translators/reactTranslator';
 import { CheckList } from '~src/pages/common/components/List/CheckList';
+import { OrderedList } from '~src/pages/common/components/List/OrderedList';
+
 import imageUrl from './assets/illustration-telemetry.png';
-
-import videoUrlChromeFR from './assets/pin_extension_chrome_fr.webm';
 import videoUrlChromeEN from './assets/pin_extension_chrome_en.webm';
-
-import videoUrlEdgeFR from './assets/pin_extension_edge_fr.webm';
+import videoUrlChromeFR from './assets/pin_extension_chrome_fr.webm';
 import videoUrlEdgeEN from './assets/pin_extension_edge_en.webm';
-
+import videoUrlEdgeFR from './assets/pin_extension_edge_fr.webm';
 import Styles from './Steps.module.scss';
 
 const showTutorial = !browserUtils.isFirefoxBrowser();

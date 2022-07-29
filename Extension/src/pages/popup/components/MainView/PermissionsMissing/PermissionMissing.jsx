@@ -1,13 +1,13 @@
+import { Button, Stack, Text } from '@qwant/qwant-ponents';
 import React from 'react';
+import { RiShieldCheckLine } from 'react-icons/ri';
 
 import { t } from '~src/common/translators/reactTranslator';
-
-import { Button, Stack, Text } from '@qwant/qwant-ponents';
 import { CheckboxCard } from '~src/pages/common/components/CheckboxCard/CheckboxCard';
-import { MainLinks } from '~src/pages/popup/components/MainLinks/MainLinks';
 import { ThinCard } from '~src/pages/common/components/ThinCard/ThinCard';
+import { MainLinks } from '~src/pages/popup/components/MainLinks/MainLinks';
 import { ShieldCount } from '~src/pages/popup/components/MainView/ShieldCount/ShieldCount';
-import { RiShieldCheckLine } from 'react-icons/ri';
+
 import Styles from './PermissionMissing.module.scss';
 
 export const PermissionsMissing = ({

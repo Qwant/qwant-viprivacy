@@ -1,9 +1,11 @@
-import React from 'react';
 import {
     Box, Card, Stack, Text,
 } from '@qwant/qwant-ponents';
 import cx from 'classnames';
+import React from 'react';
+
 import { t } from '~src/common/translators/reactTranslator';
+
 import Styles from './CheckboxCard.module.scss';
 import { ReactComponent as IconCheck } from './icon-check.svg';
 

@@ -1,18 +1,18 @@
-import { createContext } from 'react';
-import browser from 'webextension-polyfill';
 import {
     action,
     computed,
     configure,
+    makeObservable,
     observable,
     runInAction,
-    makeObservable,
 } from 'mobx';
 import punycode from 'punycode/';
+import { createContext } from 'react';
+import browser from 'webextension-polyfill';
 
+import { MESSAGE_TYPES } from '../../../common/constants';
 import { messenger } from '../../services/messenger';
 import { POPUP_STATES, TIME_RANGES } from '../constants';
-import { MESSAGE_TYPES } from '../../../common/constants';
 
 // Do not allow property change outside of store actions
 configure({ enforceActions: 'observed' });

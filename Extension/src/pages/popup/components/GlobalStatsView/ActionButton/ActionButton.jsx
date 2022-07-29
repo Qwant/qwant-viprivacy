@@ -1,6 +1,7 @@
-import React from 'react';
 import { Flex, Text } from '@qwant/qwant-ponents';
 import cx from 'classnames';
+import React from 'react';
+
 import Styles from './ActionButton.module.scss';
 
 export function ActionButton({ children, type, ...props }) {

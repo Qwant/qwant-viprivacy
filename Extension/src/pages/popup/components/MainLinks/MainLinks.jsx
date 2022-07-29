@@ -1,11 +1,13 @@
-import React, { useMemo } from 'react';
-import { ThinCard } from '~src/pages/common/components/ThinCard/ThinCard';
-import { t } from '~src/common/translators/reactTranslator';
-import { useNavigate } from 'react-router-dom';
-import { RiLineChartLine as IconChart } from 'react-icons/ri';
 import {
-    Flex, IconInfoCircle, IconExternalLink, Text,
+    Flex, IconExternalLink, IconInfoCircle, Text,
 } from '@qwant/qwant-ponents';
+import React, { useMemo } from 'react';
+import { RiLineChartLine as IconChart } from 'react-icons/ri';
+import { useNavigate } from 'react-router-dom';
+
+import { t } from '~src/common/translators/reactTranslator';
+import { ThinCard } from '~src/pages/common/components/ThinCard/ThinCard';
+
 import Styles from './MainLinks.module.scss';
 
 export function MainLinks({ withStats }) {

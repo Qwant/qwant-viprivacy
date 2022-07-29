@@ -1,10 +1,10 @@
+import { Button, Flex } from '@qwant/qwant-ponents';
 import React from 'react';
 import BarLoader from 'react-spinners/BarLoader';
 
 import { browser } from '~src/background/extension-api/browser';
 import { t } from '~src/common/translators/reactTranslator';
 
-import { Button, Flex } from '@qwant/qwant-ponents';
 import Styles from './LoadingView.module.scss';
 
 export const LoadingView = () => {

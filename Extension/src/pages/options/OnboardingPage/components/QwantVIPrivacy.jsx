@@ -1,7 +1,8 @@
-import React from 'react';
 import {
     Box, Flex,
 } from '@qwant/qwant-ponents';
+import React from 'react';
+
 import { ReactComponent as IconQwantFavicon } from './assets/qwant-favicon.svg';
 
 export const QwantVIPrivacy = () => (

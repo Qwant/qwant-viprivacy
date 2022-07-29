@@ -1,17 +1,17 @@
-import React from 'react';
-import { observer } from 'mobx-react';
 import { useMachine } from '@xstate/react';
+import { observer } from 'mobx-react';
+import React from 'react';
 
 import { apm } from '~src/background/apm';
 import { browser } from '~src/background/extension-api/browser';
-import { MESSAGE_TYPES, NOTIFIER_TYPES } from '~src/common/constants';
 import { hasAllOptionalPermissions, requestOptionalPermissions } from '~src/background/utils/optional-permissions';
+import { MESSAGE_TYPES, NOTIFIER_TYPES } from '~src/common/constants';
+
+import { urls } from '../../helpers';
+import { messenger } from '../../services/messenger';
+import { rootStore } from '../stores/RootStore';
 import { Steps } from './components/Steps';
 import { Events, stateMachine, States } from './stateMachine';
-
-import { rootStore } from '../stores/RootStore';
-import { messenger } from '../../services/messenger';
-import { urls } from '../../helpers';
 
 export const OnboardingPage = observer(() => {
     const [state, send] = useMachine(stateMachine);

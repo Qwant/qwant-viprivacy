@@ -1,5 +1,5 @@
-import { createContext } from 'react';
 import { configure } from 'mobx';
+import { createContext } from 'react';
 
 import SettingsStore from './SettingsStore';
 

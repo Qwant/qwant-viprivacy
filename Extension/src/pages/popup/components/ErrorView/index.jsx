@@ -1,11 +1,12 @@
 /* eslint-disable max-len */
-import React from 'react';
-import { observer } from 'mobx-react';
-
 import './styles.css';
+
+import { Button } from '@qwant/qwant-ponents';
+import { observer } from 'mobx-react';
+import React from 'react';
+
 import { browser } from '~src/background/extension-api/browser';
 import { t } from '~src/common/translators/reactTranslator';
-import { Button } from '@qwant/qwant-ponents';
 
 const ErrorView = observer(({ error }) => {
     const onReload = () => {

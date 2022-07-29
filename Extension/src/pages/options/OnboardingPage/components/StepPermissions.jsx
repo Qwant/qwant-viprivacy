@@ -1,6 +1,8 @@
-import React from 'react';
 import { Box, Text } from '@qwant/qwant-ponents';
+import React from 'react';
+
 import { t } from '~src/common/translators/reactTranslator';
+
 import PermissionsRequestImage from './assets/permission-request.png';
 import Styles from './Steps.module.scss';
 

@@ -1,16 +1,18 @@
-import React, { useEffect } from 'react';
-import { t } from '~src/common/translators/reactTranslator';
 import {
     Button, Card, Flex, IconArrowRightSLine, Stack, Text,
 } from '@qwant/qwant-ponents';
 import cx from 'classnames';
-import { ShieldCount } from '~src/pages/popup/components/MainView/ShieldCount/ShieldCount';
-import ReactSwitch from 'react-switch';
+import React, { useEffect } from 'react';
 import { RiShieldCheckLine } from 'react-icons/ri';
+import ReactSwitch from 'react-switch';
+
+import { t } from '~src/common/translators/reactTranslator';
 import { useAutoAnimate } from '~src/pages/common/hooks/useAutoanimate';
-import Styles from './ProtectionStatus.module.scss';
-import { isWebURL } from '../../../helpers';
+import { ShieldCount } from '~src/pages/popup/components/MainView/ShieldCount/ShieldCount';
+
 import { POPUP_STATES } from '../../../constants';
+import { isWebURL } from '../../../helpers';
+import Styles from './ProtectionStatus.module.scss';
 
 const STATES = {
     DISABLED: 'disabled',

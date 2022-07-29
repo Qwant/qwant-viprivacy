@@ -1,6 +1,8 @@
-import React from 'react';
 import { Alert, Text } from '@qwant/qwant-ponents';
+import React from 'react';
+
 import { t } from '~src/common/translators/reactTranslator';
+
 import Styles from './AlertPermission.module.scss';
 
 export function AlertPermission({ onClose, onRequestPermissions }) {

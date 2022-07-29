@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { t } from '../../common/translators/reactTranslator';
 
+import { t } from '../../common/translators/reactTranslator';
 import AdBlocked from './components/AdBlocked/AdBlocked';
 
 export const adBlocked = {

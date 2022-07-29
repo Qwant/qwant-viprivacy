@@ -1,13 +1,13 @@
-import React, { useCallback } from 'react';
-import { t } from '~src/common/translators/reactTranslator';
-
-import { MESSAGE_TYPES } from '~src/common/constants';
 import {
     Button, Flex, QwantSquaredLogo, Stack, Text,
 } from '@qwant/qwant-ponents';
-import { ThinCard } from '~src/pages/common/components/ThinCard/ThinCard';
-import { messenger } from '../../../services/messenger';
+import React, { useCallback } from 'react';
 
+import { MESSAGE_TYPES } from '~src/common/constants';
+import { t } from '~src/common/translators/reactTranslator';
+import { ThinCard } from '~src/pages/common/components/ThinCard/ThinCard';
+
+import { messenger } from '../../../services/messenger';
 import Styles from './AdBlocked.module.scss';
 
 const AdBlocked = ({ url, onGoBack, onAddUrlToTrusted }) => {

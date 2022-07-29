@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { browser } from '~src/background/extension-api/browser';
+
 import androidSvgUrls from '../assets/android';
 import appleSvgUrl from '../assets/apple.svg';
 

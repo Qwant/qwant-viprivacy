@@ -1,21 +1,20 @@
+import { Box, Button, Flex } from '@qwant/qwant-ponents';
 import React, { useMemo } from 'react';
 
-import { Events, States } from '~src/pages/options/OnboardingPage/stateMachine';
-
 import { t } from '~src/common/translators/reactTranslator';
-
-import { Box, Button, Flex } from '@qwant/qwant-ponents';
 import { QwantLogo } from '~src/pages/common/components/QwantLogo/QwantLogo';
 import { UpsellMobile } from '~src/pages/options/OnboardingPage/components/UpsellMobile/UpsellMobile';
-import Styles from './Steps.module.scss';
+import { Events, States } from '~src/pages/options/OnboardingPage/stateMachine';
+
+import { urls } from '../../../helpers';
+import { AlertPermission } from './AlertPermission/AlertPermission';
 import { ButtonForwardText } from './ButtonForwardText';
 import { StepPermissions } from './StepPermissions';
-import { StepSelectMode } from './StepSelectMode';
 import { StepProtectionLevel } from './StepProtectionLevel';
+import Styles from './Steps.module.scss';
+import { StepSelectMode } from './StepSelectMode';
 import { StepTelemetry } from './StepTelemetry';
 import { StepThanks } from './StepThanks';
-import { AlertPermission } from './AlertPermission/AlertPermission';
-import { urls } from '../../../helpers';
 
 export const Steps = ({
     isLoading,

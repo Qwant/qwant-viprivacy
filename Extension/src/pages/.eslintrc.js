@@ -15,7 +15,7 @@ module.exports = {
         sourceType: 'module',
     },
     plugins: [
-        'react',
+        'react', 'simple-import-sort',
     ],
     rules: {
         'no-use-before-define': 'off',
@@ -39,5 +39,7 @@ module.exports = {
         'react/jsx-props-no-spreading': 'off',
         'func-names': ['error', 'as-needed'],
         'no-param-reassign': ['error', { props: false }],
+        'simple-import-sort/imports': 'error',
+        'simple-import-sort/exports': 'error',
     },
 };

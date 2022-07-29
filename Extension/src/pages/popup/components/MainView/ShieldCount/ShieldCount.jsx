@@ -1,6 +1,7 @@
-import React from 'react';
 import { Box, Text } from '@qwant/qwant-ponents';
 import cx from 'classnames';
+import React from 'react';
+
 import Styles from './ShieldCount.module.scss';
 
 export function ShieldCount({

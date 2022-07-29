@@ -1,6 +1,8 @@
-import React from 'react';
 import { Box, Text } from '@qwant/qwant-ponents';
+import React from 'react';
+
 import { ThinCard } from '~src/pages/common/components/ThinCard/ThinCard';
+
 import Styles from './Tile.module.scss';
 
 export const Tile = ({

@@ -1,21 +1,21 @@
 /* eslint-disable max-len */
-import React from 'react';
+import { Stack } from '@qwant/qwant-ponents';
 import { observer } from 'mobx-react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { MESSAGE_TYPES } from '~src/common/constants';
 import { browser } from '~src/background/extension-api/browser';
 import { hasAllOptionalPermissions } from '~src/background/utils/optional-permissions';
-import { Stack } from '@qwant/qwant-ponents';
+import { MESSAGE_TYPES } from '~src/common/constants';
 import { MainLinks } from '~src/pages/popup/components/MainLinks/MainLinks';
+
+import { messenger } from '../../../services/messenger';
 import { LoadingView } from '../LoadingView/LoadingView';
 import { GlobalStats } from './GlobalStats/GlobalStats';
+import Styles from './MainView.module.scss';
 import { PermissionsMissing } from './PermissionsMissing/PermissionMissing';
 import { ProtectionLevel } from './ProtectionLevel/ProtectionLevel';
 import { ProtectionStatus } from './ProtectionStatus/ProtectionStatus';
-
-import { messenger } from '../../../services/messenger';
-import Styles from './MainView.module.scss';
 
 const Main = observer(({ store, settingsStore }) => {
     const navigate = useNavigate();

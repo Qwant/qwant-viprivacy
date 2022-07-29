@@ -1,6 +1,7 @@
-import React from 'react';
 import { Stack } from '@qwant/qwant-ponents';
 import cx from 'classnames';
+import React from 'react';
+
 import Styles from './List.module.scss';
 
 /**

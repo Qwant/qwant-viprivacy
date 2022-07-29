@@ -15,10 +15,10 @@
  * along with Adguard Browser Extension. If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { contentPage } from '../content-script/content-script';
-import { MESSAGE_TYPES } from '../common/constants';
-
 import '../common/i18n'; // !!! DO NOT REMOVE, THIS MODULE HANDLES TRANSLATIONS
+
+import { MESSAGE_TYPES } from '../common/constants';
+import { contentPage } from '../content-script/content-script';
 
 export const init = () => {
     document.addEventListener('DOMContentLoaded', () => {

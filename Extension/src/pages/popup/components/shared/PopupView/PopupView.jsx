@@ -1,9 +1,11 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { t } from '~src/common/translators/reactTranslator';
 import {
     Box, Flex, IconArrowLeftLine, Text,
 } from '@qwant/qwant-ponents';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
+import { t } from '~src/common/translators/reactTranslator';
+
 import Styles from './PopupView.module.scss';
 
 export const PopupView = ({

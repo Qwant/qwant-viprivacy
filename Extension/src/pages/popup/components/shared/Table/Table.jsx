@@ -1,7 +1,9 @@
-import React from 'react';
-import { t } from '~src/common/translators/reactTranslator';
 import { Text } from '@qwant/qwant-ponents';
+import React from 'react';
+
+import { t } from '~src/common/translators/reactTranslator';
 import { ThinCard } from '~src/pages/common/components/ThinCard/ThinCard';
+
 import Styles from './Table.module.scss';
 
 export const Table = ({ list }) => {

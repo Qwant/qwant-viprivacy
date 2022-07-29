@@ -1,9 +1,11 @@
 import React, { useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import { t } from '~src/common/translators/reactTranslator';
 import { IconShield, IconTime } from '~src/pages/popup/components/shared/Icons';
-import { Tile } from '~src/pages/popup/components/shared/Tile/Tile';
 import { ThinCardLink } from '~src/pages/popup/components/shared/ThinCardLink/ThinCardLink';
-import { useNavigate } from 'react-router-dom';
+import { Tile } from '~src/pages/popup/components/shared/Tile/Tile';
+
 import { formatAnnoyanceTime, formatCounter } from '../../../helpers';
 import Styles from './GlobalStats.module.scss';
 

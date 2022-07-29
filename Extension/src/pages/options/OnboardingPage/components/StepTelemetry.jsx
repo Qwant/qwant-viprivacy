@@ -1,10 +1,12 @@
-import React from 'react';
 import {
     Box, Card, Flex, Stack, Switch, Text,
 } from '@qwant/qwant-ponents';
+import React from 'react';
+
 import { t } from '~src/common/translators/reactTranslator';
-import Styles from './Steps.module.scss';
+
 import imageUrl from './assets/illustration-telemetry.png';
+import Styles from './Steps.module.scss';
 
 export const StepTelemetry = ({
     onChange,

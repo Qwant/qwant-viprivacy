@@ -1,17 +1,18 @@
-import React from 'react';
+import { Box } from '@qwant/qwant-ponents';
 import { observer } from 'mobx-react';
-import { useErrorBoundary } from 'use-error-boundary';
+import React from 'react';
 import { useLocation } from 'react-router-dom';
+import { useErrorBoundary } from 'use-error-boundary';
 
 import { apm } from '~src/background/apm';
-import { Box } from '@qwant/qwant-ponents';
 import { PopupHeader } from '~src/pages/popup/components/PopupHeader';
-import { popupStore } from '../stores/PopupStore';
+
 import { rootStore } from '../../options/stores/RootStore';
 import { messenger } from '../../services/messenger';
+import { popupStore } from '../stores/PopupStore';
 import ErrorView from './ErrorView';
-import { PopupRoutes } from './PopupRoutes';
 import Styles from './Popup.module.scss';
+import { PopupRoutes } from './PopupRoutes';
 
 export const Popup = observer(() => {
     const { pathname } = useLocation();

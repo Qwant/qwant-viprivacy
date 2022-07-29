@@ -1,15 +1,14 @@
-import React from 'react';
+import { Flex, Stack, Text } from '@qwant/qwant-ponents';
 import { observer } from 'mobx-react';
+import React from 'react';
 
 import { t } from '~src/common/translators/reactTranslator';
-import { Flex, Stack, Text } from '@qwant/qwant-ponents';
+
+import { formatCounter, isWebURL } from '../../helpers';
+import { IconGlobe, IconShield } from '../shared/Icons';
 import { Table } from '../shared/Table/Table';
 import { Tile } from '../shared/Tile/Tile';
 import emptyStatsImage from './empty-stats.svg';
-
-import { formatCounter, isWebURL } from '../../helpers';
-
-import { IconGlobe, IconShield } from '../shared/Icons';
 import Styles from './TabStatsView.module.scss';
 
 const LIST_SIZE = 7;

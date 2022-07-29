@@ -1,7 +1,7 @@
+import './styles.css';
+
 import cx from 'classnames';
 import React from 'react';
-
-import './styles.css';
 
 export const Section = ({
     title, text, children, onClick, size = 'big', background = '#85d6ad',

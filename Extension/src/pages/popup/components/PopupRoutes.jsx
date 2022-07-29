@@ -1,14 +1,14 @@
-import React, { useContext } from 'react';
 import { observer } from 'mobx-react';
-import { Routes, Route, useLocation } from 'react-router-dom';
-
-import { useAsyncEffect } from '~src/pages/common/hooks/useAsyncEffect';
+import React, { useContext } from 'react';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import { useAsync } from 'react-use';
+
 import { hasAllOptionalPermissions } from '~src/background/utils/optional-permissions';
-import { popupStore } from '../stores/PopupStore';
+import { useAsyncEffect } from '~src/pages/common/hooks/useAsyncEffect';
+
 import { rootStore } from '../../options/stores/RootStore';
 import { messenger } from '../../services/messenger';
-
+import { popupStore } from '../stores/PopupStore';
 import { LoadingView } from './LoadingView/LoadingView';
 
 const Main = React.lazy(() => import('./MainView/MainView'));

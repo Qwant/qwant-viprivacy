@@ -1,22 +1,22 @@
-import React, { useEffect, useState } from 'react';
-import { observer } from 'mobx-react';
-
 import {
-    Flex, Box, Button, Stack, Text,
+    Box, Button, Flex, Stack, Text,
 } from '@qwant/qwant-ponents';
+import { observer } from 'mobx-react';
+import React, { useEffect, useState } from 'react';
 import { RiDeleteBinLine as IconTrash, RiLineChartLine as IconChart } from 'react-icons/ri';
-import { t } from '~src/common/translators/reactTranslator';
 import { useToggle } from 'react-use';
-import { Table } from '../shared/Table/Table';
-import { Tile } from '../shared/Tile/Tile';
-import emptyStatsImage from './empty-stats.svg';
-import disabledStatsImage from './disabled-stats.svg';
+
+import { t } from '~src/common/translators/reactTranslator';
 
 import { formatAnnoyanceTime, formatCounter } from '../../helpers';
 import { IconShield, IconTime } from '../shared/Icons';
-import { useKonamiCode } from './useKonami';
+import { Table } from '../shared/Table/Table';
+import { Tile } from '../shared/Tile/Tile';
 import { ActionButton } from './ActionButton/ActionButton';
+import disabledStatsImage from './disabled-stats.svg';
+import emptyStatsImage from './empty-stats.svg';
 import Styles from './GlobalStatsView.module.scss';
+import { useKonamiCode } from './useKonami';
 
 const LIST_SIZE = 5;
 

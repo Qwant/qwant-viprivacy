@@ -1,4 +1,5 @@
-import { createMachine, assign } from 'xstate';
+import { assign, createMachine } from 'xstate';
+
 import { browserUtils } from '../../../background/utils/browser-utils';
 
 export const States = {

@@ -1,14 +1,16 @@
-import React from 'react';
 import {
     Checkbox, Flex, IconExternalLink, Stack, Text,
 } from '@qwant/qwant-ponents';
-import { t } from '~src/common/translators/reactTranslator';
-import { openTabHandler } from '~src/pages/popup/helpers';
 import { observer } from 'mobx-react';
-import { messenger } from '~src/pages/services/messenger';
+import React from 'react';
+
+import { t } from '~src/common/translators/reactTranslator';
 import { ThinCard } from '~src/pages/common/components/ThinCard/ThinCard';
-import imageIllustration from './illustration-info.svg';
+import { openTabHandler } from '~src/pages/popup/helpers';
+import { messenger } from '~src/pages/services/messenger';
+
 import Styles from './AboutView.module.scss';
+import imageIllustration from './illustration-info.svg';
 
 const links = [
     {

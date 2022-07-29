@@ -5,12 +5,12 @@ import {
     observable,
     runInAction,
 } from 'mobx';
+
+import { ANTIBANNER_GROUPS_ID } from '../../../common/constants';
 import { log } from '../../../common/log';
 import { createSavingService, EVENTS as SAVING_FSM_EVENTS, STATES } from '../../common/components/Editor/savingFSM';
 import { sleep } from '../../helpers';
 import { messenger } from '../../services/messenger';
-
-import { ANTIBANNER_GROUPS_ID } from '../../../common/constants';
 
 const savingAllowlistService = createSavingService({
     id: 'allowlist',

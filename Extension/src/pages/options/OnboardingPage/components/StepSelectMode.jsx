@@ -1,9 +1,11 @@
-import React from 'react';
 import { Box, Stack, Text } from '@qwant/qwant-ponents';
+import React from 'react';
+
 import { t } from '~src/common/translators/reactTranslator';
 import { CheckboxCard } from '~src/pages/common/components/CheckboxCard/CheckboxCard';
-import { ReactComponent as IconSearch } from './assets/icon-search.svg';
+
 import { ReactComponent as IconProtection } from './assets/icon-protection.svg';
+import { ReactComponent as IconSearch } from './assets/icon-search.svg';
 import { QwantVIPrivacy } from './QwantVIPrivacy';
 import Styles from './Steps.module.scss';
 
