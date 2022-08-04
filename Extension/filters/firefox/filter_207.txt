@@ -1,8 +1,8 @@
 [Adblock Plus 2.0]
-! Checksum: t2L+mqSMoJUU0ncTuE59Dg
-! Version: 202207060844
+! Checksum: IfeWdfpz3Urkw9m8oz59fg
+! Version: 202208031131
 ! Title: Adblock Warning Removal List
-! Last modified: 06 Jul 2022 08:44 UTC
+! Last modified: 03 Aug 2022 11:31 UTC
 ! Expires: 1 days (update frequency)
 ! Homepage: https://easylist.to/
 ! Licence: https://easylist.to/pages/licence.html
@@ -13,11 +13,13 @@
 !
 ! *** antiadblockfilters:antiadblockfilters/antiadblock_arabic.txt ***
 !
+/adb-watch.
 /adb_script/*
 /deadblocker/*
 /mod_ablockdetector/*
+/npsblocker/js/ads.
 !
-@@/advertisement.js$script,~third-party,domain=arabe-media.com
+@@/adsbygoogle.js$script,domain=arabiaweather.com
 !
 @@||play.bokracdn.run/v2/adsjs/ads.js$script,~third-party
 !
@@ -31,6 +33,7 @@
 ##.detected-block-modal
 ##.no-ad-reminder
 !
+kimo.ma##.adb
 myegy.cc,myegy.io,myegy.to##.disclaimer
 4algeria.com###exposeMask
 chahid4u.tk###unblocker
@@ -404,7 +407,7 @@ sd-company.su###dom_adblock
 myshared.ru###download_form > .uk-margin-top[style]
 forum.bestflowers.ru###exposeMask
 internet-law.ru###fab-enabled
-ww2.frkp.lol###film > #content > span[style="color:#ff6a00;"]
+frkp.lol###film > #content > span[style="color:#ff6a00;"]
 gk-stalker.xyz###gkadblock
 pastenow.ru###google-block
 gamesubject.com###headb

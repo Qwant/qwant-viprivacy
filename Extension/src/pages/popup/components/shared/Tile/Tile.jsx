@@ -1,3 +1,4 @@
+import cx from 'classnames';
 import React from 'react';
 import { Box, Text } from '@qwant/qwant-ponents';
 import { ThinCard } from '~src/pages/common/components/ThinCard/ThinCard';
@@ -5,6 +6,7 @@ import Styles from './Tile.module.scss';
 
 export const Tile = ({
     asCard = false,
+    tight = false,
     color = 'green',
     icon: IconComponent,
     value,
@@ -18,7 +20,13 @@ export const Tile = ({
         style.background = `var(--${color}-100)`;
     }
     return (
-        <Wrapper style={style} p="s" className={Styles.Tile}>
+        <Wrapper
+            style={style}
+            p="s"
+            className={cx(Styles.Tile, {
+                [Styles.Tight]: tight,
+            })}
+        >
             <IconComponent />
             <div>
                 <Text typo="caption-1" color="primary">{label}</Text>

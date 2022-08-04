@@ -7,6 +7,7 @@ import {
 import { RiDeleteBinLine as IconTrash, RiLineChartLine as IconChart } from 'react-icons/ri';
 import { t } from '~src/common/translators/reactTranslator';
 import { useToggle } from 'react-use';
+import { browserUtils } from '~src/background/utils/browser-utils';
 import { Table } from '../shared/Table/Table';
 import { Tile } from '../shared/Tile/Tile';
 import emptyStatsImage from './empty-stats.svg';
@@ -17,6 +18,8 @@ import { IconShield, IconTime } from '../shared/Icons';
 import { useKonamiCode } from './useKonami';
 import { ActionButton } from './ActionButton/ActionButton';
 import Styles from './GlobalStatsView.module.scss';
+
+const isMac = browserUtils.isMacOs();
 
 const LIST_SIZE = 5;
 
@@ -84,12 +87,14 @@ const GlobalStatsView = observer(({ store }) => {
             <Stack gap="s" horizontal nowrap>
                 <Tile
                     icon={IconShield}
+                    tight={!isMac}
                     label={t('popup_stats_trackers')}
                     value={formatCounter(store.totalBlocked)}
                     color="purple"
                 />
                 <Tile
                     icon={IconTime}
+                    tight={!isMac}
                     label={t('popup_stats_time_saved')}
                     value={annoyanceTime}
                     color="purple"

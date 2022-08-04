@@ -1,10 +1,12 @@
 body {
-    min-height: unset !important;
+  min-height: unset !important;
+  overflow: hidden;
 }
 
 .Popup {
   width: 360px;
   height: 472px;
+  overflow: hidden;
 }
 
 .PopupBack {
