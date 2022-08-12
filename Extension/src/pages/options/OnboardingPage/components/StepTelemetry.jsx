@@ -3,8 +3,15 @@ import {
     Box, Card, Flex, Stack, Switch, Text,
 } from '@qwant/qwant-ponents';
 import { t } from '~src/common/translators/reactTranslator';
+import { backgroundPage } from '~src/background/extension-api/background-page';
 import Styles from './Steps.module.scss';
-import imageUrl from './assets/illustration-telemetry.png';
+
+import imageUrlEN from './assets/illustration-telemetry.png';
+import imageUrlFR from './assets/illustration-telemetry-fr.png';
+
+const locale = backgroundPage.app.getLocale();
+
+const imageUrl = locale === 'fr' ? imageUrlFR : imageUrlEN;
 
 export const StepTelemetry = ({
     onChange,
