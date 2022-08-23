@@ -6,14 +6,11 @@
   "default_locale": "en",
   "description": "__MSG_description__",
   "icons": {
-    "16": "assets/icons/green-16.png",
-    "128": "assets/icons/green-128.png"
+    "96": "assets/icons/green-96.png"
   },
-
   "browser_action": {
     "default_icon": {
-      "19": "assets/icons/green-19.png",
-      "38": "assets/icons/green-38.png"
+      "96": "assets/icons/green-96.png"
     },
     "default_title": "__MSG_name__",
     "default_popup": "pages/popup.html"

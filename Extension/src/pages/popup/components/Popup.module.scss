@@ -3,8 +3,9 @@ body {
 }
 
 .Popup {
-  width: 360px;
-  height: 472px;
+  min-height: 472px;
+  width: 100%;
+  height: 100%;
 }
 
 .PopupBack {

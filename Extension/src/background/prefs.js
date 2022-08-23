@@ -104,12 +104,10 @@ export const prefs = (() => {
         get ICONS() {
             return lazyGet(Prefs, 'ICONS', () => ({
                 ICON_GREEN: {
-                    '19': browser.runtime.getURL('assets/icons/green-19.png'),
-                    '38': browser.runtime.getURL('assets/icons/green-38.png'),
+                    92: browser.runtime.getURL('assets/icons/green-92.png'),
                 },
                 ICON_GRAY: {
-                    '19': browser.runtime.getURL('assets/icons/gray-19.png'),
-                    '38': browser.runtime.getURL('assets/icons/gray-38.png'),
+                    96: browser.runtime.getURL('assets/icons/gray-96.png'),
                 },
             }));
         },
