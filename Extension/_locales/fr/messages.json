@@ -222,7 +222,7 @@
     "message": "https://github.com/Qwant/qwant-viprivacy#privacy"
   },
   "popup_stats_blocked_elements": {
-    "message": "Éléments bloqués"
+    "message": "Traqueurs bloqués"
   },
   "popup_stats_blocked_trackers": {
     "message": "Traqueurs bloqués"
@@ -237,7 +237,7 @@
     "message": "Temps économisé"
   },
   "popup_stats_trackers": {
-    "message": "Traqueurs"
+    "message": "Traqueurs bloqués"
   },
   "protection_level": {
     "message": "Niveau de protection"
