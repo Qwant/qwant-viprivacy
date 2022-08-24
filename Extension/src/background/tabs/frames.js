@@ -302,10 +302,9 @@ export const frames = (function () {
      * @returns  updated count of blocked requests
      */
     const updateBlockedAdsCount = function (tab, blocked) {
-        if (!settings.showGlobalStats()) {
-            return 0;
+        if (settings.showGlobalStats()) {
+            pageStats.updateTotalBlocked(blocked);
         }
-        pageStats.updateTotalBlocked(blocked);
 
         blocked = (tabsApi.getTabMetadata(tab.tabId, 'blocked') || 0) + blocked;
         tabsApi.updateTabMetadata(tab.tabId, { blocked });

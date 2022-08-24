@@ -4,9 +4,13 @@ import { observer } from 'mobx-react';
 import {
     Box, Flex, Button, Stack, Text,
 } from '@qwant/qwant-ponents';
-import { RiDeleteBinLine as IconTrash, RiLineChartLine as IconChart } from 'react-icons/ri';
+import {
+    RiDeleteBinLine as IconTrash,
+    RiLineChartLine as IconChart,
+} from 'react-icons/ri';
 import { t } from '~src/common/translators/reactTranslator';
 import { useToggle } from 'react-use';
+import { browserUtils } from '~src/background/utils/browser-utils';
 import { Table } from '../shared/Table/Table';
 import { Tile } from '../shared/Tile/Tile';
 import emptyStatsImage from './empty-stats.svg';
@@ -18,6 +22,8 @@ import { useKonamiCode } from './useKonami';
 import { ActionButton } from './ActionButton/ActionButton';
 import Styles from './GlobalStatsView.module.scss';
 
+const isMac = browserUtils.isMacOs();
+
 const LIST_SIZE = 5;
 
 const GlobalStatsView = observer(({ store }) => {
@@ -25,8 +31,10 @@ const GlobalStatsView = observer(({ store }) => {
     const [showDisableConfirm, toggleShowDisableConfirm] = useToggle(false);
     const [justEnabled, setJustEnabled] = useState(false);
 
-    const annoyanceTime = React.useMemo(() => formatAnnoyanceTime(store.totalBlocked),
-        [store.totalBlocked]);
+    const annoyanceTime = React.useMemo(
+        () => formatAnnoyanceTime(store.totalBlocked),
+        [store.totalBlocked],
+    );
 
     const { showGlobalStats } = store;
     const domains = store.blockedDomains?.total?.domains || [];
@@ -43,9 +51,10 @@ const GlobalStatsView = observer(({ store }) => {
         }
     }, [isKonami, domainsStr]);
 
-    const list = Object.keys(domains).map((domain) => (
-        { domain, count: domains[domain] }
-    )).sort((a, b) => b.count - a.count).slice(0, LIST_SIZE);
+    const list = Object.keys(domains)
+        .map((domain) => ({ domain, count: domains[domain] }))
+        .sort((a, b) => b.count - a.count)
+        .slice(0, LIST_SIZE);
 
     const toggleGlobalStats = () => {
         if (showDisableConfirm) {
@@ -76,8 +85,12 @@ const GlobalStatsView = observer(({ store }) => {
     }
 
     return (
-        <Flex column between takeAvailableSpace style={{ height: 'calc(100vh - 72px)' }}>
-
+        <Flex
+            column
+            between
+            takeAvailableSpace
+            style={{ height: 'calc(100vh - 72px)' }}
+        >
             <Stack gap="s">
                 <Box mb="l">
                     <Text typo="heading-5" bold color="primary" as="h1">
@@ -88,12 +101,14 @@ const GlobalStatsView = observer(({ store }) => {
                 <Stack gap="s" horizontal nowrap>
                     <Tile
                         icon={IconShield}
+                        tight={!isMac}
                         label={t('popup_stats_trackers')}
                         value={formatCounter(store.totalBlocked)}
                         color="purple"
                     />
                     <Tile
                         icon={IconTime}
+                        tight={!isMac}
                         label={t('popup_stats_time_saved')}
                         value={annoyanceTime}
                         color="purple"
@@ -126,8 +141,9 @@ function EmptyView({ justEnabled }) {
                     {t('global_stats')}
                 </Text>
                 <Text typo="body-2" color="primary">
-                    {t(justEnabled
-                        ? 'global_stats_enabled_success' : 'global_stats_empty')}
+                    {t(
+                        justEnabled ? 'global_stats_enabled_success' : 'global_stats_empty',
+                    )}
                 </Text>
             </Stack>
             <Flex p="s" column alignCenter center className={Styles.EmptyState}>
@@ -148,7 +164,14 @@ function DisabledView({ onEnable }) {
                     {t('global_stats_disabled')}
                 </Text>
             </Stack>
-            <Flex p="s" column alignCenter center takeAvailableSpace className={Styles.EmptyState}>
+            <Flex
+                p="s"
+                column
+                alignCenter
+                center
+                takeAvailableSpace
+                className={Styles.EmptyState}
+            >
                 <img src={disabledStatsImage} alt="" />
             </Flex>
             <Button variant="primary-black" full onClick={onEnable}>

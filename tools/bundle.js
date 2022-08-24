@@ -68,9 +68,9 @@ const betaPlan = [
 const releasePlan = [
     genValidators,
     copyExternals,
-    // bundleChrome,
-    // bundleFirefoxAmo,
-    // bundleEdge,
+    bundleChrome,
+    bundleFirefoxAmo,
+    bundleEdge,
     // bundleOpera,
     // buildInfo,
 ];
