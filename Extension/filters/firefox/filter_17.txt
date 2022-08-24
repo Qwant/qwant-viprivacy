@@ -1,14 +1,14 @@
-! Checksum: z5sDW96C2iuAa9OiODG3GQ
+! Checksum: ls6ztAqtKOvcqPIgtcBo8A
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.3.2
-! TimeUpdated: 2022-08-02T16:30:47+00:00
+! Version: 2.0.3.20
+! TimeUpdated: 2022-08-23T12:30:51+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
 !
 !---------------------------------------------------------------------------!
-!-------------- General tracking parameters list  ----------------------------------!
+!-------------- General tracking parameters list  --------------------------!
 !---------------------------------------------------------------------------!
 !
 ! This section contains the list of generic `$removeparam` rules that are applied on every website.
@@ -67,6 +67,15 @@ $removeparam=xtor
 ! Microsoft Click ID
 ! https://help.ads.microsoft.com/apex/index/3/en/60000
 $removeparam=msclkid
+! ITM
+! https://github.com/AdguardTeam/AdguardFilters/issues/126713
+! https://www.parse.ly/help/kb/campaign-tracking-guide
+! https://www.smashingmagazine.com/2017/08/tracking-internal-marketing-campaigns-google-analytics/
+$removeparam=itm_source
+$removeparam=itm_medium
+$removeparam=itm_campaign
+$removeparam=itm_content
+$removeparam=itm_term
 ! UTM
 $removeparam=utm_ad
 $removeparam=utm_affiliate
@@ -104,6 +113,8 @@ $removeparam=gbraid
 $removeparam=wbraid
 $removeparam=gclsrc
 $removeparam=gclid
+! Google AMP-analytics
+$removeparam=usqp
 ! DPG Media analytics
 ! Used on Dutch sites
 $removeparam=dpg_source
@@ -177,7 +188,7 @@ $removeparam=fb_comment_id
 $removeparam=fb_ref
 $removeparam=fb_source
 !---------------------------------------------------------------------------!
-!-------------- Specific web sites ---------------------------------------------!
+!-------------- Specific web sites -----------------------------------------!
 !---------------------------------------------------------------------------!
 !
 ! This section contains the list of domain-specific rules that remove URL tracking parameters. Rules have to contain only a single modifier: `removeparam`.
@@ -187,6 +198,32 @@ $removeparam=fb_source
 ! Bad: ||example.org^$xmlhttprequest,redirect=noopvast-3.0 (for instance, should be in specific.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/126438
+||facebook.com^$removeparam=extid
+! https://github.com/AdguardTeam/AdGuardSDNSFilter/issues/1024
+||zenaps.com^$removeparam=cookie
+||zenaps.com^$removeparam=bId
+||awin1.com^$removeparam=linkid
+||awin1.com^$removeparam=clickref
+||awin1.com^$removeparam=awinaffid
+! https://github.com/AdguardTeam/AdguardFilters/issues/126807
+||music.apple.com^$removeparam=itsct
+||music.apple.com^$removeparam=itscg
+! https://github.com/AdguardTeam/AdguardFilters/issues/126395
+||netflix.com^$removeparam=trackId
+||netflix.com^$removeparam=tctx
+! Emails from moodfabrics.com
+||moodfabrics.com^$removeparam=_kx
+! georiot.com
+||target.georiot.com/Proxy.ashx$removeparam=tsid
+! https://github.com/AdguardTeam/AdguardFilters/issues/126227
+||kamigame.jp^$removeparam=kamigame_source
+! https://github.com/AdguardTeam/AdguardFilters/issues/125102
+||shop.hololivepro.com^$removeparam=pr_rec_id
+||shop.hololivepro.com^$removeparam=pr_rec_pid
+||shop.hololivepro.com^$removeparam=pr_ref_pid
+||shop.hololivepro.com^$removeparam=pr_seq
+||shop.hololivepro.com^$removeparam=pr_prod_strat
 ! https://github.com/AdguardTeam/AdguardFilters/issues/125352
 ||wq.jd.com^$removeparam=pvid
 ! https://github.com/AdguardTeam/AdguardFilters/issues/124323
@@ -255,7 +292,9 @@ $removeparam=oref,domain=defenseone.com|govexec.com|nextgov.com|route-fifty.com
 $removeparam=/utm_partner_id|frommail/,domain=mail.ru|sportmail.ru
 ||pulse.mail.ru^$removeparam=/^(udid|DeviceID|ver|appbuild|vendor|model|device_name|device_type|instanceid|device_year|connection_class|appsflyerid)/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/120891
-||use.typekit.net^$font,removeparam
+! Removing "primer", "subset_id" parameters causes that some fonts are displaying incorrectly - https://github.com/AdguardTeam/AdguardFilters/issues/126288
+! another one https://github.com/AdguardTeam/AdguardFilters/issues/126333
+||use.typekit.net^$font,removeparam=~/^(primer|subset_id)=/
 ||p.typekit.net^$stylesheet,removeparam
 ! https://github.com/AdguardTeam/AdguardFilters/issues/118376#issuecomment-1134132202
 ||open.spotify.com^$removeparam=_branch_referrer
@@ -393,6 +432,12 @@ $removeparam=union_lens,domain=tmall.com|taobao.com
 ||taobao.com^$removeparam=ptl
 ||taobao.com^$removeparam=app_pvid
 ! Aliexpress
+||aliexpress.$removeparam=algo_pvid
+||aliexpress.$removeparam=curPageLogUid
+||aliexpress.$removeparam=pdp_npi
+||aliexpress.$removeparam=aff_trace_key
+||aliexpress.$removeparam=aff_platform
+||aliexpress.$removeparam=aff_short_key
 ||aliexpress.$removeparam=spm
 ||aliexpress.$removeparam=scm
 ||aliexpress.$removeparam=scm_id
@@ -447,6 +492,8 @@ $removeparam=l-id,domain=nikki.ne.jp|rakuten.co.jp|rebates.jp
 ! https://github.com/AdguardTeam/AdguardFilters/commit/920d973db052ded91b48fbb8c7ca3fe2fdeda237
 ||adjust.com^$removeparam=adgroup
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1909327
+||tiktok.com^$removeparam=sec_uid
+||tiktok.com^$removeparam=web_id
 ||tiktok.com^$removeparam=share_app_id
 ||tiktok.com^$removeparam=share_author_id
 ||tiktok.com^$removeparam=tt_from
@@ -496,8 +543,8 @@ $removeparam=aid,domain=adguard-vpn.com|adguard-dns.com|adguard.com
 ||kitbag.com^$removeparam=_ref
 ||kitbag.com^$removeparam=ab
 ! vstat extension tracking
-||web.vstat.info$removeparam=guid
-||web.vstat.info$removeparam=user_agent
+||web.vstat.info^$removeparam=guid
+||web.vstat.info^$removeparam=user_agent
 ! https://github.com/AdguardTeam/AdguardFilters/issues/101590
 ||start.pm.by^$removeparam=adtag
 ! https://github.com/AdguardTeam/AdguardFilters/issues/100613
@@ -529,14 +576,14 @@ $removeparam=spm,domain=aliyun.com|sohu.com
 ||aliyun.com^$removeparam=scm
 $removeparam=dt_dapp,domain=douban.com|163.com
 ||douban.com^$removeparam=dt_platform
-! https://github.com/AdguardTeam/AdguardFilters/issues/98659
-||listelerim.hepsiburada.com^$removeparam=af_ad
-||listelerim.hepsiburada.com^$removeparam=af_adset
-||listelerim.hepsiburada.com^$removeparam=af_force_deeplink
-||listelerim.hepsiburada.com^$removeparam=pid
-||listelerim.hepsiburada.com^$removeparam=c
-||listelerim.hepsiburada.com^$removeparam=is_retargeting
-||listelerim.hepsiburada.com^$removeparam=shortlink
+! https://github.com/AdguardTeam/AdguardFilters/issues/127888
+||hepsiburada.com^$removeparam=af_ad
+||hepsiburada.com^$removeparam=af_adset
+||hepsiburada.com^$removeparam=af_force_deeplink
+||hepsiburada.com^$removeparam=pid
+||hepsiburada.com^$removeparam=c
+||hepsiburada.com^$removeparam=is_retargeting
+||hepsiburada.com^$removeparam=shortlink
 ! Google Play source tracking
 ||play.google.com/store/$removeparam=pcampaignid
 ! http://www.cyber-ad01.cc/0155/?ip=0155&id=L206
@@ -913,7 +960,6 @@ $removeparam=dclid
 ! Daraz & Shop (Samesite)
 ||daraz.*$removeparam=/spm=|scm=|from=|keyori=|sugg=|search=|mp=|c=|^abtest|^abbucket|pos=|themeID=|algArgs=|clickTrackInfo=|acm=|item_id=|version=|up_id=|pvid=/
 ! Bilibili
-||bilibili.com^$removeparam=from
 ||bilibili.com^$removeparam=seid
 ||bilibili.com^$removeparam=share_source
 ||bilibili.com^$removeparam=spm_id_from
@@ -948,7 +994,7 @@ $removeparam=dclid
 ! https://github.com/AdguardTeam/AdguardFilters/pull/119475
 ||deezer.com^$removeparam=origin
 !---------------------------------------------------------------------------!
-!-------------- Whitelist ------------------------------------------------------!
+!-------------- Fixing filtration errors (false-positive) ------------------!
 !---------------------------------------------------------------------------!
 !
 ! This section contains the list of rules that fix incorrect blocking. Rules should be domain-specific and only the `removeparam` modifier is allowed.
