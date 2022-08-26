@@ -86,7 +86,7 @@ const AboutView = observer(({ settingsStore }) => {
                 />
 
             </Stack>
-            <Flex p="s" column alignCenter center className={Styles.Image}>
+            <Flex pt="l" p="s" column alignCenter center className={Styles.Image}>
                 <img src={imageIllustration} alt="" />
             </Flex>
         </>
