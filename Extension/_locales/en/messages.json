@@ -222,7 +222,7 @@
     "message": "https://github.com/Qwant/qwant-viprivacy#privacy"
   },
   "popup_stats_blocked_elements": {
-    "message": "Blocked trackers"
+    "message": "Blocked elements"
   },
   "popup_stats_blocked_trackers": {
     "message": "Blocked trackers "
