@@ -1,0 +1,93 @@
+body {
+  min-height: unset !important;
+}
+
+.StepsWrapper {
+  margin-inline: auto;
+  max-width: 684px;
+}
+
+.Steps {
+  overflow: hidden;
+}
+
+.StepsHeader {
+  a {
+    display: block;
+  }
+
+  img,
+  svg {
+    display: block;
+    height: 40px;
+  }
+}
+
+.StepsBody {
+  min-height: 354px;
+  border: 2px solid var(--grey-800);
+  border-radius: 8px;
+}
+
+.StepsFooter {
+  display: grid;
+  grid-template-columns: 1fr 100px 1fr;
+  justify-content: center;
+  align-items: center;
+
+  &>*:first-child {
+    justify-self: flex-start;
+  }
+
+  &>*:last-child {
+    justify-self: flex-end;
+  }
+}
+
+.StepsIndicators {
+  gap: var(--spacing-xs);
+}
+
+.StepsIndicators>* {
+  transition: .3s;
+  border: 2px solid var(--grey-400);
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
+}
+
+.StepsIndicators>[aria-current] {
+  border-color: var(--grey-900);
+  background-color: var(--grey-900);
+}
+
+.StepTelemetryCard {
+  border-color: var(--grey-400) !important;
+}
+
+.StepWithImage {
+  min-height: 224px;
+  max-width: 312px;
+}
+
+.StepWithImage img {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.StepWithImage video {
+  top: 50%;
+  width: 300px;
+  position: absolute;
+  right: var(--spacing-xl);
+  transform: translateY(-50%);
+}
+
+.StepChoices {
+  gap: var(--spacing-s);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: flex-end;
+}

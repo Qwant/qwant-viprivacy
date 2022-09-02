@@ -1,7 +1,7 @@
 [Adblock Plus 1.1]
-! Checksum: vFHcizPg8Hp+Wbb0sf27Ng
+! Checksum: ePuqnKbrdsnSMUbSusK6VQ
 ! Title: Fanboy's Anti-thirdparty Fonts
-! Updated: 2022-07-15 08:00 UTC
+! Updated: 2022-08-24 07:00 UTC
 ! Expires: 9 days
 ! License: http://creativecommons.org/licenses/by/3.0/
 ! Homepage: http://www.fanboy.co.nz/

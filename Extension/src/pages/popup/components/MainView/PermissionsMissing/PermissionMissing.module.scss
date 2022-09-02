@@ -1,0 +1,22 @@
+.PermissionMissing {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: var(--spacing-s);
+  border-color: var(--grey-500) !important;
+  background-color: var(--grey-100)!important;
+}
+
+.PermissionMissing .PermissionMissingShield {
+  width: 70px;
+  height: 70px;
+}
+
+.PermissionMissingAction {
+  grid-column: 1 / -1;
+}
+
+.MainLinks{
+  position: absolute;
+  width: calc(100% - 24px);
+  bottom: 12px;
+}

@@ -1,0 +1,57 @@
+.CheckboxCard {
+  text-align: left;
+  border-color: var(--grey-200);
+  overflow: hidden !important;
+}
+
+.CheckboxCardHeader {
+  background-color: var(--grey-100);
+}
+
+.CheckboxCardActiveIcon {
+  position: absolute;
+  top: var(--spacing-m);
+  right: var(--spacing-m);
+  width: 32px;
+  height: 32px;
+}
+
+.CheckboxCardActive {
+  background-color: var(--green-100) !important;
+  border-color: var(--grey-900) !important;
+}
+
+.CheckboxCardActive .CheckboxCardHeader {
+  background-color: var(--green-300);
+}
+
+.CheckboxCardActive svg {
+  color: var(--green-300);
+}
+
+.CheckboxCardIcon {
+  min-height: 32px;
+  color: var(--grey-100);
+}
+
+// Compact mode
+// =============
+.CheckboxCardCompact {
+  border-width: 1px !important;
+}
+
+.CheckboxCardCompact .CheckboxCardBody {
+  padding-right: 44px;
+}
+
+.CheckboxCardCompact .CheckboxCardActiveIcon {
+  width: 20px;
+  height: 20px;
+  top: var(--spacing-s);
+  right: var(--spacing-s);
+}
+
+
+.Description {
+  min-height: 36px;
+}

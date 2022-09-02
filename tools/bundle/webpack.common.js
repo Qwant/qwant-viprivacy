@@ -4,9 +4,12 @@ import CopyWebpackPlugin from 'copy-webpack-plugin';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import path from 'path';
 
+import fs from 'fs';
 import { BUILD_PATH, ENVS } from '../constants';
 import { getEnvConf, updateLocalesMSGName } from '../helpers';
 import { getModuleReplacements } from './module-replacements';
+
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const config = getEnvConf(process.env.BUILD_ENV);
 
@@ -51,6 +54,7 @@ export const genCommonConfig = (browserConfig) => {
                     'vendors/react',
                     'vendors/mobx',
                     'vendors/xstate',
+                    'vendors/react-icons',
                     // 'shared/editor',
                 ],
             },
@@ -59,6 +63,7 @@ export const genCommonConfig = (browserConfig) => {
                 dependOn: [
                     'vendors/react',
                     'vendors/mobx',
+                    'vendors/react-icons',
                 ],
             },
             // 'pages/filtering-log': {
@@ -114,6 +119,7 @@ export const genCommonConfig = (browserConfig) => {
             //    ],
             // },
             'vendors/react': ['react', 'react-dom'],
+            'vendors/react-icons': ['react-icons', 'react-icons/ri'],
             'vendors/mobx': ['mobx'],
             'vendors/xstate': ['xstate'],
         },
@@ -124,6 +130,9 @@ export const genCommonConfig = (browserConfig) => {
         resolve: {
             extensions: ['*', '.js', '.jsx'],
             symlinks: false,
+            alias: {
+                '~src': path.resolve(fs.realpathSync(process.cwd()), 'Extension/src'),
+            },
             // Node modules polyfills
             fallback: {
                 url: require.resolve('url'),
@@ -133,6 +142,37 @@ export const genCommonConfig = (browserConfig) => {
         },
         module: {
             rules: [
+                {
+                    test: /\.svg$/,
+                    use: [
+                        {
+                            loader: '@svgr/webpack',
+                            options: {
+                                icon: false,
+                                expandProps: 'end',
+                            },
+                        },
+                        {
+                            loader: 'url-loader',
+                            options: {
+                                limit: 2000,
+                                name: '[name].[contenthash:8].[ext]',
+                                publicPath: '/',
+                            },
+                        },
+                    ],
+                },
+                // .mjs import is buggy : https://github.com/webpack/webpack/issues/11467#issuecomment-691873586
+                {
+                    test: /\.m?js/,
+                    type: 'javascript/auto',
+                },
+                {
+                    test: /\.m?js/,
+                    resolve: {
+                        fullySpecified: false,
+                    },
+                },
                 {
                     include: [
                         path.resolve(__dirname, '../../Extension/src/background/filter/request-filter.js'),
@@ -153,8 +193,11 @@ export const genCommonConfig = (browserConfig) => {
                  * by deleting source map url comments in production build
                  */
                 {
-                    test: /\.(js|jsx)$/,
+                    test: /\.(m?js|jsx)$/,
                     enforce: 'pre',
+                    resolve: {
+                        fullySpecified: false,
+                    },
                     use: [
                         {
                             loader: 'source-map-loader',
@@ -165,32 +208,39 @@ export const genCommonConfig = (browserConfig) => {
                     ],
                 },
                 {
-                    test: /\.(js|jsx)$/,
-                    exclude: /node_modules/,
+                    test: /\.(m?js|jsx)$/,
+                    exclude: /node_modules\/(?!@qwant)/,
                     use: [{
                         loader: 'babel-loader',
                         options: { babelrc: true },
                     }],
                 },
                 {
-                    test: /\.(css|pcss)$/,
+                    test: /\.(css|scss)$/,
                     use: [
                         'style-loader',
                         {
                             loader: 'css-loader',
                             options: {
+                                sourceMap: true,
                                 importLoaders: 1,
                                 url: false,
+                                modules: {
+                                    auto: true,
+                                    exportOnlyLocals: false,
+                                    localIdentName: '[name]__[local]___[hash:base64:5]',
+                                },
                             },
                         },
                         'postcss-loader',
+                        'sass-loader',
                     ],
                 },
                 {
                     test: /\.(woff|woff2|eot|ttf|otf)$/,
                     type: 'asset/resource',
                 }, {
-                    test: /\.(png|jpe?g|gif)$/i,
+                    test: /\.(png|jpe?g|gif|webm)$/i,
                     use: [
                         {
                             loader: 'file-loader',
@@ -201,6 +251,7 @@ export const genCommonConfig = (browserConfig) => {
         },
 
         plugins: [
+            new BundleAnalyzerPlugin({ analyzerMode: 'disabled', reportFilename: `../report-${browserConfig.browser}.html` }),
             new CleanWebpackPlugin(),
             ...getModuleReplacements(browserConfig),
             new HtmlWebpackPlugin({
@@ -216,13 +267,13 @@ export const genCommonConfig = (browserConfig) => {
                 ...htmlTemplatePluginCommonOptions,
                 template: path.join(OPTIONS_PATH, 'index.html'),
                 filename: 'pages/options.html',
-                chunks: ['vendors/react', 'vendors/mobx', 'vendors/xstate', 'shared/editor', 'pages/options'],
+                chunks: ['vendors/react', 'vendors/react-icons', 'vendors/mobx', 'vendors/xstate', 'pages/options'],
             }),
             new HtmlWebpackPlugin({
                 ...htmlTemplatePluginCommonOptions,
                 template: path.join(POPUP_PATH, 'index.html'),
                 filename: 'pages/popup.html',
-                chunks: ['vendors/react', 'vendors/mobx', 'pages/popup'],
+                chunks: ['vendors/react', 'vendors/react-icons', 'vendors/mobx', 'pages/popup'],
             }),
             // new HtmlWebpackPlugin({
             //     ...htmlTemplatePluginCommonOptions,

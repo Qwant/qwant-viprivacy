@@ -1,0 +1,18 @@
+.Tile {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  align-items: center;
+  border-radius: 8px;
+  gap: var(--spacing-xs);
+  width: 100%;
+}
+
+.Tight {
+  grid-template-columns: 23px 1fr;
+}
+
+.Tile svg,
+.Tile img {
+  width: 28px;
+  height: 28px;
+}

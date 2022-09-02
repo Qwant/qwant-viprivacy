@@ -1,0 +1,36 @@
+.List {
+  counter-reset: olist;
+}
+
+.List li {
+  position: relative;
+  counter-increment: olist;
+  padding-left: 34px;
+}
+
+.List li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  box-sizing: content-box;
+  font-size: 14px;
+  font-weight: bold;
+  display: grid;
+  place-items: center;
+  border-radius: 20px;
+  background: var(--green-200) center center no-repeat;
+  line-height: 1;
+}
+
+.OrderedList li::before {
+  content: counter(olist);
+}
+
+.CheckList li::before {
+  border: none;
+  width: 24px;
+  height: 24px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24'%3E%3Cpath fill='%23b3e6cc' stroke='%23050506' stroke-width='0' d='M23 12a11 11 0 1 0-22 0 11 11 0 0 0 22 0Z'/%3E%3Cpath fill='%23050506' d='m16.55 8.55-5.73 5.72a.46.46 0 0 1-.64 0l-2.4-2.39a.88.88 0 0 0-1.23 1.24l2.39 2.39a2.2 2.2 0 0 0 3.12 0l5.72-5.72a.87.87 0 0 0-1.23-1.24Z'/%3E%3C/svg%3E") center center / 24px 24px no-repeat;
+}

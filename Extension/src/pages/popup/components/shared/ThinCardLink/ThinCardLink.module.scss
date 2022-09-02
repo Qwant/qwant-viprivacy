@@ -1,0 +1,7 @@
+.ThinCardLink svg {
+  transition: transform .3s;
+}
+
+.ThinCardLink:hover svg {
+  transform: translateX(var(--spacing-xxs));
+}

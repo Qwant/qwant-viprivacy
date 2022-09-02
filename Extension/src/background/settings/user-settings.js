@@ -38,6 +38,7 @@ export const settings = (() => {
     const settings = {
         DISABLE_DETECT_FILTERS: 'detect-filters-disabled',
         DISABLE_SHOW_PAGE_STATS: 'disable-show-page-statistic',
+        SHOW_GLOBAL_STATS: 'show-global-stats',
 
         /* flag used to show link to comparison of desktop and browser adblocker versions */
         DISABLE_SHOW_ADGUARD_PROMO_INFO: 'show-info-about-adguard-disabled',
@@ -92,6 +93,7 @@ export const settings = (() => {
                 defaults[settings.DISABLE_SHOW_ADGUARD_PROMO_INFO] = true;
                 defaults[settings.DISABLE_SAFEBROWSING] = true;
                 defaults[settings.DISABLE_COLLECT_HITS] = false;
+                defaults[settings.SHOW_GLOBAL_STATS] = true;
                 defaults[settings.DEFAULT_ALLOWLIST_MODE] = true;
                 defaults[settings.ALLOWLIST_ENABLED] = true;
                 defaults[settings.USE_OPTIMIZED_FILTERS] = prefs.mobile;
@@ -199,6 +201,10 @@ export const settings = (() => {
 
     const changeShowPageStatistic = function (enabled, options) {
         setProperty(settings.DISABLE_SHOW_PAGE_STATS, !enabled, options);
+    };
+
+    const showGlobalStats = function () {
+        return !!getProperty(settings.SHOW_GLOBAL_STATS);
     };
 
     const isShowInfoAboutAdguardFullVersion = function () {
@@ -458,6 +464,9 @@ export const settings = (() => {
     // Protection level
     api.getProtectionLevel = getProtectionLevel;
     api.setProtectionLevel = setProtectionLevel;
+
+    // Global stats
+    api.showGlobalStats = showGlobalStats;
 
     return api;
 })();
