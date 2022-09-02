@@ -183,7 +183,7 @@
     "message": "on <b>%domain%</b>"
   },
   "popup_main_problem_disable_protection": {
-    "message": "A problem on this site ? Try to deactivate."
+    "message": "A problem on this site? Try to deactivate."
   },
   "popup_main_protection_detail": {
     "message": "Details"
