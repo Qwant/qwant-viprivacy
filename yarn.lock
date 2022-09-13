@@ -27,12 +27,12 @@
   resolved "https://registry.yarnpkg.com/@adguard/translate/-/translate-0.2.6.tgz#47a04c0fe9c4a23de5f84124313a1bf2aa986677"
   integrity sha512-0i351ZZ9AcAm2Jy5lxbvXUGAX82QmEU9NiIu4s0k4J0hvC3tWR1m9yypgqgpR8ig67Fj/+i4deXfKL8jDRiM8g==
 
-"@adguard/tsurlfilter@^0.7.74":
-  version "0.7.78"
-  resolved "https://registry.yarnpkg.com/@adguard/tsurlfilter/-/tsurlfilter-0.7.78.tgz#66b73bfb95f9bd8df389dbe7f6bea09a1cb409cc"
-  integrity sha512-0H2kRkg8BK17BDf1lGLsWQqWNHI7488WCM/B0Q7Nx/NYjKfG9XbEIIAEiUr5g7rGHPFBxDmD9oiavp0GkCS0Gg==
+"@adguard/tsurlfilter@^1.0.35":
+  version "1.0.38"
+  resolved "https://registry.yarnpkg.com/@adguard/tsurlfilter/-/tsurlfilter-1.0.38.tgz#7b55862bd054554b85b61fb07bacea074a84c4c9"
+  integrity sha512-LYDZymWptDUL2W1p9RGaevHwwBwW0OZTEF9xEHwdtlvN3wxnlGDyQT3dbNSye7GIfXA7yr249ZUJEzPF9TYMmQ==
   dependencies:
-    "@adguard/scriptlets" "^1.6.8"
+    "@adguard/scriptlets" "^1.6.39"
     extended-css "git+https://github.com/AdguardTeam/ExtendedCss.git#v1.3.14"
     ip6addr "^0.2.3"
     is-cidr "^4.0.2"
@@ -9786,10 +9786,10 @@ react-remove-scroll-bar@^2.3.3:
     react-style-singleton "^2.2.1"
     tslib "^2.0.0"
 
-react-remove-scroll@^2.5.4:
-  version "2.5.4"
-  resolved "https://registry.yarnpkg.com/react-remove-scroll/-/react-remove-scroll-2.5.4.tgz#afe6491acabde26f628f844b67647645488d2ea0"
-  integrity sha512-xGVKJJr0SJGQVirVFAUZ2k1QLyO6m+2fy0l8Qawbp5Jgrv3DeLalrfMNBFSlmz5kriGGzsVBtGVnf4pTKIhhWA==
+react-remove-scroll@^2.5.5:
+  version "2.5.5"
+  resolved "https://registry.yarnpkg.com/react-remove-scroll/-/react-remove-scroll-2.5.5.tgz#1e31a1260df08887a8a0e46d09271b52b3a37e77"
+  integrity sha512-ImKhrzJJsyXJfBZ4bzu8Bwpka14c/fQt0k+cyFp/PBhTfyDnU5hjOtM4AG/0AMyy8oKzOTR0lDgJIM7pYXI0kw==
   dependencies:
     react-remove-scroll-bar "^2.3.3"
     react-style-singleton "^2.2.1"
