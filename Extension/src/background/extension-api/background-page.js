@@ -23,7 +23,7 @@ import { runtimeImpl } from '../../common/common-script';
 import { browser } from './browser';
 import { prefs } from '../prefs';
 import { log } from '../../common/log';
-import { getIconImageData } from './iconsCache';
+// import { getIconImageData } from './iconsCache';
 import { browserUtils } from '../utils/browser-utils';
 
 export const backgroundPage = (() => {
@@ -637,7 +637,9 @@ export const backgroundPage = (() => {
             }
 
             try {
-                await browser.browserAction.setIcon({ tabId, imageData: await getIconImageData(icon) });
+                // use path rather than imageData due to conversion problems in firefox for android
+                // https://github.com/AdguardTeam/AdguardBrowserExtension/issues/2032
+                await browser.browserAction.setIcon({ tabId, path: icon });
             } catch (e) {
                 log.debug(new Error(e.message));
                 return;

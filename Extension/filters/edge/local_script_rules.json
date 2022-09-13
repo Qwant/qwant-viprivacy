@@ -150,6 +150,10 @@
             "script": "AG_defineProperty('tv.freewheel.SDK.Util.sendAdRequestWithXMLHTTPRequest', { get: function() { return function() {return true;}; } });"
         },
         {
+            "domains": "edeka.de",
+            "script": "(()=>{window.tC={event:{track(){}}}})();"
+        },
+        {
             "domains": "ta.alamo.com",
             "script": "(()=>{window.CQ_Analytics={SegmentMgr:{loadSegments(){}},ClientContextUtils:{init(){}}}})();"
         },
@@ -342,8 +346,12 @@
             "script": "AG_onLoad(function(){if(window.location.href.includes(\"consentUUID\")){var g=new MutationObserver(function(){var b=document.querySelector('button[title*=\"Einstellungen\"]');b&&b.click(); setTimeout(function(){ var c = document.querySelectorAll(\".page-action\"); if(c[0]){c[0].click();}; }, 300); setTimeout(function(){var d = document.querySelector(\".is-checked\"); var e = document.querySelector('button[title*=\"Ablehnen\"]');if(d) {d.click(); e.click();};}, 300);});g.observe(document,{childList:!0,subtree:!0});setTimeout(function(){g.disconnect()},1E4)}});"
         },
         {
-            "domains": "sport.de,sourcepoint.vip.de,sp-consent.kurier.de",
+            "domains": "sp-consent.frankenpost.de,sport.de,sourcepoint.vip.de,sp-consent.kurier.de",
             "script": "AG_onLoad(function(){if(window.location.href.includes(\"consentUUID\")){var g=new MutationObserver(function(){var b=document.querySelector('button[title*=\"Einstellungen\"]');b&&b.click(); setTimeout(function(){ var social = document.querySelectorAll(\".accordion\"); social.forEach(function(social) {if(social.innerText.includes(\"Soziale Netzwerke\")) {if(social.nextSibling.classList.contains(\"pm-switch\")) { social.nextSibling.click(); } }});    }, 300); setTimeout(function(){ var c = document.querySelectorAll(\".page-action\"); if(c[0]){c[0].click();}; }, 300); setTimeout(function(){var d = document.querySelector(\".is-checked\"); var e = document.querySelector('button[title*=\"Auswahl speichern\"]');if(d||e) { d&&d.click(); e&&e.click();};}, 300);});g.observe(document,{childList:!0,subtree:!0});setTimeout(function(){g.disconnect()},1E4)}});"
+        },
+        {
+            "domains": "baseendpoint.chefkoch.de",
+            "script": "AG_onLoad(function(){if(window.location.href.includes(\"consentUUID\")){var g=new MutationObserver(function(){var b=document.querySelector('a[data-selected*=\"pmTab=purposes\"]');b&&b.click(); setTimeout(function(){ var c = document.querySelectorAll(\".is-checked\"); if(c[0]){c.forEach(function(c) {c.click();} ); }; }, 300); setTimeout(function(){var d = document.querySelector('button[title=\"Auswahl speichern\"]');if(d) {d.click(); };}, 300);});g.observe(document,{childList:!0,subtree:!0});setTimeout(function(){g.disconnect()},1E4)}});"
         },
         {
             "domains": "privacy.lecker.de,privacy.wunderweib.de,cmp.motorsport-magazin.com,consent.kino.de,consent.familie.de,consent.spieletipps.de",
@@ -366,8 +374,24 @@
             "script": "AG_onLoad(function(){if(window.location.href.includes(\"consentUUID\")){var g=new MutationObserver(function(){var b=document.querySelector('button[title*=\"ustimmen\"]');b&&(g.disconnect(),b.click())});g.observe(document,{childList:!0,subtree:!0});setTimeout(function(){g.disconnect()},1E4)}});"
         },
         {
+            "domains": "goplay.be",
+            "script": "AG_onLoad(function(){if(-1===document.cookie.indexOf(\"euconsent-v2\")){var c=new MutationObserver(function(){var b=document.querySelector(\"#didomi-notice-learn-more-button\");b&&(c.disconnect(),b.click(),setTimeout(function(){var a=document.querySelectorAll(\"button.didomi-components-button\");a[0]&&a[0].click();},300))});c.observe(document,{childList:!0,subtree:!0}),setTimeout(function(){c.disconnect()},1E4)}});"
+        },
+        {
+            "domains": "krone.at",
+            "script": "AG_onLoad(function(){if(-1===document.cookie.indexOf(\"euconsent-v2\")){var c=new MutationObserver(function(){var b=document.querySelector(\"#didomi-notice-learn-more-button\");b&&(c.disconnect(),b.click(),setTimeout(function(){var a=document.querySelectorAll(\"button[aria-describedby=\\\"didomi-purpose-BeEXA9\\\"]\");a[1]&&a[1].click();var b=document.querySelectorAll(\"button[aria-describedby=\\\"didomi-purpose-9HxF6e\\\"]\");b[0]&&b[0].click();var c=document.querySelectorAll(\"button[aria-describedby=\\\"didomi-purpose-JmQMZH\\\"]\");c[0]&&c[0].click()},300),setTimeout(function(){var a=document.querySelectorAll(\"button[aria-describedby=\\\"didomi-purpose-xKLmtF\\\"]\");a[1]&&a[1].click()},300),setTimeout(function(){var a=document.querySelector(\"button[aria-label*=\\\"speichern\\\"]\");a&&a.click()},300))});c.observe(document,{childList:!0,subtree:!0}),setTimeout(function(){c.disconnect()},1E4)}});"
+        },
+        {
+            "domains": "alpenverein-muenchen-oberland.de",
+            "script": "AG_onLoad(function(){if(!document.cookie.includes(\"consentUUID\")){var g=new MutationObserver(function(){var b=document.querySelector('.cookieProperties');b&&b.click(); setTimeout(function(){ var c = document.querySelector('.functionality[value=\"1\"]'); c&&c.click(); }, 300); setTimeout(function(){var d = document.querySelector('#btnAcknowledge'); if(d) {d.click();};}, 300);});g.observe(document,{childList:!0,subtree:!0});setTimeout(function(){g.disconnect()},1E4)}});"
+        },
+        {
+            "domains": "hofer.at",
+            "script": "document.cookie = \"google-maps-privacy=1\";"
+        },
+        {
             "domains": "edeka.de",
-            "script": "AG_onLoad(function(){setTimeout(function(){if(-1==document.cookie.indexOf(\"EDEKA_PRIVACY_CENTER\")){ var b=document.querySelector('#popin_tc_privacy_button_2');b.click(); document.cookie = \"EDEKA_PRIVACY_CENTER=2%2C3%2C4;domain=.edeka.de;path=/\" }},700);});"
+            "script": "document.cookie=\"EDEKA_PRIVACY=@0@0@2%2C3%2C7@0@0;path=/\";"
         },
         {
             "domains": "comingsoon.it,beachcam.meo.pt",
@@ -450,6 +474,10 @@
             "script": "AG_onLoad(function(){if(window.location.href.includes(\"consentUUID\")){var g=new MutationObserver(function(){var b=document.querySelector('button[title*=\"Accept\" i]');b&&(g.disconnect(),b.click())});g.observe(document,{childList:!0,subtree:!0});setTimeout(function(){g.disconnect()},1E4)}});"
         },
         {
+            "domains": "rainews.it",
+            "script": "AG_onLoad(function(){if(-1==document.cookie.indexOf(\"oil_data\")){const a=new MutationObserver(function(){const b=document.querySelector(\".as-oil button.as-js-optin[data-qa=\\\"oil-YesButton\\\"]\");b&&(a.disconnect(),b.click())});a.observe(document,{childList:!0,subtree:!0}),setTimeout(function(){a.disconnect()},1E4)}});"
+        },
+        {
             "domains": "xgp.pl",
             "script": "AG_onLoad(function(){if(-1==document.cookie.indexOf(\"real_cookie_banner\")){const b=new MutationObserver(function(){const a=document.querySelector(\".rcb-banner .rcb-btn-accept-all\");a&&(b.disconnect(),a.click())});b.observe(document,{childList:!0,subtree:!0}),setTimeout(function(){b.disconnect()},1E4)}});"
         },
@@ -470,7 +498,7 @@
             "script": "AG_onLoad(function(){try{if(!document.cookie.includes(\"__cmpconsent\")||!Object.keys(localStorage).find(a=>a.includes(\"__cmpconsent\"))){const a=new MutationObserver(function(){const b=document.body;b&&(b.style.overflow=\"auto\");const c=document.querySelector(\"#cmpwrapper\");if(c){c.style=\"display: none !important;\";const b=c.shadowRoot?.querySelector(\"a.cmpboxbtnyes\");b&&(a.disconnect(),b.click())}});a.observe(document,{childList:!0,subtree:!0}),setTimeout(function(){a.disconnect()},1E4)}}catch(a){console.error(a)}});"
         },
         {
-            "domains": "wpolityce.pl,travlerz.com",
+            "domains": "pcgamer.com,wpolityce.pl,travlerz.com",
             "script": "AG_onLoad(function(){if(-1==document.cookie.indexOf(\"euconsent-v2\")){var a=new MutationObserver(function(){var b=document.querySelector('.qc-cmp2-summary-buttons > button[mode]:last-child'),c=document.querySelector(\"#qc-cmp2-container\");b&&c&&(a.disconnect(),b.click(),c.style=\"display: none !important;\")});a.observe(document,{childList:!0,subtree:!0});setTimeout(function(){a.disconnect()},1E4)}});"
         },
         {
@@ -643,7 +671,7 @@
         },
         {
             "domains": "bike24.*",
-            "script": "(function(){document.cookie.includes(\"cookieConsent=\")||(document.cookie='cookieConsent={\"algolia\":false,\"basket-store\":true,\"emarsys\":false,\"google-ga\":false,\"google-tm\":false,\"trbo\":false,\"zenloop\":false}; path=/;')})();"
+            "script": "(function(){document.cookie.includes(\"cookieConsent=\")||(document.cookie='cookieConsent={\"algolia\":false,\"basket-store\":true,\"emarsys\":false,\"google-ga\":false,\"google-optimize\":false,\"google-tm\":false,\"trbo\":false,\"zenloop\":false}; path=/;')})();"
         },
         {
             "domains": "skousen.dk,skousen.no,whiteaway.com,whiteaway.no,whiteaway.se",
@@ -750,7 +778,7 @@
             "script": "AG_onLoad(function() {var b=new MutationObserver(function() {var c=document.querySelector('aside[aria-label=\"Blocket cookie inställningar\"]'); c&&(b.disconnect(),c.click()) });b.observe(document, {childList: !0,subtree: !0});setTimeout(function() {b.disconnect()}, 1E4)});"
         },
         {
-            "domains": "iltalehti.fi",
+            "domains": "uusisuomi.fi,iltalehti.fi",
             "script": "AG_onLoad(function(){if(-1==document.cookie.indexOf(\"TcString\")){var a=new MutationObserver(function(){var b=document.querySelector(\"#alma-cmpv2-container button#almacmp-modalConfirmBtn\");b&&(a.disconnect(),b.click())});a.observe(document,{childList:!0,subtree:!0});setTimeout(function(){a.disconnect()},1E4)}});"
         },
         {
@@ -894,7 +922,7 @@
             "script": "AG_onLoad(function(){if(!document.cookie.includes(\"cc_cookie\")){var g=new MutationObserver(function(){var b=document.querySelector('#cm_secondary_btn');var c=document.querySelector('#cs_save__btn');b&&b.click();setTimeout(function(){ c&&c.click(); }, 300);});g.observe(document,{childList:!0,subtree:!0});setTimeout(function(){g.disconnect()},1E4)}});"
         },
         {
-            "domains": "brita.de,infranken.de",
+            "domains": "teneriffa-news.com,brita.de,infranken.de",
             "script": "AG_onLoad(function(){var a=new MutationObserver(function(){var b=document.querySelector(\"#cmpbox .cmpboxbtnyes\"),c=document.querySelector('div[id^=\"cmpbox\"]'),d=document.querySelector('.cmpboxWelcomeGDPR[style^=\"display: block;\"]'),e=document.querySelector(\"#cmpbox.cmpstyleroot:not(.cmpboxWelcomeGDPR)\");b&&c&&d&&(a.disconnect(),b.click(),c.style=\"display: none !important;\");e&&a.disconnect()});a.observe(document,{childList:!0,subtree:!0});setTimeout(function(){a.disconnect()}, 1E4)});"
         },
         {
@@ -902,7 +930,7 @@
             "script": "AG_onLoad(function(){if(-1==document.cookie.indexOf(\"euconsent-v2\")){var a=new MutationObserver(function(){var b=document.querySelector('.qc-cmp2-container .qc-cmp2-summary-buttons button[mode=\"primary\"]'),c=document.querySelector(\"#qc-cmp2-container\");b&&c&&(a.disconnect(),b.click(),c.style=\"display: none !important;\")});a.observe(document,{childList:!0,subtree:!0});setTimeout(function(){a.disconnect()},1E4)}});"
         },
         {
-            "domains": "fly4free.pl",
+            "domains": "cinemablend.com,fly4free.pl",
             "script": "AG_onLoad(function(){if(-1==document.cookie.indexOf(\"euconsent-v2\")){var a=new MutationObserver(function(){var b=document.querySelector('.qc-cmp2-container .qc-cmp2-summary-buttons button[mode=\"primary\"]');b&&(a.disconnect(),b.click())});a.observe(document,{childList:!0,subtree:!0});setTimeout(function(){a.disconnect()},1E4)}});"
         },
         {
@@ -1238,6 +1266,10 @@
             "script": "AG_onLoad(function(){var a=new MutationObserver(function(){var a=document.querySelector(\"button#cmp-btn-accept\"),b=document.querySelector(\"#cmp-wetter.cmp-hide\");a&&!b&&a.click()});a.observe(document,{childList:!0,subtree:!0,attributeFilter:[\"style\"]}),setTimeout(function(){a.disconnect()},1E4)});"
         },
         {
+            "domains": "cyclingnews.com",
+            "script": "AG_onLoad(function() {var b=new MutationObserver(function() {var c=document.querySelector('button[mode=\"primary\"]'); c&&(b.disconnect(),c.click()) });b.observe(document, {childList: !0,subtree: !0});setTimeout(function() {b.disconnect()}, 1E4)});"
+        },
+        {
             "domains": "express.co.uk,space.com",
             "script": "AG_onLoad(function() {var b=new MutationObserver(function() {var c=document.querySelector('button[mode=\"primary\"]'); c&&(b.disconnect(),c.click()) });b.observe(document, {childList: !0,subtree: !0});setTimeout(function() {b.disconnect()}, 1E4)});"
         },
@@ -1394,8 +1426,8 @@
             "script": "AG_onLoad(function() { setTimeout(function() { var el = document.querySelector('button[id=\"onetrust-accept-btn-handler\"]'); if(el) { el.click(); } }, 800); });"
         },
         {
-            "domains": "theguardian.com",
-            "script": "AG_onLoad(function(){if(window.location.href.includes(\"consentUUID\")){var a=new MutationObserver(function(){var b=document.querySelector('button[title^=\"Yes, I’m happy\"]');b&&(a.disconnect(),b.click())});a.observe(document,{childList:!0,subtree:!0});setTimeout(function(){a.disconnect()},1E4)}});"
+            "domains": "sourcepoint.theguardian.com",
+            "script": "(function(){if(window.location.href.includes(\"consentUUID\")){var a=new MutationObserver(function(){var b=document.querySelector('button[title^=\"Yes, I\\u2019m happy\"], .message-component > .message-component.sp_choice_type_11');b&&(a.disconnect(),b.click())});a.observe(document,{childList:!0,subtree:!0});setTimeout(function(){a.disconnect()},1E4)}})();"
         },
         {
             "domains": "sourcepoint.wetter.de",
@@ -1442,7 +1474,7 @@
             "script": "AG_onLoad(function() {if (!document.cookie.includes(\"euconsent-v2\")) {var g = new MutationObserver(function() {var b = document.querySelector('.qc-cmp2-summary-buttons > button[mode=\"primary\"]');b && b.click();});g.observe(document, {childList: !0,subtree: !0});setTimeout(function() {g.disconnect()}, 1E4)}});"
         },
         {
-            "domains": "t3.com,livescience.com,independentespanol.com,gamesradar.com,pcgamer.com",
+            "domains": "t3.com,livescience.com,independentespanol.com,gamesradar.com",
             "script": "AG_onLoad(function() {var g = new MutationObserver(function() {var b = document.querySelector('.qc-cmp2-summary-buttons > button[mode=\"primary\"]');b && (g.disconnect(),b.click())});g.observe(document, {childList: !0,subtree: !0});setTimeout(function() {g.disconnect()}, 3E4)});"
         },
         {
@@ -1560,10 +1592,6 @@
         {
             "domains": "consent.faz.net,consent-cdn.sueddeutsche.de",
             "script": "AG_onLoad(function(){if(!document.cookie.includes(\"euconsent-v2\")){var c=new MutationObserver(function(){var a=document.querySelector('button[title=\"Einstellungen\"i]:not([class*=\"-hidden\"])'),b=document.querySelector('button[title=\"Auswahl Speichern\" i]');a&&a.click();b&&b.click()});c.observe(document,{childList:!0,subtree:!0});setTimeout(function(){c.disconnect()},1E4)}});"
-        },
-        {
-            "domains": "chefkoch.de",
-            "script": "AG_onLoad(function() {if (!document.cookie.includes(\"euconsent-v2\")) {var g = new MutationObserver(function() {var b = document.querySelector(\"button.message-component.no-children\");var c = document.querySelector(\"html\");b && b.click();c && c.style.setProperty('overflow', 'visible', 'important');c && c.style.setProperty('position', 'static', 'important');});g.observe(document, {childList: !0,subtree: !0});setTimeout(function() {g.disconnect()}, 1E4)}});"
         },
         {
             "domains": "computerbase.de",
@@ -2246,7 +2274,7 @@
             "script": "document.cookie=\"COOKIE_BANNER=Y; path=/;\";"
         },
         {
-            "domains": "music.yandex.com,music.yandex.by,music.yandex.kz,music.yandex.ru,music.yandex.ua",
+            "domains": "music.yandex.com,music.yandex.by,music.yandex.kz,music.yandex.ru",
             "script": "if (typeof localStorage != 'undefined' && localStorage.setItem) { localStorage.setItem('gdpr-welcome', '{\"0\":0}'); }"
         },
         {
@@ -3190,6 +3218,10 @@
             "script": "(function() { try { if (\"undefined\" != typeof localStorage) { localStorage.setItem(\"gendernlsubscription\", \"\") } } catch (ex) {} })();"
         },
         {
+            "domains": "atlasbus.ru",
+            "script": "(function(){-1==document.cookie.indexOf(\"native-app-topper\")&&(document.cookie=\"native-app-topper=\"+Date.now()+\"; path=/;\",location.reload())})();"
+        },
+        {
             "domains": "stanby.com",
             "script": "(function() { try { if (\"undefined\" != typeof localStorage) { localStorage.setItem('app_banner_close', '{\"value\":\"close\"}') } } catch (ex) {} })();"
         },
@@ -3310,7 +3342,7 @@
             "script": "AG_onLoad(function(){var a=new MutationObserver(function(){var b=document.querySelector(\".aquisition-holder .close-button\");b&&(a.disconnect(),b.click())});a.observe(document,{childList:!0,subtree:!0});setTimeout(function(){a.disconnect()},1E4)});"
         },
         {
-            "domains": "google.*",
+            "domains": "google.ad,google.ae,google.al,google.am,google.as,google.at,google.az,google.ba,google.be,google.bf,google.bg,google.bi,google.bj,google.bs,google.bt,google.by,google.ca,google.cat,google.cd,google.cf,google.cg,google.ch,google.ci,google.cl,google.cm,google.cn,google.co.ao,google.co.bw,google.co.ck,google.co.cr,google.co.id,google.co.il,google.co.in,google.co.jp,google.co.ke,google.co.kr,google.co.ls,google.co.ma,google.co.mz,google.co.nz,google.co.th,google.co.tz,google.co.ug,google.co.uk,google.co.uz,google.co.ve,google.co.vi,google.co.za,google.co.zm,google.co.zw,google.com,google.com.af,google.com.ag,google.com.ai,google.com.ar,google.com.au,google.com.bd,google.com.bh,google.com.bn,google.com.bo,google.com.br,google.com.bz,google.com.co,google.com.cu,google.com.cy,google.com.do,google.com.ec,google.com.eg,google.com.et,google.com.fj,google.com.gh,google.com.gi,google.com.gt,google.com.hk,google.com.jm,google.com.kh,google.com.kw,google.com.lb,google.com.ly,google.com.mm,google.com.mt,google.com.mx,google.com.my,google.com.na,google.com.nf,google.com.ng,google.com.ni,google.com.np,google.com.om,google.com.pa,google.com.pe,google.com.pg,google.com.ph,google.com.pk,google.com.pr,google.com.py,google.com.qa,google.com.sa,google.com.sb,google.com.sg,google.com.sl,google.com.sv,google.com.tj,google.com.tr,google.com.tw,google.com.ua,google.com.uy,google.com.vc,google.com.vn,google.cv,google.cz,google.de,google.dj,google.dk,google.dm,google.dz,google.ee,google.es,google.fi,google.fm,google.fr,google.ga,google.ge,google.gg,google.gl,google.gm,google.gp,google.gr,google.gy,google.hn,google.hr,google.ht,google.hu,google.ie,google.im,google.iq,google.is,google.it,google.je,google.jo,google.kg,google.ki,google.kz,google.la,google.li,google.lk,google.lt,google.lu,google.lv,google.md,google.me,google.mg,google.mk,google.ml,google.mn,google.ms,google.mu,google.mv,google.mw,google.ne,google.nl,google.no,google.nr,google.nu,google.pl,google.pn,google.ps,google.pt,google.ro,google.rs,google.ru,google.rw,google.sc,google.se,google.sh,google.si,google.sk,google.sm,google.sn,google.so,google.sr,google.st,google.td,google.tg,google.tk,google.tl,google.tm,google.tn,google.to,google.tt,google.vg,google.vu,google.ws",
             "script": "(function() { try { if (\"undefined\" != typeof localStorage) { window.localStorage.setItem(\"gtButterbarDismissalExpiry\", ((new Date).getTime() + 6048E5).toString()) } } catch (ex) {} })();"
         },
         {
@@ -3422,6 +3454,10 @@
             "script": "document.cookie = \"phone-banner_shown=1; path=/;\";"
         },
         {
+            "domains": "reviewtech.me",
+            "script": "(function(){if(location.href.includes(\"/aHR0c\"))try{let a=location.href.substring(location.href.indexOf(\"aHR0c\"));a=atob(a),location.assign(decodeURIComponent(a))}catch(a){}})();"
+        },
+        {
             "domains": "ghostcloud.ml",
             "script": "AG_onLoad(function(){const a=document.querySelector(\"body > meta[http-equiv=\\\"refresh\\\"][content*=\\\";url=http\\\"]\");if(a)try{const b=a.content?.split(\";url=\").pop();location.assign(b)}catch(a){}});"
         },
@@ -3446,7 +3482,7 @@
             "script": "AG_onLoad(function(){try{var a=document.querySelector('form > input[name=\"newwpsafelink\"]');if(a){var b,c=null==(b=JSON.parse(atob(a.value)))?void 0:b.linkr;if(c){var d=JSON.parse(atob(c.split(\"?safelink_redirect=\")[1]));location.assign(decodeURIComponent(null==d?void 0:d.safelink))}}}catch(e){}});"
         },
         {
-            "domains": "blog.textpage.xyz,veganab.co",
+            "domains": "themorningtribune.com,veganho.co,veganal.co,blog.textpage.xyz,veganab.co",
             "script": "AG_onLoad(function(){try{var a=document.querySelector('form#wpsafelink-landing > input[name=\"newwpsafelink\"]');if(a){var b,c=null==(b=JSON.parse(atob(a.value)))?void 0:b.linkr;if(c){var d=JSON.parse(atob(c.split(\"?safelink_redirect=\")[1]));location.assign(decodeURIComponent(null==d?void 0:d.safelink))}}}catch(e){}});"
         },
         {
@@ -3846,7 +3882,7 @@
             "script": "AG_onLoad(function(){ var el = document.querySelector('.page-content1 button#makingdifferenttimer[onclick*=\"PathSet()\"]'); if(el) el.click(); });"
         },
         {
-            "domains": "imgxxxx.buzz,imgwia.buzz,imgkorle.buzz,imgkoc.buzz,imgwer.buzz,imgqte.buzz,imgbbd.buzz,imgxvd.buzz,imglkju.buzz,imgyvdw.buzz,imglqw.buzz,imgyng.buzz,imgpekele.buzz,imgwex.buzz,imgkuiw.xyz,imgveni.xyz,imglina.xyz,imgtrw.buzz,imgjut.buzz,imgweika.buzz,imguiwe.buzz,imgkane.buzz,imgkoka.buzz,imgkia.buzz,imgalor.xyz,imgklx.xyz,imgkaka.xyz,imgyear.icu,federleqa.icu,nemenlake.icu,opalekr.icu,pixsera.net,rtkenale.icu,cloudgallery.net,imgair.net,imgfrost.net,imgair.net",
+            "domains": "xmbme.buzz,pyotinle.buzz,utinwpqqui.buzz,imgxxxx.buzz,imgwia.buzz,imgkorle.buzz,imgkoc.buzz,imgwer.buzz,imgqte.buzz,imgbbd.buzz,imgxvd.buzz,imglkju.buzz,imgyvdw.buzz,imglqw.buzz,imgyng.buzz,imgpekele.buzz,imgwex.buzz,imgkuiw.xyz,imgveni.xyz,imglina.xyz,imgtrw.buzz,imgjut.buzz,imgweika.buzz,imguiwe.buzz,imgkane.buzz,imgkoka.buzz,imgkia.buzz,imgalor.xyz,imgklx.xyz,imgkaka.xyz,imgyear.icu,federleqa.icu,nemenlake.icu,opalekr.icu,pixsera.net,rtkenale.icu,cloudgallery.net,imgair.net,imgfrost.net,imgair.net",
             "script": "AG_onLoad(function(){setTimeout(function(){var a=document.querySelector(\"a[href].url-link\");a&&(a.click(),setTimeout(function(){a.click()},50))},500)});"
         },
         {
@@ -3892,18 +3928,6 @@
         {
             "domains": "wowroms.com",
             "script": "AG_onLoad(function() { setTimeout(function() { second = 0; }, 300); });"
-        },
-        {
-            "domains": "rysafe.blogspot.com",
-            "script": "AG_setConstant('safelink.counter', '0');"
-        },
-        {
-            "domains": "rysafe.blogspot.com",
-            "script": "AG_setConstant('safelink.click2x', 'false');"
-        },
-        {
-            "domains": "rysafe.blogspot.com",
-            "script": "AG_onLoad(function() { setTimeout(function() { var el = document.querySelector('.result > a[href^=\"http\"]'); if(el) { location = el.href; } }, 2000); });"
         },
         {
             "domains": "dutchycorp.ovh,dutchycorp.space",
@@ -4142,11 +4166,11 @@
             "script": "if (typeof localStorage != 'undefined' && localStorage.setItem) { localStorage.setItem('cnetSettings', '{\"autoplayEnabled\":\"off\"}'); }"
         },
         {
-            "domains": "bluemediafiles.com",
+            "domains": "bluemediafiles.eu,bluemediafiles.com",
             "script": "AG_onLoad(function(){if(-1!=window.location.href.indexOf(\"/url-generator.php?url=\")){var a=new MutationObserver(function(){var b=document.querySelector('form[action=\"get-url.php\"] > input#url[value] + input[id][type=\"image\"][src]');b&&(a.disconnect(),b.click())});a.observe(document,{childList:!0,subtree:!0});setTimeout(function(){a.disconnect()},1E4)}});"
         },
         {
-            "domains": "bluemediafiles.com",
+            "domains": "bluemediafiles.eu,bluemediafiles.com",
             "script": "(function(){var a=\"http\"+(new URL(window.location.href)).searchParams.get(\"xurl\");try{new URL(a);var b=!0}catch(c){b=!1}if(b)try{window.location=a}catch(c){}})();"
         },
         {

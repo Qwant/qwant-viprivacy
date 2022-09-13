@@ -1,8 +1,8 @@
 [Adblock Plus 2.0]
-! Checksum: vrQDJU+eTwIpJa2hwcVtTQ
-! Version: 202208231131
+! Checksum: 4r0YYz9IqO5ICz1cgSE72w
+! Version: 202209121331
 ! Title: Adblock Warning Removal List
-! Last modified: 23 Aug 2022 11:31 UTC
+! Last modified: 12 Sep 2022 13:31 UTC
 ! Expires: 1 days (update frequency)
 ! Homepage: https://easylist.to/
 ! Licence: https://easylist.to/pages/licence.html
@@ -61,6 +61,8 @@ koolhydraatarmerecepten.info##body > [style^="z-index: 1000000; "]
 ||corrosif.science^$domain=filerev.cc|pencurimovie.pw
 ||rockradio.com^*/blockadblock-$script,domain=rockradio.com
 ||static.game-state.com/images/main/alert/replacement/
+||tritoshi.com/libs/check.js
+||tristoshink.online/libs/check.js
 ||www.google.*/ajax/pi/phd?abd=0$xmlhttprequest
 ! Specific hide
 mediafire.com###abnotify
@@ -421,7 +423,7 @@ asn.in.ua,beadeath.dclans.ru###mdl_ctnr
 photolessons.org###modal-adbmon-div
 ostroh.info###modal.modal-bg
 all-episodes.net###odin
-filmix.ac,filmix.beer,filmix.biz,filmix.buzz,filmix.cc,filmix.click,filmix.co,filmix.email,filmix.gay,filmix.ink,filmix.love,filmix.ltd,filmix.online,filmix.site,filmix.today,filmix.wiki,filmix.zone###oframeplayer > #player_control_play-icon ~ pjsdiv[style^="position: absolute; left:"][style*="pointer-events: none; display: block; visibility:"]
+filmix.ac,filmix.gay,filmix.life,filmix.love,filmix.tech,filmix.zone###oframeplayer > #player_control_play-icon ~ pjsdiv[style^="position: absolute; left:"][style*="pointer-events: none; display: block; visibility:"]
 mover.uz###oframeplayer > [class][style^="display: block"]
 md4u.ru###pagecontent > div[style*="background-color"]
 alensat.org,forummikrotik.ru###phpbb-ads-ab
@@ -510,7 +512,7 @@ pythonworld.ru##.pythonworld-contributor
 veseloeradio.ru##.racy_sidebar
 fanfics.me##.red.nodata
 webofcomics.ru##.reklandvipinfo
-filmix.ac,filmix.beer,filmix.biz,filmix.buzz,filmix.cc,filmix.click,filmix.co,filmix.email,filmix.gay,filmix.ink,filmix.love,filmix.ltd,filmix.online,filmix.site,filmix.today,filmix.wiki,filmix.zone##.remove-sda-wrap
+filmix.ac,filmix.gay,filmix.life,filmix.love,filmix.tech,filmix.zone##.remove-sda-wrap
 sport-express.ru##.se-adv-notice
 101.ru##.showMessageAdBlock
 playunturned.ru##.side_left > center
@@ -591,7 +593,7 @@ abc-people.com##div[style*="background-color"][style*="position"][style*="z-inde
 sdamgia.ru##div[style="text-align:center; color:red; border: 0px solid black; font-size:16px"]
 anime.anidub.life,myanime.online,online.anidub.com#?#div[style^="position: fixed;"]:-abp-has(> :-abp-contains(Обнаружена блокировка рекламы))
 pvcalc.ru##div[style^="position:fixed; top:0px; left:0px; opacity: 0.9;"]
-reshuege.ru,reshuoge.ru,reshuvpr.ru,sdamgia.ru##div[style^="text-align:center; color:red;"][style*="font-size:16px"]
+sdamgia.ru##div[style^="text-align:center; color:red;"][style*="font-size:16px"]
 ph4.ru##div[style^="width: 728px; height: 90px;"]
 bdmbase.ru##html > .q1
 7sim.net##html > body ~ div

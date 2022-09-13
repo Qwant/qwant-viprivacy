@@ -125,6 +125,10 @@ class Messenger {
         return this.sendMessage(MESSAGE_TYPES.OPEN_EXTENSION_STORE);
     };
 
+    openComparePage = async () => {
+        return this.sendMessage(MESSAGE_TYPES.OPEN_COMPARE_PAGE);
+    };
+
     async enableFilter(filterId) {
         return this.sendMessage(MESSAGE_TYPES.ADD_AND_ENABLE_FILTER, { filterId });
     }
@@ -216,8 +220,8 @@ class Messenger {
         return this.sendMessage(MESSAGE_TYPES.OPEN_ASSISTANT);
     }
 
-    async openAbuseSite(url) {
-        return this.sendMessage(MESSAGE_TYPES.OPEN_ABUSE_TAB, { url });
+    async openAbuseSite(url, from) {
+        return this.sendMessage(MESSAGE_TYPES.OPEN_ABUSE_TAB, { url, from });
     }
 
     async checkSiteSecurity(url) {

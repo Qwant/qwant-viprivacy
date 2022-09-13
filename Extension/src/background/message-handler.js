@@ -273,6 +273,11 @@ const createMessageHandler = () => {
         const { data, type } = message;
 
         switch (type) {
+            case MESSAGE_TYPES.SCRIPTLET_CLOSE_WINDOW: {
+                const { tabId } = sender.tab;
+                tabsApi.remove(tabId);
+                break;
+            }
             case MESSAGE_TYPES.GET_OPTIONS_DATA: {
                 return processGetOptionsData();
             }
@@ -458,6 +463,9 @@ const createMessageHandler = () => {
                 break;
             case MESSAGE_TYPES.OPEN_EXTENSION_STORE:
                 // uiService.openExtensionStore();
+                break;
+            case MESSAGE_TYPES.OPEN_COMPARE_PAGE:
+                uiService.openComparePage();
                 break;
             case MESSAGE_TYPES.OPEN_FILTERING_LOG:
                 // uiService.openFilteringLog(message.tabId);
