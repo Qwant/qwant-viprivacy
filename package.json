@@ -93,7 +93,7 @@
     "zip-webpack-plugin": "^4.0.1"
   },
   "dependencies": {
-    "@adguard/assistant": "^4.3.62",
+    "@adguard/assistant": "^4.3.63",
     "@adguard/filters-downloader": "1.1.12",
     "@adguard/scriptlets": "^1.6.39",
     "@adguard/translate": "^0.2.5",
