@@ -88,6 +88,7 @@ export const filtersUpdate = (() => {
             const group = subscriptions.getGroup(filter.groupId);
             if (filter.installed && filter.enabled && group.enabled) {
                 if (forceUpdate || needUpdate(filter)) {
+                    log.info(`Filter [${filter.filterId}] will update`);
                     if (filter.customUrl) {
                         customFilterIds.push(filter.filterId);
                     } else {
