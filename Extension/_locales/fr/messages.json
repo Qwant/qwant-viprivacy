@@ -225,7 +225,7 @@
     "message": "Éléments bloqués"
   },
   "popup_stats_blocked_trackers": {
-    "message": "Traqueurs bloqués"
+    "message": "Éléments bloqués"
   },
   "popup_stats_table_domains_label": {
     "message": "Domaines"
@@ -237,7 +237,7 @@
     "message": "Temps économisé"
   },
   "popup_stats_trackers": {
-    "message": "Traqueurs bloqués"
+    "message": "Éléments bloqués"
   },
   "protection_level": {
     "message": "Niveau de protection"
