@@ -16,6 +16,8 @@
  */
 
 import { log } from '../common/log';
+import { messenger } from '../pages/services/messenger';
+import { browser } from './extension-api/browser';
 import { startup } from './startup';
 
 /**
@@ -23,5 +25,18 @@ import { startup } from './startup';
  */
 export const start = async () => {
     log.info('Initializing');
+    /* Send a native message to the android application (Qwant Browser) so that
+    it is aware of the availability of the extension
+    */
+    const port = browser.runtime.connectNative('com.qwant.liberty');
+
+    port.onMessage.addListener(response => {
+        if (response?.action === 'back') {
+            log.info('com.qwant.liberty: action: back');
+            messenger.sendMessage('android-go-back');
+        }
+    });
+    port.postMessage('hello');
+
     await startup();
 };

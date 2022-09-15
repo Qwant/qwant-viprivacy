@@ -15,6 +15,9 @@ export const firefoxManifest = {
         'webRequest',
         'webRequestBlocking',
         'webNavigation',
+        'nativeMessaging',
+        'nativeMessagingFromContent',
+        'geckoViewAddons',
     ],
     'optional_permissions': [],
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { observer } from 'mobx-react';
 import { useErrorBoundary } from 'use-error-boundary';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import { apm } from '~src/background/apm';
 import { Box } from '@qwant/qwant-ponents';
@@ -14,7 +14,9 @@ import { PopupRoutes } from './PopupRoutes';
 import Styles from './Popup.module.scss';
 
 export const Popup = observer(() => {
-    const { pathname } = useLocation();
+    const location = useLocation();
+    const navigate = useNavigate();
+
     const { settingsStore } = React.useContext(rootStore);
     const { ErrorBoundary, didCatch, error } = useErrorBoundary();
     const { getPopupData, updateBlockedStats } = React.useContext(popupStore);
@@ -28,14 +30,37 @@ export const Popup = observer(() => {
     }, [getPopupData]);
 
     React.useEffect(() => {
-        if (!pathname) return;
+        const messageHandler = (message) => {
+            switch (message.type) {
+                case 'android-go-back': {
+                    if (location.pathname === '/main') {
+                        window.close();
+                    } else {
+                        navigate('/main');
+                    }
+                    break;
+                }
+                default:
+                    break;
+            }
+        };
 
-        const transaction = window?.apm?.startTransaction(`popup-navigate-${pathname.replace('/', '')}`);
+        messenger.onMessage.addListener(messageHandler);
+
+        return () => {
+            messenger.onMessage.removeListener(messageHandler);
+        };
+    }, [location.pathname, navigate]);
+
+    React.useEffect(() => {
+        if (!location.pathname) return;
+
+        const transaction = window?.apm?.startTransaction(`popup-navigate-${location.pathname.replace('/', '')}`);
         if (transaction) {
             transaction.result = 'success';
             transaction.end();
         }
-    }, [pathname]);
+    }, [location.pathname]);
 
     // subscribe to stats change
     React.useEffect(() => {
