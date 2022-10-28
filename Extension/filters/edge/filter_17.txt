@@ -1,8 +1,8 @@
-! Checksum: P3SbTYqXePKkZotEPMHrYQ
+! Checksum: SZXQvmn+QAZjX5ue07yrtQ
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.3.60
-! TimeUpdated: 2022-10-18T08:30:48+00:00
+! Version: 2.0.3.61
+! TimeUpdated: 2022-10-23T00:30:50+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -221,6 +221,8 @@ $removeparam=fb_source
 ! Good: ||example.org^$removeparam=cx
 !
 !
+! https://github.com/uBlockOrigin/uAssets/issues/12972#issuecomment-1286665177
+||mirror.co.uk^$removeparam=int_source
 ! https://github.com/AdguardTeam/AdguardFilters/issues/132478
 ||wiley.com^$removeparam=/elq/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/131490
