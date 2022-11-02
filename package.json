@@ -97,7 +97,7 @@
     "@adguard/filters-downloader": "1.1.12",
     "@adguard/scriptlets": "^1.6.39",
     "@adguard/translate": "^0.2.5",
-    "@adguard/tsurlfilter": "^1.0.35",
+    "@adguard/tsurlfilter": "^1.0.43",
     "@babel/runtime": "^7.18.6",
     "@elastic/apm-rum": "^5.10.2",
     "@formkit/auto-animate": "^1.0.0-beta.1",
