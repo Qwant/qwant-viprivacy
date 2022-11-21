@@ -1,13 +1,9 @@
-import {
-    Flex, IconArrowLeftLine, Text,
-} from '@qwant/qwant-ponents';
+import { Flex, IconArrowLeftLine, Text } from '@qwant/qwant-ponents';
 import { t } from '~src/common/translators/reactTranslator';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { QwantLogo } from '~src/pages/common/components/QwantLogo/QwantLogo';
 import React from 'react';
 import Styles from './Popup.module.scss';
-import { IconSearch } from './shared/Icons';
-import { urls } from '../../helpers';
 
 export function PopupHeader() {
     const navigate = useNavigate();
@@ -17,17 +13,6 @@ export function PopupHeader() {
         return (
             <Flex between alignCenter mb="s">
                 <QwantLogo withSquare height={44} width={224} />
-                <Text
-                    typo="heading-3"
-                    as="a"
-                    color="primary"
-                    href={urls.qwant()}
-                    target="_blank"
-                    rel="noreferrer"
-                    className={Styles.PopupSearch}
-                >
-                    <IconSearch />
-                </Text>
             </Flex>
         );
     }
