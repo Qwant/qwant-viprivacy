@@ -1,8 +1,8 @@
-! Checksum: PCO9ntjp/3R1uXvL6m2R3A
+! Checksum: SAqtiKUir0Kqzlq4RarfVA
 ! Title: AdGuard French filter
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.36.20
-! TimeUpdated: 2022-11-28T09:31:07+00:00
+! Version: 2.0.36.21
+! TimeUpdated: 2022-11-28T12:30:51+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -611,6 +611,8 @@ jeuxvideo.com#?#.list-actu-home > li[-ext-has='span.officiel']
 !------- JS rules ---------------------!
 !--------------------------------------!
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/135942
+! https://github.com/AdguardTeam/AdguardFilters/issues/135943
 ! https://github.com/AdguardTeam/AdguardFilters/issues/125733
 ! https://github.com/AdguardTeam/AdguardFilters/issues/119411
 voici.fr,programme-tv.net,gala.fr,capital.fr#%#AG_onLoad(function(){if(window.pmsCoreAds&&Array.isArray(pmsCoreAds)){window.pmsCoreAds=new Proxy(pmsCoreAds,{set:(a,b,c,d)=>{if("function"==typeof c)try{let a=!1;const b=b=>{var c=document.querySelector(".ads-core-video");c&&a?clearInterval(d):(b(),a=!0)},d=setInterval(b,1e3,c)}catch(a){}return Reflect.set(a,b,c,d)}})}});
@@ -745,6 +747,13 @@ all-stadium.net#$##layer2 {top:50px!important; left:950px!important;}
 /^(?!.*(bootstrapcdn.com|cdn.ampproject.org|cloudflare.com|disqus.com|disquscdn.com|dmca.com|ebacdn.com|facebook.net|fastlylb.net|fbcdn.net|fluidplayer.com|fontawesome.com|github.io|google.com|googleapis.com|googletagmanager.com|gstatic.com|jquery.com|jsdelivr.net|jwpcdn.com|jwplatform.com|polyfill.io|recaptcha.net|shrink.pe|twitter.com|ulogin.ru|unpkg.com|userapi.com|vidazoo.com|vk.com|yandex.|yastatic.net|ytimg.com|zencdn.net|player|youtube.com|cackle.me|googleoptimize.com|vuukle.com|chatango.com|twimg.com|google-analytics.com|hcaptcha.com|raincaptcha.com|media-imdb.com|blogger.com|hwcdn.net|instagram.com|wp.com)).*$/$third-party,script,domain=scan-fr.cc
 !
 !
+zone-telechargement.moe##a[href^="https://dl-protect.net/get-premium-url?"] > img
+||zone-telechargement.moe/main.js?v=
+||zone-telechargement.moe/templates/zone/images/dl/telechargement-direct.png
+dl-protect.net##a[href^="/geturl"] > img
+||dl-protect.net/main.js?v=
+||annuaire-telechargement.tel/main.js?v=
+||annuaire-telechargement.tel/static/img/atdl1.png
 cnews.fr##.ban-top-habillage
 cnews.fr##div[id^="block-dm-ads-"]
 aufeminin.com###af_partnerBlock_seeAlso
@@ -1178,11 +1187,13 @@ lesfrontaliers.lu##.ad-listing
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/135955
 ! https://github.com/AdguardTeam/AdguardFilters/issues/135982
 whatpub.com#@#.pub_left
 whatpub.com#@##pub-footer
 ! https://github.com/AdguardTeam/AdguardFilters/issues/135765
-@@||cpforumhttps-calgarypuck.netdna-ssl.com/$domain=forum.calgarypuck.com
+||netdna-ssl.com^$badfilter
+||netdna-ssl.com^$subdocument,third-party,badfilter
 ! https://github.com/AdguardTeam/AdguardFilters/issues/135631
 ||stripchat.com^$badfilter
 ! https://github.com/AdguardTeam/AdguardFilters/issues/135608

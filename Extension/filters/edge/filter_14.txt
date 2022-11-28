@@ -1,8 +1,8 @@
-! Checksum: WVdVege97yA4SR/lptkUJg
+! Checksum: 5PQHp27WHOIyCVfRXDLAuw
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.1.40.93
-! TimeUpdated: 2022-11-28T11:30:51+00:00
+! Version: 2.1.40.94
+! TimeUpdated: 2022-11-28T12:30:44+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -15148,6 +15148,7 @@ reddit.com#@#.ADBAR
 ! SECTION: Anti-adblock - Regular rules
 ! Do not forget about '!#safari_cb_affinity' section for exclusions
 !
+realtime-chart.info##.amazoom1 > div > div[class][id][style="color: rgb(255, 255, 255);"]
 maximum.ru,rusradio.ru,dfm.ru##.ad-blocked-message
 ||allrefs.net/js/cur.js
 maximum.ru##.ad-blocked-message
@@ -17381,6 +17382,7 @@ aol.com#$#.ad__tile { height: 10px!important; position: absolute!important; left
 !
 ! SECTION: Popups - Regular rules
 !
+visualstudio.microsoft.com###vscom-modal-surveypopup
 ficbook.net##button.discount
 unionpedia.org#$#.modalBack { display: none !important; }
 unionpedia.org#$#body[style="overflow: hidden;"] { overflow: auto !important; }
@@ -24054,6 +24056,10 @@ technologyreview.com,inews.co.uk,nordbayern.de,thelocal.ch,morgenpost.de,waz.de,
 !
 ! SECTION: Subscriptions - Regular rules
 !
+newdaily.co.kr##.notifyjs-corner
+||image.newdaily.co.kr/site/etc/banner/*_newsletter_
+||newstomato.com/images/newsletter.png
+newstomato.com##.rn_container div[style^="text-align:"][style*="margin-top:"]
 fbi.gov###meta-tile-meta-sticky-footer
 trend.az##.read-news-on
 zdg.md##.google-block

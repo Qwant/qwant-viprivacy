@@ -1625,8 +1625,8 @@
       "groupId": 4,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/edge_filter_14.txt",
       "trustLevel": "full",
-      "version": "2.1.40.93",
-      "timeUpdated": "2022-11-28T11:30:51+0000",
+      "version": "2.1.40.94",
+      "timeUpdated": "2022-11-28T12:30:44+0000",
       "languages": [],
       "tags": [
         5,
@@ -1645,8 +1645,8 @@
       "groupId": 6,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/edge_filter_15.txt",
       "trustLevel": "full",
-      "version": "2.0.42.25",
-      "timeUpdated": "2022-11-28T06:30:45+0000",
+      "version": "2.0.42.26",
+      "timeUpdated": "2022-11-28T12:30:46+0000",
       "languages": [],
       "tags": [
         45,
@@ -1674,8 +1674,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/edge_filter_16.txt",
       "trustLevel": "full",
-      "version": "2.0.36.20",
-      "timeUpdated": "2022-11-28T09:31:07+0000",
+      "version": "2.0.36.21",
+      "timeUpdated": "2022-11-28T12:30:51+0000",
       "languages": [
         "fr"
       ],
@@ -1740,8 +1740,8 @@
       "groupId": 4,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/edge_filter_19.txt",
       "trustLevel": "full",
-      "version": "2.0.3.78",
-      "timeUpdated": "2022-11-28T10:30:53+0000",
+      "version": "2.0.3.79",
+      "timeUpdated": "2022-11-28T12:30:57+0000",
       "languages": [],
       "tags": [
         5,
@@ -1862,8 +1862,8 @@
       "groupId": 1,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/edge_filter_2.txt",
       "trustLevel": "full",
-      "version": "2.2.57.44",
-      "timeUpdated": "2022-11-28T11:31:39+0000",
+      "version": "2.2.57.45",
+      "timeUpdated": "2022-11-28T12:31:31+0000",
       "languages": [],
       "tags": [
         10,
@@ -1902,8 +1902,8 @@
       "groupId": 3,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/edge_filter_4.txt",
       "trustLevel": "full",
-      "version": "2.0.73.95",
-      "timeUpdated": "2022-11-28T10:31:40+0000",
+      "version": "2.0.73.96",
+      "timeUpdated": "2022-11-28T12:31:43+0000",
       "languages": [],
       "tags": [
         3,
@@ -1962,8 +1962,8 @@
       "groupId": 7,
       "subscriptionUrl": "https://f.qwant.com/tracking-protection/edge_filter_7.txt",
       "trustLevel": "full",
-      "version": "2.0.28.51",
-      "timeUpdated": "2022-11-28T11:32:09+0000",
+      "version": "2.0.28.52",
+      "timeUpdated": "2022-11-28T12:32:00+0000",
       "languages": [
         "ja"
       ],
