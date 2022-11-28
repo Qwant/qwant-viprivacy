@@ -282,13 +282,13 @@
 				"name": "Widżety społecznościowe"
 			},
 			"pt": {
-				"name": "Widgets Sociais"
+				"name": "Widgets sociais"
 			},
 			"pt_BR": {
-				"name": "Widgets Sociais"
+				"name": "Widgets sociais"
 			},
 			"pt_PT": {
-				"name": "Widgets Sociais"
+				"name": "Widgets sociais"
 			},
 			"ru": {
 				"name": "Виджеты социальных сетей"
@@ -1622,7 +1622,7 @@
 			},
 			"fi": {
 				"description": "Suodatin, joka tehostaa mainosestoa erityisesti englanninkielisillä sivustoilla",
-				"name": "Englanninkielisten mainosten esto"
+				"name": "Englannin kielikohtainen mainosesto"
 			},
 			"fr": {
 				"description": "Créé spécifiquement pour bloquer les publicités sur les pages web utilisant la langue Anglaise",
@@ -1756,7 +1756,7 @@
 			},
 			"fi": {
 				"description": "Suodatin, joka tehostaa mainosestoa erityisesti venäjänkielisillä sivustoilla",
-				"name": "Venäjänkielisten mainosten esto"
+				"name": "Venäjän kielikohtainen mainosesto"
 			},
 			"fr": {
 				"description": "Créé spécifiquement pour bloquer les publicités sur les pages web utilisant la langue Russe",
@@ -2292,7 +2292,7 @@
 			},
 			"fi": {
 				"description": "Suodatin, joka tehostaa mainosestoa erityisesti saksankielisillä sivustoilla",
-				"name": "Saksankielisten mainosten esto"
+				"name": "Saksan kielikohtainen mainosesto"
 			},
 			"fr": {
 				"description": "Créé spécifiquement pour bloquer les publicités sur les pages web utilisant la langue Allemande",
@@ -2560,7 +2560,7 @@
 			},
 			"fi": {
 				"description": "Suodatin, joka tehostaa mainosestoa erityisesti japaninkielisillä sivustoilla",
-				"name": "Japaninkielisten mainosten esto"
+				"name": "Japanin kielikohtainen mainosesto"
 			},
 			"fr": {
 				"description": "Créé spécifiquement pour bloquer les publicités sur les pages web utilisant la langue Japonaise",
@@ -2694,7 +2694,7 @@
 			},
 			"fi": {
 				"description": "Suodatin, joka tehostaa mainosestoa erityisesti hollanninkielisillä sivustoilla",
-				"name": "Hollanninkielisten mainosten esto"
+				"name": "Hollannin kielikohtainen mainosesto"
 			},
 			"fr": {
 				"description": "Créé spécifiquement pour bloquer les publicités sur les pages web utilisant la langue Néerlandaise",
@@ -2962,7 +2962,7 @@
 			},
 			"fi": {
 				"description": "Suodatin, joka tehostaa mainosestoa erityisesti espanjankielisillä sivustoilla",
-				"name": "Espanjankielisten mainosten esto"
+				"name": "Espanjan kielikohtainen mainosesto"
 			},
 			"fr": {
 				"description": "Créé spécifiquement pour bloquer les publicités sur les pages web utilisant la langue Espagnole",
@@ -3096,7 +3096,7 @@
 			},
 			"fi": {
 				"description": "Suodatin, joka tehostaa mainosestoa erityisesti portugalinkielisillä sivustoilla",
-				"name": "Portugalinkielisten mainosten esto"
+				"name": "Portugalin kielikohtainen mainosesto"
 			},
 			"fr": {
 				"description": "Créé spécifiquement pour bloquer les publicités sur les pages web utilisant la langue Portugaise",
@@ -3900,7 +3900,7 @@
 			},
 			"fi": {
 				"description": "Suodatin, joka tehostaa mainosestoa erityisesti turkinkielisillä sivustoilla",
-				"name": "Turkinkielisten mainosten esto"
+				"name": "Turkin kielikohtainen mainosesto"
 			},
 			"fr": {
 				"description": "Créé spécifiquement pour bloquer les publicités sur les pages web utilisant la langue Turque",
@@ -4302,7 +4302,7 @@
 			},
 			"fi": {
 				"description": "Suodatin, joka tehostaa mainosestoa erityisesti ranskankielisillä sivustoilla",
-				"name": "Ranskankielisten mainosten esto"
+				"name": "Ranskan kielikohtainen mainosesto"
 			},
 			"fr": {
 				"description": "Créé spécifiquement pour bloquer les publicités sur les pages web utilisant la langue Française",
@@ -4570,7 +4570,7 @@
 			},
 			"fi": {
 				"description": "Suodatin, joka tehostaa mainosestoa erityisesti indonesiankielisillä sivustoilla",
-				"name": "Indonesiankielisten mainosten esto"
+				"name": "Indonesian kielikohtainen mainosesto"
 			},
 			"fr": {
 				"description": "Conçu spécialement pour bloquer les publicités sur les pages Web en indonésien",
@@ -4704,7 +4704,7 @@
 			},
 			"fi": {
 				"description": "Suodatin, joka tehostaa mainosestoa erityisesti bulgariankielisillä sivustoilla",
-				"name": "Bulgariankielisten mainosten esto"
+				"name": "Bulgarian kielikohtainen mainosesto"
 			},
 			"fr": {
 				"description": "Conçu spécifiquement pour bloquer les publicités sur les pages Web en bulgare",
@@ -4838,7 +4838,7 @@
 			},
 			"fi": {
 				"description": "Suodatin, joka tehostaa mainosestoa erityisesti kiinankielisillä sivustoilla",
-				"name": "Kiinankielisten mainosten esto"
+				"name": "Kiinan kielikohtainen mainosesto"
 			},
 			"fr": {
 				"description": "Créé spécifiquement pour bloquer les publicités sur les pages web utilisant la langue Chinoise",
@@ -4972,7 +4972,7 @@
 			},
 			"fi": {
 				"description": "Suodatin, joka tehostaa mainosestoa erityisesti tšekinkielisillä sivustoilla",
-				"name": "Tšekinkielisten mainosten esto"
+				"name": "Tšekin kielikohtainen mainosesto"
 			},
 			"fr": {
 				"description": "Créé spécifiquement pour bloquer les publicités sur les pages web utilisant la langue Tchèque",
@@ -5106,7 +5106,7 @@
 			},
 			"fi": {
 				"description": "Suodatin, joka tehostaa mainosestoa erityisesti slovakinkielisillä sivustoilla",
-				"name": "Slovakinkielisten mainosten esto"
+				"name": "Slovakin kielikohtainen mainosesto"
 			},
 			"fr": {
 				"description": "Créé spécifiquement pour bloquer les publicités sur les pages web utilisant la langue Slovaque",
@@ -5240,7 +5240,7 @@
 			},
 			"fi": {
 				"description": "Suodatin, joka tehostaa mainosestoa erityisesti hepreankielisillä sivustoilla",
-				"name": "Hepreankielisten mainosten esto"
+				"name": "Heprean kielikohtainen mainosesto"
 			},
 			"fr": {
 				"description": "Créé spécifiquement pour bloquer les publicités sur les pages web utilisant l'Hébreu",
@@ -5374,7 +5374,7 @@
 			},
 			"fi": {
 				"description": "Suodatin, joka tehostaa mainosestoa erityisesti italiankielisillä sivustoilla",
-				"name": "Italiankielisten mainosten esto"
+				"name": "Italian kielikohtainen mainosesto"
 			},
 			"fr": {
 				"description": "Créé spécifiquement pour bloquer les publicités sur les pages web utilisant la langue Italienne",
@@ -5508,7 +5508,7 @@
 			},
 			"fi": {
 				"description": "Suodatin, joka tehostaa mainosestoa erityisesti latviankielisillä sivustoilla",
-				"name": "Latviankielisten mainosten esto"
+				"name": "Latvian kielikohtainen mainosesto"
 			},
 			"fr": {
 				"description": "Créé spécifiquement pour bloquer les publicités sur les pages web utilisant la langue Lettonne",
@@ -5642,7 +5642,7 @@
 			},
 			"fi": {
 				"description": "Suodatin, joka tehostaa mainosestoa erityisesti lieuttuankielisillä sivustoilla",
-				"name": "Liettuankielisten mainosten esto"
+				"name": "Liettuan kielikohtainen mainosesto"
 			},
 			"fr": {
 				"description": "Créé spécifiquement pour bloquer les publicités sur les pages web utilisant la langue Lithuanienne",
@@ -5776,7 +5776,7 @@
 			},
 			"fi": {
 				"description": "Suodatin, joka tehostaa mainosestoa erityisesti arabiankielisillä sivustoilla",
-				"name": "Arabiankielisten mainosten esto"
+				"name": "Arabian kielikohtainen mainosesto"
 			},
 			"fr": {
 				"description": "Créé spécifiquement pour bloquer les publicités sur les pages web utilisant la langue Arabe",
@@ -5910,7 +5910,7 @@
 			},
 			"fi": {
 				"description": "Suodatin, joka tehostaa mainosestoa erityisesti romaniankielisillä sivustoilla",
-				"name": "Romaniankielisten mainosten esto"
+				"name": "Romanian kielikohtainen mainosesto"
 			},
 			"fr": {
 				"description": "Créé spécifiquement pour bloquer les publicités sur les pages web utilisant la langue Roumaine",
@@ -6044,7 +6044,7 @@
 			},
 			"fi": {
 				"description": "Suodatin, joka tehostaa mainosestoa erityisesti suomenkielisillä sivustoilla",
-				"name": "Suomenkielisten mainosten esto"
+				"name": "Suomen kielikohtainen mainosesto"
 			},
 			"fr": {
 				"description": "Créé spécifiquement pour bloquer les publicités sur les pages web utilisant la langue Finnoise",
@@ -6178,7 +6178,7 @@
 			},
 			"fi": {
 				"description": "Suodatin, joka tehostaa mainosestoa erityisesti puolankielisillä sivustoilla",
-				"name": "Puolankielisten mainosten esto"
+				"name": "Puolan kielikohtainen mainosesto"
 			},
 			"fr": {
 				"description": "Créé spécifiquement pour bloquer les publicités sur les pages web utilisant la langue Polonaise",
@@ -6312,7 +6312,7 @@
 			},
 			"fi": {
 				"description": "Suodatin, joka tehostaa mainosestoa erityisesti islanninkielisillä sivustoilla",
-				"name": "Islanninkielisten mainosten esto"
+				"name": "Islannin kielikohtainen mainosesto"
 			},
 			"fr": {
 				"description": "Créé spécifiquement pour bloquer les publicités sur les pages web utilisant la langue Islandaise",
@@ -6446,7 +6446,7 @@
 			},
 			"fi": {
 				"description": "Suodatin, joka tehostaa mainosestoa erityisesti norjankielisillä sivustoilla",
-				"name": "Norjankielisten mainosten esto"
+				"name": "Norjan kielikohtainen mainosesto"
 			},
 			"fr": {
 				"description": "Créé spécifiquement pour bloquer les publicités sur les pages web utilisant la langue Norvégienne",
@@ -6580,7 +6580,7 @@
 			},
 			"fi": {
 				"description": "Suodatin, joka tehostaa mainosestoa erityisesti kreikankielisillä sivustoilla",
-				"name": "Kreikankielisten mainosten esto"
+				"name": "Kreikan kielikohtainen mainosesto"
 			},
 			"fr": {
 				"description": "Créé spécifiquement pour bloquer les publicités sur les pages web utilisant la langue Grecque",
@@ -6982,7 +6982,7 @@
 			},
 			"fi": {
 				"description": "Suodatin, joka tehostaa mainosestoa erityisesti tšekinkielisillä sivustoilla",
-				"name": "Tšekinkielisten mainosten esto"
+				"name": "Tšekin kielikohtainen mainosesto"
 			},
 			"fr": {
 				"description": "Créé spécifiquement pour bloquer les publicités sur les pages web utilisant la langue Tchèque",
@@ -7116,7 +7116,7 @@
 			},
 			"fi": {
 				"description": "Suodatin, joka tehostaa mainosestoa erityisesti unkarinkielisillä sivustoilla",
-				"name": "Unkarinkielisten mainosten esto"
+				"name": "Unkarin kielikohtainen mainosesto"
 			},
 			"fr": {
 				"description": "Créé spécifiquement pour bloquer les publicités sur les pages web utilisant la langue Hongroise",
@@ -7250,7 +7250,7 @@
 			},
 			"fi": {
 				"description": "Suodatin, joka tehostaa mainosestoa erityisesti tanskankielisillä sivustoilla",
-				"name": "Tanskankielisten mainosten esto"
+				"name": "Tanskan kielikohtainen mainosesto"
 			},
 			"fr": {
 				"description": "Créé spécifiquement pour bloquer les publicités sur les pages web utilisant la langue Danoise",
@@ -7652,7 +7652,7 @@
 			},
 			"fi": {
 				"description": "Suodatin, joka tehostaa mainosestoa erityisesti vietnaminkielisillä sivustoilla",
-				"name": "Vietnaminkielisten mainosten esto"
+				"name": "Vietnamin kielikohtainen mainosesto"
 			},
 			"fr": {
 				"description": "Créé spécifiquement pour bloquer les publicités sur les pages web utilisant la langue Vietnamienne",
@@ -7786,7 +7786,7 @@
 			},
 			"fi": {
 				"description": "Suodatin, joka tehostaa mainosestoa erityisesti vironkielisillä sivustoilla",
-				"name": "Vironkielisten mainosten esto"
+				"name": "Viron kielikohtainen mainosesto"
 			},
 			"fr": {
 				"description": "Créé spécifiquement pour bloquer les publicités sur les pages web utilisant la langue Estonienne",
@@ -7920,7 +7920,7 @@
 			},
 			"fi": {
 				"description": "Suodatin, joka tehostaa mainosestoa erityisesti farsinkielisillä sivustoilla",
-				"name": "Farsinkielisten mainosten esto"
+				"name": "Farsin kielikohtainen mainosesto"
 			},
 			"fr": {
 				"description": "Créé spécifiquement pour bloquer les publicités sur les pages web utilisant la langue Persane",
@@ -8054,7 +8054,7 @@
 			},
 			"fi": {
 				"description": "Suodatin, joka tehostaa mainosestoa erityisesti ruotsinkielisillä sivustoilla",
-				"name": "Ruotsinkielisten mainosten esto"
+				"name": "Ruotsin kielikohtainen mainosesto"
 			},
 			"fr": {
 				"description": "Créé spécifiquement pour bloquer les publicités sur les pages web utilisant la langue Suédoise",
@@ -8188,7 +8188,7 @@
 			},
 			"fi": {
 				"description": "Suodatin, joka tehostaa mainosestoa erityisesti koreankielisillä sivustoilla",
-				"name": "Koreankielisten mainosten esto"
+				"name": "Korean kielikohtainen mainosesto"
 			},
 			"fr": {
 				"description": "Créé spécifiquement pour bloquer les publicités sur les pages web utilisant la langue Coréenne",
@@ -8590,7 +8590,7 @@
 			},
 			"fi": {
 				"description": "Suodatin, joka tehostaa mainosestoa erityisesti fäärinkielisillä sivustoilla",
-				"name": "Fäärinkielisten mainosten esto"
+				"name": "Fäärin kielikohtainen mainosesto"
 			},
 			"fr": {
 				"description": "Conçu spécifiquement pour bloquer les publicités sur les pages Web en féroïen",
@@ -8724,7 +8724,7 @@
 			},
 			"fi": {
 				"description": "Suodatin, joka tehostaa mainosestoa erityisesti thainkielisillä sivustoilla",
-				"name": "Thainkielisten mainosten esto"
+				"name": "Thain kielikohtainen mainosesto"
 			},
 			"fr": {
 				"description": "Conçu spécifiquement pour bloquer les publicités sur les pages Web en Thaï",
@@ -8850,7 +8850,7 @@
 			},
 			"fi": {
 				"description": "Suodatin, joka tehostaa mainosestoa erityisesti serbiankielisillä sivustoilla",
-				"name": "Serbiankielisten mainosten esto"
+				"name": "Serbian kielikohtainen mainosesto"
 			},
 			"fr": {
 				"description": "Créé spécifiquement pour bloquer les publicités sur les pages web utilisant la langue Serbe",
@@ -8924,6 +8924,10 @@
 				"description": "Створений спеціально для блокування реклами на вебсторінках сербською мовою",
 				"name": "Блокування реклами на сербськомовних сайтах"
 			},
+			"vi": {
+				"description": "Được thiết kế đặc biệt để chặn quảng cáo ở trang web tiếng Xéc-bi",
+				"name": "Chặn quảng cáo tiếng Xéc-bi"
+			},
 			"zh": {
 				"description": "专门设计用于屏蔽塞尔维亚语网页上的广告",
 				"name": "针对塞尔维亚语的广告拦截"
@@ -8968,7 +8972,7 @@
 			},
 			"fi": {
 				"description": "Suodatin, joka tehostaa mainosestoa erityisesti kroatiankielisillä sivustoilla",
-				"name": "Kroatiankielisten mainosten esto"
+				"name": "Kroatian kielikohtainen mainosesto"
 			},
 			"fr": {
 				"description": "Créé spécifiquement pour bloquer les publicités sur les pages web utilisant la langue Croate",
@@ -9042,6 +9046,10 @@
 				"description": "Створений спеціально для блокування реклами на вебсторінках хорватською мовою",
 				"name": "Блокування реклами хорватською мовою"
 			},
+			"vi": {
+				"description": "Được thiết kế đặc biệt để chặn quảng cáo ở trang web tiếng Croatia",
+				"name": "Chặn quảng cáo tiếng Croatia"
+			},
 			"zh": {
 				"description": "专门设计用于屏蔽克罗地亚语网页上的广告",
 				"name": "针对克罗地亚语的广告拦截"
@@ -9082,7 +9090,7 @@
 			},
 			"fi": {
 				"description": "Suodatin, joka tehostaa mainosestoa erityisesti hindinkielisillä sivustoilla",
-				"name": "Hindinkielisten mainosten esto"
+				"name": "Hindin kielikohtainen mainosesto"
 			},
 			"fr": {
 				"description": "Conçu spécifiquement pour bloquer les publicités sur les pages web en hindi",
@@ -9151,6 +9159,10 @@
 			"uk": {
 				"description": "Створений спеціально для блокування реклами на сайтах мовою гінді",
 				"name": "Блокування реклами мовою гінді"
+			},
+			"vi": {
+				"description": "Được thiết kế đặc biệt để chặn quảng cáo trên các trang web bằng tiếng Hindi",
+				"name": "Chặn quảng cáo dành riêng cho ngôn ngữ Hindi"
 			},
 			"zh": {
 				"description": "专门设计用于屏蔽印地语网页上的广告",
@@ -10898,11 +10910,11 @@
 			},
 			"es": {
 				"name": "Filtro de elementos molestos",
-				"description": "Bloquea los elementos irritantes en las páginas web, incluidos avisos de cookies, widgets de terceros y ventanas emergentes en la página. Contiene los siguientes filtros de AdGuard: avisos de cookies, ventanas emergentes, banners de aplicaciones móviles, widgets y otros elementos molestos."
+				"description": "Bloquea elementos irritantes en sitios web, incluidos avisos de cookies, widgets de terceros y ventanas emergentes dentro del sitio. Contiene los siguientes filtros de AdGuard: avisos de cookies, ventanas emergentes, banners en aplicaciones móviles, otros elementos molestos y widgets."
 			},
 			"es_ES": {
 				"name": "Filtro de elementos molestos",
-				"description": "Bloquea los elementos irritantes en las páginas web, incluidos avisos de cookies, widgets de terceros y ventanas emergentes en la página. Contiene los siguientes filtros de AdGuard: avisos de cookies, ventanas emergentes, banners de aplicaciones móviles, widgets y otros elementos molestos."
+				"description": "Bloquea elementos irritantes en sitios web, incluidos avisos de cookies, widgets de terceros y ventanas emergentes dentro del sitio. Contiene los siguientes filtros de AdGuard: avisos de cookies, ventanas emergentes, banners en aplicaciones móviles, otros elementos molestos y widgets."
 			},
 			"fa": {
 				"name": "فیلتر نارضایتی",
@@ -10925,7 +10937,7 @@
 				"description": "Blokira iritantne elemente na web stranicama, uključujući obavijesti o kolačićima, widgete drugih proizvođača i skočne prozore na stranici."
 			},
 			"hu": {
-				"name": "AdGuard bosszúságok szűrő",
+				"name": "AdGuard Kellemetlenségek elleni szűrő",
 				"description": "Blokkolja a weboldalak irritáló elemeit, beleértve a cookie-értesítéseket, a harmadik féltől származó widgeteket és az oldalon belüli felugró ablakokat. A következő AdGuard szűrőket tartalmazza: Cookie-értesítések, felugró ablakok, mobilalkalmazás-bannerek, egyéb zavaró tényezők és widgetek."
 			},
 			"id": {
@@ -10958,7 +10970,7 @@
 			},
 			"pt": {
 				"name": "Filtro de aborrecimentos do AdGuard",
-				"description": "Bloqueia elementos irritantes em páginas web, incluindo avisos de cookies, widgets de terceiros e pop-ups nas páginas. Contém os seguintes filtros AdGuard: Avisos de Cookies, Popups, Banners de Aplicações Móveis, Outros Anormos e Widgets."
+				"description": "Bloqueia elementos irritantes em páginas da web, incluindo avisos de cookies, widgets de terceiros e pop-ups na página. Contém os seguintes filtros do AdGuard: avisos de cookies, pop-ups, banners de aplicações móveis, outros aborrecimentos e widgets."
 			},
 			"pt_BR": {
 				"name": "Filtro de aborrecimentos do AdGuard",
@@ -10966,7 +10978,7 @@
 			},
 			"pt_PT": {
 				"name": "Filtro de aborrecimentos do AdGuard",
-				"description": "Bloqueia elementos irritantes em páginas web, incluindo avisos de cookies, widgets de terceiros e pop-ups nas páginas. Contém os seguintes filtros AdGuard: Avisos de Cookies, Popups, Banners de Aplicações Móveis, Outros Anormos e Widgets."
+				"description": "Bloqueia elementos irritantes em páginas da web, incluindo avisos de cookies, widgets de terceiros e pop-ups na página. Contém os seguintes filtros do AdGuard: avisos de cookies, pop-ups, banners de aplicações móveis, outros aborrecimentos e widgets."
 			},
 			"ru": {
 				"name": "Фильтр раздражителей",
@@ -11387,7 +11399,7 @@
 				"description": "Filtro que aumenta a privacidade removendo parâmetros de monitorização de URLs."
 			},
 			"pt_BR": {
-				"name": "Filtro contra rastreamento de URL do AdGuard",
+				"name": "Filtro contra rastreamento de URL AdGuard",
 				"description": "Filtro que aumenta a privacidade removendo parâmetros de rastreamento de URLs."
 			},
 			"pt_PT": {
@@ -11466,11 +11478,11 @@
 			},
 			"es": {
 				"name": "Filtro de avisos de cookies",
-				"description": "Bloquea avisos de cookies en las páginas web."
+				"description": "Bloquea avisos de cookies en sitios web."
 			},
 			"es_ES": {
 				"name": "Filtro de avisos de cookies",
-				"description": "Bloquea avisos de cookies en las páginas web."
+				"description": "Bloquea avisos de cookies en sitios web."
 			},
 			"fa": {
 				"name": "فیلتر اطلاعیه‌های کوکی AdGuard",
@@ -11636,7 +11648,7 @@
 			},
 			"hu": {
 				"name": "AdGuard Popups szűrő",
-				"description": "Blokkol mindenféle felugró ablakot, amely nem szükséges a weboldalak működéséhez."
+				"description": "Blokkolja az összes olyan előugró ablakot, amely nem szükséges a webhelyek működéséhez."
 			},
 			"id": {
 				"name": "Filter Munculan AdGuard",
@@ -11699,7 +11711,7 @@
 				"description": "Blockerar alla typer av popup-fönster som inte är nödvändiga för att webbplatsen ska fungera."
 			},
 			"tr": {
-				"name": "AdGuard Açılır Pencre filtresi",
+				"name": "AdGuard Açılır Pencereler filtresi",
 				"description": "Sitelerin çalışması için gerekli olmayan her türlü açılır pencereleri engeller."
 			},
 			"uk": {
@@ -11749,12 +11761,12 @@
 				"description": "Blocks irritating banners that promote mobile apps of websites."
 			},
 			"es": {
-				"name": "Filtro de banners de aplicaciones móviles",
-				"description": "Bloquea anuncios molestos que promocionan las aplicaciones móviles de los sitios web."
+				"name": "Filtro de banners en aplicaciones móviles",
+				"description": "Bloquea banners irritantes que promocionan aplicaciones móviles de sitios web."
 			},
 			"es_ES": {
-				"name": "Filtro de banners de aplicaciones móviles",
-				"description": "Bloquea anuncios molestos que promocionan las aplicaciones móviles de los sitios web."
+				"name": "Filtro de banners en aplicaciones móviles",
+				"description": "Bloquea banners irritantes que promocionan aplicaciones móviles de sitios web."
 			},
 			"fa": {
 				"name": "فیلتر بنرهای اپلیکیشن موبایل AdGuard",
@@ -11809,7 +11821,7 @@
 				"description": "Blokuje irytujące banery promujące aplikacje mobilne stron internetowych."
 			},
 			"pt": {
-				"name": "Filtro de banners de aplicativos móveis do AdGuard",
+				"name": "Filtro de banners de aplicações móveis do AdGuard",
 				"description": "Blocos de faixas irritantes que promovem aplicações móveis de sítios."
 			},
 			"pt_BR": {
@@ -11817,7 +11829,7 @@
 				"description": "Bloqueia banners irritantes que promovem aplicativos móveis de sites."
 			},
 			"pt_PT": {
-				"name": "Filtro de banners de aplicativos móveis do AdGuard",
+				"name": "Filtro de banners de aplicações móveis do AdGuard",
 				"description": "Blocos de faixas irritantes que promovem aplicações móveis de sítios."
 			},
 			"ru": {
@@ -11841,7 +11853,7 @@
 				"description": "Blockerar irriterande banners som marknadsför mobilappar på webbplatser."
 			},
 			"tr": {
-				"name": "AdGuard Mobil Uygulama Afiş filtresi",
+				"name": "AdGuard Mobil Uygulama Afişleri filtresi",
 				"description": "Sitelerin mobil uygulamalarını tanıtan sinir bozucu afişleri engeller."
 			},
 			"uk": {
@@ -11892,11 +11904,11 @@
 			},
 			"es": {
 				"name": "Filtro de otros elementos molestos",
-				"description": "Bloquea elementos molestos en páginas web que no se encuentran incluidos en el resto de categorías."
+				"description": "Bloquea elementos irritantes en sitios web que no entran en las categorías populares de elementos molestos."
 			},
 			"es_ES": {
 				"name": "Filtro de otros elementos molestos",
-				"description": "Bloquea elementos molestos en páginas web que no se encuentran incluidos en el resto de categorías."
+				"description": "Bloquea elementos irritantes en sitios web que no entran en las categorías populares de elementos molestos."
 			},
 			"fa": {
 				"name": "فیلتر AdGuard سایر مزاحمت ها",
@@ -11919,7 +11931,7 @@
 				"description": "Blokira iritantne elemente na web stranicama koji ne spadaju u popularne kategorije smetnji."
 			},
 			"hu": {
-				"name": "AdGuard Egyéb bosszúságok szűrő",
+				"name": "AdGuard Egyéb Kellemetlenségek elleni szűrő",
 				"description": "Blokkolja a weboldalak olyan zavaró elemeit, amelyek nem tartoznak a népszerű zavaró kategóriákba."
 			},
 			"id": {
@@ -12093,7 +12105,7 @@
 				"description": "Blokuje irytujące widżety innych firm: asystenci online, czaty na żywo itp. Już zawarte w filtrze AdGuard Annoyances."
 			},
 			"pt": {
-				"name": "Filtro AdGuard Widgets",
+				"name": "Filtro de widgets do AdGuard",
 				"description": "Bloqueia widgets irritantes de terceiros: assistentes em linha, chats de apoio ao vivo, etc."
 			},
 			"pt_BR": {
@@ -12101,7 +12113,7 @@
 				"description": "Bloqueia widgets irritantes de terceiros: assistentes online, chats de suporte ao vivo, etc."
 			},
 			"pt_PT": {
-				"name": "Filtro AdGuard Widgets",
+				"name": "Filtro de widgets do AdGuard",
 				"description": "Bloqueia widgets irritantes de terceiros: assistentes em linha, chats de apoio ao vivo, etc."
 			},
 			"ru": {
@@ -12125,7 +12137,7 @@
 				"description": "Blockerar irriterande widgetar från tredje part: onlineassistenter, chattar för direktsupport osv."
 			},
 			"tr": {
-				"name": "AdGuard Araç filtresi",
+				"name": "AdGuard Araçlar filtresi",
 				"description": "Rahatsız edici üçüncü taraf araçlarını engeller: çevrimiçi asistanlar, canlı destek sohbetleri, vb."
 			},
 			"uk": {
@@ -12380,6 +12392,10 @@
 				"name": "ABPindo",
 				"description": "Додатковий фільтр для вебсайтів індонезійською мовою."
 			},
+			"vi": {
+				"name": "ABPindo",
+				"description": "Phần bổ trợ tiếng Indonesia cho EasyList."
+			},
 			"zh": {
 				"name": "ABPindo",
 				"description": "印尼语网站的补充过滤器列表。"
@@ -12489,6 +12505,10 @@
 			"uk": {
 				"name": "Bulgarian list",
 				"description": "Додатковий фільтр для вебсайтів болгарською мовою."
+			},
+			"vi": {
+				"name": "Bulgarian list",
+				"description": "Phần bổ trợ tiếng Bungaria cho EasyList."
 			},
 			"zh": {
 				"name": "保加利亚列表",
@@ -12604,6 +12624,10 @@
 				"name": "EasyList China",
 				"description": "Додатковий фільтр для вебсайтів китайською мовою. Уже входить до складу Китайського фільтра AdGuard."
 			},
+			"vi": {
+				"name": "EasyList China",
+				"description": "Phần bổ trợ tiếng Trung Quốc cho EasyList."
+			},
 			"zh": {
 				"name": "EasyList 中国",
 				"description": "中文网站的补充过滤器列表。已包含在 AdGuard 中文过滤器中。"
@@ -12717,6 +12741,10 @@
 			"uk": {
 				"name": "EasyList Czech and Slovak",
 				"description": "Додатковий фільтр для вебсайтів чеською та словацькою мовами."
+			},
+			"vi": {
+				"name": "EasyList Czech and Slovak",
+				"description": "Phần bổ trợ tiếng Séc và tiếng Slovak cho EasyList."
 			},
 			"zh": {
 				"name": "EasyList Czech and Slovak",
@@ -12832,6 +12860,10 @@
 				"name": "EasyList Dutch",
 				"description": "Додатковий фільтр для вебсайтів голландською мовою. Уже входить до складу Голландського фільтра AdGuard."
 			},
+			"vi": {
+				"name": "EasyList Dutch",
+				"description": "Phần bổ trợ tiếng Hà Lan cho EasyList. Đã bao gồm trong bộ lọc tiếng Hà Lan của AdGuard."
+			},
 			"zh": {
 				"name": "EasyList 荷兰语",
 				"description": "荷兰语网站的补充过滤器列表。已包含在 AdGuard 荷兰语过滤器中。"
@@ -12945,6 +12977,10 @@
 			"uk": {
 				"name": "EasyList Germany",
 				"description": "Додатковий фільтр для вебсайтів німецькою мовою. Уже входить до складу Німецького фільтра AdGuard."
+			},
+			"vi": {
+				"name": "EasyList Germany",
+				"description": "Phần bổ trợ tiếng Đức cho EasyList. Đã bao gồm trong bộ lọc tiếng Đức của AdGuard."
 			},
 			"zh": {
 				"name": "EasyList 德国",
@@ -13060,6 +13096,10 @@
 				"name": "EasyList Hebrew",
 				"description": "Додатковий фільтр для вебсайтів івритом."
 			},
+			"vi": {
+				"name": "EasyList Hebrew",
+				"description": "Phần bổ trợ tiếng Do Thái cho EasyList."
+			},
 			"zh": {
 				"name": "EasyList Hebrew",
 				"description": "希伯来语网站的补充过滤器列表。"
@@ -13174,6 +13214,10 @@
 				"name": "EasyList Italy",
 				"description": "Додатковий фільтр для вебсайтів італійською мовою."
 			},
+			"vi": {
+				"name": "EasyList Italy",
+				"description": "Phần bổ trợ tiếng Ý cho EasyList."
+			},
 			"zh": {
 				"name": "EasyList Italy",
 				"description": "意大利语网站的补充过滤器列表。"
@@ -13284,6 +13328,10 @@
 				"name": "EasyList Lithuania",
 				"description": "Додатковий фільтр для вебсайтів литовською мовою."
 			},
+			"vi": {
+				"name": "EasyList Lithuania",
+				"description": "Phần bổ trợ tiếng Litva cho EasyList."
+			},
 			"zh": {
 				"name": "EasyList 立陶宛",
 				"description": "陶宛语网站的补充过滤器列表。"
@@ -13393,6 +13441,10 @@
 			"uk": {
 				"name": "Latvian List",
 				"description": "Додатковий фільтр для вебсайтів латвійською мовою."
+			},
+			"vi": {
+				"name": "Latvian List",
+				"description": "Phần bổ trợ tiếng Latvia cho EasyList."
 			},
 			"zh": {
 				"name": "拉脱维亚列表",
@@ -13508,6 +13560,10 @@
 				"name": "Liste AR",
 				"description": "Додатковий фільтр для вебсайтів арабською мовою."
 			},
+			"vi": {
+				"name": "Liste AR",
+				"description": "Phần bổ trợ tiếng Ả Rập cho EasyList."
+			},
 			"zh": {
 				"name": "Liste AR",
 				"description": "阿拉伯语网站的补充过滤器列表。"
@@ -13617,6 +13673,10 @@
 			"uk": {
 				"name": "Liste FR",
 				"description": "Додатковий фільтр для вебсайтів французькою мовою. Уже входить до складу Французького фільтра AdGuard."
+			},
+			"vi": {
+				"name": "Liste AR",
+				"description": "Phần bổ trợ tiếng Pháp cho EasyList. Đã bao gồm trong bộ lọc tiếng Pháp của AdGuard."
 			},
 			"zh": {
 				"name": "Liste FR",
@@ -13735,6 +13795,10 @@
 			"uk": {
 				"name": "ROList",
 				"description": "Додатковий фільтр для вебсайтів румунською мовою."
+			},
+			"vi": {
+				"name": "ROList",
+				"description": "Phần bổ trợ tiếng Rumani cho EasyList."
 			},
 			"zh": {
 				"name": "ROList",
@@ -13937,15 +14001,15 @@
 				"description": "Extra filterlijst voor websites in het IJslands."
 			},
 			"pt": {
-				"name": "Lista ABP Islandês",
+				"name": "Icelandic ABP List",
 				"description": "Lista de filtros adicionais para sites em Islandês."
 			},
 			"pt_BR": {
-				"name": "Lista ABP Islandês",
+				"name": "Icelandic ABP List",
 				"description": "Suplemento islandês para EasyList."
 			},
 			"pt_PT": {
-				"name": "Lista ABP Islandês",
+				"name": "Icelandic ABP List",
 				"description": "Lista de filtros adicionais para sites em Islandês."
 			},
 			"ru": {
@@ -13967,6 +14031,10 @@
 			"uk": {
 				"name": "Icelandic ABP List",
 				"description": "Додатковий фільтр для вебсайтів ісландською мовою."
+			},
+			"vi": {
+				"name": "Icelandic ABP List",
+				"description": "Phần bổ trợ tiếng Iceland cho EasyList."
 			},
 			"zh": {
 				"name": "Icelandic ABP List",
@@ -14090,6 +14158,10 @@
 				"name": "AdBlockID",
 				"description": "Додатковий фільтр для вебсайтів індонезійською мовою."
 			},
+			"vi": {
+				"name": "AdBlockID",
+				"description": "Phần bổ trợ tiếng Indonesia cho EasyList và bộ lọc tiếng Anh của AdGuard."
+			},
 			"zh": {
 				"name": "AdBlockID",
 				"description": "印尼语网站的补充过滤器列表。"
@@ -14169,15 +14241,15 @@
 				"description": "Extra filterlijst voor websites in het Grieks."
 			},
 			"pt": {
-				"name": "Filtro de bloqueio de publicidade grego",
+				"name": "Greek AdBlock Filter",
 				"description": "Lista de filtros adicionais para sites em Grego."
 			},
 			"pt_BR": {
-				"name": "Filtro de bloqueio de anúncios grego",
+				"name": "Greek AdBlock Filter",
 				"description": "Suplemento grego para EasyList."
 			},
 			"pt_PT": {
-				"name": "Filtro de bloqueio de publicidade grego",
+				"name": "Greek AdBlock Filter",
 				"description": "Lista de filtros adicionais para sites em Grego."
 			},
 			"ru": {
@@ -14199,6 +14271,10 @@
 			"uk": {
 				"name": "Greek AdBlock Filter",
 				"description": "Додатковий фільтр для вебсайтів грецькою мовою."
+			},
+			"vi": {
+				"name": "Greek AdBlock Filter",
+				"description": "Phần bổ trợ tiếng Hy Lạp cho EasyList."
 			},
 			"zh": {
 				"name": "Greek AdBlock Filter",
@@ -14256,7 +14332,7 @@
 			},
 			"hu": {
 				"name": "Fanboy's Annoyances",
-				"description": "Eltávolítja az oldalakon belüli felugró ablakokat és az egyéb bosszúságokat. Tartalmazza Fanboy's Social Blocking és az EasyList Süti listát."
+				"description": "Eltávolítja az oldalakon belüli felugró ablakokat és az egyéb kellemetlenségeket. Tartalmazza Fanboy's Social Blocking és az EasyList Süti listát."
 			},
 			"id": {
 				"name": "Fanboy's Annoyances",
@@ -14283,15 +14359,15 @@
 				"description": "Usuwa wyskakujące okienka na stronie i inne irytujące elementy. Zawiera Fanboy's Social Blocking i listy plików cookie EasyList."
 			},
 			"pt": {
-				"name": "Aborrecimentos de Fanboy",
+				"name": "Fanboy's Annoyances",
 				"description": "Remove pop-ups na página e outros incômodos. Inclui Lista de bloqueio social do Fanboy e Lista de cookie do EasyList."
 			},
 			"pt_BR": {
-				"name": "Aborrecimentos de Fanboy",
+				"name": "Fanboy's Annoyances",
 				"description": "Remove pop-ups na página e outros incômodos. Inclui Lista de bloqueio social do Fanboy e Lista de cookie do EasyList."
 			},
 			"pt_PT": {
-				"name": "Aborrecimentos de Fanboy",
+				"name": "Fanboy's Annoyances",
 				"description": "Remove pop-ups na página e outros incômodos. Inclui Lista de bloqueio social do Fanboy e Lista de cookie do EasyList."
 			},
 			"ru": {
@@ -14405,15 +14481,15 @@
 				"description": "Ukrywa i blokuje elementy z sieci społecznościowych, widżety, skrypty, i ikony społecznościowe. Już zawarty na liście Fanboy's Annoyances."
 			},
 			"pt": {
-				"name": "Lista de bloqueio social do Fanboy",
+				"name": "Fanboy's Social Blocking List",
 				"description": "Oculta e bloqueia conteúdo social, widgets sociais, scripts sociais e ícones sociais. Já incluído na Fanboy's Annoyances list."
 			},
 			"pt_BR": {
-				"name": "Lista de bloqueio social do Fanboy",
+				"name": "Fanboy's Social Blocking List",
 				"description": "Oculta e bloqueia conteúdo social, widgets sociais, scripts sociais e ícones sociais. Já incluído na Fanboy's Annoyances list."
 			},
 			"pt_PT": {
-				"name": "Lista de bloqueio social do Fanboy",
+				"name": "Fanboy's Social Blocking List",
 				"description": "Oculta e bloqueia conteúdo social, widgets sociais, scripts sociais e ícones sociais. Já incluído na Fanboy's Annoyances list."
 			},
 			"ru": {
@@ -15141,7 +15217,7 @@
 				"description": "Usuwa ostrzeżenia anty adblock i inne natrętne komunikaty."
 			},
 			"pt": {
-				"name": "Lista de remoção de aviso de bloqueio de anúncio",
+				"name": "Adblock Warning Removal List",
 				"description": "Remove avisos de bloqueio de anúncios e outras mensagens intrusivas."
 			},
 			"pt_BR": {
@@ -15149,7 +15225,7 @@
 				"description": "Remove avisos de bloqueio de anúncios e outras mensagens intrusivas."
 			},
 			"pt_PT": {
-				"name": "Lista de remoção de aviso de bloqueio de anúncio",
+				"name": "Adblock Warning Removal List",
 				"description": "Remove avisos de bloqueio de anúncios e outras mensagens intrusivas."
 			},
 			"ru": {
@@ -15263,15 +15339,15 @@
 				"description": "Blokuje domeny, o których wiadomo, że są używane do rozprzestrzeniania złośliwego oprogramowania i oprogramowania szpiegującego."
 			},
 			"pt": {
-				"name": "Lista de bloqueio de URLs maliciosos",
+				"name": "Online Malicious URL Blocklist",
 				"description": "Bloqueia domínios que são usados para propagar malware e spyware."
 			},
 			"pt_BR": {
-				"name": "Lista de bloqueio de URLs maliciosos",
+				"name": "Online Malicious URL Blocklist",
 				"description": "Bloqueia domínios que são usados para propagar malware e spyware."
 			},
 			"pt_PT": {
-				"name": "Lista de bloqueio de URLs maliciosos",
+				"name": "Online Malicious URL Blocklist",
 				"description": "Bloqueia domínios que são usados para propagar malware e spyware."
 			},
 			"ru": {
@@ -15312,6 +15388,10 @@
 			}
 		},
 		"209": {
+			"be": {
+				"name": "ADgk Mobile China list",
+				"description": "Фільтр для мабільных кітайскіх сайтаў."
+			},
 			"da": {
 				"name": "ADgk Mobile China-liste",
 				"description": "Filter til kinesiske mobilwebsteder."
@@ -15332,9 +15412,21 @@
 				"name": "ADgk Mobile China list",
 				"description": "Filtro para sitios web móviles chinos."
 			},
+			"fi": {
+				"name": "ADgk Mobile China list",
+				"description": "Suodatin kiinankielisille mobiilisivustoille."
+			},
 			"fr": {
 				"name": "Liste ADgk Mobile China",
 				"description": "Filtre pour les sites mobiles chinois."
+			},
+			"hr": {
+				"name": "Popis ADgk Mobile China",
+				"description": "Filtar za kineske mobilne stranice."
+			},
+			"hu": {
+				"name": "ADgk Mobile Kína listája",
+				"description": "Szűrő kínai mobil webhelyekhez."
 			},
 			"it": {
 				"name": "ADgk Mobile China list",
@@ -15348,9 +15440,53 @@
 				"name": "ADgk Mobile China list",
 				"description": "모바일 중국어 사이트를 위한 필터입니다."
 			},
+			"nl": {
+				"name": "ADgk Mobile China-lijst",
+				"description": "Filter voor mobiele Chinese sites."
+			},
+			"pt": {
+				"name": "ADgk Mobile China list",
+				"description": "Filtro para sítios móveis chineses."
+			},
+			"pt_BR": {
+				"name": "ADgk Mobile China list",
+				"description": "Filtro para sites móveis chineses."
+			},
+			"pt_PT": {
+				"name": "ADgk Mobile China list",
+				"description": "Filtro para sítios móveis chineses."
+			},
 			"ru": {
 				"name": "ADgk Mobile China list",
 				"description": "Фильтр для китайских мобильных сайтов."
+			},
+			"sk": {
+				"name": "Zoznam ADgk Mobile China",
+				"description": "Filter pre čínske mobilné stránky."
+			},
+			"sl": {
+				"name": "Seznam ADgk Mobile China",
+				"description": "Filter za kitajske mobilne spletne strani."
+			},
+			"sr": {
+				"name": "ADgk Mobile China lista",
+				"description": "Filter za mobilne kineske stranice."
+			},
+			"sv": {
+				"name": "ADgk Mobile China list",
+				"description": "Filter för kinesiska mobilwebbplatser."
+			},
+			"tr": {
+				"name": "ADgk Mobile China list",
+				"description": "Çin mobil siteleri için filtre."
+			},
+			"uk": {
+				"name": "ADgk Mobile China list",
+				"description": "Фільтр для мобільних сайтів китайською мовою."
+			},
+			"vi": {
+				"name": "Danh sách ADgk Mobile China",
+				"description": "Lọc các trang web dành cho thiết bị di động của Trung Quốc."
 			},
 			"zh": {
 				"name": "ADgk 移动中文列表",
@@ -15358,7 +15494,7 @@
 			},
 			"zh_TW": {
 				"name": "ADgk Mobile China list",
-				"description": "用於行動中文網站的過濾器。"
+				"description": "用於中文行動網站的過濾器。"
 			}
 		},
 		"212": {
@@ -15827,6 +15963,10 @@
 			"uk": {
 				"name": "Official Polish filters for AdBlock, uBlock Origin & AdGuard",
 				"description": "Додатковий фільтр для вебсайтів польською мовою."
+			},
+			"vi": {
+				"name": "Official Polish filters for AdBlock, uBlock Origin & AdGuard",
+				"description": "Phần bổ trợ tiếng Ba Lan cho EasyList."
 			},
 			"zh": {
 				"name": "AdBlock、uBlock Origin & AdGuard的官方波兰语过滤器",
@@ -17060,6 +17200,10 @@
 				"name": "EasyList Spanish",
 				"description": "Додатковий фільтр для вебсайтів іспанською мовою."
 			},
+			"vi": {
+				"name": "EasyList Spanish",
+				"description": "Phần bổ trợ tiếng Tây Ban Nha cho EasyList."
+			},
 			"zh": {
 				"name": "EasyList 西班牙语",
 				"description": "西班牙语网站的补充过滤器列表。"
@@ -17539,6 +17683,10 @@
 			"uk": {
 				"name": "Persian Blocker",
 				"description": "Фільтр для блокування реклами та стеження на вебсайтах перською мовою."
+			},
+			"vi": {
+				"name": "Iranian filter",
+				"description": "Bộ lọc chặn quảng cáo tiếng Iran/Ba Tư."
 			},
 			"zh": {
 				"name": "Persian Blocker",
@@ -18328,7 +18476,7 @@
 			},
 			"hu": {
 				"name": "Frellwit's Swedish Filter",
-				"description": "Szűrő, amely eltávolítja a regionális svéd hirdetéseket, a nyomkövetőket, a közösségi médiát, a bosszúságokat, a szponzorált cikkeket stb."
+				"description": "Szűrő, amely eltávolítja a regionális svéd hirdetéseket, a nyomkövetőket, a közösségi médiát, a kellemetlenségeket, a szponzorált cikkeket stb."
 			},
 			"it": {
 				"name": "Filtro Frellwit Swedish",
@@ -18743,6 +18891,10 @@
 			"uk": {
 				"name": "EasyList Polish",
 				"description": "Додатковий фільтр для вебсайтів польською мовою."
+			},
+			"vi": {
+				"name": "EasyList Polish",
+				"description": "Phần bổ trợ tiếng Ba Lan cho EasyList."
 			},
 			"zh": {
 				"name": "EasyList 波兰语",
@@ -19354,6 +19506,10 @@
 				"name": "Dandelion Sprout's Serbo-Croatian List",
 				"description": "Фільтр для вебсайтів сербською, чорногорською, хорватською та боснійською мовами."
 			},
+			"vi": {
+				"name": "Danh sách Dandelion Sprout's Serbo-Croatian",
+				"description": "Danh sách bộ lọc cho những trang web tiếng Xéc-bi, Montenegro, Croatia, Bosnia."
+			},
 			"zh": {
 				"name": "Dandelion Sprout's Serbo-Croatian List",
 				"description": "针对塞尔维亚语、黑山语、克罗地亚语和波斯尼亚语网站的过滤列表。"
@@ -19459,6 +19615,10 @@
 			"uk": {
 				"name": "IndianList",
 				"description": "Додатковий фільтр для вебсайтів мовами гінді, тамільською та іншими дравідійськими й індійськими мовами."
+			},
+			"vi": {
+				"name": "IndianList",
+				"description": "Danh sách bộ lọc bổ sung cho các trang web bằng các ngôn ngữ Ấn Độ."
 			},
 			"zh": {
 				"name": "IndianList",
