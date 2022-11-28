@@ -14,10 +14,10 @@
   dependencies:
     axios "^0.21.1"
 
-"@adguard/scriptlets@^1.6.55":
-  version "1.6.55"
-  resolved "https://registry.yarnpkg.com/@adguard/scriptlets/-/scriptlets-1.6.55.tgz#e32941d1ae02405ce0e0996f550e5dcf39de7929"
-  integrity sha512-p6lt0midjcLDdMcZilnyIDtEQm43OljLGSvVnjUn1Dh3crONpCp+MI+PVys82fd+9VNiea30hkz5d/WQ7DIiYg==
+"@adguard/scriptlets@^1.6.55", "@adguard/scriptlets@^1.7.3":
+  version "1.7.3"
+  resolved "https://registry.yarnpkg.com/@adguard/scriptlets/-/scriptlets-1.7.3.tgz#63df428f136635ea8395bd911c1697561d32ca1f"
+  integrity sha512-6qRjUQGr2Ga5mF9cbrhbcibum7pMSyCWP5wK5xEviyemwvcLAQQvCvzChzgVeBmfpCFjuEV9ufCj9oGfkMCpSw==
   dependencies:
     "@babel/runtime" "^7.7.2"
     js-yaml "^3.13.1"
@@ -1300,14 +1300,7 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.18.9", "@babel/runtime@^7.19.0", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4":
-  version "7.19.0"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.19.0.tgz#22b11c037b094d27a8a2504ea4dcff00f50e2259"
-  integrity sha512-eR8Lo9hnDS7tqkO7NsV+mKvCmv5boaXFSZ70DnfhcgiEne8hv9oCEd36Klw74EtizEqLsy4YnW8UWwpBVolHZA==
-  dependencies:
-    regenerator-runtime "^0.13.4"
-
-"@babel/runtime@^7.12.5", "@babel/runtime@^7.14.5", "@babel/runtime@^7.18.3":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.12.5", "@babel/runtime@^7.14.5", "@babel/runtime@^7.18.3", "@babel/runtime@^7.18.9", "@babel/runtime@^7.19.0", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4":
   version "7.19.4"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.19.4.tgz#a42f814502ee467d55b38dd1c256f53a7b885c78"
   integrity sha512-EXpLCrk55f+cYqmHsSR+yD/0gAIMxxA9QK9lnQWzhMCvt+YmoBN7Zx94s++Kv0+unHk39vxNO8t+CMA2WSS3wA==
