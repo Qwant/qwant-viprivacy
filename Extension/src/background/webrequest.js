@@ -57,6 +57,28 @@ const webrequestInit = function () {
     const shouldUseInsertCSSAndExecuteScript = prefs.features.canUseInsertCSSAndExecuteScript;
 
     /**
+     * Detect if the requestUrl is on qwant.com host
+     * @param {RequestDetails} requestDetails - Request details
+     * @returns {boolean} True if request url is part of qwant.com
+     */
+    function isQwantHost(requestDetails) {
+        return /^(https:\/\/)?(www\.)?qwant\.com/i.test(requestDetails?.requestUrl);
+    }
+
+    /**
+     * Inject specific headers in qwant.com urls for better extension installed detection.
+     * @returns {*} headers to send.
+     */
+    function getQwantSpecificHeaders(requestHeaders) {
+        return {
+            requestHeaders: [
+                ...requestHeaders,
+                { name: 'X-Qwant-Ext-Installed', value: '1' },
+            ],
+        };
+    }
+
+    /**
      * Retrieve referrer url from request details.
      * Extract referrer by priority:
      * 1. referrerUrl in requestDetails
@@ -320,6 +342,10 @@ const webrequestInit = function () {
         requestContextStorage.update(requestId, { requestHeaders });
 
         let requestHeadersModified = false;
+
+        if (isQwantHost(requestDetails)) {
+            return getQwantSpecificHeaders(requestHeaders);
+        }
 
         if (requestType === RequestTypes.DOCUMENT) {
             // Save ref header
