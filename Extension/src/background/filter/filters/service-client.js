@@ -254,6 +254,18 @@ export const backend = (function () {
         return FiltersDownloader.download(url, FilterCompilerConditionsConstants);
     };
 
+    const downloadExclusions = (forceRemote) => {
+        let url;
+        if (forceRemote) {
+            // TODO: utiliser une url privacy
+            url = 'https://raw.githubusercontent.com/AdguardTeam/HttpsExclusions/master/exclusions/banks.txt';
+        } else {
+            // TODO: le stockage en fichier local n'est pas implem, a implémenter
+            url = backgroundPage.getURL(`${settings.localFiltersFolder}/banks.txt`);
+        }
+        return FiltersDownloader.download(url, FilterCompilerConditionsConstants);
+    };
+
     /**
      * Downloads filter rules by url
      *
@@ -521,7 +533,7 @@ export const backend = (function () {
     return {
         downloadFilterRules,
         downloadFilterRulesBySubscriptionUrl,
-
+        downloadExclusions,
         getLocalFiltersMetadata,
         // getLocalFiltersI18Metadata,
         getLocalScriptRules,

@@ -535,6 +535,8 @@ export const settingsProvider = (function () {
             await applyStealthModeSection(input);
             await applyGeneralSettingsSection(input);
             applyExtensionSpecificSettingsSection(input);
+            // TODO: fait doublon avec celui plus bas, est-ce qu'on garde ?
+            await application.loadExclusions();
             await applyFiltersSection(input);
             onFinished(true);
             return true;
@@ -559,6 +561,8 @@ export const settingsProvider = (function () {
             await applyFiltersSection(input, true);
             await applyStealthModeSection(input);
 
+            // TODO: voir si c'est le bon endroit pour le first load
+            await application.loadExclusions();
             await application.addAndEnableFilters(subscriptions.getLangSuitableFilters());
 
             return true;
