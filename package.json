@@ -95,9 +95,9 @@
   "dependencies": {
     "@adguard/assistant": "^4.3.63",
     "@adguard/filters-downloader": "1.1.12",
-    "@adguard/scriptlets": "^1.6.55",
+    "@adguard/scriptlets": "^1.7.3",
     "@adguard/translate": "^0.3.0",
-    "@adguard/tsurlfilter": "^1.0.42",
+    "@adguard/tsurlfilter": "^1.0.51",
     "@babel/runtime": "^7.19.0",
     "@elastic/apm-rum": "^5.10.2",
     "@formkit/auto-animate": "^1.0.0-beta.1",
