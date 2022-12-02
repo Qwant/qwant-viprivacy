@@ -7,8 +7,6 @@ import { QwantLogo } from '~src/pages/common/components/QwantLogo/QwantLogo';
 import React from 'react';
 import { browserUtils } from '~src/background/utils/browser-utils';
 import Styles from './Popup.module.scss';
-import { IconSearch } from './shared/Icons';
-import { urls } from '../../helpers';
 
 const MainHeaderMobile = () => {
     const onClose = () => {
@@ -39,17 +37,6 @@ export function PopupHeader() {
         return (
             <Flex between alignCenter mb="s">
                 <QwantLogo withSquare height={44} width={224} />
-                <Text
-                    typo="heading-3"
-                    as="a"
-                    color="primary"
-                    href={urls.qwant()}
-                    target="_blank"
-                    rel="noreferrer"
-                    className={Styles.PopupSearch}
-                >
-                    <IconSearch />
-                </Text>
             </Flex>
         );
     }

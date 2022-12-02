@@ -31,119 +31,198 @@ export const notifications = (function () {
     const VIEWED_NOTIFICATIONS = 'viewed-notifications';
     const LAST_NOTIFICATION_TIME = 'viewed-notification-time';
 
-    const BIRTHDAY_13_ID = 'birthday13';
+    const HALLOWEEN_PROMO_22_ID = 'halloweenPromo22';
 
-    const birthday13Notification = {
-        id: BIRTHDAY_13_ID,
+    const halloweenPromo22Notification = {
+        id: HALLOWEEN_PROMO_22_ID,
         locales: {
             en: {
-                title: 'AdGuard',
-                desc: 'Anniversary Quiz',
-                btn: 'Play',
+                title: 'Halloween promo',
+                btn: 'Get 40% off',
             },
             ru: {
-                title: 'Нам 13 лет!',
-                desc: 'Отпразднуем?',
-                btn: 'Вперёд!',
-            },
-            es: {
-                title: 'Test de cumpleaños',
-                desc: 'de AdGuard',
-                btn: 'Ponte a prueba',
-            },
-            de: {
-                title: 'AdGuard-Quiz',
-                desc: 'zum 13. Geburtstag',
-                btn: "Los geht's!",
-            },
-            fr: {
-                title: 'AdGuard fête ses 13',
-                desc: 'ans !',
-                btn: 'Test festif ici',
-            },
-            it: {
-                title: 'AdGuard celebra i',
-                desc: 'suoi 13 anni!',
-                btn: 'Test festivo qui',
-            },
-            ko: {
-                title: 'AdGuard 생일 퀴즈',
-                btn: '퀴즈 시작',
-            },
-            zh_cn: {
-                title: 'AdGuard 生日会',
-                desc: '知识竞赛',
-                btn: '我要参加！',
-            },
-            zh_tw: {
-                title: 'AdGuard 生日派對',
-                desc: '知識競賽',
-                btn: '我要參加！',
+                title: 'Акция на Хэллоуин',
+                btn: 'Скидка 40%',
             },
             ja: {
-                title: 'AdGuard',
-                desc: '創業13周年クイズ',
-                btn: '答えてみる',
+                title: 'ハロウィンキャンペーン',
+                btn: '40%OFF割引をGET',
             },
-            uk: {
-                title: 'Вікторина до дня',
-                desc: 'народження AdGuard',
-                btn: 'Взяти участь',
+            ko: {
+                title: '할로윈 프로모션',
+                btn: '40% 할인 받기',
+            },
+            es: {
+                title: 'Rebajas de Halloween',
+                btn: 'Obtén un 40% off',
+            },
+            de: {
+                title: 'Halloween-Sale',
+                btn: '40% Rabatt erhalten',
+            },
+            fr: {
+                title: 'Promo Halloween',
+                btn: 'Remise 40%',
+            },
+            it: {
+                title: 'Offerta Halloween',
+                btn: '40% di sconto',
+            },
+            zh_cn: {
+                title: '万圣节优惠',
+                btn: '低至6折',
+            },
+            zh_tw: {
+                title: '萬聖節折扣',
+                btn: '低至六折',
             },
             pt_pt: {
-                title: 'Quiz de aniversário',
-                desc: 'AdGuard',
-                btn: 'Teste-se',
+                title: 'Promoção de Halloween',
+                btn: 'Garanta 40% off',
             },
             pt_br: {
-                title: 'Quiz de aniversário',
-                desc: 'AdGuard',
-                btn: 'Teste-se',
+                title: 'Promoção de Halloween',
+                btn: 'Garanta 40% off',
+            },
+            uk: {
+                title: 'Акція на Хелловін',
+                btn: 'Знижка 40%',
             },
             ar: {
-                title: 'اختبار عيد ميلاد',
-                desc: 'AdGuard',
-                btn: 'اختبر نفسك',
+                title: 'عرض عيد الهالوين',
+                btn: '٪احصل على خصم 40',
             },
             be: {
-                title: 'Тэст дня нараджэння',
-                btn: 'Праверце сябе',
+                title: 'Прома на Хэлоўін',
+                btn: 'Зніжка 40%',
+            },
+            bg: {
+                title: 'Хелоуин промо',
+                btn: '40% отстъпка',
+            },
+            ca: {
+                title: 'Promoció de Halloween',
+                btn: '40% de descompte',
+            },
+            cs: {
+                title: 'Halloweenská promo akce',
+                btn: '40% sleva',
+            },
+            da: {
+                title: 'Halloween-kampagne',
+                btn: 'Få 40% rabat',
+            },
+            el: {
+                title: 'Απόκριες promo',
+                btn: 'Έκπτωση 40%',
+            },
+            es_419: {
+                title: 'Rebajas de Halloween',
+                btn: 'Obtén un 40% off',
+            },
+            fa: {
+                title: 'تبلیغاتی هالووین',
+                btn: 'دریافت 40٪ خاموش',
+            },
+            fi: {
+                title: 'Halloween-kampanja',
+                btn: 'Saat 40% alennuksen',
+            },
+            he: {
+                title: 'פרומו ליל כל הקדושים',
+                btn: 'קבל 40% הנחה',
+            },
+            hr: {
+                title: 'Promocija za Noć vještica',
+                btn: '40% popusta',
+            },
+            hu: {
+                title: 'Halloween promóció',
+                btn: '40% kedvezmény',
+            },
+            hy: {
+                title: 'Հելոուինի պրոմո',
+                btn: '40% զեղչ',
             },
             id: {
-                title: 'Kuis ulang tahun',
-                desc: 'AdGuard',
-                btn: 'Uji dirimu',
+                title: 'Promosi Halloween',
+                btn: 'Dapatkan diskon 40%',
+            },
+            lt: {
+                title: 'Helovino akcija',
+                btn: '40% nuolaida',
+            },
+            ms: {
+                title: 'Promosi Halloween',
+                btn: 'Diskaun 40%',
+            },
+            nb: {
+                title: 'Halloween-kampanje',
+                btn: 'Få 40% avslag',
+            },
+            nl: {
+                title: 'Halloween promotie',
+                btn: 'Ontvang 40% korting',
             },
             pl: {
-                title: 'Quiz urodzinowy',
-                desc: 'AdGuard',
-                btn: 'Sprawdź się',
+                title: 'Promocja Halloween',
+                btn: 'Uzyskaj 40% zniżki',
+            },
+            ro: {
+                title: 'Promoție de Halloween',
+                btn: '40% reducere',
+            },
+            sk: {
+                title: 'Propagácia Halloweenu',
+                btn: 'Získajte 40% zľavu',
+            },
+            sl: {
+                title: 'Promocija noči čarovnic',
+                btn: 'Dobi 40% popusta',
+            },
+            sr: {
+                title: 'Promocija za Noć veštica',
+                btn: 'Skini 40% popusta',
+            },
+            sv: {
+                title: 'Halloween-kampanj',
+                btn: 'Få 40% rabatt',
             },
             tr: {
-                title: 'AdGuard doğum günü',
-                desc: 'testi',
-                btn: 'Kendini test et',
+                title: 'Cadılar Bayramı promosyonu',
+                btn: '%40 indirim',
             },
             vi: {
-                title: 'Câu đố sinh nhật',
-                desc: 'AdGuard',
-                btn: 'Tự kiểm tra',
+                title: 'Khuyến mãi Halloween',
+                btn: 'Giảm giá 40%',
+            },
+            hi: {
+                title: 'हेलोवीन पदोन्नति',
+                btn: '40% की छूट',
+            },
+            et: {
+                title: 'Halloweeni promo',
+                btn: '40% allahindlust',
+            },
+            th: {
+                title: 'โปรโมชั่นฮาโลวีน',
+                btn: 'รับส่วนลด 40%',
             },
         },
         text: '',
-        url: 'https://adguard.com/forward.html?action=birthday13&app=browser_extension',
-        from: '31 May 2022 12:00:00',
-        to: '5 June 2022 23:59:00',
+        url: 'https://link.adtidy.org/forward.html?action=halloween_promo_22&app=browser_extension',
+        from: '27 October 2022 12:00:00',
+        to: '2 November 2022 23:59:00',
         type: 'animated',
         get icons() {
-            return lazyGet(birthday13Notification, 'icons', () => ({
+            return lazyGet(halloweenPromo22Notification, 'icons', () => ({
                 ICON_GREEN: {
-                    '19': backgroundPage.getURL('assets/icons/b13-on-19.png'),
-                    '38': backgroundPage.getURL('assets/icons/b13-on-38.png'),
+                    '19': backgroundPage.getURL('assets/icons/hlw22-on-19.png'),
+                    '38': backgroundPage.getURL('assets/icons/hlw22-on-38.png'),
                 },
                 ICON_GRAY: {
-                    '19': backgroundPage.getURL('assets/icons/b13-off-19.png'),
-                    '38': backgroundPage.getURL('assets/icons/b13-off-38.png'),
+                    '19': backgroundPage.getURL('assets/icons/hlw22-off-19.png'),
+                    '38': backgroundPage.getURL('assets/icons/hlw22-off-38.png'),
                 },
             }));
         },
@@ -165,8 +244,7 @@ export const notifications = (function () {
      * @property {string} type;
      */
     const notifications = {
-        // newYear2020: newYearNotification,
-        // easter2022: easterNotification,
+        // halloweenPromo22: halloweenPromo22Notification,
     };
 
     /**
@@ -277,13 +355,6 @@ export const notifications = (function () {
      * @returns {null|Notification} - notification
      */
     const getCurrentNotification = function () {
-        // TODO remove to show next notification
-        const DISABLE_NOTIFICATIONS = true;
-
-        if (DISABLE_NOTIFICATIONS) {
-            return null;
-        }
-
         // Do not display notification on Firefox
         if (browserUtils.isFirefoxBrowser()) {
             return null;

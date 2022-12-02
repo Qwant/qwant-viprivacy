@@ -408,6 +408,8 @@ export const uiService = (function () {
 
     const showAlertMessagePopup = async (title, text, alertStyles) => {
         const tab = await tabsApi.getActive();
+        // const alertContainerStylesResponse = await fetch(alertContainerStylesUrl);
+        // const alertContainerStyles = await alertContainerStylesResponse.text();
         if (tab) {
             tabsApi.sendMessage(tab.tabId, {
                 type: 'show-alert-popup',
@@ -415,6 +417,7 @@ export const uiService = (function () {
                 title,
                 text,
                 alertStyles,
+                // alertContainerStyles,
             });
         }
     };
@@ -440,6 +443,7 @@ export const uiService = (function () {
      * @param currentVersion
      * @param previousVersion
      * @param alertStyles
+     * @param updateIframeStyles
      */
     // const showApplicationUpdatedPopup = async (currentVersion, previousVersion, alertStyles) => {
     //     const promoNotification = notifications.getCurrentNotification();
@@ -980,8 +984,11 @@ export const uiService = (function () {
     };
 
     const init = async () => {
-        // const response = await fetch(alertStylesUrl);
-        // const alertStyles = await response.text();
+        // const alertStylesResponse = await fetch(alertStylesUrl);
+        // const alertStyles = await alertStylesResponse.text();
+
+        // const updateIframeStylesResponse = await fetch(updateIframeStyleUrl);
+        // const updateIframeStyles = await updateIframeStylesResponse.text();
 
         // update icon on event received
         listeners.addListener((event, tab, reset) => {
