@@ -199,6 +199,14 @@ These lists include rules used to detect and block trackers. Changing protection
 
 We hand-picked the lists in `Standard Mode` to offer the best tracking protection with the least impact on the browsing experience. On the other hand, `Strict Mode` offers a more advanced tracking protection, however some pages may not display properly (social-media login, certain cookie banners, etc).
 
+
+# Qwant Browser Android
+
+Qwant VIPrivacy is available on [Qwant Android application](https://play.google.com/store/apps/details?id=com.qwant.liberty).
+
+Since [QwantBrowserAndroid](https://github.com/Qwant/QwantBrowserAndroid) is based on the Firefox browser, we maintain a dedicated [production-android](https://github.com/Qwant/qwant-viprivacy/tree/production-android) branch for it.
+
+
 <a id="license"></a>
 
 ## License

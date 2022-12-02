@@ -7,6 +7,7 @@ import {
 } from 'mobx';
 import { log } from '../../../common/log';
 import { createSavingService, EVENTS as SAVING_FSM_EVENTS, STATES } from '../../common/components/Editor/savingFSM';
+import { MIN_FILTERS_UPDATE_DISPLAY_DURATION } from '../../common/constants';
 import { sleep } from '../../helpers';
 import { messenger } from '../../services/messenger';
 import { SEARCH_FILTERS } from '../components/Filters/Search/constants';
@@ -248,6 +249,12 @@ class SettingsStore {
         return filter.enabled;
     }
 
+    isCategoryEnabled(categoryId) {
+        const category = this.categories
+            .find((c) => c.groupId === categoryId);
+        return category.enabled;
+    }
+
     isAllowAcceptableAdsFilterEnabled() {
         const { SEARCH_AND_SELF_PROMO_FILTER_ID } = this.constants.AntiBannerFiltersId;
         this.isFilterEnabled(SEARCH_AND_SELF_PROMO_FILTER_ID);
@@ -370,7 +377,7 @@ class SettingsStore {
             this.refreshFilters(filtersUpdates);
             setTimeout(() => {
                 this.setFiltersUpdating(false);
-            }, 2000);
+            }, MIN_FILTERS_UPDATE_DISPLAY_DURATION);
             return filtersUpdates;
         } catch (error) {
             this.setFiltersUpdating(false);
@@ -649,6 +656,12 @@ class SettingsStore {
     @action
     async setProtectionLevel(value) {
         this.updateSetting('protection-level', value);
+    }
+
+    @computed
+    get isUpdateFiltersButtonActive() {
+        return this.filters.some((filter) => filter.enabled
+            && this.isCategoryEnabled(filter.groupId));
     }
 }
 
