@@ -1,8 +1,8 @@
-! Checksum: P8XmHG/V6yXWit55JiOTdA
+! Checksum: eHpaVW/b0/mPh1+xDcCLSg
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.3.79
-! TimeUpdated: 2022-11-18T10:30:51+00:00
+! Version: 2.0.3.84
+! TimeUpdated: 2022-12-01T13:02:38+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -19,6 +19,8 @@
 ! Good: $removeparam=utm_id
 ! Bad:  $removeparam=utm_id,domain=example.org (for instance, should be in specific.txt)
 !
+! https://tsunen.team-lab.com/?twclid=2-3bhrj1ny7p11v5r9pap3anqge
+$removeparam=twclid
 ! https://interactivead.ru/wp-content/uploads/2022/08/arir22_rkn.pdf
 $removeparam=erid
 ! Cxense clickthrough tracking
@@ -226,6 +228,15 @@ $removeparam=fb_source
 ! Good: ||example.org^$removeparam=cx
 !
 !
+! https://oshiete.goo.ne.jp/ksos/?from=hensyu_i
+||oshiete.goo.ne.jp^$removeparam=from
+! https://github.com/AdguardTeam/AdguardFilters/issues/135493
+||immobilienscout24.de^$removeparam=referrer
+||immobilienscout24.de^$removeparam=navigationServiceUrl
+||immobilienscout24.de^$removeparam=searchId
+||immobilienscout24.de^$removeparam=searchGeoPath
+||immobilienscout24.de^$removeparam=enteredFrom
+||immobilienscout24.de^$removeparam=source
 ! https://github.com/AdguardTeam/AdguardFilters/issues/134658
 ||tumblr.com^$removeparam=source
 ! https://github.com/AdguardTeam/AdguardFilters/issues/134656
@@ -313,6 +324,9 @@ $removeparam=fb_source
 ||store.udiscovermusic.com^$removeparam=/utm_/
 ! https://github.com/uBlockOrigin/uAssets/issues/14653
 ||hktvmall.com/yuicombo?$script,removeparam=/^\/_ui\/desktop\/common\/js\/uiAnalytics\//
+||hktvmall.com/yuicombo?$script,removeparam=/_ui\/shared\/common\/js\/analytics\/with-intersection-track.js/
+||hktvmall.com/yuicombo?$script,removeparam=/_ui\/shared\/common\/js\/InappCommunicationManager.js/
+||hktvmall.com/yuicombo?$script,removeparam=/_ui\/shared\/common\/js\/util\/jquery.analytics-utils.js/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/128820
 ||go.xlivrdr.com^$removeparam
 ||stripchat.com^$removeparam=affiliateId
@@ -613,7 +627,7 @@ $removeparam=union_lens,domain=tmall.com|taobao.com
 ||api.cxense.com^$removeparam=/^pickup_list_click/
 ! Rakuten sites self-promo links
 $removeparam=l-id,domain=nikki.ne.jp|rakuten.co.jp|rebates.jp
-||rakuten.co.jp^$removeparam=scid
+$removeparam=scid,domain=rakuten.co.jp|rakuten-wallet.co.jp
 ||rakuten.co.jp^$removeparam=sc2id
 ! https://github.com/AdguardTeam/AdguardFilters/issues/107266
 ||azby.fmworld.net/cgi-bin/common/rd.cgi?$removeparam=affitest
