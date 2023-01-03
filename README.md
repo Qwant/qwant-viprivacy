@@ -95,6 +95,12 @@ Run the following command:
 yarn dev
 ```
 
+or
+
+```
+yarn dev:watch
+```
+
 This will create a build directory with unpacked extensions for all browsers:
 
 ```
@@ -103,6 +109,11 @@ This will create a build directory with unpacked extensions for all browsers:
   build/dev/firefox-amo
   build/dev/firefox-standalone
 ```
+
+**Dev with Firefox**
+
+- Start by running `yarn dev:watch:ff` in a separate terminal.
+- In another terminal, execute `yarn start:firefox`.
 
 **Building the beta and release versions**
 

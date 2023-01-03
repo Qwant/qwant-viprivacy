@@ -15,6 +15,7 @@
     "dev": "cross-env BUILD_ENV=dev babel-node tools/bundle.js",
     "dev:watch": "cross-env BUILD_ENV=dev babel-node tools/bundle.js chrome --watch",
     "dev:watch:ff": "cross-env BUILD_ENV=dev babel-node tools/bundle.js firefox --watch",
+    "start:firefox": "web-ext run --source-dir ./build/dev/firefox-amo/",
     "beta": "cross-env BUILD_ENV=beta babel-node tools/bundle.js",
     "release": "cross-env BUILD_ENV=release babel-node tools/bundle.js",
     "test": "jest",
