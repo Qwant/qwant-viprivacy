@@ -113,7 +113,7 @@ This will create a build directory with unpacked extensions for all browsers:
 **Dev with Firefox**
 
 - Start by running `yarn dev:watch:ff` in a separate terminal.
-- In another terminal, change directory to `build/dev/firefox-amo` and then execute `web-ext run`.
+- In another terminal, execute `yarn start:firefox`.
 
 **Building the beta and release versions**
 
