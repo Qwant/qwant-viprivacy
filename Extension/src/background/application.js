@@ -254,6 +254,10 @@ export const application = (() => {
         return enabledFilters;
     };
 
+    const loadExclusions = async () => {
+        await antiBannerService.addExclusionsDomains();
+    };
+
     /**
      * Disables filters by id
      *
@@ -413,6 +417,7 @@ export const application = (() => {
         disableGroup,
         disableAllGroups,
 
+        loadExclusions,
         loadCustomFilter,
         loadCustomFilterInfo,
         getEnabledFiltersFromEnabledGroups,

@@ -266,6 +266,10 @@ export const antiBannerService = (() => {
         return onFilterLoaded(result);
     };
 
+    const addExclusionsDomains = async () => {
+        await filtersUpdate.loadExclusions(true);
+    };
+
     /**
      * Reloads filters from backend
      *
@@ -687,6 +691,7 @@ export const antiBannerService = (() => {
         isRunning,
 
         addAntiBannerFilter,
+        addExclusionsDomains,
 
         getRequestFilter,
         getRequestFilterInitTime,

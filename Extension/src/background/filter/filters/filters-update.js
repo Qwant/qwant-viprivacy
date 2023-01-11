@@ -23,6 +23,7 @@ import { log } from '../../../common/log';
 import { settings } from '../../settings/user-settings';
 import { browserUtils } from '../../utils/browser-utils';
 import { customFilters } from './custom-filters';
+import { allowlist } from '../allowlist';
 
 /**
  * Filters update service
@@ -175,6 +176,27 @@ export const filtersUpdate = (() => {
         listeners.notifyListeners(listeners.SUCCESS_DOWNLOAD_FILTER, filter);
         listeners.notifyListeners(listeners.UPDATE_FILTER_RULES, filter, filterRules);
         return true;
+    }
+
+    async function loadExclusions(forceRemote) {
+        let exclusions;
+
+        // TODO: replace console.log by cleaner logging
+        console.log('start loading exclusions');
+        try {
+            exclusions = await backend.downloadExclusions(forceRemote);
+        } catch (e) {
+            log.error(e);
+        }
+
+        console.log('exclusions', exclusions);
+
+        const domains = exclusions
+            .map(string => string.trim())
+            .filter(string => !string.startsWith('//') && string.length > 0);
+
+        allowlist.updateAllowlistDomains(domains);
+        console.log('allowlist loaded', allowlist.getAllowlistedDomains());
     }
 
     /**
@@ -330,10 +352,14 @@ export const filtersUpdate = (() => {
         return loadedFilters;
     };
 
+    const checkExclusionsDomainsUpdate = async () => {
+        await loadExclusions(true);
+    };
     // Scheduling job
     let scheduleUpdateTimeoutId;
     function scheduleUpdate() {
-        const checkTimeout = 1000 * 60 * 30;
+        // TODO: replace by old timeout
+        const checkTimeout = 1000 * 30;
         if (scheduleUpdateTimeoutId) {
             clearTimeout(scheduleUpdateTimeoutId);
         }
@@ -345,7 +371,13 @@ export const filtersUpdate = (() => {
 
         scheduleUpdateTimeoutId = setTimeout(async () => {
             try {
-                await checkAntiBannerFiltersUpdate();
+                // TODO: handle errors correctly
+                const promises = await Promise.allSettled([
+                    checkAntiBannerFiltersUpdate(),
+                    checkExclusionsDomainsUpdate(),
+                ]);
+
+                console.log('promises return', promises);
             } catch (ex) {
                 log.error('Error update filters, cause {0}', ex);
             }
@@ -373,5 +405,6 @@ export const filtersUpdate = (() => {
         checkAntiBannerFiltersUpdate,
         scheduleFiltersUpdate,
         loadFilterRules,
+        loadExclusions,
     };
 })();
